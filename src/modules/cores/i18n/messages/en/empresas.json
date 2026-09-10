@@ -8,6 +8,20 @@
     "backToList": "Back to directory",
     "pending": "Pending confirmation",
     "pendingNote": "We are validating this profile's information with the company. Check back soon.",
+    "filter": {
+      "search": "Search companies...",
+      "batch": "Batch",
+      "industry": "Industry",
+      "region": "Region",
+      "clear": "Clear filters",
+      "noResults": "No companies match these filters."
+    },
+    "batch": {
+      "early": "Early"
+    },
+    "list": {
+      "more": "+{count} more"
+    },
     "detail": {
       "industry": "Industries",
       "problem": "The problem",

@@ -8,6 +8,20 @@
     "backToList": "Volver al directorio",
     "pending": "Pendiente de confirmar",
     "pendingNote": "Estamos validando la información de esta ficha con la empresa. Regresa pronto.",
+    "filter": {
+      "search": "Buscar empresa...",
+      "batch": "Lote",
+      "industry": "Industria",
+      "region": "Región",
+      "clear": "Limpiar filtros",
+      "noResults": "No se encontraron empresas con estos filtros."
+    },
+    "batch": {
+      "early": "Early"
+    },
+    "list": {
+      "more": "+{count} más"
+    },
     "detail": {
       "industry": "Industrias",
       "problem": "El problema",
