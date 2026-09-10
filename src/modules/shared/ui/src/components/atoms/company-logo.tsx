@@ -7,8 +7,10 @@ interface CompanyLogoProps {
 export function CompanyLogo({ name, logo, className = "size-14" }: CompanyLogoProps) {
   if (logo) {
     return (
-      /* eslint-disable-next-line @next/next/no-img-element */
-      <img src={logo} alt={name} loading="lazy" className={`${className} object-contain`} />
+      <span className={`${className} flex items-center justify-center rounded-md bg-elevated p-1.5`}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logo} alt={name} loading="lazy" className="h-full w-full object-contain" />
+      </span>
     );
   }
 
