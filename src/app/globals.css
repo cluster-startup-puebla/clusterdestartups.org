@@ -1,26 +1,353 @@
 @import "tailwindcss";
 
+/* Design System CSI — clusterdestartups.org
+   Documentación completa: /DESIGN_SYSTEM.md */
+
+/* Modo oscuro por atributo [data-theme="dark"] en <html> (no por prefers-color-scheme) */
+@custom-variant dark ([data-theme="dark"] &);
+
+/* ============================================================
+   Tokens de marca (fijos en ambos modos)
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-primary: #e8186a;
+  --brand-primary-dark: #b8104f;
+  --brand-primary-light: #ff4d93;
+  --brand-secondary: #16284f;
+  --brand-secondary-light: #28406f;
+  --brand-gradient: linear-gradient(135deg, #e8186a 0%, #16284f 100%);
+}
+/* ============================================================
+   Modo Claro (default)
+   ============================================================ */
+:root,
+[data-theme="light"] {
+  --bg-base: #ffffff;
+  --bg-subtle: #f7f7f8;
+  --bg-elevated: #ffffff;
+  --border-default: #e5e7eb;
+  --text-primary: #16284f;
+  --text-secondary: #4b5563;
+  --text-muted: #8a8f98;
+  --text-on-brand: #ffffff;
+  --link: #e8186a;
+  --focus-ring: rgb(232 24 106 / 0.4);
+  /* Acentos interactivos: rosa de marca en claro, rosa claro (AA sobre navy) en oscuro */
+  --brand-accent: var(--brand-primary);
+  --on-accent: #ffffff;
+  --accent-soft: rgb(232 24 106 / 0.12);
+  --success: #1e8e5a;
+  --warning: #b8860b;
+  --error: #c6303e;
+  --info: #2563eb;
+  --card-shadow: 0 2px 8px rgb(22 40 79 / 0.06);
 }
 
+/* ============================================================
+   Modo Oscuro (alternativo, opt-in)
+   ============================================================ */
+[data-theme="dark"] {
+  --bg-base: #0e1420;
+  --bg-subtle: #16284f;
+  --bg-elevated: #1c2b47;
+  --border-default: #2b3b5c;
+  --text-primary: #f5f6f8;
+  --text-secondary: #b8c0ce;
+  --text-muted: #7c8aa3;
+  --text-on-brand: #ffffff;
+  --link: #ff4d93;
+  --focus-ring: rgb(255 77 147 / 0.5);
+  --brand-accent: var(--brand-primary-light);
+  --on-accent: #0e1420;
+  --accent-soft: rgb(255 77 147 / 0.16);
+  --success: #3ddc91;
+  --warning: #f5c244;
+  --error: #ff6b7a;
+  --info: #5b9bff;
+  --card-shadow: none;
+}
+
+/* ============================================================
+   Mapping tokens → utilities de Tailwind
+   ============================================================ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Marca */
+  --color-brand: var(--brand-primary);
+  --color-brand-dark: var(--brand-primary-dark);
+  --color-brand-light: var(--brand-primary-light);
+  --color-navy: var(--brand-secondary);
+  --color-navy-light: var(--brand-secondary-light);
+  --color-on-brand: var(--text-on-brand);
+
+  /* Acento interactivo (reacciona al modo) */
+  --color-accent: var(--brand-accent);
+  --color-on-accent: var(--on-accent);
+
+  /* Superficies semánticas (reaccionan al modo) */
+  --color-surface: var(--bg-base);
+  --color-surface-subtle: var(--bg-subtle);
+  --color-elevated: var(--bg-elevated);
+  --color-line: var(--border-default);
+
+  /* Texto semántico */
+  --color-ink: var(--text-primary);
+  --color-ink-secondary: var(--text-secondary);
+  --color-ink-muted: var(--text-muted);
+  --color-link: var(--link);
+  --color-focus-ring: var(--focus-ring);
+
+  /* Funcionales */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* Tipografía */
+  --font-display: var(--font-archivo), "Archivo", sans-serif;
+  --font-body: var(--font-raleway), "Raleway", sans-serif;
+
+  /* Escala tipográfica */
+  --text-display: clamp(3.5rem, 6vw, 4.5rem);
+  --text-display--line-height: 1.05;
+  --text-display--font-weight: 700;
+  --text-h1: 2.5rem;
+  --text-h1--line-height: 1.1;
+  --text-h1--font-weight: 700;
+  --text-h2: 2rem;
+  --text-h2--line-height: 1.15;
+  --text-h2--font-weight: 600;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.2;
+  --text-h3--font-weight: 600;
+  --text-h4: 1.125rem;
+  --text-h4--line-height: 1.3;
+  --text-h4--font-weight: 600;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-micro: 0.75rem;
+  --text-micro--line-height: 1.4;
+  --text-micro--font-weight: 500;
+  --text-micro--letter-spacing: 0.04em;
+
+  /* Radios */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-card: var(--card-shadow);
+  --shadow-cta: 0 4px 12px rgb(232 24 106 / 0.25);
+
+  /* Layout */
+  --container-site: 80rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================================
+   Base
+   ============================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body), "Raleway", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  .display {
+    font-family: var(--font-display), "Archivo", sans-serif;
+    font-stretch: 125%;
+    font-weight: 700;
+  }
+
+  ::placeholder {
+    color: var(--text-muted);
+  }
+
+  a {
+    color: var(--link);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================================================
+   Componentes
+   ============================================================ */
+@layer components {
+  .container-site {
+    max-width: var(--container-site);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .container-site {
+      padding-inline: 4rem;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-body), sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0.875rem 1.75rem;
+    transition:
+      background-color 150ms ease,
+      color 150ms ease,
+      border-color 150ms ease,
+      box-shadow 150ms ease,
+      transform 150ms ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--brand-primary);
+    color: var(--text-on-brand);
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-primary-dark);
+    box-shadow: var(--shadow-cta);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--brand-accent);
+    border: 1.5px solid var(--brand-accent);
+  }
+
+  .btn-secondary:hover {
+    background: var(--brand-accent);
+    color: var(--on-accent);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-primary);
+  }
+
+  .btn-ghost:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .btn-on-dark {
+    background: var(--brand-primary-light);
+    color: #0e1420;
+  }
+
+  .btn-on-dark:hover {
+    background: var(--brand-primary);
+    color: var(--text-on-brand);
+    box-shadow: var(--shadow-cta);
+  }
+
+  .card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+
+  .badge-brand {
+    display: inline-flex;
+    align-items: center;
+    background: var(--accent-soft);
+    color: var(--brand-accent);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body), sans-serif;
+    font-size: var(--text-micro);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .input {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font-body), sans-serif;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    transition:
+      border-color 150ms ease,
+      box-shadow 150ms ease;
+  }
+
+  .input:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+  }
+
+  .bg-brand-gradient {
+    background-image: var(--brand-gradient);
+  }
+}
+
+@layer components {
+  .article-body {
+    @apply text-body text-ink leading-relaxed;
+  }
+  .article-body h2 {
+    @apply text-h2 mt-12 font-display;
+  }
+  .article-body h3 {
+    @apply text-h3 mt-8 font-display;
+  }
+  .article-body p {
+    @apply mt-6;
+  }
+  .article-body ul {
+    @apply mt-6 list-disc space-y-3 pl-6;
+  }
+  .article-body strong {
+    @apply text-ink font-semibold;
+  }
+  .article-body a {
+    @apply text-link underline;
+  }
+}
+
+@layer components {
+  .hero-dark {
+    background-color: #0e1420;
+    background-image: linear-gradient(
+      135deg,
+      rgba(232, 24, 106, 0.32) 0%,
+      rgba(232, 24, 106, 0.08) 34%,
+      rgba(14, 20, 32, 0) 60%
+    );
+    color: #ffffff;
+  }
+  .hero-dark .hero-cta-secondary {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+  }
+  .hero-dark .hero-cta-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
 }
