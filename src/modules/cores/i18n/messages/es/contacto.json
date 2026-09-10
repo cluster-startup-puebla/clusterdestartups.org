@@ -1,7 +1,7 @@
 {
   "Contact": {
     "metaTitle": "Contacto | Clúster de Startups e Innovación (CSI)",
-    "metaDescription": "Escríbenos para unirte al clúster, proponer vinculación institucional o escribir como prensa. Visítanos en el Hub, CERHAN II, Cuautlancingo, Puebla.",
+    "metaDescription": "Escríbenos para unirte al clúster, proponer vinculación institucional o escribir como prensa. Visítanos en nuestra oficina en Cuautlancingo, Puebla.",
     "form": {
       "eyebrow": "Escríbenos",
       "title": "Cuéntanos quién eres",
@@ -12,10 +12,13 @@
       "emailPlaceholder": "nombre@dominio.com",
       "organizationLabel": "Organización",
       "organizationPlaceholder": "Proyecto, empresa o institución (opcional)",
-      "profileLabel": "Perfil",
+      "profileLabel": "¿Quién eres?",
+      "infoCardLabel": "Tus datos",
       "profiles": [
-        "Quiero ser maker/empresa",
-        "Represento gobierno/academia/industria",
+        "Soy estudiante",
+        "Soy emprendedor / quiero iniciar",
+        "Empresa",
+        "Represento gobierno / academia / industria",
         "Soy prensa",
         "Otro"
       ],
@@ -32,15 +35,15 @@
     },
     "location": {
       "eyebrow": "Visítanos",
-      "title": "El Hub, en CERHAN II",
-      "description": "Nuestra sede está en el Hub de Innovación del Parque Científico y Tecnológico CERHAN II, en Cuautlancingo, Puebla.",
+      "title": "Oficina del clúster",
+      "description": "Nuestra oficina está en Cuautlancingo, Puebla.",
       "addressLabel": "Dirección",
-      "address": "Av. San Lorenzo Almecatla, CERHAN II, Cuautlancingo, Puebla, México",
-      "mapTitle": "Mapa de la ubicación del Hub, CERHAN II, Cuautlancingo",
+      "address": "Av. San Lorenzo Almecatla, Cuautlancingo, Puebla",
+      "addressHref": "https://maps.app.goo.gl/8EpnaYuVsiyjGYe98",
       "mapNote": "El mapa se carga desde Google Maps; al abrirlo también puedes consultar rutas de acceso.",
       "socialLabel": "Redes oficiales",
       "linkedinLabel": "LinkedIn",
-      "linkedinHref": "https://www.linkedin.com/company/clusterdestartups"
+      "linkedinHref": "https://www.linkedin.com/company/cluster-startups-puebla/"
     }
   }
 }

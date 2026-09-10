@@ -150,6 +150,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
           { label: t("legalFactNameLabel"), value: t("legalFactNameValue") },
           { label: t("legalFactRfcLabel"), value: t("legalFactRfcValue") },
           { label: t("legalFactDateLabel"), value: t("legalFactDateValue") },
+          { label: t("legalFactAddressLabel"), value: t("legalFactAddressValue"), href: t("legalFactAddressHref") },
         ]}
       />
     </>

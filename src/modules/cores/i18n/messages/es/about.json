@@ -72,6 +72,9 @@
     "legalFactRfcValue": "CSI260615EM5",
     "legalFactDateLabel": "Fecha de constitución",
     "legalFactDateValue": "15 de junio de 2026",
-    "legalCtaLabel": "Contacta al clúster"
+    "legalCtaLabel": "Contacta al clúster",
+    "legalFactAddressLabel": "Oficina del clúster",
+    "legalFactAddressValue": "Av. San Lorenzo Almecatla, Cuautlancingo, Puebla",
+    "legalFactAddressHref": "https://maps.app.goo.gl/8EpnaYuVsiyjGYe98"
   }
 }

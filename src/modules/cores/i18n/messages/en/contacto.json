@@ -1,7 +1,7 @@
 {
   "Contact": {
     "metaTitle": "Contact | Cluster of Startups and Innovation (CSI)",
-    "metaDescription": "Write to us to join the cluster, propose institutional partnerships or reach us as press. Visit us at the Hub, CERHAN II, Cuautlancingo, Puebla.",
+    "metaDescription": "Write to us to join the cluster, propose institutional partnerships or reach us as press. Visit us at our office in Cuautlancingo, Puebla.",
     "form": {
       "eyebrow": "Get in touch",
       "title": "Tell us who you are",
@@ -12,7 +12,8 @@
       "emailPlaceholder": "name@domain.com",
       "organizationLabel": "Organization",
       "organizationPlaceholder": "Project, company or institution (optional)",
-      "profileLabel": "Profile",
+      "profileLabel": "Who are you?",
+      "infoCardLabel": "Your info",
       "profiles": [
         "I want to be a maker/company",
         "I represent government/academia/industry",
@@ -32,15 +33,15 @@
     },
     "location": {
       "eyebrow": "Visit us",
-      "title": "The Hub, at CERHAN II",
-      "description": "Our headquarters are at the Innovation Hub of the CERHAN II Science and Technology Park, in Cuautlancingo, Puebla.",
+      "title": "Cluster office",
+      "description": "Our office is in Cuautlancingo, Puebla.",
       "addressLabel": "Address",
-      "address": "Av. San Lorenzo Almecatla, CERHAN II, Cuautlancingo, Puebla, Mexico",
-      "mapTitle": "Map of the Hub location, CERHAN II, Cuautlancingo",
+      "address": "Av. San Lorenzo Almecatla, Cuautlancingo, Puebla",
+      "addressHref": "https://maps.app.goo.gl/8EpnaYuVsiyjGYe98",
       "mapNote": "The map loads from Google Maps; opening it also lets you check access routes.",
       "socialLabel": "Official social media",
       "linkedinLabel": "LinkedIn",
-      "linkedinHref": "https://www.linkedin.com/company/clusterdestartups"
+      "linkedinHref": "https://www.linkedin.com/company/cluster-startups-puebla/"
     }
   }
 }

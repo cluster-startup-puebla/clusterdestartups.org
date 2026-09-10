@@ -72,6 +72,9 @@
     "legalFactRfcValue": "CSI260615EM5",
     "legalFactDateLabel": "Date of incorporation",
     "legalFactDateValue": "June 15, 2026",
-    "legalCtaLabel": "Contact the cluster"
+    "legalCtaLabel": "Contact the cluster",
+    "legalFactAddressLabel": "Cluster office",
+    "legalFactAddressValue": "Av. San Lorenzo Almecatla, CERHAN II, Cuautlancingo, Puebla",
+    "legalFactAddressHref": "https://maps.app.goo.gl/8EpnaYuVsiyjGYe98"
   }
 }

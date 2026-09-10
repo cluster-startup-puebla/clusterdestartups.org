@@ -19,6 +19,7 @@ interface ContactFormProps {
     message: FieldProps;
   };
   profile: { label: string; options: string[] };
+  infoCardLabel: string;
   submitLabel: string;
   successMessage: string;
   errors: {
@@ -38,6 +39,7 @@ export function ContactForm({
   description,
   fields,
   profile,
+  infoCardLabel,
   submitLabel,
   successMessage,
   errors,
@@ -89,52 +91,55 @@ export function ContactForm({
         <div className="mb-12">
           <SectionHeader eyebrow={eyebrow} title={title} description={description} />
         </div>
-        <form onSubmit={handleSubmit} noValidate className="card max-w-2xl p-8">
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <label htmlFor="contact-name" className="mb-2 block text-small text-ink">
-                {fields.name.label}
-              </label>
-              <input
-                id="contact-name"
-                className="input"
-                type="text"
-                autoComplete="name"
-                placeholder={fields.name.placeholder}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                aria-invalid={Boolean(fieldErrors.name)}
-                aria-describedby={fieldErrors.name ? nameErrorId : undefined}
-              />
-              {fieldErrors.name && (
-                <p id={nameErrorId} role="alert" className="mt-2 text-small text-error">
-                  {fieldErrors.name}
-                </p>
-              )}
+        <form onSubmit={handleSubmit} noValidate className="mx-auto max-w-xl space-y-6">
+          <div className="card p-6">
+            <p className="text-micro uppercase tracking-wide text-ink-muted mb-4">{infoCardLabel}</p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label htmlFor="contact-name" className="mb-1.5 block text-small text-ink">
+                  {fields.name.label}
+                </label>
+                <input
+                  id="contact-name"
+                  className="input"
+                  type="text"
+                  autoComplete="name"
+                  placeholder={fields.name.placeholder}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  aria-invalid={Boolean(fieldErrors.name)}
+                  aria-describedby={fieldErrors.name ? nameErrorId : undefined}
+                />
+                {fieldErrors.name && (
+                  <p id={nameErrorId} role="alert" className="mt-1.5 text-small text-error">
+                    {fieldErrors.name}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label htmlFor="contact-email" className="mb-1.5 block text-small text-ink">
+                  {fields.email.label}
+                </label>
+                <input
+                  id="contact-email"
+                  className="input"
+                  type="email"
+                  autoComplete="email"
+                  placeholder={fields.email.placeholder}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  aria-invalid={Boolean(fieldErrors.email)}
+                  aria-describedby={fieldErrors.email ? emailErrorId : undefined}
+                />
+                {fieldErrors.email && (
+                  <p id={emailErrorId} role="alert" className="mt-1.5 text-small text-error">
+                    {fieldErrors.email}
+                  </p>
+                )}
+              </div>
             </div>
-            <div>
-              <label htmlFor="contact-email" className="mb-2 block text-small text-ink">
-                {fields.email.label}
-              </label>
-              <input
-                id="contact-email"
-                className="input"
-                type="email"
-                autoComplete="email"
-                placeholder={fields.email.placeholder}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                aria-invalid={Boolean(fieldErrors.email)}
-                aria-describedby={fieldErrors.email ? emailErrorId : undefined}
-              />
-              {fieldErrors.email && (
-                <p id={emailErrorId} role="alert" className="mt-2 text-small text-error">
-                  {fieldErrors.email}
-                </p>
-              )}
-            </div>
-            <div>
-              <label htmlFor="contact-organization" className="mb-2 block text-small text-ink">
+            <div className="mt-4">
+              <label htmlFor="contact-organization" className="mb-1.5 block text-small text-ink">
                 {fields.organization.label}
               </label>
               <input
@@ -147,31 +152,33 @@ export function ContactForm({
                 onChange={(e) => setOrganization(e.target.value)}
               />
             </div>
-            <div>
-              <label htmlFor="contact-profile" className="mb-2 block text-small text-ink">
-                {profile.label}
-              </label>
-              <select
-                id="contact-profile"
-                className="input"
-                value={selectedProfile}
-                onChange={(e) => setSelectedProfile(e.target.value)}
-              >
-                {profile.options.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
+          </div>
+          <div className="card p-6">
+            <p className="text-micro uppercase tracking-wide text-ink-muted mb-4">{profile.label}</p>
+            <div className="flex flex-wrap gap-2">
+              {profile.options.map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  onClick={() => setSelectedProfile(option)}
+                  className={`rounded-full border px-3 py-1.5 text-small transition ${
+                    selectedProfile === option
+                      ? "border-brand bg-brand text-on-brand"
+                      : "border-line bg-surface text-ink-secondary hover:border-brand"
+                  }`}
+                >
+                  {option}
+                </button>
+              ))}
             </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="contact-message" className="mb-2 block text-small text-ink">
+            <div className="mt-4">
+              <label htmlFor="contact-message" className="mb-1.5 block text-small text-ink">
                 {fields.message.label}
               </label>
               <textarea
                 id="contact-message"
-                className="input min-h-32"
-                rows={5}
+                className="input min-h-24"
+                rows={3}
                 placeholder={fields.message.placeholder}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -179,17 +186,17 @@ export function ContactForm({
                 aria-describedby={fieldErrors.message ? messageErrorId : undefined}
               />
               {fieldErrors.message && (
-                <p id={messageErrorId} role="alert" className="mt-2 text-small text-error">
+                <p id={messageErrorId} role="alert" className="mt-1.5 text-small text-error">
                   {fieldErrors.message}
                 </p>
               )}
             </div>
+            <button type="submit" className="btn btn-primary mt-4 w-full">
+              {submitLabel}
+            </button>
           </div>
-          <button type="submit" className="btn btn-primary mt-8">
-            {submitLabel}
-          </button>
           {submitted && (
-            <p role="status" className="mt-4 text-small text-success">
+            <p role="status" className="text-center text-small text-success">
               {successMessage}
             </p>
           )}

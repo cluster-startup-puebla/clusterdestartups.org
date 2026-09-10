@@ -45,6 +45,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
           message: { label: t("form.messageLabel"), placeholder: t("form.messagePlaceholder") },
         }}
         profile={{ label: t("form.profileLabel"), options: t.raw("form.profiles") }}
+        infoCardLabel={t("form.infoCardLabel")}
         submitLabel={t("form.submitLabel")}
         successMessage={t("form.successMessage")}
         errors={{
@@ -60,7 +61,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
         description={t("location.description")}
         addressLabel={t("location.addressLabel")}
         address={t("location.address")}
-        mapTitle={t("location.mapTitle")}
+        addressHref={t("location.addressHref")}
         mapNote={t("location.mapNote")}
         socialLabel={t("location.socialLabel")}
         social={[

@@ -3,6 +3,7 @@ import { Button, SectionHeader } from "@/modules/shared/ui/src/components";
 interface LegalFact {
   label: string;
   value: string;
+  href?: string;
 }
 
 interface LegalDataSectionProps {
@@ -28,7 +29,13 @@ export function LegalDataSection({
           {facts.map((fact) => (
             <div key={fact.label}>
               <p className="text-micro uppercase tracking-wider text-ink-muted">{fact.label}</p>
-              <p className="mt-2 text-body font-medium text-ink">{fact.value}</p>
+              {fact.href ? (
+                <a href={fact.href} target="_blank" rel="noopener noreferrer" className="mt-2 block text-body font-medium text-link hover:underline">
+                  {fact.value}
+                </a>
+              ) : (
+                <p className="mt-2 text-body font-medium text-ink">{fact.value}</p>
+              )}
             </div>
           ))}
         </div>

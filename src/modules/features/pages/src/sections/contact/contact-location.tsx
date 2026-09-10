@@ -7,13 +7,13 @@ interface ContactLocationProps {
   description: string;
   addressLabel: string;
   address: string;
-  mapTitle: string;
+  addressHref?: string;
   mapNote: string;
   socialLabel: string;
   social: { label: string; href: string }[];
 }
 
-const MAP_EMBED_SRC = "https://www.google.com/maps?q=CERHAN+II+Cuautlancingo&output=embed";
+const MAP_LINK = "https://www.google.com/maps?q=19.113973,-98.246581";
 
 export function ContactLocation({
   eyebrow,
@@ -21,7 +21,7 @@ export function ContactLocation({
   description,
   addressLabel,
   address,
-  mapTitle,
+  addressHref,
   mapNote,
   socialLabel,
   social,
@@ -33,21 +33,30 @@ export function ContactLocation({
           <SectionHeader eyebrow={eyebrow} title={title} description={description} />
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
-          <iframe
-            src={MAP_EMBED_SRC}
-            title={mapTitle}
-            loading="lazy"
-            className="min-h-80 w-full rounded-md border border-line bg-elevated"
-          />
+          <a
+            href={addressHref || MAP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-80 flex-col items-center justify-center gap-4 rounded-md border border-line bg-elevated p-8 text-center transition hover:border-brand hover:shadow-lg"
+          >
+            <MapPin strokeWidth={1.5} size={48} className="text-brand" aria-hidden="true" />
+            <p className="text-body font-medium text-ink">{address}</p>
+            <span className="text-small text-link">{mapNote}</span>
+          </a>
           <div className="card h-fit p-8">
             <div className="flex items-start gap-3">
               <MapPin strokeWidth={1.5} size={24} className="mt-1 shrink-0 text-accent" aria-hidden="true" />
               <div>
                 <h3 className="text-h4 font-display text-ink">{addressLabel}</h3>
-                <p className="mt-2 text-body text-ink-secondary">{address}</p>
+                {addressHref ? (
+                  <a href={addressHref} target="_blank" rel="noopener noreferrer" className="mt-2 block text-body text-link hover:underline">
+                    {address}
+                  </a>
+                ) : (
+                  <p className="mt-2 text-body text-ink-secondary">{address}</p>
+                )}
               </div>
             </div>
-            <p className="mt-4 text-small text-ink-muted">{mapNote}</p>
             <div className="mt-8 border-t border-line pt-6">
               <p className="text-micro uppercase tracking-wider text-ink-muted">{socialLabel}</p>
               <ul className="mt-4 space-y-3">

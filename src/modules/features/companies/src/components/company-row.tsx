@@ -32,7 +32,7 @@ export function CompanyRow({ company, locale, labels }: CompanyRowProps) {
   return (
     <Link
       href={`/empresas/${company.slug}`}
-      className="group flex items-start gap-4 rounded-md border-l-2 border-transparent p-4 transition-colors hover:border-brand hover:bg-surface-subtle"
+      className="group flex items-start gap-4 rounded-md p-4 transition-colors hover:bg-surface-subtle"
     >
       <CompanyLogo name={company.name} logo={company.logo} className="size-10 shrink-0" dark={company.logoDark} />
       <div className="min-w-0 flex-1">
