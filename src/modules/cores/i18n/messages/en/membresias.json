@@ -1,0 +1,128 @@
+{
+  "Memberships": {
+    "metaTitle": "Memberships | Cluster of Startups and Innovation (CSI)",
+    "metaDescription": "Learn about the maker and company membership levels of the Cluster of Startups and Innovation in Puebla, and how to apply.",
+    "hero": {
+      "eyebrow": "Memberships",
+      "title": "A place for makers, startups and companies building in Puebla",
+      "description": "Joining the cluster means having a workspace, a network of people and institutions, and visibility within the state's innovation ecosystem.",
+      "primaryCta": "Join the cluster",
+      "secondaryCta": "Explore the Hub",
+      "imageAlt": "Makers working in a shared space at the Innovation Hub"
+    },
+    "why": {
+      "eyebrow": "The value of belonging",
+      "title": "Why join the cluster",
+      "description": "Membership opens three concrete things for those who are part of the community.",
+      "items": [
+        {
+          "title": "Hub access",
+          "description": "Workspaces and laboratories at CERHAN II, alongside communities that share knowledge and tools every day."
+        },
+        {
+          "title": "Real connections",
+          "description": "Direct links with government, academia and industry, plus makers and startups building in Puebla."
+        },
+        {
+          "title": "Visibility",
+          "description": "Presence in cluster events, programs and announcements, so your work is visible to the whole ecosystem."
+        }
+      ]
+    },
+    "levels": {
+      "eyebrow": "Membership levels",
+      "title": "Two paths, eleven levels",
+      "description": "Membership is organized into two groups: M levels for makers and community, and E levels for companies. Each level describes who it applies to; contribution amounts are shared during the application process.",
+      "makersLabel": "M levels · Makers and community",
+      "makersNote": "For individuals, students and projects in development.",
+      "companiesLabel": "E levels · Companies",
+      "companiesNote": "For organizations that want to engage with the ecosystem.",
+      "makers": [
+        {
+          "code": "M0",
+          "name": "Explorer",
+          "description": "People curious about tech entrepreneurship; they access open events and information sessions."
+        },
+        {
+          "code": "M1",
+          "name": "Base maker",
+          "description": "Students and enthusiasts starting to take part in Hub life."
+        },
+        {
+          "code": "M2",
+          "name": "Active maker",
+          "description": "Those who attend regularly, share tools and collaborate in community activities."
+        },
+        {
+          "code": "M3",
+          "name": "Maker with a project",
+          "description": "People with an idea or prototype in development seeking feedback and support."
+        },
+        {
+          "code": "M4",
+          "name": "Maker with a team",
+          "description": "Groups of two or more people working on a shared project at the Hub."
+        },
+        {
+          "code": "M5",
+          "name": "Validated prototype",
+          "description": "Projects with evidence of real use, early users or technical validation."
+        },
+        {
+          "code": "M6",
+          "name": "Startup in formation",
+          "description": "Teams in pre-incubation structuring their business model within the cluster."
+        },
+        {
+          "code": "M7",
+          "name": "Established startup",
+          "description": "Startups already operating in the market and giving back to the community."
+        }
+      ],
+      "companies": [
+        {
+          "code": "E1",
+          "name": "Allied company",
+          "description": "Organizations that want to connect with the maker community and take part in cluster events."
+        },
+        {
+          "code": "E2",
+          "name": "Collaborating company",
+          "description": "Companies that join challenges, programs and laboratories together with makers and startups."
+        },
+        {
+          "code": "E3",
+          "name": "Founding partner company",
+          "description": "Organizations that support the cluster's strategic direction and co-invest in the ecosystem."
+        }
+      ]
+    },
+    "apply": {
+      "eyebrow": "Application process",
+      "title": "How to apply",
+      "description": "The process is simple and personal; no application goes unanswered.",
+      "steps": [
+        {
+          "title": "Send your interest",
+          "description": "Write to us from the contact page and tell us who you are: maker, project or company."
+        },
+        {
+          "title": "We talk",
+          "description": "We schedule a Hub visit or a video call to learn about your proposal and suggest the level that fits you best."
+        },
+        {
+          "title": "Formalize your membership",
+          "description": "You receive the level sheet with current contributions and confirm your incorporation."
+        },
+        {
+          "title": "Join the community",
+          "description": "You get your welcome, Hub access and the activity calendar for your level."
+        }
+      ],
+      "cta": {
+        "label": "Start your application on Contact",
+        "href": "/contacto"
+      }
+    }
+  }
+}

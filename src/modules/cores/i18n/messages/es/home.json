@@ -1,0 +1,83 @@
+{
+  "Home": {
+    "metaTitle": "Clúster de Startups e Innovación CSI A.C. | Puebla",
+    "metaDescription": "Asociación civil que articula gobierno, academia y empresa para que sea más fácil abrir una startup tecnológica en Puebla. Conoce el ecosistema y el Hub.",
+    "hero": {
+      "eyebrow": "Clúster de Startups e Innovación A.C.",
+      "title": "Que en 2030 emprender una empresa de base tecnológica sea más fácil que abrir un negocio tradicional.",
+      "description": "Gobierno, academia y empresa trabajando juntos desde 2021 para lograrlo en Puebla.",
+      "primaryCta": "Conoce el ecosistema",
+      "imageAlt": "Personas trabajando en el Hub de Innovación CERHAN II"
+    },
+    "stats": {
+      "eyebrow": "Cifras de impacto",
+      "title": "Lo que construimos hoy, medido con metas al 2030",
+      "description": "Cada cifra parte de un punto de origen verificable y tiene una meta concreta de cierre de 2030.",
+      "todayNote": "Cifra actual, al cierre del último trimestre.",
+      "goalNote": "Meta institucional al 2030.",
+      "footnote": "Cifras de referencia actualizadas por el consejo directivo; las metas 2030 están documentadas en el plan institucional.",
+      "items": {
+        "companies": {
+          "value": "48",
+          "label": "Empresas activas en el clúster",
+          "note": "Hoy · Meta 2030: 150"
+        },
+        "hubSpace": {
+          "value": "1,800",
+          "label": "Metros cuadrados del Hub en CERHAN II",
+          "note": "Hoy · Meta 2030: 4,500 m²"
+        },
+        "nodes": {
+          "value": "7",
+          "label": "Nodos del clúster en operación",
+          "note": "Hoy · Meta 2030: 12"
+        },
+        "industries": {
+          "value": "5",
+          "label": "Industrias vinculadas con startups",
+          "note": "Hoy · Meta 2030: 10"
+        }
+      }
+    },
+    "about": {
+      "eyebrow": "Quiénes somos",
+      "title": "Una asociación civil con modelo de Triple Hélice",
+      "description": "CSI A.C. articula gobierno, academia y empresa alrededor de un mismo objetivo: que emprender en tecnología en Puebla deje de ser una excepción y se vuelva la regla. Sin fines de lucro, con gobernanza abierta y resultados medibles.",
+      "imageAlt": "Diagrama del modelo de Triple Hélice: gobierno, academia y empresa",
+      "linkLabel": "Quiénes somos"
+    },
+    "hub": {
+      "eyebrow": "El Hub",
+      "title": "Un espacio físico para construir en CERHAN II",
+      "description": "El Hub de Innovación CSI opera en CERHAN II con infraestructura abierta para makers, startups y equipos de industria: FabLab con manufactura digital, laboratorio de inteligencia artificial con cómputo GPU y auditorio para comunidad.",
+      "fabLab": "FabLab",
+      "fabLabDescription": "Manufactura digital: impresión 3D, corte láser y electrónica de prototipos.",
+      "iaLab": "Laboratorio de IA",
+      "iaLabDescription": "Cómputo GPU y acompañamiento técnico para equipos que entrenan modelos.",
+      "auditorium": "Auditorio",
+      "auditoriumDescription": "Espacio para demo days, talleres y sesiones de trabajo del clúster.",
+      "imageFabLabAlt": "FabLab del Hub de Innovación CSI en CERHAN II",
+      "imageNaveBAlt": "Nave B del Hub de Innovación CSI en CERHAN II",
+      "linkLabel": "Conoce el Hub"
+    },
+    "alliances": {
+      "eyebrow": "Alianzas destacadas",
+      "title": "Instituciones que hacen posible el clúster",
+      "description": "Trabajamos de la mano con dependencias federales y estatales, y con las universidades que forman al talento del ecosistema.",
+      "logos": {
+        "secihtiAlt": "Logo de la Secretaría de Ciencias, Humanidades, Tecnología e Innovación (SECIHTI)",
+        "sedetraAlt": "Logo de la Secretaría de Desarrollo Económico y Trabajo del Estado de Puebla (SEDETRA)",
+        "universidadesAlt": "Logos de las universidades aliadas del clúster"
+      }
+    },
+    "closing": {
+      "title": "Puebla emprende con el clúster",
+      "description": "Como institución, puedes colaborar en programas, infraestructura y vinculación para el ecosistema poblano.",
+      "institutions": {
+        "title": "Gobierno, academia y empresa",
+        "description": "Colabora en programas, nodos e infraestructura para el ecosistema poblano.",
+        "cta": "Colabora con el clúster"
+      }
+    }
+  }
+}

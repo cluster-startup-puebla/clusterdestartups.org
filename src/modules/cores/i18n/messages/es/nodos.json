@@ -1,0 +1,25 @@
+{
+  "Nodes": {
+    "metaTitle": "Nodos | Clúster de Startups e Innovación A.C.",
+    "metaDescription": "El modelo de nodos del CSI: expansión geográfica en Puebla mediante colaboración recíproca. Nodos ancla activos en Tehuacán y Huejotzingo.",
+    "introEyebrow": "Nodos",
+    "introTitle": "¿Qué es un nodo CSI?",
+    "introDescription": "Los nodos son la forma de extender la actividad del clúster más allá del Hub, llevando programas, talento y proyectos a distintas regiones del estado.",
+    "pillarModelTitle": "Modelo de expansión geográfica",
+    "pillarModelDesc": "Cada nodo opera como una extensión local del clúster: articula actores de su región, difunde programas y alimenta proyectos al ecosistema estatal.",
+    "pillarReciprocityTitle": "Colaboración recíproca",
+    "pillarReciprocityDesc": "Durante el primer año no hay transferencias monetarias: la colaboración se construye con recursos, talento, espacios e infraestructura aportados por cada parte.",
+    "mapEyebrow": "Mapa de nodos",
+    "mapTitle": "Nodos ancla en el estado",
+    "mapDescription": "Los primeros nodos del clúster operan como puntos de referencia regionales para el interior de Puebla.",
+    "mapImageAlt": "Mapa de los nodos del CSI en el estado de Puebla",
+    "tehuacan": "Tehuacán",
+    "tehuacanDesc": "Nodo ancla de la región sur del estado, con proyectos vinculados a la industria local y al talento de la región.",
+    "huejotzingo": "Huejotzingo",
+    "huejotzingoDesc": "Nodo ancla de la región poniente, conectado al corredor industrial y logístico del estado.",
+    "statusActive": "Activo",
+    "ctaTitle": "Propón un nodo en tu región",
+    "ctaDescription": "Si una institución o actor del interior del estado quiere impulsar un nodo del clúster en su región, trabaja con nosotros en la habilitación de un nuevo nodo.",
+    "ctaLabel": "Contacta al clúster"
+  }
+}

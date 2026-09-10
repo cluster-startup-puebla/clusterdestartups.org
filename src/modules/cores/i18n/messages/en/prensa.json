@@ -1,0 +1,45 @@
+{
+  "Press": {
+    "metaTitle": "Press Room | Cluster of Startups and Innovation (CSI)",
+    "metaDescription": "News and public presence of the Cluster of Startups and Innovation in Puebla, with press kit and institutional information.",
+    "releases": {
+      "eyebrow": "News",
+      "title": "Public presence of the cluster",
+      "description": "Fact sheets on the milestones and public appearances of CSI.",
+      "badge": "Release"
+    },
+    "kit": {
+      "eyebrow": "Press kit",
+      "title": "Resources for the media",
+      "description": "Basic institutional information and official logos ready for editorial use.",
+      "dataLabel": "Institutional information",
+      "data": [
+        {
+          "label": "Legal name",
+          "value": "Clúster de Startups e Innovación (CSI) A.C."
+        },
+        {
+          "label": "Tax ID (RFC)",
+          "value": "CSI260615EM5"
+        },
+        {
+          "label": "Headquarters",
+          "value": "Innovation Hub, CERHAN II, Cuautlancingo, Puebla"
+        }
+      ],
+      "contactLabel": "Press contact",
+      "contactValue": "prensa@clusterdestartups.org",
+      "downloadsLabel": "Logo downloads",
+      "downloads": [
+        {
+          "label": "Logo on light background",
+          "href": "/assets/img/logo-csi-fondo-claro.svg"
+        },
+        {
+          "label": "Logo on dark background",
+          "href": "/assets/img/logo-csi-fondo-oscuro.svg"
+        }
+      ]
+    }
+  }
+}

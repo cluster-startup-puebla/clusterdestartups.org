@@ -1,0 +1,46 @@
+{
+  "Contact": {
+    "metaTitle": "Contacto | Clúster de Startups e Innovación (CSI)",
+    "metaDescription": "Escríbenos para unirte al clúster, proponer vinculación institucional o escribir como prensa. Visítanos en el Hub, CERHAN II, Cuautlancingo, Puebla.",
+    "form": {
+      "eyebrow": "Escríbenos",
+      "title": "Cuéntanos quién eres",
+      "description": "Comparte tus datos y el motivo de tu mensaje; respondemos a toda solicitud en un plazo razonable.",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre y apellidos",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "nombre@dominio.com",
+      "organizationLabel": "Organización",
+      "organizationPlaceholder": "Proyecto, empresa o institución (opcional)",
+      "profileLabel": "Perfil",
+      "profiles": [
+        "Quiero ser maker/empresa",
+        "Represento gobierno/academia/industria",
+        "Soy prensa",
+        "Otro"
+      ],
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Cuéntanos en pocas líneas cómo podemos acompañarte.",
+      "submitLabel": "Enviar mensaje",
+      "successMessage": "Gracias por escribirnos. Se abrió tu aplicación de correo con el mensaje listo para enviar; si no se abrió, escríbenos directamente a contacto@clusterdestartups.org.",
+      "errors": {
+        "nameRequired": "Escribe tu nombre.",
+        "emailRequired": "Escribe tu correo electrónico.",
+        "emailInvalid": "Escribe un correo electrónico válido.",
+        "messageRequired": "Escribe tu mensaje."
+      }
+    },
+    "location": {
+      "eyebrow": "Visítanos",
+      "title": "El Hub, en CERHAN II",
+      "description": "Nuestra sede está en el Hub de Innovación del Parque Científico y Tecnológico CERHAN II, en Cuautlancingo, Puebla.",
+      "addressLabel": "Dirección",
+      "address": "Av. San Lorenzo Almecatla, CERHAN II, Cuautlancingo, Puebla, México",
+      "mapTitle": "Mapa de la ubicación del Hub, CERHAN II, Cuautlancingo",
+      "mapNote": "El mapa se carga desde Google Maps; al abrirlo también puedes consultar rutas de acceso.",
+      "socialLabel": "Redes oficiales",
+      "linkedinLabel": "LinkedIn",
+      "linkedinHref": "https://www.linkedin.com/company/clusterdestartups"
+    }
+  }
+}

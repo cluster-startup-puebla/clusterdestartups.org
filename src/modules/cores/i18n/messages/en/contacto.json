@@ -1,0 +1,46 @@
+{
+  "Contact": {
+    "metaTitle": "Contact | Cluster of Startups and Innovation (CSI)",
+    "metaDescription": "Write to us to join the cluster, propose institutional partnerships or reach us as press. Visit us at the Hub, CERHAN II, Cuautlancingo, Puebla.",
+    "form": {
+      "eyebrow": "Get in touch",
+      "title": "Tell us who you are",
+      "description": "Share your details and the reason for your message; we answer every request within a reasonable time.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your full name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "name@domain.com",
+      "organizationLabel": "Organization",
+      "organizationPlaceholder": "Project, company or institution (optional)",
+      "profileLabel": "Profile",
+      "profiles": [
+        "I want to be a maker/company",
+        "I represent government/academia/industry",
+        "I am press",
+        "Other"
+      ],
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us briefly how we can support you.",
+      "submitLabel": "Send message",
+      "successMessage": "Thanks for reaching out. Your email app opened with the message ready to send; if it did not open, write to us directly at contacto@clusterdestartups.org.",
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "messageRequired": "Please write your message."
+      }
+    },
+    "location": {
+      "eyebrow": "Visit us",
+      "title": "The Hub, at CERHAN II",
+      "description": "Our headquarters are at the Innovation Hub of the CERHAN II Science and Technology Park, in Cuautlancingo, Puebla.",
+      "addressLabel": "Address",
+      "address": "Av. San Lorenzo Almecatla, CERHAN II, Cuautlancingo, Puebla, Mexico",
+      "mapTitle": "Map of the Hub location, CERHAN II, Cuautlancingo",
+      "mapNote": "The map loads from Google Maps; opening it also lets you check access routes.",
+      "socialLabel": "Official social media",
+      "linkedinLabel": "LinkedIn",
+      "linkedinHref": "https://www.linkedin.com/company/clusterdestartups"
+    }
+  }
+}

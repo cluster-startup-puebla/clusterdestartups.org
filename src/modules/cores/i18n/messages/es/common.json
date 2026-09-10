@@ -1,0 +1,34 @@
+{
+  "Nav": {
+    "label": "Navegación principal",
+    "home": "Inicio",
+    "about": "Quiénes somos",
+    "governance": "Equipo",
+    "hub": "El Hub",
+    "nodes": "Nodos",
+    "alliances": "Alianzas",
+    "memberships": "Membresías",
+    "press": "Sala de prensa",
+    "contact": "Contacto",
+    "open": "Abrir menú",
+    "close": "Cerrar menú",
+    "companies": "Empresas",
+    "skipToContent": "Saltar al contenido"
+  },
+  "Footer": {
+    "name": "Clúster de Startups e Innovación (CSI) A.C.",
+    "hub": "El Hub",
+    "hubAddress": "Av. San Lorenzo Almecatla, CERHAN II",
+    "hubCity": "Cuautlancingo, Puebla",
+    "links": "Enlaces",
+    "join": "Súmate al clúster",
+    "pressKit": "Kit de prensa",
+    "contact": "Contacto",
+    "madeIn": "Hecho en Puebla, México.",
+    "aboutLink": "Quiénes somos",
+    "contactLink": "Contacto",
+    "membershipsLink": "Súmate al clúster",
+    "pressLink": "Kit de prensa",
+    "companiesLink": "Empresas del clúster"
+  }
+}

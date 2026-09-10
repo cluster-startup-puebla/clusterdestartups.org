@@ -1,0 +1,25 @@
+{
+  "Nodes": {
+    "metaTitle": "Nodes | Startup and Innovation Cluster",
+    "metaDescription": "The CSI node model: geographic expansion across Puebla through reciprocal collaboration. Anchor nodes active in Tehuacán and Huejotzingo.",
+    "introEyebrow": "Nodes",
+    "introTitle": "What is a CSI node?",
+    "introDescription": "Nodes extend cluster activity beyond the Hub, bringing programs, talent and projects to different regions of the state.",
+    "pillarModelTitle": "Geographic expansion model",
+    "pillarModelDesc": "Each node operates as a local extension of the cluster: it convenes actors in its region, spreads programs and feeds projects into the state ecosystem.",
+    "pillarReciprocityTitle": "Reciprocal collaboration",
+    "pillarReciprocityDesc": "During the first year there are no monetary transfers: collaboration is built on resources, talent, spaces and infrastructure contributed by each party.",
+    "mapEyebrow": "Node map",
+    "mapTitle": "Anchor nodes across the state",
+    "mapDescription": "The cluster's first nodes operate as regional reference points for the rest of Puebla.",
+    "mapImageAlt": "Map of CSI nodes in the state of Puebla",
+    "tehuacan": "Tehuacán",
+    "tehuacanDesc": "Anchor node for the southern region, with projects linked to local industry and regional talent.",
+    "huejotzingo": "Huejotzingo",
+    "huejotzingoDesc": "Anchor node for the western region, connected to the state's industrial and logistics corridor.",
+    "statusActive": "Active",
+    "ctaTitle": "Propose a node in your region",
+    "ctaDescription": "If an institution or actor outside the metro area wants to drive a cluster node in its region, work with us to build a new node.",
+    "ctaLabel": "Contact the cluster"
+  }
+}

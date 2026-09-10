@@ -1,0 +1,23 @@
+{
+  "Companies": {
+    "metaTitle": "Cluster companies",
+    "metaDescription": "Directory of startups and companies that are part of the Startup and Innovation Cluster in Puebla: what they build, the problems they solve, and how to reach them.",
+    "title": "Cluster companies",
+    "subtitle": "Startups and companies connected through the cluster: what they build and the industries they serve.",
+    "viewDetail": "View profile",
+    "backToList": "Back to directory",
+    "pending": "Pending confirmation",
+    "pendingNote": "We are validating this profile's information with the company. Check back soon.",
+    "detail": {
+      "industry": "Industries",
+      "problem": "The problem",
+      "solution": "The solution",
+      "catalog": "Products and services",
+      "contact": "Contact",
+      "website": "Website",
+      "demo": "Demo",
+      "email": "Email",
+      "phone": "Phone"
+    }
+  }
+}

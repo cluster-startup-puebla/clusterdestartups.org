@@ -1,0 +1,83 @@
+{
+  "Home": {
+    "metaTitle": "Clúster de Startups e Innovación CSI A.C. | Puebla",
+    "metaDescription": "A nonprofit that brings together government, academia and industry so that starting a tech startup in Puebla becomes easier than opening a traditional business. Explore the ecosystem and the Hub.",
+    "hero": {
+      "eyebrow": "Clúster de Startups e Innovación A.C.",
+      "title": "By 2030, starting a tech-based company in Puebla will be easier than opening a traditional business.",
+      "description": "Government, academia, and industry working together since 2021 to make it happen in Puebla.",
+      "primaryCta": "Explore the ecosystem",
+      "imageAlt": "People working at the CERHAN II Innovation Hub"
+    },
+    "stats": {
+      "eyebrow": "Impact in numbers",
+      "title": "What we build today, measured against 2030 goals",
+      "description": "Every figure starts from a verifiable baseline and carries a concrete target for the end of 2030.",
+      "todayNote": "Current figure, as of the last quarter.",
+      "goalNote": "Institutional target for 2030.",
+      "footnote": "Reference figures updated by the governing board; the 2030 targets are documented in the institutional plan.",
+      "items": {
+        "companies": {
+          "value": "48",
+          "label": "Active companies in the cluster",
+          "note": "Today · 2030 target: 150"
+        },
+        "hubSpace": {
+          "value": "1,800",
+          "label": "Square meters of the Hub at CERHAN II",
+          "note": "Today · 2030 target: 4,500 m²"
+        },
+        "nodes": {
+          "value": "7",
+          "label": "Cluster nodes in operation",
+          "note": "Today · 2030 target: 12"
+        },
+        "industries": {
+          "value": "5",
+          "label": "Industries connected to startups",
+          "note": "Today · 2030 target: 10"
+        }
+      }
+    },
+    "about": {
+      "eyebrow": "About us",
+      "title": "A nonprofit built on the Triple Helix model",
+      "description": "CSI A.C. brings government, academia and industry together around one goal: making tech entrepreneurship in Puebla the rule, not the exception. Nonprofit, open governance and measurable results.",
+      "imageAlt": "Triple Helix model diagram: government, academia and industry",
+      "linkLabel": "About us"
+    },
+    "hub": {
+      "eyebrow": "The Hub",
+      "title": "A physical space to build, at CERHAN II",
+      "description": "The CSI Innovation Hub operates at CERHAN II with open infrastructure for makers, startups and industry teams: a FabLab with digital fabrication, an AI laboratory with GPU compute, and an auditorium for the community.",
+      "fabLab": "FabLab",
+      "fabLabDescription": "Digital fabrication: 3D printing, laser cutting and prototyping electronics.",
+      "iaLab": "AI Laboratory",
+      "iaLabDescription": "GPU compute and technical support for teams training models.",
+      "auditorium": "Auditorium",
+      "auditoriumDescription": "A venue for demo days, workshops and cluster working sessions.",
+      "imageFabLabAlt": "FabLab at the CSI Innovation Hub in CERHAN II",
+      "imageNaveBAlt": "Nave B at the CSI Innovation Hub in CERHAN II",
+      "linkLabel": "Discover the Hub"
+    },
+    "alliances": {
+      "eyebrow": "Key alliances",
+      "title": "Institutions that make the cluster possible",
+      "description": "We work hand in hand with federal and state agencies, and with the universities that train the talent of the ecosystem.",
+      "logos": {
+        "secihtiAlt": "Logo of the Ministry of Science, Humanities, Technology and Innovation (SECIHTI)",
+        "sedetraAlt": "Logo of the Ministry of Economic Development and Labor of Puebla (SEDETRA)",
+        "universidadesAlt": "Logos of the cluster's partner universities"
+      }
+    },
+    "closing": {
+      "title": "Puebla builds with the cluster",
+      "description": "As an institution, you can collaborate on programs, infrastructure, and ecosystem connections in Puebla.",
+      "institutions": {
+        "title": "Government, academia and industry",
+        "description": "Collaborate on programs, nodes and infrastructure for the Puebla ecosystem.",
+        "cta": "Partner with the cluster"
+      }
+    }
+  }
+}

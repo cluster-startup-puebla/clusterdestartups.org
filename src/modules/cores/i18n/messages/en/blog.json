@@ -1,0 +1,12 @@
+{
+  "Blog": {
+    "title": "Blog",
+    "description": "Stories, guides, and analysis of the startup ecosystem in Mexico and Latin America.",
+    "backToBlog": "← Back to blog",
+    "readingTime": "{minutes} min read",
+    "categoryPress": "Press room",
+    "categoryCommunity": "Community",
+    "readMore": "Read more →",
+    "allPosts": "All posts"
+  }
+}
