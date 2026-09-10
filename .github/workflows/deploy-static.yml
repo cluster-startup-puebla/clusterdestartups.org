@@ -1,0 +1,51 @@
+name: Deploy static export to cPanel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Disable proxy (incompatible with output: export)
+        run: mv src/proxy.ts src/proxy.ts.disabled
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build static export
+        run: STATIC_EXPORT=1 pnpm build
+
+      - name: Restore proxy
+        if: always()
+        run: mv src/proxy.ts.disabled src/proxy.ts
+
+      - name: Write root redirect
+        run: node scripts/root-redirect.mjs
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-site
+          path: out/
+
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.CPANEL_FTP_SERVER }}
+          username: ${{ secrets.CPANEL_FTP_USER }}
+          password: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          local-dir: out/
+          server-dir: public_html/
