@@ -53,6 +53,12 @@ export type Company = {
    * oscuro y un PNG con fondo blanco se ve como recuadro pegado.
    */
   logo?: string;
+  /** Lote de ingreso al clúster. "early" = fundacionales. */
+  batch?: string;
+  /** Ubicación de la empresa (localized). */
+  region?: LocalizedText;
+  /** Descripción corta de una línea para el listado. */
+  shortDescription?: LocalizedText;
   /** A qué industrias sirve, como etiquetas sueltas. */
   industries?: LocalizedList;
   /** Problema que resuelve. */
@@ -94,6 +100,15 @@ export const companies: readonly Company[] = [
     slug: 'karggu',
     name: 'Karggu',
     logo: '/empresas/karggu.webp',
+    batch: 'early',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Plataforma que conecta paquetería, cliente y destinatario con tracking, Carta Porte y control de saldos.',
+      en: 'Platform connecting carriers, customers and recipients with tracking, Carta Porte and balance control.'
+    },
     industries: {
       es: ['Logística', 'Paqueterías', 'Transporte de carga', 'Carta Porte'],
       en: ['Logistics', 'Parcel carriers', 'Freight transport', 'Carta Porte']
@@ -115,6 +130,15 @@ export const companies: readonly Company[] = [
     slug: 'kotemah',
     name: 'Kotemah',
     logo: '/empresas/kotemah.webp',
+    batch: 'early',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Equipos de manipulación de carga en gravedad cero y exoesqueletos para la industria.',
+      en: 'Zero-gravity load handling equipment and exoskeletons for industry.'
+    },
     industries: {
       es: ['Manufactura', 'Ergonomía', 'Manejo de cargas', 'Seguridad y salud'],
       en: ['Manufacturing', 'Ergonomics', 'Load handling', 'Health and safety']
@@ -183,6 +207,15 @@ export const companies: readonly Company[] = [
     slug: 'mileva-dynamics',
     name: 'Mileva Dynamics',
     logo: '/empresas/mileva-dynamics.webp',
+    batch: 'early',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Sistema Andon de control de presencia y productividad por reconocimiento facial en planta.',
+      en: 'Andon system for presence and productivity control via facial recognition on the shop floor.'
+    },
     industries: {
       es: [
         'Manufactura',
@@ -213,6 +246,15 @@ export const companies: readonly Company[] = [
     slug: 'oxtron',
     name: 'Oxtron',
     logo: '/empresas/oxtron.webp',
+    batch: 'early',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Plataforma de huella de carbono alimentaria e inventario de emisiones con captura de CO₂.',
+      en: 'Food carbon footprint platform and emissions inventory with CO₂ capture.'
+    },
     industries: {
       es: [
         'Agroalimentario',
@@ -246,6 +288,15 @@ export const companies: readonly Company[] = [
     slug: 'radek',
     name: 'Radek',
     logo: '/empresas/radek.webp',
+    batch: 'early',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Convierte el desarrollo interno de empresas consolidadas en un negocio digital aparte.',
+      en: 'Turns in-house development at established companies into a separate digital business.'
+    },
     industries: {
       es: [
         'Multisectorial',
@@ -278,6 +329,15 @@ export const companies: readonly Company[] = [
     slug: 'sabia',
     name: 'Sabia',
     logo: '/empresas/sabia.webp',
+    batch: 'early',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Integración de sistemas e implementación de IA que estandarizan y automatizan procesos.',
+      en: 'Systems integration and AI implementation that standardizes and automates processes.'
+    },
     industries: {
       es: [
         'Industria y servicios',
