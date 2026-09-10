@@ -15,7 +15,7 @@ export function Logo({ className = "", alt = "Clúster de Startups e Innovación
     <img
       src="/logo-cluster.webp"
       alt={alt}
-      className={`${mounted && theme === "dark" ? "[filter:brightness(0)_invert(1)]" : ""} ${className}`}
+      className={`${mounted && theme !== "dark" ? "[filter:brightness(0)]" : ""} ${className}`}
     />
   );
 }
