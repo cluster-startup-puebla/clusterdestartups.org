@@ -87,7 +87,7 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
       </Link>
 
       <header className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-7">
-        <CompanyLogo name={company.name} logo={company.logo} className="size-20" />
+        <CompanyLogo name={company.name} logo={company.logo} className="size-20" dark={company.logoDark} />
         <div>
           <h1 className="text-h1 font-display text-ink">{company.name}</h1>
           <ul aria-label={t("detail.industry")} className="mt-4 flex flex-wrap gap-2">

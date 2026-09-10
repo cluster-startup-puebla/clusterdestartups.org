@@ -6,13 +6,14 @@ interface CompanyLogoProps {
   name: string;
   logo?: string;
   className?: string;
+  dark?: boolean;
 }
 
-export function CompanyLogo({ name, logo, className = "size-14" }: CompanyLogoProps) {
+export function CompanyLogo({ name, logo, className = "size-14", dark = false }: CompanyLogoProps) {
   const { theme, mounted } = useTheme();
 
   if (logo) {
-    const filter = mounted && theme !== "dark" ? "brightness(0)" : "none";
+    const filter = mounted && dark && theme !== "dark" ? "brightness(0)" : "none";
 
     return (
       <span className={`${className} flex items-center justify-center rounded-md p-1.5`}>

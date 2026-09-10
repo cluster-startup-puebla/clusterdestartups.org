@@ -53,6 +53,8 @@ export type Company = {
    * oscuro y un PNG con fondo blanco se ve como recuadro pegado.
    */
   logo?: string;
+  /** Si el logo es claro/transparente, aplicar filter en modo claro para que sea visible. */
+  logoDark?: boolean;
   /** Lote de ingreso al clúster. "early" = fundacionales. */
   batch?: string;
   /** Ubicación de la empresa (localized). */
@@ -246,6 +248,7 @@ export const companies: readonly Company[] = [
     slug: 'oxtron',
     name: 'Oxtron',
     logo: '/empresas/oxtron.webp',
+    logoDark: true,
     batch: 'early',
     region: {
       es: 'Puebla, México',
@@ -288,6 +291,7 @@ export const companies: readonly Company[] = [
     slug: 'radek',
     name: 'Radek',
     logo: '/empresas/radek.webp',
+    logoDark: true,
     batch: 'early',
     region: {
       es: 'Puebla, México',
@@ -329,6 +333,7 @@ export const companies: readonly Company[] = [
     slug: 'sabia',
     name: 'Sabia',
     logo: '/empresas/sabia.webp',
+    logoDark: true,
     batch: 'early',
     region: {
       es: 'Puebla, México',
