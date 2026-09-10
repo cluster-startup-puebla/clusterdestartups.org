@@ -45,7 +45,7 @@ export default async function GovernancePage({ params }: PageProps<"/[locale]/go
               name="Yamil Álvarez"
               role={t("boardYamilRole")}
               description={t("boardYamilDescription")}
-              image={{ src: "/assets/img/yamil.jpg", alt: t("boardYamilRole") }}
+              image={{ src: "/assets/img/yamil.png", alt: t("boardYamilRole") }}
               badge={t("founderBadge")}
             />
           </div>
@@ -55,7 +55,7 @@ export default async function GovernancePage({ params }: PageProps<"/[locale]/go
               name="Daniel Martínez"
               role={t("boardDanielRole")}
               description={t("boardDanielDescription")}
-              image={{ src: "/assets/img/daniel.jpg", alt: t("boardDanielRole") }}
+              image={{ src: "/assets/img/daniel.png", alt: t("boardDanielRole") }}
               badge={t("founderBadge")}
             />
             <ProfileCard
@@ -90,7 +90,7 @@ export default async function GovernancePage({ params }: PageProps<"/[locale]/go
             <ProfileCard
               name="Héctor Gama"
               role="Miembro del comité de vigilancia"
-              image={{ src: "/assets/img/ey-hector-armando-gama-site.jpg", alt: "Héctor Gama" }}
+              image={{ src: "/assets/img/ey-hector-armando-gama-site.png", alt: "Héctor Gama" }}
             />
           </div>
         </div>

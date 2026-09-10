@@ -91,15 +91,15 @@ _(Sin foto.)_
 
 **Contenido:** Presidente/representante legal (Yamil Álvarez) y Cluster Manager (Álvaro Castillo). Rol + una línea de responsabilidad cada uno.
 
-![Retrato institucional de Yamil Álvarez, Presidente](/assets/img/gobernanza-yamil-alvarez.jpg)
-![Retrato institucional de Álvaro Castillo, Cluster Manager](/assets/img/gobernanza-alvaro-castillo.jpg)
+![Retrato institucional de Yamil Álvarez, Presidente](/assets/img/gobernanza-yamil-alvarez.png)
+![Retrato institucional de Álvaro Castillo, Cluster Manager](/assets/img/gobernanza-alvaro-castillo.png)
 
 ### 3.2 Coordinadores de nodo
 
 **Contenido:** Los 6 coordinadores por nivel (N2–N6 + Coordinación de Comités), con su nivel asignado, en grid uniforme.
 
-![Retrato institucional Rodrigo Ruiz, Coordinador N6 Fondos](/assets/img/gobernanza-rodrigo-ruiz.jpg)
-![Retrato institucional Daniel Martínez, Coordinador N5 Soluciones](/assets/img/gobernanza-daniel-martinez.jpg)
+![Retrato institucional Rodrigo Ruiz, Coordinador N6 Fondos](/assets/img/gobernanza-rodrigo-ruiz.png)
+![Retrato institucional Daniel Martínez, Coordinador N5 Soluciones](/assets/img/gobernanza-daniel-martinez.png)
 ![Retrato institucional Omar Balanzar, Coordinador N4 Comunidad](/assets/img/gobernanza-omar-balanzar.jpg)
 ![Retrato institucional Lenin Pérez, Coordinador N3 Infraestructura](/assets/img/gobernanza-lenin-perez.jpg)
 ![Retrato institucional Margarita Herrera, Coordinadora N2 Talento](/assets/img/gobernanza-margarita-herrera.jpg)

@@ -11,13 +11,11 @@ export function ProfileCard({ name, role, description, image, badge }: ProfileCa
     <div className="card flex flex-col overflow-hidden">
       {image && (
         <div className="bg-elevated relative overflow-hidden border-b border-line" style={{ aspectRatio: "4 / 5" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo-cluster.webp"
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 m-auto h-1/2 w-auto opacity-[0.06] blur-[1px] dark:opacity-[0.08]"
-          />
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.06] dark:opacity-[0.08]">
+            <span className="font-display text-3xl font-bold leading-tight tracking-tight text-ink">
+              Clúster<br />de<br />STARTUPS<br />e INNOVACIÓN
+            </span>
+          </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={image.src} alt={image.alt} loading="lazy" className="relative h-full w-full object-cover" />
         </div>

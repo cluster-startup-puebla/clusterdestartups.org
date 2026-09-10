@@ -49,7 +49,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
         eyebrow={t("originEyebrow")}
         title={t("originTitle")}
         description={t("originDescription")}
-        image={{ src: "/assets/img/gala-lanzamiento-jul2026.jpg", alt: t("originImageAlt") }}
+        image={{ src: "/assets/img/gala-lanzamiento-jul2026.jpg", alt: t("originImageAlt"), ratio: "4 / 3" }}
         items={[
           {
             date: t("originItem1Date"),
@@ -66,11 +66,12 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
             title: t("originItem3Title"),
             description: t("originItem3Description"),
           },
-          {
-            date: t("originItem4Date"),
-            title: t("originItem4Title"),
-            description: t("originItem4Description"),
-          },
+          // TODO: Gala de lanzamiento (jul 2026) — pendiente de publicar
+          // {
+          //   date: t("originItem4Date"),
+          //   title: t("originItem4Title"),
+          //   description: t("originItem4Description"),
+          // },
         ]}
       />
       <MissionVisionSection

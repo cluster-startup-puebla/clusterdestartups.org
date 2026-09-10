@@ -15,7 +15,7 @@ image:
 
 El sábado 7 de febrero de 2026, Puebla participó en el **v0 Global Buildathon** — el evento simultáneo de construcción con IA celebrado en más de 40 ciudades del mundo — con la edición local **Prompt to Production, Puebla City**.
 
-La sesión fue hosteada por **Álvaro Castillo**, Cluster Manager del Clúster de Startups e Innovación, con equipo operativo de **Sabia**, en un evento que trajo por primera vez el vínculo con el buildathon global de **v0 by Vercel** a la ciudad.
+La sesión fue hosteada por **Álvaro Castillo**, Cluster Manager del Clúster de Startups e Innovación, con equipo operativo de **Sabia**, en un evento que trajo por primera vez el vínculo con el buildathon global de **v0 by Vercel** a la ciudad. El enlace que conectó a Puebla con la convocatoria global fue **Walter Morales**.
 
 ## Cómo fue el formato
 
@@ -29,6 +29,12 @@ El perfil era deliberadamente inclusivo: dirigido a personas sin experiencia pre
 
 ## El arranque de una línea
 
-Este evento abrió la línea de comunidad IA que después continuó con el Cafe Cursor de mayo y el Prompt to Product de agosto, siempre con el mismo mecanismo: créditos de la herramienta, laptop obligatoria y construcción en vivo.
+Este evento abrió la **línea de comunidad IA** del Clúster, que después continuó con el Cafe Cursor en mayo y el Cursor Workshop en agosto, siempre con el mismo mecanismo: créditos de la herramienta, laptop obligatoria y construcción en vivo.
 
-Las próximas sesiones de la línea de comunidad se anuncian primero entre la membresía del [Clúster](/membresias).
+Es el primer evento que trajo el vínculo con un proveedor global a la ciudad. **Talavera Valley** aparece como apoyo declarado en la convocatoria — la comunidad que quedó marcada como emergente en el mapeo del ecosistema. Este cartel es evidencia de una relación existente.
+
+## ¿Por qué importa
+
+Como primer evento de la línea, estableció el formato que después se repetiría con mayor asistencia: convocatoria abierta, créditos de la herramienta incluidos, y la exigencia de que cada participante se fuera con algo construido. No fue un meetup de ponencias: fue una sesión de trabajo con guía.
+
+Las próximas sesiones de la línea de comunidad se anuncian primero entre la membresía del [Clúster](/membresías).
