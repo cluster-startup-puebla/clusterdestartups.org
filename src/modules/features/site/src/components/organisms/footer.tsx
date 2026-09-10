@@ -4,11 +4,12 @@ import { isHiddenSection } from "@/modules/cores/site/src/config/hidden-sections
 import { Logo } from "@/modules/shared/ui/src/components";
 
 const FOOTER_LINKS = [
-  { key: "aboutLink", href: "/quienes-somos" },
-  { key: "companiesLink", href: "/empresas" },
-  { key: "contactLink", href: "/contacto" },
-  { key: "membershipsLink", href: "/membresias" },
-  { key: "pressLink", href: "/prensa" },
+  { key: "home", href: "/" },
+  { key: "about", href: "/quienes-somos" },
+  { key: "governance", href: "/gobernanza" },
+  { key: "companies", href: "/empresas" },
+  { key: "blog", href: "/blog" },
+  { key: "contact", href: "/contacto" },
 ].filter((item) => !isHiddenSection(item.href));
 
 export async function Footer() {
@@ -22,7 +23,6 @@ export async function Footer() {
             <Logo className="h-full w-auto" />
           </Link>
           <p className="mt-3 max-w-xs text-small text-ink-secondary">{t("name")}</p>
-          <p className="mt-2 text-small text-ink-muted">RFC CSI260615EM5</p>
         </div>
 
         <div>

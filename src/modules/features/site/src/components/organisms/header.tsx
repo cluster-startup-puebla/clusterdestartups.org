@@ -15,6 +15,7 @@ const ITEMS: { key: string; href: string }[] = [
   { key: "about", href: "/quienes-somos" },
   { key: "governance", href: "/gobernanza" },
   { key: "companies", href: "/empresas" },
+  { key: "blog", href: "/blog" },
   { key: "contact", href: "/contacto" },
 ].filter((item) => !isHiddenSection(item.href));
 

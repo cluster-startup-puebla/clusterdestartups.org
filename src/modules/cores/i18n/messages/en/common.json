@@ -13,6 +13,7 @@
     "open": "Open menu",
     "close": "Close menu",
     "companies": "Companies",
+    "blog": "Blog",
     "skipToContent": "Skip to content"
   },
   "Footer": {
@@ -21,14 +22,12 @@
     "hubAddress": "Av. San Lorenzo Almecatla, CERHAN II",
     "hubCity": "Cuautlancingo, Puebla",
     "links": "Links",
-    "join": "Join the cluster",
-    "pressKit": "Press kit",
-    "contact": "Contact",
     "madeIn": "Made in Puebla, Mexico.",
-    "aboutLink": "Who we are",
-    "contactLink": "Contact",
-    "membershipsLink": "Join the cluster",
-    "pressLink": "Press kit",
-    "companiesLink": "Cluster companies"
+    "home": "Home",
+    "about": "Who we are",
+    "governance": "Team",
+    "companies": "Companies",
+    "blog": "Blog",
+    "contact": "Contact"
   }
 }
