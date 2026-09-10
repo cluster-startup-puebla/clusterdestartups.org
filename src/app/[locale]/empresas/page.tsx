@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
-import { Badge, CompanyLogo, NodeField } from "@/modules/shared/ui/src/components";
-import { companies, localize } from "@/data/companies";
+import { NodeField } from "@/modules/shared/ui/src/components";
+import { CompanyDirectory } from "@/modules/features/companies/src";
+import { companies } from "@/data/companies";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -30,6 +30,17 @@ export default async function CompaniesPage({ params }: PageProps<"/[locale]/emp
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Companies" });
 
+  const labels = {
+    search: t("filter.search"),
+    batch: t("filter.batch"),
+    industry: t("filter.industry"),
+    region: t("filter.region"),
+    clear: t("filter.clear"),
+    viewDetail: t("viewDetail"),
+    more: t("list.more"),
+    noResults: t("filter.noResults"),
+  };
+
   return (
     <section className="relative isolate overflow-hidden py-16 lg:py-24">
       <NodeField variant="sparse" />
@@ -39,37 +50,9 @@ export default async function CompaniesPage({ params }: PageProps<"/[locale]/emp
           <p className="text-body-lg mt-4 text-ink-secondary">{t("subtitle")}</p>
         </header>
 
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {companies.map((company) => {
-            const industries = company.industries
-              ? localize(company.industries, locale)
-              : [t("pending")];
-
-            return (
-              <li key={company.slug}>
-                <Link
-                  href={`/empresas/${company.slug}`}
-                  className="card group flex h-full flex-col gap-4 p-6 transition hover:shadow-lg"
-                >
-                  <CompanyLogo name={company.name} logo={company.logo} />
-                  <h2 className="text-h4 font-display text-ink group-hover:text-brand">
-                    {company.name}
-                  </h2>
-                  <ul aria-label={t("detail.industry")} className="mt-auto flex flex-wrap gap-1.5">
-                    {industries.slice(0, 4).map((industry) => (
-                      <li key={industry}>
-                        <Badge>{industry}</Badge>
-                      </li>
-                    ))}
-                  </ul>
-                  <span className="text-small text-link">
-                    {t("viewDetail")} →
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="mt-12">
+          <CompanyDirectory companies={companies} locale={locale} labels={labels} />
+        </div>
       </div>
     </section>
   );
