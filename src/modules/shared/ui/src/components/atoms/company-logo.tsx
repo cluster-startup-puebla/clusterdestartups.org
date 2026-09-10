@@ -1,3 +1,7 @@
+"use client";
+
+import { useTheme } from "@/modules/cores/theme/src/hooks/use-theme";
+
 interface CompanyLogoProps {
   name: string;
   logo?: string;
@@ -5,11 +9,15 @@ interface CompanyLogoProps {
 }
 
 export function CompanyLogo({ name, logo, className = "size-14" }: CompanyLogoProps) {
+  const { theme, mounted } = useTheme();
+
   if (logo) {
+    const filter = mounted && theme !== "dark" ? "brightness(0)" : "none";
+
     return (
-      <span className={`${className} flex items-center justify-center rounded-md bg-elevated p-1.5`}>
+      <span className={`${className} flex items-center justify-center rounded-md p-1.5`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logo} alt={name} loading="lazy" className="h-full w-full object-contain" />
+        <img src={logo} alt={name} loading="lazy" className="h-full w-full object-contain" style={{ filter }} />
       </span>
     );
   }
