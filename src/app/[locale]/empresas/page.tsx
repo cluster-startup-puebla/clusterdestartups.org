@@ -38,7 +38,6 @@ export default async function CompaniesPage({ params }: PageProps<"/[locale]/emp
     region: t("filter.region"),
     clear: t("filter.clear"),
     viewDetail: t("viewDetail"),
-    more: t("list.more"),
     noResults: t("filter.noResults"),
   };
 

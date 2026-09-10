@@ -6,7 +6,6 @@ interface CompanyListProps {
   locale: string;
   labels: {
     viewDetail: string;
-    more: string;
     noResults: string;
   };
 }
@@ -27,7 +26,7 @@ export function CompanyList({ companies, locale, labels }: CompanyListProps) {
           key={company.slug}
           company={company}
           locale={locale}
-          labels={{ viewDetail: labels.viewDetail, more: labels.more }}
+          labels={{ viewDetail: labels.viewDetail }}
         />
       ))}
     </div>

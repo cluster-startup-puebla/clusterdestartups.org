@@ -45,7 +45,7 @@ export default async function GovernancePage({ params }: PageProps<"/[locale]/go
               name="Yamil Álvarez"
               role={t("boardYamilRole")}
               description={t("boardYamilDescription")}
-              image={{ src: "/assets/img/yamil.png", alt: t("boardYamilRole") }}
+              image={{ src: "/gobernanza/yamil.png", alt: t("boardYamilRole") }}
               badge={t("founderBadge")}
             />
           </div>
@@ -55,21 +55,21 @@ export default async function GovernancePage({ params }: PageProps<"/[locale]/go
               name="Daniel Martínez"
               role={t("boardDanielRole")}
               description={t("boardDanielDescription")}
-              image={{ src: "/assets/img/daniel.png", alt: t("boardDanielRole") }}
+              image={{ src: "/gobernanza/daniel.png", alt: t("boardDanielRole") }}
               badge={t("founderBadge")}
             />
             <ProfileCard
               name="Álvaro Castillo"
               role={t("boardAlvaroRole")}
               description={t("boardAlvaroDescription")}
-              image={{ src: "/assets/img/alvaro-castillo.png", alt: t("boardAlvaroRole") }}
+              image={{ src: "/gobernanza/alvaro-castillo.png", alt: t("boardAlvaroRole") }}
               badge={t("founderBadge")}
             />
             <ProfileCard
               name="Rodrigo Ruiz"
               role={t("boardRodrigoRole")}
               description={t("boardRodrigoDescription")}
-              image={{ src: "/assets/img/rodrigo-ruiz.png", alt: t("boardRodrigoRole") }}
+              image={{ src: "/gobernanza/rodrigo-ruiz.png", alt: t("boardRodrigoRole") }}
               badge={t("founderBadge")}
             />
           </div>
@@ -85,12 +85,12 @@ export default async function GovernancePage({ params }: PageProps<"/[locale]/go
             <ProfileCard
               name="Oliver Salman"
               role="Miembro del comité de vigilancia"
-              image={{ src: "/assets/img/oliver-sahlmann.png", alt: "Oliver Salman" }}
+              image={{ src: "/gobernanza/oliver-sahlmann.png", alt: "Oliver Salman" }}
             />
             <ProfileCard
               name="Héctor Gama"
               role="Miembro del comité de vigilancia"
-              image={{ src: "/assets/img/ey-hector-armando-gama-site.png", alt: "Héctor Gama" }}
+              image={{ src: "/gobernanza/ey-hector-armando-gama-site.jpg", alt: "Héctor Gama" }}
             />
           </div>
         </div>
@@ -106,7 +106,7 @@ export default async function GovernancePage({ params }: PageProps<"/[locale]/go
               <ProfileCard
                 name="Pablo Nuño"
                 role={t("honoraryPabloRole")}
-                image={{ src: "/assets/img/pablo.jpeg", alt: t("honoraryPabloRole") }}
+                image={{ src: "/gobernanza/pablo.jpeg", alt: t("honoraryPabloRole") }}
               />
             </div>
           </div>

@@ -44,7 +44,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         title={t("hero.title")}
         description={t("hero.description")}
         primaryCta={t("hero.primaryCta")}
-        imageSrc="/assets/img/hero-hub-general.jpg"
+        imageSrc="/hub/hero-hub-general.jpg"
         imageAlt={t("hero.imageAlt")}
       />
       <ImpactStats
@@ -58,7 +58,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         eyebrow={t("about.eyebrow")}
         title={t("about.title")}
         description={t("about.description")}
-        imageSrc="/assets/img/diagrama-triple-helice.svg"
+        imageSrc="/quienes-somos/diagrama-triple-helice.svg"
         imageAlt={t("about.imageAlt")}
         linkLabel={t("about.linkLabel")}
       />

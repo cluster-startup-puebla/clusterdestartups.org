@@ -1,4 +1,7 @@
+"use client";
+
 import { Link } from "@/modules/cores/i18n/src/config/routing";
+import { useTranslations } from "next-intl";
 import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
 import type { Company } from "@/data/companies";
 import { localize } from "@/data/companies";
@@ -8,11 +11,11 @@ interface CompanyRowProps {
   locale: string;
   labels: {
     viewDetail: string;
-    more: string;
   };
 }
 
 export function CompanyRow({ company, locale, labels }: CompanyRowProps) {
+  const t = useTranslations("Companies");
   const industries = company.industries
     ? localize(company.industries, locale)
     : [];
@@ -57,7 +60,7 @@ export function CompanyRow({ company, locale, labels }: CompanyRowProps) {
           ))}
           {overflow > 0 && (
             <li>
-              <Badge className="bg-surface text-ink-muted">{labels.more.replace("{count}", String(overflow))}</Badge>
+              <Badge className="bg-surface text-ink-muted">{t("list.more", { count: overflow })}</Badge>
             </li>
           )}
         </ul>

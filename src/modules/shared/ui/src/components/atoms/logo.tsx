@@ -15,7 +15,7 @@ export function Logo({ className = "", alt = "Clúster de Startups e Innovación
   return (
     /* eslint-disable-next-line @next/next/no-img-element */
     <img
-      src="/logo-cluster.webp"
+      src="/logos/logo-cluster.webp"
       alt={alt}
       className={className}
       style={{ filter }}

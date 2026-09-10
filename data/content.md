@@ -4,7 +4,7 @@
 Documento de trabajo — Septiembre 2026
 Enfoque: sitio institucional (.org) de dar a conocer, no transaccional ni editorial-blog.
 
-> Las imágenes están insertadas como **placeholders** con ruta sugerida y alt-text descriptivo. Sustituir el archivo en `/assets/img/...` por la foto real cuando esté disponible; el nombre de archivo ya indica qué foto va ahí.
+> Las imágenes están insertadas como **placeholders** con ruta sugerida y alt-text descriptivo. Sustituir el archivo en `/hub/...` por la foto real cuando esté disponible; el nombre de archivo ya indica qué foto va ahí.
 
 ---
 
@@ -14,7 +14,7 @@ Enfoque: sitio institucional (.org) de dar a conocer, no transaccional ni editor
 
 **Contenido:** Declaración de propósito 2030 ("Que sea más fácil abrir una startup tecnológica en Puebla que un negocio tradicional"). CTA primario ("Conoce el ecosistema") y CTA secundario ("Ver el Hub").
 
-![Personas trabajando en el Hub de Innovación CERHAN II, plano amplio](/assets/img/hero-hub-general.jpg)
+![Personas trabajando en el Hub de Innovación CERHAN II, plano amplio](/hub/hero-hub-general.jpg)
 
 ### 1.2 Cifras de impacto
 
@@ -26,22 +26,22 @@ _(Sin foto — solo tipografía grande + iconografía simple.)_
 
 **Contenido:** 2–3 líneas del modelo Triple Hélice (gobierno–academia–empresa). Link a "Quiénes somos".
 
-![Diagrama simplificado del modelo Triple Hélice: gobierno, academia y empresa](/assets/img/diagrama-triple-helice.svg)
+![Diagrama simplificado del modelo Triple Hélice: gobierno, academia y empresa](/quienes-somos/diagrama-triple-helice.svg)
 
 ### 1.4 El Hub
 
 **Contenido:** Presentación breve de CERHAN II (FabLab, laboratorio IA, auditorio). Link a página "El Hub".
 
-![Interior del FabLab en CERHAN II](/assets/img/hub-fablab-01.jpg)
-![Nave B de CERHAN II](/assets/img/hub-nave-b-01.jpg)
+![Interior del FabLab en CERHAN II](/hub/hub-fablab-01.jpg)
+![Nave B de CERHAN II](/hub/hub-nave-b-01.jpg)
 
 ### 1.5 Alianzas destacadas
 
 **Contenido:** Logos de SECIHTI, SEDETRA, universidades y cámaras principales en fila.
 
-![Logo SECIHTI](/assets/img/logo-secihti.svg)
-![Logo SEDETRA](/assets/img/logo-sedetra.svg)
-![Logos de universidades aliadas: IEU, INAOE, La Inter](/assets/img/logos-universidades.svg)
+![Logo SECIHTI](/logos/logo-secihti.svg)
+![Logo SEDETRA](/logos/logo-sedetra.svg)
+![Logos de universidades aliadas: IEU, INAOE, La Inter](/logos/logos-universidades.svg)
 
 ### 1.6 CTA de cierre
 
@@ -57,7 +57,7 @@ _(Sin foto.)_
 
 **Contenido:** Línea de tiempo: activo desde 2021 → constitución formal (15 jun 2026) → reconocimiento SEDETRA (23 jun 2026) → gala de lanzamiento (jul 2026).
 
-![Gala de lanzamiento y toma de protesta, julio 2026](/assets/img/gala-lanzamiento-jul2026.jpg)
+![Gala de lanzamiento y toma de protesta, julio 2026](/quienes-somos/gala-lanzamiento-jul2026.jpg)
 
 ### 2.2 Misión y visión
 
@@ -69,13 +69,13 @@ _(Sin foto.)_
 
 **Contenido:** Cómo interactúan gobierno, academia y sector privado dentro del clúster.
 
-![Diagrama ampliado del modelo Triple Hélice con roles de cada actor](/assets/img/diagrama-triple-helice-detalle.svg)
+![Diagrama ampliado del modelo Triple Hélice con roles de cada actor](/quienes-somos/diagrama-triple-helice-detalle.svg)
 
 ### 2.4 Estructura del ecosistema (7 niveles)
 
 **Contenido:** Versión pública y simplificada del mapa de 7 niveles (N1 Industria Local → N7 Dirección Estratégica), sin exponer los 42 componentes internos.
 
-![Diagrama del ecosistema CSI, versión pública de 7 niveles](/assets/img/diagrama-ecosistema-publico.svg)
+![Diagrama del ecosistema CSI, versión pública de 7 niveles](/quienes-somos/diagrama-ecosistema-publico.svg)
 
 ### 2.5 RFC y datos institucionales
 
@@ -91,25 +91,25 @@ _(Sin foto.)_
 
 **Contenido:** Presidente/representante legal (Yamil Álvarez) y Cluster Manager (Álvaro Castillo). Rol + una línea de responsabilidad cada uno.
 
-![Retrato institucional de Yamil Álvarez, Presidente](/assets/img/gobernanza-yamil-alvarez.png)
-![Retrato institucional de Álvaro Castillo, Cluster Manager](/assets/img/gobernanza-alvaro-castillo.png)
+![Retrato institucional de Yamil Álvarez, Presidente](/gobernanza/gobernanza-yamil-alvarez.png)
+![Retrato institucional de Álvaro Castillo, Cluster Manager](/gobernanza/gobernanza-alvaro-castillo.png)
 
 ### 3.2 Coordinadores de nodo
 
 **Contenido:** Los 6 coordinadores por nivel (N2–N6 + Coordinación de Comités), con su nivel asignado, en grid uniforme.
 
-![Retrato institucional Rodrigo Ruiz, Coordinador N6 Fondos](/assets/img/gobernanza-rodrigo-ruiz.png)
-![Retrato institucional Daniel Martínez, Coordinador N5 Soluciones](/assets/img/gobernanza-daniel-martinez.png)
-![Retrato institucional Omar Balanzar, Coordinador N4 Comunidad](/assets/img/gobernanza-omar-balanzar.jpg)
-![Retrato institucional Lenin Pérez, Coordinador N3 Infraestructura](/assets/img/gobernanza-lenin-perez.jpg)
-![Retrato institucional Margarita Herrera, Coordinadora N2 Talento](/assets/img/gobernanza-margarita-herrera.jpg)
-![Retrato institucional Juan Alberto Vázquez, Coordinación de Comités](/assets/img/gobernanza-juan-alberto-vazquez.jpg)
+![Retrato institucional Rodrigo Ruiz, Coordinador N6 Fondos](/gobernanza/gobernanza-rodrigo-ruiz.png)
+![Retrato institucional Daniel Martínez, Coordinador N5 Soluciones](/gobernanza/gobernanza-daniel-martinez.png)
+![Retrato institucional Omar Balanzar, Coordinador N4 Comunidad](/gobernanza/gobernanza-omar-balanzar.jpg)
+![Retrato institucional Lenin Pérez, Coordinador N3 Infraestructura](/gobernanza/gobernanza-lenin-perez.jpg)
+![Retrato institucional Margarita Herrera, Coordinadora N2 Talento](/gobernanza/gobernanza-margarita-herrera.jpg)
+![Retrato institucional Juan Alberto Vázquez, Coordinación de Comités](/gobernanza/gobernanza-juan-alberto-vazquez.jpg)
 
 ### 3.3 Consejeros honorarios / asesores
 
 **Contenido:** Mención de honorarios (ej. Pablo Nuño), si se decide hacerlos públicos.
 
-![Retrato institucional Pablo Nuño, Miembro Honorario](/assets/img/gobernanza-pablo-nuno.jpg)
+![Retrato institucional Pablo Nuño, Miembro Honorario](/gobernanza/gobernanza-pablo-nuno.jpg)
 
 ### 3.4 Aviso de transparencia
 
@@ -125,20 +125,20 @@ _(Sin foto.)_
 
 **Contenido:** Ubicación (Av. San Lorenzo Almecatla, Cuautlancingo), naves activas (B y C), estado de nave A (pendiente).
 
-![Fachada exterior del complejo CERHAN II](/assets/img/hub-fachada-exterior.jpg)
+![Fachada exterior del complejo CERHAN II](/hub/hub-fachada-exterior.jpg)
 
 ### 4.2 Espacios y laboratorios
 
 **Contenido:** Ficha por espacio con una línea de descripción, sin el documento técnico completo.
 
-![FabLab, Nave 1A](/assets/img/hub-fablab-02.jpg)
-![Laboratorio de IA/GPU](/assets/img/hub-lab-ia-gpu.jpg)
-![Auditorio, Nave 1C](/assets/img/hub-auditorio.jpg)
-![Chill Zone](/assets/img/hub-chill-zone.jpg)
-![Laboratorio textil y biomateriales](/assets/img/hub-lab-textil.jpg)
-![Laboratorio de compostaje](/assets/img/hub-lab-compostaje.jpg)
-![Laboratorio de tratamiento de agua](/assets/img/hub-lab-agua.jpg)
-![Laboratorio de caracterización de materiales](/assets/img/hub-lab-materiales.jpg)
+![FabLab, Nave 1A](/hub/hub-fablab-02.jpg)
+![Laboratorio de IA/GPU](/hub/hub-lab-ia-gpu.jpg)
+![Auditorio, Nave 1C](/hub/hub-auditorio.jpg)
+![Chill Zone](/hub/hub-chill-zone.jpg)
+![Laboratorio textil y biomateriales](/hub/hub-lab-textil.jpg)
+![Laboratorio de compostaje](/hub/hub-lab-compostaje.jpg)
+![Laboratorio de tratamiento de agua](/hub/hub-lab-agua.jpg)
+![Laboratorio de caracterización de materiales](/hub/hub-lab-materiales.jpg)
 
 ### 4.3 Cómo visitar / agendar
 
@@ -160,7 +160,7 @@ _(Sin foto.)_
 
 **Contenido:** Mapa de Puebla con nodos ancla (Tehuacán, Huejotzingo) y estado de cada uno.
 
-![Mapa de nodos CSI en el estado de Puebla](/assets/img/mapa-nodos-puebla.svg)
+![Mapa de nodos CSI en el estado de Puebla](/nodos/mapa-nodos-puebla.svg)
 
 ### 5.3 Cómo proponer un nodo
 
@@ -176,28 +176,28 @@ _(Sin foto.)_
 
 **Contenido:** SEDETRA (estatal) y SECIHTI, una línea de qué representa cada relación.
 
-![Logo SEDETRA](/assets/img/logo-sedetra.svg)
-![Logo SECIHTI](/assets/img/logo-secihti.svg)
+![Logo SEDETRA](/logos/logo-sedetra.svg)
+![Logo SECIHTI](/logos/logo-secihti.svg)
 
 ### 6.2 Academia
 
 **Contenido:** IEU, INAOE, La Inter y otras universidades vinculadas, con tipo de convenio.
 
-![Logo IEU](/assets/img/logo-ieu.svg)
-![Logo INAOE](/assets/img/logo-inaoe.svg)
-![Logo Universidad Interamericana (La Inter)](/assets/img/logo-la-inter.svg)
+![Logo IEU](/logos/logo-ieu.svg)
+![Logo INAOE](/logos/logo-inaoe.svg)
+![Logo Universidad Interamericana (La Inter)](/logos/logo-la-inter.svg)
 
 ### 6.3 Sector privado / cámaras
 
 **Contenido:** Cámaras empresariales y clústeres aliados (ej. Clúster de Plásticos y Economía Circular).
 
-![Logo Clúster de Plásticos y Economía Circular](/assets/img/logo-cluster-plasticos.svg)
+![Logo Clúster de Plásticos y Economía Circular](/logos/logo-cluster-plasticos.svg)
 
 ### 6.4 Consejo Intercluster de Puebla
 
 **Contenido:** Rol de CSI dentro del órgano paraguas de los 24 clústeres de Puebla.
 
-![Evento Sinergia Clústeres Puebla, Centro de Convenciones William O. Jenkins](/assets/img/evento-sinergia-clusteres.jpg)
+![Evento Sinergia Clústeres Puebla, Centro de Convenciones William O. Jenkins](/alianzas/evento-sinergia-clusteres.jpg)
 
 ---
 
@@ -207,7 +207,7 @@ _(Sin foto.)_
 
 **Contenido:** Valor real de pertenecer al clúster (acceso al Hub, vinculación, visibilidad), tono no agresivo.
 
-![Makers trabajando en espacio compartido del Hub](/assets/img/membresias-makers-trabajando.jpg)
+![Makers trabajando en espacio compartido del Hub](/membresias/membresias-makers-trabajando.jpg)
 
 ### 7.2 Niveles de membresía
 
@@ -229,13 +229,13 @@ _(Sin foto.)_
 
 **Contenido:** Entradas cortas tipo ficha: fecha, título, 2–3 líneas, con foto del evento. Solo hechos ya sucedidos (ver "Notas de alcance").
 
-![Stand 777, evento CAPIM Industry Supply Chain](/assets/img/prensa-capim-stand777.jpg)
-![Pabellón Puebla en InnovaFest Querétaro 2026, Querétaro Centro de Congresos](/assets/img/prensa-innovafest-queretaro.jpg)
+![Stand 777, evento CAPIM Industry Supply Chain](/prensa/prensa-capim-stand777.jpg)
+![Pabellón Puebla en InnovaFest Querétaro 2026, Querétaro Centro de Congresos](/prensa/prensa-innovafest-queretaro.jpg)
 
 Fichas publicadas:
 
-1. **Pabellón Puebla en InnovaFest Querétaro 2026** — 21 de agosto de 2026, Querétaro Centro de Congresos. El Clúster de Startups e Innovación A.C., encabezado por su presidente Yamil Álvarez, articuló y operó el Pabellón Puebla bajo identidad del Gobierno del Estado (financiamiento estatal, sin recurso propio del Clúster): nueve actores en ocho módulos, siete horas de piso. La Coordinación Nacional de InnovaFest visitó el pabellón y quedó acordada la instalación del Comité Organizador de InnovaFest Puebla. Referencia interna: CSI/RR/2026-001 (reporte de resultados) y CSI/RM/2026-002 (materialidad). *Las cifras de alcance del pabellón son estimaciones documentadas — no publicarlas como conteo.* Foto portada: `/assets/img/prensa-innovafest-queretaro.jpg` (grupal, de PHOTO-2026-08-21-21-49-22); secundaria: `/assets/img/prensa-innovafest-queretaro-02.jpg`.
-2. **Seis startups del clúster en CAPIM Industry Supply Chain** — 12–13 de agosto de 2026, Centro Expositor de Puebla. El Clúster participó con el stand 777 en el Pabellón Clústers Industriales, presentando seis startups B2B industriales afiliadas (Karggu, Kotemah, Mileva Dynamics, Oxtron, Radek y Sabia) ante más de 7,000 empresas convocadas. Referencia interna: CSI/FI/2026-001 — *ficha pendiente de emitir; no publicar datos de inversión, contactos ni ROO hasta completarla (objetivos posiblemente reconstruidos ex post).* Foto: `/assets/img/prensa-capim-stand777.jpg` (colocada desde `data/capim.jpg`).
+1. **Pabellón Puebla en InnovaFest Querétaro 2026** — 21 de agosto de 2026, Querétaro Centro de Congresos. El Clúster de Startups e Innovación A.C., encabezado por su presidente Yamil Álvarez, articuló y operó el Pabellón Puebla bajo identidad del Gobierno del Estado (financiamiento estatal, sin recurso propio del Clúster): nueve actores en ocho módulos, siete horas de piso. La Coordinación Nacional de InnovaFest visitó el pabellón y quedó acordada la instalación del Comité Organizador de InnovaFest Puebla. Referencia interna: CSI/RR/2026-001 (reporte de resultados) y CSI/RM/2026-002 (materialidad). *Las cifras de alcance del pabellón son estimaciones documentadas — no publicarlas como conteo.* Foto portada: `/prensa/prensa-innovafest-queretaro.jpg` (grupal, de PHOTO-2026-08-21-21-49-22); secundaria: `/prensa/prensa-innovafest-queretaro-02.jpg`.
+2. **Seis startups del clúster en CAPIM Industry Supply Chain** — 12–13 de agosto de 2026, Centro Expositor de Puebla. El Clúster participó con el stand 777 en el Pabellón Clústers Industriales, presentando seis startups B2B industriales afiliadas (Karggu, Kotemah, Mileva Dynamics, Oxtron, Radek y Sabia) ante más de 7,000 empresas convocadas. Referencia interna: CSI/FI/2026-001 — *ficha pendiente de emitir; no publicar datos de inversión, contactos ni ROO hasta completarla (objetivos posiblemente reconstruidos ex post).* Foto: `/prensa/prensa-capim-stand777.jpg` (colocada desde `data/capim.jpg`).
 
 Pendientes de publicar (una vez sucedidos):
 
@@ -245,8 +245,8 @@ Pendientes de publicar (una vez sucedidos):
 
 **Contenido:** Logo, datos institucionales básicos, contacto de prensa.
 
-![Logotipo institucional CSI en fondo claro](/assets/img/logo-csi-fondo-claro.svg)
-![Logotipo institucional CSI en fondo oscuro](/assets/img/logo-csi-fondo-oscuro.svg)
+![Logotipo institucional CSI en fondo claro](/logos/logo-csi-fondo-claro.svg)
+![Logotipo institucional CSI en fondo oscuro](/logos/logo-csi-fondo-oscuro.svg)
 
 ---
 

@@ -7,7 +7,7 @@ author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
 tags: ["InnovaFest", "Querétaro", "ecosystem", "Puebla"]
 image:
-  src: "/assets/img/prensa-innovafest-queretaro.jpg"
+  src: "/prensa/prensa-innovafest-queretaro.jpg"
   alt: "Actors of the Puebla innovation ecosystem at the Puebla Pavilion of InnovaFest Querétaro 2026, operated by the Cluster of Startups and Innovation A.C."
 ---
 

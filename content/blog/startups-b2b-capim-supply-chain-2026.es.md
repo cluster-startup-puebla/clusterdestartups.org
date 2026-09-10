@@ -7,7 +7,7 @@ author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
 tags: ["CAPIM", "supply chain", "startups B2B", "Puebla"]
 image:
-  src: "/assets/img/prensa-capim-stand777.jpg"
+  src: "/prensa/prensa-capim-stand777.jpg"
   alt: "Representación del Clúster de Startups e Innovación de Puebla en el stand 777 del Pabellón Clústers Industriales de CAPIM Industry Supply Chain 2026"
 ---
 

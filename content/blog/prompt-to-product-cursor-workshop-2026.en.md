@@ -7,7 +7,7 @@ author: "Clúster de Startups e Innovación A.C."
 category: "comunidad"
 tags: ["Cursor", "AI", "workshop", "community"]
 image:
-  src: "/assets/img/blog-cursor-workshop.jpg"
+  src: "/blog/blog-cursor-workshop.jpg"
   alt: "Participants of the Prompt to Product workshop building with Cursor AI agents in Puebla"
 ---
 

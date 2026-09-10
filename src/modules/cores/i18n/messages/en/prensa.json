@@ -33,11 +33,11 @@
       "downloads": [
         {
           "label": "Logo on light background",
-          "href": "/assets/img/logo-csi-fondo-claro.svg"
+          "href": "/logos/logo-csi-fondo-claro.svg"
         },
         {
           "label": "Logo on dark background",
-          "href": "/assets/img/logo-csi-fondo-oscuro.svg"
+          "href": "/logos/logo-csi-fondo-oscuro.svg"
         }
       ]
     }

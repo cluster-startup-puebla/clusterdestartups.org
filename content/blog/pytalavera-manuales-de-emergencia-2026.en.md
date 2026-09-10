@@ -7,7 +7,7 @@ author: "Clúster de Startups e Innovación A.C."
 category: "comunidad"
 tags: ["PyTalavera", "DevOps", "tech community", "workshop"]
 image:
-  src: "/assets/img/blog-pytalavera.jpg"
+  src: "/blog/blog-pytalavera.jpg"
   alt: "PyTalavera meetup talk on emergency manuals and incidents at Workósfera, Puebla"
 ---
 

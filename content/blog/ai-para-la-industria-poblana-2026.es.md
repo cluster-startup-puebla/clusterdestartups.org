@@ -7,7 +7,7 @@ author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
 tags: ["industria", "Industria 4.0", "SECIHTI", "CANACINTRA", "Amozoc"]
 image:
-  src: "/assets/img/blog-ai-industria-poblana.jpg"
+  src: "/blog/blog-ai-industria-poblana.jpg"
   alt: "Grupo de industriales en la inauguración del programa AI para la Industria Poblana con SECIHTI y CANACINTRA en Puebla"
 ---
 

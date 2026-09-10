@@ -41,12 +41,12 @@ export default async function AlliancesPage({ params }: PageProps<"/[locale]/ali
           {
             name: `${t("sedetra")} · ${t("sedetraFull")}`,
             relation: t("sedetraRelation"),
-            logo: { src: "/assets/img/logo-sedetra.svg", alt: t("logoSedetraAlt") },
+            logo: { src: "/logos/logo-sedetra.svg", alt: t("logoSedetraAlt") },
           },
           {
             name: `${t("secihti")} · ${t("secihtiFull")}`,
             relation: t("secihtiRelation"),
-            logo: { src: "/assets/img/logo-secihti.svg", alt: t("logoSecihtiAlt") },
+            logo: { src: "/logos/logo-secihti.svg", alt: t("logoSecihtiAlt") },
           },
         ]}
       />
@@ -59,19 +59,19 @@ export default async function AlliancesPage({ params }: PageProps<"/[locale]/ali
             name: t("ieu"),
             agreement: t("ieuAgreement"),
             relation: t("ieuRelation"),
-            logo: { src: "/assets/img/logo-ieu.svg", alt: t("logoIeuAlt") },
+            logo: { src: "/logos/logo-ieu.svg", alt: t("logoIeuAlt") },
           },
           {
             name: t("inaoe"),
             agreement: t("inaoeAgreement"),
             relation: t("inaoeRelation"),
-            logo: { src: "/assets/img/logo-inaoe.svg", alt: t("logoInaoeAlt") },
+            logo: { src: "/logos/logo-inaoe.svg", alt: t("logoInaoeAlt") },
           },
           {
             name: t("laInter"),
             agreement: t("laInterAgreement"),
             relation: t("laInterRelation"),
-            logo: { src: "/assets/img/logo-la-inter.svg", alt: t("logoLaInterAlt") },
+            logo: { src: "/logos/logo-la-inter.svg", alt: t("logoLaInterAlt") },
           },
         ]}
       />
@@ -82,7 +82,7 @@ export default async function AlliancesPage({ params }: PageProps<"/[locale]/ali
         partner={{
           name: t("plasticos"),
           relation: t("plasticosRelation"),
-          logo: { src: "/assets/img/logo-cluster-plasticos.svg", alt: t("logoPlasticosAlt") },
+          logo: { src: "/logos/logo-cluster-plasticos.svg", alt: t("logoPlasticosAlt") },
         }}
       />
       <AlliancesCouncil
@@ -90,7 +90,7 @@ export default async function AlliancesPage({ params }: PageProps<"/[locale]/ali
         title={t("councilTitle")}
         description={t("councilDescription")}
         role={t("councilRole")}
-        image={{ src: "/assets/img/evento-sinergia-clusteres.jpg", alt: t("councilImageAlt") }}
+        image={{ src: "/alianzas/evento-sinergia-clusteres.jpg", alt: t("councilImageAlt") }}
       />
     </main>
   );

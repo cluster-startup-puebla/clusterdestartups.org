@@ -40,7 +40,7 @@ export default async function NodesPage({ params }: PageProps<"/[locale]/nodos">
         eyebrow={t("mapEyebrow")}
         title={t("mapTitle")}
         description={t("mapDescription")}
-        map={{ src: "/assets/img/mapa-nodos-puebla.svg", alt: t("mapImageAlt") }}
+        map={{ src: "/nodos/mapa-nodos-puebla.svg", alt: t("mapImageAlt") }}
         anchors={[
           { name: t("tehuacan"), statusLabel: t("statusActive"), description: t("tehuacanDesc") },
           {

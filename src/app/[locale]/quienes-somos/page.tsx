@@ -49,7 +49,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
         eyebrow={t("originEyebrow")}
         title={t("originTitle")}
         description={t("originDescription")}
-        image={{ src: "/assets/img/gala-lanzamiento-jul2026.jpg", alt: t("originImageAlt"), ratio: "4 / 3" }}
+        image={{ src: "/quienes-somos/gala-lanzamiento-jul2026.jpg", alt: t("originImageAlt"), ratio: "4 / 3" }}
         items={[
           {
             date: t("originItem1Date"),
@@ -86,7 +86,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
         title={t("helixTitle")}
         description={t("helixDescription")}
         image={{
-          src: "/assets/img/diagrama-triple-helice-detalle.svg",
+          src: "/quienes-somos/diagrama-triple-helice-detalle.svg",
           alt: t("helixImageAlt"),
         }}
         actors={[
@@ -100,7 +100,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
         title={t("ecosystemTitle")}
         description={t("ecosystemDescription")}
         image={{
-          src: "/assets/img/diagrama-ecosistema-publico.svg",
+          src: "/quienes-somos/diagrama-ecosistema-publico.svg",
           alt: t("ecosystemImageAlt"),
         }}
         levels={[

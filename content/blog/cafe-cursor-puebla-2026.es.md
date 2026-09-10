@@ -7,7 +7,7 @@ author: "Clúster de Startups e Innovación A.C."
 category: "comunidad"
 tags: ["Cursor", "IA", "comunidad", "co-working"]
 image:
-  src: "/assets/img/blog-cafe-cursor.jpg"
+  src: "/blog/blog-cafe-cursor.jpg"
   alt: "Comunidad de IA trabajando con laptops durante el Cafe Cursor Puebla en Workósfera"
 ---
 

@@ -39,7 +39,7 @@ export default async function MembershipsPage({ params }: PageProps<"/[locale]/m
         description={t("hero.description")}
         primaryCta={{ label: t("hero.primaryCta"), href: "/contacto" }}
         secondaryCta={{ label: t("hero.secondaryCta"), href: "/" }}
-        imageSrc="/assets/img/membresias-makers-trabajando.jpg"
+        imageSrc="/membresias/membresias-makers-trabajando.jpg"
         imageAlt={t("hero.imageAlt")}
       />
       <WhyJoin

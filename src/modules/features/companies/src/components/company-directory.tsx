@@ -16,7 +16,6 @@ interface CompanyDirectoryProps {
     region: string;
     clear: string;
     viewDetail: string;
-    more: string;
     noResults: string;
   };
 }
@@ -129,7 +128,6 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
           locale={locale}
           labels={{
             viewDetail: labels.viewDetail,
-            more: labels.more,
             noResults: labels.noResults,
           }}
         />

@@ -48,7 +48,7 @@ export default async function HubPage({ params }: PageProps<"/[locale]/hub">) {
           { name: t("navA"), statusLabel: t("statusPending"), statusTone: "pending" },
         ]}
         image={{
-          src: "/assets/img/hub-fachada-exterior.jpg",
+          src: "/hub/hub-fachada-exterior.jpg",
           alt: t("imageFachadaAlt"),
         }}
         stats={[
@@ -65,49 +65,49 @@ export default async function HubPage({ params }: PageProps<"/[locale]/hub">) {
           {
             title: t("spaceFablab"),
             description: t("spaceFablabDesc"),
-            image: { src: "/assets/img/hub-fablab-02.jpg", alt: t("imageFablabAlt") },
+            image: { src: "/hub/hub-fablab-02.jpg", alt: t("imageFablabAlt") },
             icon: <Cog strokeWidth={1.5} className="h-6 w-6" />,
           },
           {
             title: t("spaceAiLab"),
             description: t("spaceAiLabDesc"),
-            image: { src: "/assets/img/hub-lab-ia-gpu.jpg", alt: t("imageAiLabAlt") },
+            image: { src: "/hub/hub-lab-ia-gpu.jpg", alt: t("imageAiLabAlt") },
             icon: <Cpu strokeWidth={1.5} className="h-6 w-6" />,
           },
           {
             title: t("spaceAuditorio"),
             description: t("spaceAuditorioDesc"),
-            image: { src: "/assets/img/hub-auditorio.jpg", alt: t("imageAuditorioAlt") },
+            image: { src: "/hub/hub-auditorio.jpg", alt: t("imageAuditorioAlt") },
             icon: <Presentation strokeWidth={1.5} className="h-6 w-6" />,
           },
           {
             title: t("spaceChill"),
             description: t("spaceChillDesc"),
-            image: { src: "/assets/img/hub-chill-zone.jpg", alt: t("imageChillAlt") },
+            image: { src: "/hub/hub-chill-zone.jpg", alt: t("imageChillAlt") },
             icon: <Coffee strokeWidth={1.5} className="h-6 w-6" />,
           },
           {
             title: t("spaceTextil"),
             description: t("spaceTextilDesc"),
-            image: { src: "/assets/img/hub-lab-textil.jpg", alt: t("imageTextilAlt") },
+            image: { src: "/hub/hub-lab-textil.jpg", alt: t("imageTextilAlt") },
             icon: <Scissors strokeWidth={1.5} className="h-6 w-6" />,
           },
           {
             title: t("spaceCompostaje"),
             description: t("spaceCompostajeDesc"),
-            image: { src: "/assets/img/hub-lab-compostaje.jpg", alt: t("imageCompostajeAlt") },
+            image: { src: "/hub/hub-lab-compostaje.jpg", alt: t("imageCompostajeAlt") },
             icon: <Sprout strokeWidth={1.5} className="h-6 w-6" />,
           },
           {
             title: t("spaceAgua"),
             description: t("spaceAguaDesc"),
-            image: { src: "/assets/img/hub-lab-agua.jpg", alt: t("imageAguaAlt") },
+            image: { src: "/hub/hub-lab-agua.jpg", alt: t("imageAguaAlt") },
             icon: <Droplets strokeWidth={1.5} className="h-6 w-6" />,
           },
           {
             title: t("spaceMateriales"),
             description: t("spaceMaterialesDesc"),
-            image: { src: "/assets/img/hub-lab-materiales.jpg", alt: t("imageMaterialesAlt") },
+            image: { src: "/hub/hub-lab-materiales.jpg", alt: t("imageMaterialesAlt") },
             icon: <Microscope strokeWidth={1.5} className="h-6 w-6" />,
           },
         ]}

@@ -7,7 +7,7 @@ author: "Clúster de Startups e Innovación A.C."
 category: "comunidad"
 tags: ["v0", "Vercel", "buildathon", "AI", "community"]
 image:
-  src: "/assets/img/blog-v0-prompt-to-production.jpg"
+  src: "/blog/blog-v0-prompt-to-production.jpg"
   alt: "Participants of v0 Prompt to Production Puebla City during the v0 Global Buildathon"
 ---
 
