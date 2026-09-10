@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
@@ -51,7 +52,9 @@ export default async function CompaniesPage({ params }: PageProps<"/[locale]/emp
         </header>
 
         <div className="mt-12">
-          <CompanyDirectory companies={companies} locale={locale} labels={labels} />
+          <Suspense>
+            <CompanyDirectory companies={companies} locale={locale} labels={labels} />
+          </Suspense>
         </div>
       </div>
     </section>
