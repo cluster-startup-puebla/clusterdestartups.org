@@ -76,7 +76,9 @@ export default async function BlogPostPage({
     datePublished: post.date,
     dateModified: post.date,
     author: { "@type": "Organization", name: post.author },
-    image: post.image ? [`${SITE_URL}${post.image.src}`] : undefined,
+    image: [post.image, ...(post.images ?? [])]
+      .filter((item): item is NonNullable<typeof item> => Boolean(item?.src))
+      .map((item) => `${SITE_URL}${item.src}`),
     articleSection: post.category,
     url: `${SITE_URL}/${locale}/blog/${slug}/`,
     keywords: post.tags.join(", "),

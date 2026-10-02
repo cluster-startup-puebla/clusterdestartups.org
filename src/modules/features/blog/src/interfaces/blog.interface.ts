@@ -1,6 +1,8 @@
 export interface BlogPostImage {
   src: string;
   alt: string;
+  /** Pie visible bajo la foto. Si no viene, la imagen solo usa el alt. */
+  caption?: string;
 }
 
 export interface BlogPost {
@@ -15,6 +17,8 @@ export interface BlogPost {
   author: string;
   tags: string[];
   image?: BlogPostImage;
+  /** Fotos extra, además de la portada. También se pueden insertar en el markdown. */
+  images?: BlogPostImage[];
   readingMinutes: number;
   contentHtml: string;
 }

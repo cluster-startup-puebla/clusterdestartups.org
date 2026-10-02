@@ -16,7 +16,7 @@
       {
         "heading": "What we store on this site",
         "paragraphs": [
-          "The HTML of every page includes the Google Tag Manager container GTM-P4W4WZCS.",
+          "The HTML of every page includes Google Analytics 4, measurement ID G-84QLB6EYLV, and the Google Tag Manager container GTM-P4W4WZCS.",
           "Before that container loads, an inline script sets Google Consent Mode. By default it denies ad_storage, ad_user_data, ad_personalization, and analytics_storage. Those four signals start as granted only if the localStorage key csi-consent already has the value granted. functionality_storage and security_storage stay granted because the site needs them to work; they are not used for measurement or advertising.",
           "We store two keys in localStorage. csi-consent remembers whether you accepted or rejected measurement. csi-theme stores whether you prefer the light or dark theme and is not a tracking cookie. Google measurement cookies run only after you accept. If you reject, they stay off."
         ]

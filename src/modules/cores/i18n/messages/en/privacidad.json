@@ -40,7 +40,7 @@
       {
         "heading": "Cookies and measurement",
         "paragraphs": [
-          "If you accept cookies, we measure site use with Google Tag Manager, container GTM-P4W4WZCS, and with the tags the cluster enables in that container.",
+          "If you accept cookies, we measure site use with Google Analytics 4, measurement ID G-84QLB6EYLV, and with Google Tag Manager, container GTM-P4W4WZCS.",
           "If you decline cookies, measurement stays denied through Consent Mode.",
           "You can change your mind by deleting the localStorage key csi-consent and reloading the page. The site will ask again."
         ]

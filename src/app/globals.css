@@ -335,6 +335,15 @@
   .article-body a {
     @apply text-link underline;
   }
+  .article-body figure {
+    @apply bg-elevated my-8 overflow-hidden rounded-lg;
+  }
+  .article-body figure img {
+    @apply h-auto w-full;
+  }
+  .article-body figcaption {
+    @apply px-4 py-3 text-small text-ink-muted;
+  }
 }
 
 @layer components {

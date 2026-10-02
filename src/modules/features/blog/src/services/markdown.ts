@@ -17,6 +17,31 @@ function escapeAttr(value: string) {
     .replaceAll('"', "&quot;");
 }
 
+function safeImageSrc(raw: string): string | null {
+  const trimmed = raw.trim();
+  if (trimmed.startsWith("/") && !trimmed.startsWith("//")) return trimmed;
+  try {
+    const url = new URL(trimmed);
+    if (url.protocol === "https:" || url.protocol === "http:") return url.toString();
+  } catch {
+    return null;
+  }
+  return null;
+}
+
+function renderNoteFigure(src: string, alt: string, caption?: string | null): string {
+  const safe = safeImageSrc(src);
+  if (!safe) return escapeAttr(alt);
+  const cap = caption
+    ? `<figcaption class="px-4 py-3 text-small text-ink-muted">${escapeAttr(caption)}</figcaption>`
+    : "";
+  return `<figure class="bg-elevated my-8 overflow-hidden rounded-lg"><img src="${escapeAttr(safe)}" alt="${escapeAttr(alt)}" class="h-auto w-full" />${cap}</figure>`;
+}
+
+function unwrapFigures(html: string) {
+  return html.replace(/<p>\s*(<figure[\s\S]*?<\/figure>)\s*<\/p>/g, "$1");
+}
+
 class NoteLinkRenderer extends Renderer {
   constructor(private readonly slug: string) {
     super();
@@ -29,6 +54,13 @@ class NoteLinkRenderer extends Renderer {
     const titleAttr = title ? ` title="${escapeAttr(title)}"` : "";
     return `<a href="${escapeAttr(next)}"${titleAttr} target="_blank" rel="noopener noreferrer">${inner}</a>`;
   }
+
+  image({ href, title, text, tokens }: Tokens.Image): string {
+    const alt = tokens?.length
+      ? String(this.parser.parseInline(tokens, this.parser.textRenderer))
+      : text;
+    return renderNoteFigure(href, alt, title);
+  }
 }
 
 interface Frontmatter {
@@ -40,6 +72,7 @@ interface Frontmatter {
   category?: string;
   tags: string[];
   image?: BlogPostImage;
+  images?: BlogPostImage[];
 }
 
 export const CATEGORIES = {
@@ -53,6 +86,13 @@ function parseFile(fileName: string): BlogPost {
   const { data, content } = matter(raw);
   const meta = data as Frontmatter;
   const words = content.split(/\s+/).filter(Boolean).length;
+  const bodyHtml = unwrapFigures(
+    marked.parse(content, { renderer: new NoteLinkRenderer(slug) }) as string,
+  );
+  const extras = (meta.images ?? [])
+    .filter((img) => img.src && img.src !== meta.image?.src && !bodyHtml.includes(img.src))
+    .map((img) => renderNoteFigure(img.src, img.alt, img.caption))
+    .join("");
 
   return {
     slug,
@@ -65,8 +105,9 @@ function parseFile(fileName: string): BlogPost {
     author: meta.author,
     tags: meta.tags ?? [],
     image: meta.image,
+    images: meta.images,
     readingMinutes: Math.max(1, Math.round(words / 200)),
-    contentHtml: marked.parse(content, { renderer: new NoteLinkRenderer(slug) }) as string,
+    contentHtml: `${bodyHtml}${extras}`,
   };
 }
 

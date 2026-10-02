@@ -40,7 +40,7 @@
       {
         "heading": "Cookies y medición",
         "paragraphs": [
-          "Si aceptas las cookies, medimos el uso del sitio con Google Tag Manager, contenedor GTM-P4W4WZCS, y con las etiquetas que el clúster active en ese contenedor.",
+          "Si aceptas las cookies, medimos el uso del sitio con Google Analytics 4, medición G-84QLB6EYLV, y con Google Tag Manager, contenedor GTM-P4W4WZCS.",
           "Si rechazas las cookies, la medición permanece negada mediante Consent Mode.",
           "Puedes cambiar de opinión: borra la clave csi-consent de localStorage y recarga la página. El sitio volverá a preguntarte."
         ]

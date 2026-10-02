@@ -16,7 +16,7 @@
       {
         "heading": "Qué guardamos en este sitio",
         "paragraphs": [
-          "En el HTML de cada página está el contenedor de Google Tag Manager GTM-P4W4WZCS.",
+          "En el HTML de cada página está Google Analytics 4, medición G-84QLB6EYLV, y el contenedor de Google Tag Manager GTM-P4W4WZCS.",
           "Antes de que ese contenedor cargue, un script de la página fija el modo de consentimiento de Google. Por defecto deniega ad_storage, ad_user_data, ad_personalization y analytics_storage. Esos cuatro permisos solo inician como concedidos si la clave csi-consent de localStorage ya tiene el valor granted. functionality_storage y security_storage quedan concedidos porque el sitio los necesita para funcionar; no sirven para medir ni para publicidad.",
           "En localStorage guardamos dos claves. csi-consent recuerda si aceptaste o rechazaste la medición. csi-theme guarda si prefieres el tema claro o el oscuro y no es una cookie de seguimiento. Las cookies de medición de Google solo se activan después de que aceptas. Si rechazas, se mantienen apagadas."
         ]

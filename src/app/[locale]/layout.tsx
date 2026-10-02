@@ -46,7 +46,11 @@ export async function generateMetadata({
 
 const themeScript = `(function(){try{var t=localStorage.getItem("csi-theme");if(t){document.documentElement.dataset.theme=t}}catch(e){}})();`;
 
+const GA_ID = "G-84QLB6EYLV";
+
 const gtmConsentScript = `(function(){window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};var c="denied";try{if(localStorage.getItem("csi-consent")==="granted")c="granted";}catch(e){}window.gtag("consent","default",{ad_storage:c,ad_user_data:c,ad_personalization:c,analytics_storage:c,functionality_storage:"granted",security_storage:"granted"});})();`;
+
+const gaConfigScript = `window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};window.gtag('js',new Date());window.gtag('config','${GA_ID}');`;
 
 const gtmScript = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P4W4WZCS');`;
 
@@ -65,6 +69,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
     >
       <head>
         <script id="gtm-consent" dangerouslySetInnerHTML={{ __html: gtmConsentScript }} />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script id="ga4" dangerouslySetInnerHTML={{ __html: gaConfigScript }} />
         <script id="gtm" dangerouslySetInnerHTML={{ __html: gtmScript }} />
       </head>
       <body className="flex min-h-full flex-col bg-surface font-body text-ink">
