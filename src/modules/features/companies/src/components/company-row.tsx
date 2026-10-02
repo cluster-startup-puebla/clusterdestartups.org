@@ -3,8 +3,7 @@
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { useTranslations } from "next-intl";
 import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
-import type { Company } from "@/data/companies";
-import { localize } from "@/data/companies";
+import { localize, STARTUP_INDUSTRIES, type Company } from "@/data/companies";
 
 interface CompanyRowProps {
   company: Company;
@@ -16,9 +15,9 @@ interface CompanyRowProps {
 
 export function CompanyRow({ company, locale, labels }: CompanyRowProps) {
   const t = useTranslations("Companies");
-  const industries = company.industries
-    ? localize(company.industries, locale)
-    : [];
+  const industries = (company.industries ?? []).map((id) =>
+    localize(STARTUP_INDUSTRIES[id], locale),
+  );
   const shown = industries.slice(0, 2);
   const overflow = industries.length - shown.length;
   const batchLabel = company.batch === "early" ? "Early" : company.batch;
@@ -32,16 +31,21 @@ export function CompanyRow({ company, locale, labels }: CompanyRowProps) {
   return (
     <Link
       href={`/empresas/${company.slug}`}
-      className="group flex items-start gap-4 rounded-md p-4 transition-colors hover:bg-surface-subtle"
+      className="group flex items-center gap-4 rounded-md px-4 py-3 transition-colors hover:bg-surface-subtle"
     >
-      <CompanyLogo name={company.name} logo={company.logo} className="size-10 shrink-0" dark={company.logoDark} />
+      <CompanyLogo
+        name={company.name}
+        logo={company.logo}
+        className="h-[46px] w-[91px] shrink-0 sm:h-[53px] sm:w-[122px]"
+        dark={company.logoDark}
+      />
       <div className="min-w-0 flex-1">
-        <div className="flex items-baseline gap-2">
-          <h2 className="text-body-lg font-display text-ink group-hover:text-brand truncate">
+        <div className="flex flex-wrap items-baseline gap-x-2">
+          <h2 className="max-w-full text-body-lg font-display text-ink group-hover:text-brand">
             {company.name}
           </h2>
           {region && (
-            <span className="text-micro text-ink-muted shrink-0">{region}</span>
+            <span className="text-micro text-ink-muted">{region}</span>
           )}
         </div>
         {description && (
@@ -65,7 +69,7 @@ export function CompanyRow({ company, locale, labels }: CompanyRowProps) {
           )}
         </ul>
       </div>
-      <span className="text-small text-link shrink-0 opacity-0 transition-opacity group-hover:opacity-100">
+      <span className="hidden text-small text-link shrink-0 opacity-0 transition-opacity group-hover:opacity-100 sm:inline">
         {labels.viewDetail} →
       </span>
     </Link>

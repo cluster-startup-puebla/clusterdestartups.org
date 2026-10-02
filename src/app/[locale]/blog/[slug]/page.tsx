@@ -21,10 +21,13 @@ export async function generateMetadata({
   const post = getPost(slug, locale);
   if (!post) return {};
 
-  const url = `${SITE_URL}/${locale}/blog/${slug}`;
+  const url = `${SITE_URL}/${locale}/blog/${slug}/`;
   const languages = Object.fromEntries(
-    routing.locales.map((l) => [l, `${SITE_URL}/${l}/blog/${slug}`]),
+    routing.locales.map((l) => [l, `${SITE_URL}/${l}/blog/${slug}/`]),
   );
+  const image = post.image
+    ? { url: `${SITE_URL}${post.image.src}`, alt: post.image.alt }
+    : undefined;
 
   return {
     title: post.title,
@@ -39,17 +42,18 @@ export async function generateMetadata({
       publishedTime: post.date,
       authors: post.author,
       tags: post.tags,
-      images: post.image ? [{ url: post.image.src, alt: post.image.alt }] : undefined,
-      siteName: "Clúster de Startups",
+      images: image ? [image] : undefined,
+      siteName: "Clúster de Startups e Innovación (CSI)",
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      images: image ? [image.url] : undefined,
     },
     alternates: {
       canonical: url,
-      languages: { ...languages, "x-default": `${SITE_URL}/es/blog/${slug}` },
+      languages: { ...languages, "x-default": `${SITE_URL}/es/blog/${slug}/` },
     },
   };
 }
@@ -74,7 +78,7 @@ export default async function BlogPostPage({
     author: { "@type": "Organization", name: post.author },
     image: post.image ? [`${SITE_URL}${post.image.src}`] : undefined,
     articleSection: post.category,
-    url: `${SITE_URL}/${locale}/blog/${slug}`,
+    url: `${SITE_URL}/${locale}/blog/${slug}/`,
     keywords: post.tags.join(", "),
     inLanguage: locale,
   };

@@ -24,7 +24,7 @@
         },
         {
           "label": "Headquarters",
-          "value": "Innovation Hub, CERHAN II, Cuautlancingo, Puebla"
+          "value": "{officeAddress}"
         }
       ],
       "contactLabel": "Press contact",

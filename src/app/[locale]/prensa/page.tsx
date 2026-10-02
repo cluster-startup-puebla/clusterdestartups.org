@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
+import { OFFICE_ADDRESS_WITH_PLACE, withOfficeAddress } from "@/modules/cores/site/src/config/site";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { PressReleases } from "@/modules/features/pages/src/sections/press/press-releases";
 import { PressKit } from "@/modules/features/pages/src/sections/press/press-kit";
@@ -44,7 +45,10 @@ export default async function PressPage({ params }: PageProps<"/[locale]/prensa"
         title={t("kit.title")}
         description={t("kit.description")}
         dataLabel={t("kit.dataLabel")}
-        data={t.raw("kit.data")}
+        data={(t.raw("kit.data") as { label: string; value: string }[]).map((item) => ({
+          ...item,
+          value: withOfficeAddress(item.value, OFFICE_ADDRESS_WITH_PLACE),
+        }))}
         contactLabel={t("kit.contactLabel")}
         contactValue={t("kit.contactValue")}
         downloadsLabel={t("kit.downloadsLabel")}

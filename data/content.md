@@ -61,7 +61,7 @@ _(Sin foto.)_
 
 ### 2.2 Misión y visión
 
-**Contenido:** Misión (generar entorno para que startups poblanas escalen globalmente) y visión (Puebla como referente latinoamericano de innovación), en dos bloques cortos.
+**Contenido:** Misión (generar entorno para que startups poblanas escalen globalmente) y visión (que en 2030 emprender una empresa de base tecnológica sea más fácil que abrir un negocio tradicional, y que Puebla sea un referente latinoamericano de innovación), en dos bloques cortos.
 
 _(Sin foto.)_
 
@@ -229,13 +229,13 @@ _(Sin foto.)_
 
 **Contenido:** Entradas cortas tipo ficha: fecha, título, 2–3 líneas, con foto del evento. Solo hechos ya sucedidos (ver "Notas de alcance").
 
-![Stand 777, evento CAPIM Industry Supply Chain](/prensa/prensa-capim-stand777.jpg)
-![Pabellón Puebla en InnovaFest Querétaro 2026, Querétaro Centro de Congresos](/prensa/prensa-innovafest-queretaro.jpg)
+![Stand 777, evento CAPIM Industry Supply Chain](/prensa/prensa-capim-stand777.webp)
+![Pabellón Puebla en InnovaFest Querétaro 2026, Querétaro Centro de Congresos](/prensa/prensa-innovafest-queretaro.webp)
 
 Fichas publicadas:
 
-1. **Pabellón Puebla en InnovaFest Querétaro 2026** — 21 de agosto de 2026, Querétaro Centro de Congresos. El Clúster de Startups e Innovación A.C., encabezado por su presidente Yamil Álvarez, articuló y operó el Pabellón Puebla bajo identidad del Gobierno del Estado (financiamiento estatal, sin recurso propio del Clúster): nueve actores en ocho módulos, siete horas de piso. La Coordinación Nacional de InnovaFest visitó el pabellón y quedó acordada la instalación del Comité Organizador de InnovaFest Puebla. Referencia interna: CSI/RR/2026-001 (reporte de resultados) y CSI/RM/2026-002 (materialidad). *Las cifras de alcance del pabellón son estimaciones documentadas — no publicarlas como conteo.* Foto portada: `/prensa/prensa-innovafest-queretaro.jpg` (grupal, de PHOTO-2026-08-21-21-49-22); secundaria: `/prensa/prensa-innovafest-queretaro-02.jpg`.
-2. **Seis startups del clúster en CAPIM Industry Supply Chain** — 12–13 de agosto de 2026, Centro Expositor de Puebla. El Clúster participó con el stand 777 en el Pabellón Clústers Industriales, presentando seis startups B2B industriales afiliadas (Karggu, Kotemah, Mileva Dynamics, Oxtron, Radek y Sabia) ante más de 7,000 empresas convocadas. Referencia interna: CSI/FI/2026-001 — *ficha pendiente de emitir; no publicar datos de inversión, contactos ni ROO hasta completarla (objetivos posiblemente reconstruidos ex post).* Foto: `/prensa/prensa-capim-stand777.jpg` (colocada desde `data/capim.jpg`).
+1. **Pabellón Puebla en InnovaFest Querétaro 2026** — 21 de agosto de 2026, Querétaro Centro de Congresos. El Clúster de Startups e Innovación A.C., encabezado por su presidente Yamil Álvarez, articuló y operó el Pabellón Puebla bajo identidad del Gobierno del Estado (financiamiento estatal, sin recurso propio del Clúster): nueve actores en ocho módulos, siete horas de piso. La Coordinación Nacional de InnovaFest visitó el pabellón y quedó acordada la instalación del Comité Organizador de InnovaFest Puebla. Referencia interna: CSI/RR/2026-001 (reporte de resultados) y CSI/RM/2026-002 (materialidad). *Las cifras de alcance del pabellón son estimaciones documentadas — no publicarlas como conteo.* Foto portada: `/prensa/prensa-innovafest-queretaro.webp` (grupal, de PHOTO-2026-08-21-21-49-22); secundaria: `/prensa/prensa-innovafest-queretaro-02.webp`.
+2. **Seis startups del clúster en CAPIM Industry Supply Chain** — 12–13 de agosto de 2026, Centro Expositor de Puebla. El Clúster participó con el stand 777 en el Pabellón Clústers Industriales, presentando seis startups B2B industriales afiliadas (Karggu, Kotemah, Mileva Dynamics, Oxtron, Radek y Sabia) ante más de 7,000 empresas convocadas. Referencia interna: CSI/FI/2026-001 — *ficha pendiente de emitir; no publicar datos de inversión, contactos ni ROO hasta completarla (objetivos posiblemente reconstruidos ex post).* Foto: `/prensa/prensa-capim-stand777.webp` (colocada desde `data/capim.jpg`).
 
 Pendientes de publicar (una vez sucedidos):
 

@@ -1,13 +1,13 @@
 ---
-title: "Six startups from the Cluster of Startups and Innovation presented at CAPIM Industry Supply Chain 2026"
-description: "The Cluster of Startups and Innovation (CSI) A.C. from Puebla took part with stand 777 in the Industrial Clusters Pavilion at Mexico's Industry Supply Chain (CAPIM) 2026, with six affiliated B2B industrial startups."
-excerpt: "Karggu, Kotemah, Mileva Dynamics, Oxtron, Radek and Sabia presented their technology capabilities in front of more than 7,000 convoked companies at the Centro Expositor de Puebla."
+title: "Six CSI startups at CAPIM Supply Chain 2026 in Puebla"
+description: "The CSI, Puebla's startup cluster, took six B2B startups to stand 777 in the Industrial Clusters Pavilion at CAPIM Supply Chain 2026 in Puebla."
+excerpt: "Karggu, Kotemah, Mileva Dynamics, Oxtron, Radek and Sabia, CSI startups, presented B2B capabilities at the Centro Expositor de Puebla."
 date: "2026-08-12"
 author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
-tags: ["CAPIM", "supply chain", "B2B startups", "Puebla"]
+tags: ["CSI Puebla", "CAPIM 2026", "B2B startups", "supply chain", "startup cluster"]
 image:
-  src: "/prensa/prensa-capim-stand777.jpg"
+  src: "/prensa/prensa-capim-stand777.webp"
   alt: "Delegation of the Cluster of Startups and Innovation of Puebla at stand 777 of the Industrial Clusters Pavilion, CAPIM Industry Supply Chain 2026"
 ---
 

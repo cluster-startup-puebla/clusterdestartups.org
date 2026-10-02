@@ -1,13 +1,13 @@
 ---
-title: "Puebla joined the v0 Global Buildathon with Prompt to Production"
-description: "The Puebla City edition of v0 Prompt to Production — part of the v0 Global Buildathon held simultaneously in more than 40 cities — brought the community together to build web apps with AI, locally hosted by Álvaro Castillo, Cluster Manager of the Cluster."
-excerpt: "v0 credits included, networking with the local tech community and a format built for people with no prior programming experience: from idea to product in minutes."
+title: "v0 in Puebla: the CSI cluster manager was local host"
+description: "Álvaro Castillo, CSI cluster manager, was local host of v0 Prompt to Production in Puebla, part of the Global Buildathon in more than 40 cities."
+excerpt: "v0 credits and from idea to product. The local host in Puebla was Álvaro Castillo, CSI cluster manager."
 date: "2026-02-07"
 author: "Clúster de Startups e Innovación A.C."
 category: "comunidad"
-tags: ["v0", "Vercel", "buildathon", "AI", "community"]
+tags: ["CSI Puebla", "v0", "Vercel", "buildathon", "artificial intelligence"]
 image:
-  src: "/blog/blog-v0-prompt-to-production.jpg"
+  src: "/blog/blog-v0-prompt-to-production.webp"
   alt: "Participants of v0 Prompt to Production Puebla City during the v0 Global Buildathon"
 ---
 

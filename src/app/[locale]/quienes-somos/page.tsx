@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
+import { OFFICE_ADDRESS_WITH_PLACE, OFFICE_MAPS_URL } from "@/modules/cores/site/src/config/site";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { SectionHeader } from "@/modules/shared/ui/src/components";
 import { OriginTimelineSection } from "@/modules/features/pages/src/sections/about/origin-timeline-section";
@@ -150,7 +151,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
           { label: t("legalFactNameLabel"), value: t("legalFactNameValue") },
           { label: t("legalFactRfcLabel"), value: t("legalFactRfcValue") },
           { label: t("legalFactDateLabel"), value: t("legalFactDateValue") },
-          { label: t("legalFactAddressLabel"), value: t("legalFactAddressValue"), href: t("legalFactAddressHref") },
+          { label: t("legalFactAddressLabel"), value: OFFICE_ADDRESS_WITH_PLACE, href: OFFICE_MAPS_URL },
         ]}
       />
     </>

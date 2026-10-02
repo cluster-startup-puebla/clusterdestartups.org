@@ -1,7 +1,7 @@
 {
   "Contact": {
     "metaTitle": "Contact | Cluster of Startups and Innovation (CSI)",
-    "metaDescription": "Write to us to join the cluster, propose institutional partnerships or reach us as press. Visit us at our office in Cuautlancingo, Puebla.",
+    "metaDescription": "Write to us to join the cluster, propose institutional partnerships or reach us as press. Visit us at our office in San Andrés Cholula, Puebla.",
     "form": {
       "eyebrow": "Get in touch",
       "title": "Tell us who you are",
@@ -23,7 +23,12 @@
       "messageLabel": "Message",
       "messagePlaceholder": "Tell us briefly how we can support you.",
       "submitLabel": "Send message",
-      "successMessage": "Thanks for reaching out. Your email app opened with the message ready to send; if it did not open, write to us directly at contacto@clusterdestartups.org.",
+      "sendingLabel": "Sending…",
+      "successMessage": "Thanks for reaching out. We received your message and will reply soon. You can also write to hola@clusterdestartups.org.",
+      "alreadySentMessage": "You already sent a message from this device. To reach us again, write to hola@clusterdestartups.org.",
+      "errorMessage": "We could not send your message. Try again or write to hola@clusterdestartups.org.",
+      "privacyNote": "By sending this form, you agree that we use these details only to reply, as described in the",
+      "privacyLinkLabel": "privacy notice",
       "errors": {
         "nameRequired": "Please enter your name.",
         "emailRequired": "Please enter your email address.",
@@ -34,14 +39,16 @@
     "location": {
       "eyebrow": "Visit us",
       "title": "Cluster office",
-      "description": "Our office is in Cuautlancingo, Puebla.",
+      "description": "Our office is in San Andrés Cholula, Puebla.",
       "addressLabel": "Address",
-      "address": "Av. San Lorenzo Almecatla, Cuautlancingo, Puebla",
-      "addressHref": "https://maps.app.goo.gl/8EpnaYuVsiyjGYe98",
       "mapNote": "The map loads from Google Maps; opening it also lets you check access routes.",
+      "phoneLabel": "Phone",
+      "whatsappLabel": "WhatsApp",
       "socialLabel": "Official social media",
       "linkedinLabel": "LinkedIn",
-      "linkedinHref": "https://www.linkedin.com/company/cluster-startups-puebla/"
+      "linkedinHref": "https://www.linkedin.com/company/cluster-startups-puebla/",
+      "instagramLabel": "Instagram",
+      "instagramHref": "https://www.instagram.com/cluster_startups/"
     }
   }
 }

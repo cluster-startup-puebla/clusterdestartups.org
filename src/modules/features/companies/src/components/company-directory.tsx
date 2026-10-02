@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { FilterSidebar } from "./filter-sidebar";
 import { CompanyList } from "./company-list";
-import { localize, type Company } from "@/data/companies";
+import { localize, STARTUP_INDUSTRIES, type Company, type StartupIndustry } from "@/data/companies";
 
 interface CompanyDirectoryProps {
   companies: readonly Company[];
@@ -15,6 +15,7 @@ interface CompanyDirectoryProps {
     industry: string;
     region: string;
     clear: string;
+    filters: string;
     viewDetail: string;
     noResults: string;
   };
@@ -26,7 +27,7 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
   const batchFilters = searchParams.getAll("batch");
   const industryFilters = searchParams.getAll("industry");
   const regionFilters = searchParams.getAll("region");
-  const searchQuery = searchParams.get("q")?.toLowerCase() ?? "";
+  const searchQuery = searchParams.get("q")?.trim().toLowerCase() ?? "";
 
   const filtered = useMemo(() => {
     let result = [...companies];
@@ -36,11 +37,9 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
     }
 
     if (industryFilters.length > 0) {
-      result = result.filter((c) => {
-        if (!c.industries) return false;
-        const companyIndustries = localize(c.industries, locale);
-        return industryFilters.some((f) => companyIndustries.includes(f));
-      });
+      result = result.filter((c) =>
+        c.industries?.some((id) => industryFilters.includes(id)),
+      );
     }
 
     if (regionFilters.length > 0) {
@@ -66,17 +65,15 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
 
   const filterSections = useMemo(() => {
     const batchCounts = new Map<string, number>();
-    const industryCounts = new Map<string, number>();
+    const industryCounts = new Map<StartupIndustry, number>();
     const regionCounts = new Map<string, number>();
 
     for (const company of companies) {
       if (company.batch) {
         batchCounts.set(company.batch, (batchCounts.get(company.batch) ?? 0) + 1);
       }
-      if (company.industries) {
-        for (const industry of localize(company.industries, locale)) {
-          industryCounts.set(industry, (industryCounts.get(industry) ?? 0) + 1);
-        }
+      for (const industry of company.industries ?? []) {
+        industryCounts.set(industry, (industryCounts.get(industry) ?? 0) + 1);
       }
       if (company.region) {
         const region = localize(company.region, locale);
@@ -88,7 +85,20 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
       early: "Early",
     };
 
-    return [
+    const industryOrder = Object.keys(STARTUP_INDUSTRIES) as StartupIndustry[];
+
+    const sections = [
+      {
+        key: "industry",
+        label: labels.industry,
+        options: industryOrder
+          .filter((id) => industryCounts.has(id))
+          .map((id) => ({
+            value: id,
+            label: localize(STARTUP_INDUSTRIES[id], locale),
+            count: industryCounts.get(id) ?? 0,
+          })),
+      },
       {
         key: "batch",
         label: labels.batch,
@@ -99,13 +109,6 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
         })),
       },
       {
-        key: "industry",
-        label: labels.industry,
-        options: Array.from(industryCounts.entries())
-          .sort((a, b) => b[1] - a[1])
-          .map(([value, count]) => ({ value, label: value, count })),
-      },
-      {
         key: "region",
         label: labels.region,
         options: Array.from(regionCounts.entries())
@@ -113,6 +116,13 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
           .map(([value, count]) => ({ value, label: value, count })),
       },
     ];
+
+    return sections.filter((section) => {
+      if (section.options.length === 0) return false;
+      const coversEveryone =
+        section.options.length === 1 && section.options[0].count === companies.length;
+      return !coversEveryone;
+    });
   }, [companies, locale, labels]);
 
   return (
@@ -120,7 +130,7 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
       <FilterSidebar
         sections={filterSections}
         searchPlaceholder={labels.search}
-        labels={{ clear: labels.clear, search: labels.search }}
+        labels={{ clear: labels.clear, search: labels.search, filters: labels.filters }}
       />
       <div className="min-w-0 flex-1">
         <CompanyList

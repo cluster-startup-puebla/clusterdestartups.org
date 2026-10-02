@@ -6,8 +6,9 @@ import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { SITE_URL } from "@/modules/cores/site/src/config/site";
 import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
-import { companies, getCompany, localize, type Company } from "@/data/companies";
+import { companies, getCompany, localize, STARTUP_INDUSTRIES, type Company } from "@/data/companies";
 import { toTelHref } from "@/lib/phone";
+import { withClusterUtm } from "@/lib/utm";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -40,9 +41,9 @@ type ContactKey = "website" | "demo" | "email" | "phone";
 async function CompanyDetail({ company, locale }: { company: Company; locale: string }) {
   const t = await getTranslations({ locale, namespace: "Companies" });
 
-  const industries = company.industries
-    ? localize(company.industries, locale)
-    : [];
+  const industries = (company.industries ?? []).map((id) =>
+    localize(STARTUP_INDUSTRIES[id], locale),
+  );
   const isPending = !industries.length && !company.problem && !company.solution;
 
   const contactEntries: {
@@ -54,13 +55,17 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
     {
       key: "website",
       value: company.contact?.website,
-      href: company.contact?.website ?? "",
+      href: company.contact?.website
+        ? withClusterUtm(company.contact.website, company.slug)
+        : "",
       external: true,
     },
     {
       key: "demo",
       value: company.contact?.demo,
-      href: company.contact?.demo ?? "",
+      href: company.contact?.demo
+        ? withClusterUtm(company.contact.demo, `${company.slug}-demo`)
+        : "",
       external: true,
     },
     {

@@ -23,8 +23,8 @@ export async function GET(
       (post) => `
     <item>
       <title>${post.title}</title>
-      <link>${blogUrl}/${post.slug}</link>
-      <guid isPermaLink="true">${blogUrl}/${post.slug}</guid>
+      <link>${blogUrl}/${post.slug}/</link>
+      <guid isPermaLink="true">${blogUrl}/${post.slug}/</guid>
       <description>${post.description}</description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <author>${post.author}</author>

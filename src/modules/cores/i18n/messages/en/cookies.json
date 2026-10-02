@@ -1,0 +1,48 @@
+{
+  "Cookies": {
+    "metaTitle": "Cookie notice | Clúster de Startups e Innovación (CSI)",
+    "metaDescription": "What clusterdestartups.org stores in your browser, when Google measurement cookies run, and how to accept or reject them.",
+    "eyebrow": "Transparency",
+    "title": "Cookie notice",
+    "updated": "October 2, 2026",
+    "sections": [
+      {
+        "heading": "What cookies are",
+        "paragraphs": [
+          "A cookie is a small file a site can store in your browser. This site also uses the browser’s local storage (localStorage) to remember a preference on your device.",
+          "The controller of this site is Clúster de Startups e Innovación (CSI) A.C. If you have questions about this notice, write to hola@clusterdestartups.org."
+        ]
+      },
+      {
+        "heading": "What we store on this site",
+        "paragraphs": [
+          "The HTML of every page includes the Google Tag Manager container GTM-P4W4WZCS.",
+          "Before that container loads, an inline script sets Google Consent Mode. By default it denies ad_storage, ad_user_data, ad_personalization, and analytics_storage. Those four signals start as granted only if the localStorage key csi-consent already has the value granted. functionality_storage and security_storage stay granted because the site needs them to work; they are not used for measurement or advertising.",
+          "We store two keys in localStorage. csi-consent remembers whether you accepted or rejected measurement. csi-theme stores whether you prefer the light or dark theme and is not a tracking cookie. Google measurement cookies run only after you accept. If you reject, they stay off."
+        ]
+      },
+      {
+        "heading": "How to accept or reject",
+        "paragraphs": [
+          "When you arrive, a notice offers two choices: Accept and Reject.",
+          "If you choose Accept, we store csi-consent with the value granted and call gtag('consent', 'update') to grant ad_storage, ad_user_data, ad_personalization, and analytics_storage. Google measurement cookies can be set from that moment.",
+          "If you choose Reject, we store csi-consent with the value denied and update consent to denied. Measurement cookies stay off."
+        ]
+      },
+      {
+        "heading": "How to change your mind",
+        "paragraphs": [
+          "Delete the localStorage key csi-consent and reload the page. The notice will appear again so you can choose once more.",
+          "You can also clear this site’s cookies and site data from your browser controls."
+        ]
+      },
+      {
+        "heading": "Privacy notice",
+        "paragraphs": [
+          "The contact form does not use cookies. How we handle the data you send is explained in the privacy notice."
+        ]
+      }
+    ],
+    "privacyLinkLabel": "Read the privacy notice"
+  }
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
+import { OFFICE_ADDRESS_WITH_PLACE } from "@/modules/cores/site/src/config/site";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { HubOverview } from "@/modules/features/pages/src/sections/hub/hub-overview";
 import { HubSpaces } from "@/modules/features/pages/src/sections/hub/hub-spaces";
@@ -41,7 +42,7 @@ export default async function HubPage({ params }: PageProps<"/[locale]/hub">) {
         eyebrow={t("overviewEyebrow")}
         title={t("overviewTitle")}
         description={t("overviewDescription")}
-        address={t("overviewAddress")}
+        address={OFFICE_ADDRESS_WITH_PLACE}
         navItems={[
           { name: t("navB"), statusLabel: t("statusActive"), statusTone: "active" },
           { name: t("navC"), statusLabel: t("statusActive"), statusTone: "active" },

@@ -1,13 +1,13 @@
 ---
-title: "PyTalavera at the Hub: emergency manuals for incidents, with the Cluster's support"
-description: "The PyTalavera community meetup —'Calm under the storm: how to write emergency manuals'— took place at Workósfera with the collaboration of the Cluster of Startups and Innovation A.C., which provided the space, logistics and outreach."
-excerpt: "19 people in a hands-on DevOps workshop with Román Bernábe: incident communication templates, blameless post mortems and a live incident exercise, at no cost to the community."
+title: "PyTalavera in Puebla: the CSI backed the DevOps workshop"
+description: "The PyTalavera meetup on emergency manuals ran with the CSI, Puebla's startup cluster, which provided space, logistics, and outreach."
+excerpt: "19 people at a PyTalavera DevOps workshop. The CSI provided space, logistics, and outreach, at no cost to Puebla's technical community."
 date: "2026-08-06"
 author: "Clúster de Startups e Innovación A.C."
 category: "comunidad"
-tags: ["PyTalavera", "DevOps", "tech community", "workshop"]
+tags: ["CSI Puebla", "PyTalavera", "DevOps", "tech community", "Puebla"]
 image:
-  src: "/blog/blog-pytalavera.jpg"
+  src: "/blog/blog-pytalavera.webp"
   alt: "PyTalavera meetup talk on emergency manuals and incidents at Workósfera, Puebla"
 ---
 

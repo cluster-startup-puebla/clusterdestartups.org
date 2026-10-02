@@ -1,13 +1,13 @@
 ---
-title: "El Clúster de Startups e Innovación operó el Pabellón Puebla en InnovaFest Querétaro 2026"
-description: "El Clúster de Startups e Innovación (CSI) A.C. de Puebla, encabezado por su presidente Yamil Álvarez, articuló y operó el Pabellón Puebla en InnovaFest Querétaro 2026; quedó acordada la instalación del Comité Organizador de InnovaFest Puebla."
-excerpt: "Nueve actores del ecosistema de innovación de Puebla en ocho módulos expositivos en el Querétaro Centro de Congresos. La Coordinación Nacional de InnovaFest visitó el pabellón y quedó acordado el Comité Organizador de InnovaFest Puebla."
+title: "Pabellón Puebla: el CSI en InnovaFest Querétaro 2026"
+description: "El CSI, clúster de startups de Puebla, operó el Pabellón Puebla en InnovaFest Querétaro 2026 y acordó el Comité Organizador de InnovaFest Puebla."
+excerpt: "El CSI articuló el Pabellón Puebla en InnovaFest Querétaro: nueve actores del ecosistema y el acuerdo del Comité Organizador de InnovaFest Puebla."
 date: "2026-08-21"
 author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
-tags: ["InnovaFest", "Querétaro", "ecosistema", "Puebla"]
+tags: ["CSI Puebla", "InnovaFest Querétaro", "Pabellón Puebla", "ecosistema de innovación", "startups"]
 image:
-  src: "/prensa/prensa-innovafest-queretaro.jpg"
+  src: "/prensa/prensa-innovafest-queretaro.webp"
   alt: "Actores del ecosistema de innovación de Puebla en el Pabellón Puebla de InnovaFest Querétaro 2026, operado por el Clúster de Startups e Innovación A.C."
 ---
 

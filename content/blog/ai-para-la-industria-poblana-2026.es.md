@@ -1,13 +1,13 @@
 ---
-title: "El Clúster de Startups e Innovación inauguró el programa AI para la Industria Poblana junto a SECIHTI y CANACINTRA"
-description: "El Clúster de Startups e Innovación (CSI) A.C. organizó el desayuno-workshop «Del piso de producción al dato» con la colaboración de SECIHTI y CANACINTRA, evento inaugural del programa AI para la Industria Poblana para la industria de Amozoc y Puebla."
-excerpt: "Casos de éxito en sectores automotriz y plásticos, autodiagnóstico Industria 4.0 en vivo con resultados proyectados en sala y exhibición de Kotemah y Oxtron, ante industriales de Amozoc y Puebla."
+title: "AI para la Industria Poblana: el programa del CSI"
+description: "El CSI, clúster de startups de Puebla, lanzó el programa AI para la Industria Poblana con SECIHTI y CANACINTRA, en Amozoc y Puebla."
+excerpt: "El CSI inauguró AI para la Industria Poblana con SECIHTI y CANACINTRA: casos de industria, autodiagnóstico 4.0 y startups ante Amozoc y Puebla."
 date: "2026-05-08"
 author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
-tags: ["industria", "Industria 4.0", "SECIHTI", "CANACINTRA", "Amozoc"]
+tags: ["CSI Puebla", "inteligencia artificial", "industria poblana", "SECIHTI", "CANACINTRA"]
 image:
-  src: "/blog/blog-ai-industria-poblana.jpg"
+  src: "/blog/blog-ai-industria-poblana.webp"
   alt: "Grupo de industriales en la inauguración del programa AI para la Industria Poblana con SECIHTI y CANACINTRA en Puebla"
 ---
 

@@ -1,13 +1,13 @@
 ---
-title: "Sinergia Clústeres Puebla: 24 clústeres construyen acuerdos para fortalecer la economía del estado"
-description: "El Clúster de Startups e Innovación participó en Sinergia Clústeres Puebla, donde 10 clústeres presentaron sus capacidades y exploraron formas de colaboración bajo el lema Conocer, Conectar, Colaborar."
-excerpt: "Representantes de 24 clústeres productivos se reunieron en el Auditorio Centro de Convenciones William O. Jenkins para construir acuerdos y fortalecer las cadenas de valor de Puebla."
+title: "El CSI en Sinergia Clústeres: 24 clústeres de Puebla"
+description: "El CSI participó en Sinergia Clústeres Puebla, donde 24 clústeres productivos construyeron acuerdos para las cadenas de valor del estado."
+excerpt: "El CSI estuvo en Sinergia Clústeres Puebla. Representantes de 24 clústeres productivos construyeron acuerdos para las cadenas de valor del estado."
 date: "2026-09-10"
 author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
-tags: ["Sinergia Clústeres", "gobierno", "Consejo Interclúster", "Puebla", "clústeres productivos"]
+tags: ["CSI Puebla", "Sinergia Clústeres", "Consejo Interclúster", "clústeres Puebla", "economía"]
 image:
-  src: "/prensa/prensa-sinergia-clusteres-grupo.jpg"
+  src: "/prensa/prensa-sinergia-clusteres-grupo.webp"
   alt: "Participantes de Sinergia Clústeres Puebla en el Auditorio Centro de Convenciones William O. Jenkins"
 ---
 

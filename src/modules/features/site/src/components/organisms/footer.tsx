@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { isHiddenSection } from "@/modules/cores/site/src/config/hidden-sections";
+import { OFFICE_ADDRESS_LINE, OFFICE_MAPS_URL, OFFICE } from "@/modules/cores/site/src/config/site";
 import { Logo } from "@/modules/shared/ui/src/components";
 
 const FOOTER_LINKS = [
@@ -27,8 +28,26 @@ export async function Footer() {
 
         <div>
           <p className="text-micro uppercase tracking-wide text-ink-muted">{t("hub")}</p>
-          <p className="mt-3 text-small text-ink-secondary">{t("hubAddress")}</p>
-          <p className="mt-2 text-small text-ink-muted">{t("hubCity")}</p>
+          <a
+            href={OFFICE_MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 block text-small text-ink-secondary hover:text-link"
+          >
+            <span className="block font-medium text-ink">{OFFICE.place}</span>
+            <span className="mt-1 block">{OFFICE_ADDRESS_LINE}</span>
+          </a>
+          <a href={`tel:${OFFICE.phoneTel}`} className="mt-3 inline-block text-small text-link">
+            {t("phone")}: {OFFICE.phoneDisplay}
+          </a>
+          <a
+            href={OFFICE.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 block text-small text-link"
+          >
+            {t("whatsapp")}: {OFFICE.phoneDisplay}
+          </a>
         </div>
 
         <div>
@@ -41,6 +60,16 @@ export async function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href="https://www.instagram.com/cluster_startups/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-link"
+              >
+                {t("instagram")}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -48,6 +77,14 @@ export async function Footer() {
       <div className="container-site mt-12 border-t border-line pt-6">
         <p className="text-micro text-ink-muted">
           © {new Date().getFullYear()} Clúster de Startups e Innovación (CSI) A.C. · {t("madeIn")}
+          {" · "}
+          <Link href="/aviso-de-privacidad" className="text-link">
+            {t("privacy")}
+          </Link>
+          {" · "}
+          <Link href="/aviso-de-cookies" className="text-link">
+            {t("cookies")}
+          </Link>
         </p>
       </div>
     </footer>

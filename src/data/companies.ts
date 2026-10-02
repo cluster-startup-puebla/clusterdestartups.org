@@ -29,12 +29,26 @@ import type { Locale } from "@/modules/cores/i18n/src/interfaces/i18n.interface"
 export type LocalizedText = Record<Locale, string>;
 
 /**
- * Lista de etiquetas cortas en los dos idiomas.
+ * Verticales de startup. El id es estable y viaja en la URL del filtro;
+ * la etiqueta se traduce al pintar.
  *
- * Las industrias se pintan como píldoras, así que cada entrada tiene que
- * caber en una: una o tres palabras, nunca una frase.
+ * Catálogo cerrado a propósito: cada empresa elige de aquí, en vez de
+ * inventar una etiqueta nueva que parta el directorio en filtros de un
+ * solo uso.
  */
-export type LocalizedList = Record<Locale, readonly string[]>;
+export const STARTUP_INDUSTRIES = {
+  agtech: { es: "Agtech", en: "Agtech" },
+  climatech: { es: "Climatech", en: "Climatech" },
+  edtech: { es: "Edtech", en: "Edtech" },
+  healthtech: { es: "Healthtech", en: "Healthtech" },
+  hrtech: { es: "HR Tech", en: "HR Tech" },
+  industry40: { es: "Industria 4.0", en: "Industry 4.0" },
+  logistics: { es: "Logística", en: "Logistics" },
+  mobility: { es: "Movilidad", en: "Mobility" },
+  software: { es: "Software", en: "Software" },
+} as const satisfies Record<string, LocalizedText>;
+
+export type StartupIndustry = keyof typeof STARTUP_INDUSTRIES;
 
 export type CatalogItem = {
   name: LocalizedText;
@@ -61,8 +75,8 @@ export type Company = {
   region?: LocalizedText;
   /** Descripción corta de una línea para el listado. */
   shortDescription?: LocalizedText;
-  /** A qué industrias sirve, como etiquetas sueltas. */
-  industries?: LocalizedList;
+  /** Verticales de `STARTUP_INDUSTRIES`. Una o dos, nunca una frase. */
+  industries?: readonly StartupIndustry[];
   /** Problema que resuelve. */
   problem?: LocalizedText;
   /** Solución o servicio que provee. */
@@ -99,6 +113,66 @@ export function localize<T>(value: Record<Locale, T>, locale: string): T {
 /** Orden alfabético por nombre. */
 export const companies: readonly Company[] = [
   {
+    slug: 'concora',
+    name: 'Concora',
+    logo: '/empresas/concora.webp',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Plataforma que conecta juventudes con oportunidades y empresas con talento junior mediante retos.',
+      en: 'Platform connecting young people with opportunities and companies with junior talent through challenges.'
+    },
+    industries: ['edtech', 'hrtech'],
+    problem: {
+      es: 'Contratar talento junior con un currículum no dice si la persona puede hacer el trabajo. Del otro lado, becas, empleos y convocatorias están regados: hay que enterarse de cada una por separado y postularse sin saber si el perfil encaja.',
+      en: 'Hiring junior talent from a résumé does not show whether the person can do the work. On the other side, scholarships, jobs and open calls are scattered: each one has to be found separately, with no way to tell whether the profile fits.'
+    },
+    solution: {
+      es: 'Una plataforma que junta educación, tecnología y experiencia laboral. La Ruta Brújula evalúa competencias e intereses, detecta brechas de empleabilidad y forma en las habilidades que pide el mercado. Los retos de reclutamiento ponen a resolver un problema real de la empresa y dejan experiencia validada, con acceso a becas, trabajo o capital semilla. Las becas, empleos y convocatorias llegan con recomendación personalizada.',
+      en: 'A platform that brings education, technology and work experience together. The Brújula path assesses skills and interests, finds employability gaps and trains the skills the market asks for. Recruitment challenges have people solve a real company problem and leave validated experience, with access to scholarships, jobs or seed capital. Scholarships, jobs and open calls arrive with a personalized recommendation.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Ruta Brújula',
+          en: 'Brújula path'
+        },
+        description: {
+          es: 'Evalúa competencias e intereses, detecta brechas de empleabilidad y forma en las habilidades que más pide el mercado.',
+          en: 'Assesses skills and interests, finds employability gaps and trains the skills the market asks for most.'
+        }
+      },
+      {
+        name: {
+          es: 'Retos de reclutamiento',
+          en: 'Recruitment challenges'
+        },
+        description: {
+          es: 'La persona resuelve un problema real de la empresa, deja experiencia profesional validada y puede acceder a becas, trabajo o capital semilla.',
+          en: 'The person solves a real company problem, leaves validated professional experience and can access scholarships, a job or seed capital.'
+        }
+      },
+      {
+        name: {
+          es: 'Oportunidades',
+          en: 'Opportunities'
+        },
+        description: {
+          es: 'Becas, empleos y convocatorias de emprendimiento, con recomendaciones personalizadas.',
+          en: 'Scholarships, jobs and entrepreneurship calls, with personalized recommendations.'
+        }
+      }
+    ],
+    contact: {
+      person: 'Fátima Gaytán',
+      role: 'CEO',
+      website: 'https://www.concora.mx/',
+      email: 'hola@concora.mx'
+    }
+  },
+  {
     slug: 'karggu',
     name: 'Karggu',
     logo: '/empresas/karggu.webp',
@@ -111,10 +185,7 @@ export const companies: readonly Company[] = [
       es: 'Plataforma que conecta paquetería, cliente y destinatario con tracking, Carta Porte y control de saldos.',
       en: 'Platform connecting carriers, customers and recipients with tracking, Carta Porte and balance control.'
     },
-    industries: {
-      es: ['Logística', 'Paqueterías', 'Transporte de carga', 'Carta Porte'],
-      en: ['Logistics', 'Parcel carriers', 'Freight transport', 'Carta Porte']
-    },
+    industries: ['logistics'],
     problem: {
       es: 'La paquetería genera las guías a mano, una por una, y la información de facturación vive repartida entre archivos y personas. El cliente no tiene visibilidad del status de sus entregas, así que llama para preguntar; los sobrecargos se documentan tarde y buena parte nunca se cobra. Y sin un lugar donde vivan los precios y acuerdos de cada cliente, cada cotización se negocia de nuevo.',
       en: 'The carrier issues waybills by hand, one at a time, and billing information sits scattered across files and people. The customer has no visibility into delivery status, so they call to ask; surcharges get documented late and a good share is never billed. And with no single place holding each customer’s prices and agreements, every quote is renegotiated from scratch.'
@@ -126,6 +197,95 @@ export const companies: readonly Company[] = [
     contact: {
       website: 'https://karggu.com/',
       email: 'admin@karggu.com'
+    }
+  },
+  {
+    slug: 'kigo',
+    name: 'Kigo',
+    logo: '/empresas/kigo.webp',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Plataforma de accesos, identidad y pagos para estacionamientos, residencias, escuelas y corporativos.',
+      en: 'Platform for access, identity and payments across parking, residential, school and corporate sites.'
+    },
+    industries: ['mobility'],
+    problem: {
+      es: 'Entrar, pagar y salir de un estacionamiento, un fraccionamiento o un colegio sigue dependiendo de filas, efectivo y registros que no se hablan. La operación no puede mostrar con evidencia quién entró, cuándo y bajo qué regla, y cada sede resuelve el acceso con un sistema distinto.',
+      en: 'Getting in, paying and leaving a parking lot, a gated community or a school still depends on queues, cash and records that do not talk to each other. Operations cannot show, with evidence, who entered, when and under which rule, and each site solves access with a different system.'
+    },
+    solution: {
+      es: 'Una sola plataforma para el control de accesos, la identidad y los pagos, conectada a la infraestructura que ya existe: barreras, puertas, torniquetes, elevadores y parquímetros. Identifica a la persona, valida las reglas y abre el acceso, y deja registro de quién, cuándo, dónde y bajo qué regla. Funciona con app, QR, placa, NFC/RFID o biometría. Nació en 2010 como parquímetro virtual y hoy opera en más de 75 ciudades.',
+      en: 'One platform for access control, identity and payments, plugged into infrastructure that is already there: barriers, doors, turnstiles, elevators and parking meters. It identifies the person, checks the rules and opens the access, and records who, when, where and under which rule. It works with the app, QR, a license plate, NFC/RFID or biometrics. It started in 2010 as a virtual parking meter and now operates in more than 75 cities.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Parquímetro virtual Parkimovil',
+          en: 'Parkimovil virtual parking meter'
+        },
+        description: {
+          es: 'Cobro de estacionamiento en vía pública desde el celular, sin monedas.',
+          en: 'On-street parking payment from the phone, with no coins.'
+        }
+      },
+      {
+        name: {
+          es: 'Estacionamiento digital',
+          en: 'Digital parking'
+        },
+        description: {
+          es: 'Pago de estacionamiento desde la app, sin fila ni efectivo.',
+          en: 'Parking payment from the app, with no queue and no cash.'
+        }
+      },
+      {
+        name: {
+          es: 'Kigo Residencial',
+          en: 'Kigo Residential'
+        },
+        description: {
+          es: 'Accesos de fraccionamientos y edificios con app, QR o placa.',
+          en: 'Access for gated communities and buildings with the app, QR or a license plate.'
+        }
+      },
+      {
+        name: {
+          es: 'Kigo Corporativo',
+          en: 'Kigo Corporate'
+        },
+        description: {
+          es: 'Accesos, visitas y permisos de oficinas en una sola consola.',
+          en: 'Office access, visitors and permissions in a single console.'
+        }
+      },
+      {
+        name: {
+          es: 'Kigo Universidades',
+          en: 'Kigo Universities'
+        },
+        description: {
+          es: 'Accesos de campus con la misma identidad y trazabilidad.',
+          en: 'Campus access under the same identity and traceability.'
+        }
+      },
+      {
+        name: {
+          es: 'Kigo Colegios',
+          en: 'Kigo Schools'
+        },
+        description: {
+          es: 'Entradas y salidas escolares, con aviso cuando el estudiante entra o sale.',
+          en: 'School entry and exit, with a notice when the student comes in or leaves.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://kigo.pro/',
+      email: 'ventas@kigo.pro',
+      phone: '+52 222 790 0170'
     }
   },
   {
@@ -141,10 +301,7 @@ export const companies: readonly Company[] = [
       es: 'Equipos de manipulación de carga en gravedad cero y exoesqueletos para la industria.',
       en: 'Zero-gravity load handling equipment and exoskeletons for industry.'
     },
-    industries: {
-      es: ['Manufactura', 'Ergonomía', 'Manejo de cargas', 'Seguridad y salud'],
-      en: ['Manufacturing', 'Ergonomics', 'Load handling', 'Health and safety']
-    },
+    industries: ['industry40'],
     problem: {
       es: 'Levantar, empujar y transportar carga desgasta al operador, y a la planta le cuesta en incapacidades, rotación y ritmo perdido. Además es obligación normativa: la NOM-036-1-STPS-2018 exige identificar, analizar, prevenir y controlar el riesgo ergonómico en toda tarea que maneje cargas desde 3 kg, y sostenerlo con evidencia documentada. La mayoría de las plantas no tiene con qué demostrarlo.',
       en: 'Lifting, pushing and carrying loads wears the operator down, and it costs the plant in sick leave, turnover and lost pace. It is also a legal obligation: Mexico’s NOM-036-1-STPS-2018 requires identifying, analyzing, preventing and controlling ergonomic risk in every task handling loads of 3 kg or more, backed by documented evidence. Most plants have no way to prove it.'
@@ -218,15 +375,7 @@ export const companies: readonly Company[] = [
       es: 'Sistema Andon de control de presencia y productividad por reconocimiento facial en planta.',
       en: 'Andon system for presence and productivity control via facial recognition on the shop floor.'
     },
-    industries: {
-      es: [
-        'Manufactura',
-        'Piso de planta',
-        'Líneas de ensamble',
-        'Visión por computadora'
-      ],
-      en: ['Manufacturing', 'Shop floor', 'Assembly lines', 'Computer vision']
-    },
+    industries: ['industry40'],
     problem: {
       es: 'Saber quién está trabajando, en qué estación y por cuánto tiempo resulta caro y poco confiable. El registro manual o por credencial se presta a errores y a que alguien marque por otro, así que no hay certeza del tiempo real en estación; sin ese dato no se ven los cuellos de botella, las ausencias ni los desbalances de línea. La visión industrial tradicional lo resuelve, pero pide servidores, GPU dedicada y cableado que muchas plantas no pueden pagar.',
       en: 'Knowing who is working, at which station and for how long turns out to be expensive and unreliable. Manual or badge check-in invites errors and buddy punching, so there is no certainty about real time at the station; without that figure, bottlenecks, absences and line imbalances stay invisible. Traditional machine vision solves it, but it demands servers, a dedicated GPU and cabling many plants cannot afford.'
@@ -258,20 +407,7 @@ export const companies: readonly Company[] = [
       es: 'Plataforma de huella de carbono alimentaria e inventario de emisiones con captura de CO₂.',
       en: 'Food carbon footprint platform and emissions inventory with CO₂ capture.'
     },
-    industries: {
-      es: [
-        'Agroalimentario',
-        'Polímeros y petroquímica',
-        'Huella de carbono',
-        'Descarbonización'
-      ],
-      en: [
-        'Agrifood',
-        'Polymers and petrochemicals',
-        'Carbon footprint',
-        'Decarbonization'
-      ]
-    },
+    industries: ['climatech', 'agtech'],
     problem: {
       es: 'Los compradores europeos y estadounidenses ya exigen trazabilidad ambiental para dejar entrar un producto, y el exportador mexicano no tiene con qué responder: medir la huella de cada producto pide análisis de ciclo de vida, y el reporte de emisiones se rearma a mano cada año. En polímeros y petroquímica hay además un desperdicio doble: el CO₂ de proceso se ventea como residuo mientras la planta sigue comprando insumos convencionales.',
       en: 'European and US buyers already demand environmental traceability before letting a product in, and Mexican exporters have no way to answer: measuring each product’s footprint requires life-cycle assessment, and the emissions report is rebuilt by hand every year. In polymers and petrochemicals the waste is twofold: process CO₂ is vented while the plant keeps buying conventional feedstock.'
@@ -301,20 +437,7 @@ export const companies: readonly Company[] = [
       es: 'Convierte el desarrollo interno de empresas consolidadas en un negocio digital aparte.',
       en: 'Turns in-house development at established companies into a separate digital business.'
     },
-    industries: {
-      es: [
-        'Multisectorial',
-        'Empresas consolidadas',
-        'Digitalización',
-        'Venture building'
-      ],
-      en: [
-        'Cross-sector',
-        'Established companies',
-        'Digitization',
-        'Venture building'
-      ]
-    },
+    industries: ['software'],
     problem: {
       es: 'La inversión en tecnología es necesaria, pero el ROI se justifica solo desde el ahorro interno y ese ahorro casi nunca alcanza para pagar el proyecto. El software que la empresa manda a construir queda encerrado en su propia operación: cuesta, se amortiza lento y nunca genera un peso de ingreso.',
       en: 'Investing in technology is necessary, but the ROI case rests on internal savings alone, and those savings rarely cover the project. The software a company commissions stays locked inside its own operation: it costs money, pays back slowly and never earns a peso.'
@@ -343,20 +466,7 @@ export const companies: readonly Company[] = [
       es: 'Integración de sistemas e implementación de IA que estandarizan y automatizan procesos.',
       en: 'Systems integration and AI implementation that standardizes and automates processes.'
     },
-    industries: {
-      es: [
-        'Industria y servicios',
-        'Integración de sistemas',
-        'IA aplicada',
-        'Automatización'
-      ],
-      en: [
-        'Industry and services',
-        'Systems integration',
-        'Applied AI',
-        'Process automation'
-      ]
-    },
+    industries: ['software'],
     problem: {
       es: 'La operación vive en hojas de cálculo y en sistemas que no se hablan entre sí. Cada área captura lo mismo con otro nombre, la versión buena del archivo la tiene una persona y nadie puede decir cuánto tarda de verdad un proceso. Sin dato estandarizado y medido no hay nada que automatizar: primero hay que poner orden, y ese es el trabajo que siempre se pospone.',
       en: 'The operation lives in spreadsheets and in systems that do not talk to each other. Each area records the same thing under a different name, the good version of the file sits with one person, and nobody can say how long a process actually takes. Without standardized, measured data there is nothing to automate: the ordering has to come first, and that is the work that always gets postponed.'
@@ -411,6 +521,32 @@ export const companies: readonly Company[] = [
       person: 'Álvaro Castillo',
       email: 'hola@alvarocastillo.dev',
       phone: '221 240 1587'
+    }
+  },
+  {
+    slug: 'the-x-chair',
+    name: 'The X-Chair',
+    logo: '/empresas/the-x-chair.webp',
+    region: {
+      es: 'México',
+      en: 'Mexico'
+    },
+    shortDescription: {
+      es: 'Silla de ruedas controlada por la mente, con interfaz cerebro-computadora.',
+      en: 'Mind-controlled wheelchair with a brain-computer interface.'
+    },
+    industries: ['healthtech', 'mobility'],
+    problem: {
+      es: 'Una silla de ruedas convencional se opera con un control físico. Para quien no puede usarlo, el límite no es la silla: es no tener una forma propia de decirle hacia dónde ir.',
+      en: 'A conventional wheelchair is operated with a physical control. For someone who cannot use it, the limit is not the chair: it is having no way of their own to tell it where to go.'
+    },
+    solution: {
+      es: 'Silla de ruedas controlada por la mente, con neurotecnología e interfaz cerebro-computadora. La desarrolla The X-Company, con talento mexicano, para la salud y el bienestar de quien la necesita. El desarrollo obtuvo el primer lugar en el hackathon del Harvard Health Systems Innovation Lab.',
+      en: 'A mind-controlled wheelchair built with neurotechnology and a brain-computer interface. The X-Company develops it, with Mexican talent, for the health and wellbeing of the people who need it. The work won first place at the Harvard Health Systems Innovation Lab hackathon.'
+    },
+    contact: {
+      person: 'Eduardo Zárate Lara',
+      website: 'https://www.instagram.com/the_xchair/'
     }
   }
 ];

@@ -1,12 +1,35 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import { marked } from "marked";
+import { marked, Renderer, type Tokens } from "marked";
+import { withNoteUtm } from "@/lib/utm";
 import type { BlogPost, BlogPostImage } from "../interfaces/blog.interface";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "blog");
 
 marked.use({ gfm: true, async: false });
+
+function escapeAttr(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+class NoteLinkRenderer extends Renderer {
+  constructor(private readonly slug: string) {
+    super();
+  }
+
+  link({ href, title, tokens, text, autolink }: Tokens.Link): string {
+    const inner = autolink ? escapeAttr(text) : this.parser.parseInline(tokens);
+    const next = withNoteUtm(href, this.slug);
+    if (!next) return inner;
+    const titleAttr = title ? ` title="${escapeAttr(title)}"` : "";
+    return `<a href="${escapeAttr(next)}"${titleAttr} target="_blank" rel="noopener noreferrer">${inner}</a>`;
+  }
+}
 
 interface Frontmatter {
   title: string;
@@ -43,7 +66,7 @@ function parseFile(fileName: string): BlogPost {
     tags: meta.tags ?? [],
     image: meta.image,
     readingMinutes: Math.max(1, Math.round(words / 200)),
-    contentHtml: marked.parse(content) as string,
+    contentHtml: marked.parse(content, { renderer: new NoteLinkRenderer(slug) }) as string,
   };
 }
 

@@ -17,6 +17,8 @@ const ROUTES = [
   { path: "/prensa", priority: 0.8, frequency: "weekly" as const },
   { path: "/contacto", priority: 0.7, frequency: "yearly" as const },
   { path: "/blog", priority: 0.9, frequency: "weekly" as const },
+  { path: "/aviso-de-privacidad", priority: 0.3, frequency: "yearly" as const },
+  { path: "/aviso-de-cookies", priority: 0.3, frequency: "yearly" as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -32,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     for (const slug of getPostSlugs(locale)) {
       entries.push({
-        url: `${SITE_URL}/${locale}/blog/${slug}`,
+        url: `${SITE_URL}/${locale}/blog/${slug}/`,
         changeFrequency: "monthly",
         priority: 0.8,
       });

@@ -1,4 +1,5 @@
-import { Link2, MapPin } from "lucide-react";
+import { Link2, MapPin, MessageCircle, Phone } from "lucide-react";
+import { OFFICE, OFFICE_ADDRESS_LINE, OFFICE_MAPS_URL } from "@/modules/cores/site/src/config/site";
 import { SectionHeader } from "@/modules/shared/ui/src/components";
 
 interface ContactLocationProps {
@@ -6,23 +7,21 @@ interface ContactLocationProps {
   title: string;
   description: string;
   addressLabel: string;
-  address: string;
-  addressHref?: string;
   mapNote: string;
+  phoneLabel: string;
+  whatsappLabel: string;
   socialLabel: string;
   social: { label: string; href: string }[];
 }
-
-const MAP_LINK = "https://www.google.com/maps?q=19.113973,-98.246581";
 
 export function ContactLocation({
   eyebrow,
   title,
   description,
   addressLabel,
-  address,
-  addressHref,
   mapNote,
+  phoneLabel,
+  whatsappLabel,
   socialLabel,
   social,
 }: ContactLocationProps) {
@@ -34,13 +33,14 @@ export function ContactLocation({
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
           <a
-            href={addressHref || MAP_LINK}
+            href={OFFICE_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="flex min-h-80 flex-col items-center justify-center gap-4 rounded-md border border-line bg-elevated p-8 text-center transition hover:border-brand hover:shadow-lg"
           >
             <MapPin strokeWidth={1.5} size={48} className="text-brand" aria-hidden="true" />
-            <p className="text-body font-medium text-ink">{address}</p>
+            <p className="text-body font-medium text-ink">{OFFICE.place}</p>
+            <p className="text-small text-ink-secondary">{OFFICE_ADDRESS_LINE}</p>
             <span className="text-small text-link">{mapNote}</span>
           </a>
           <div className="card h-fit p-8">
@@ -48,13 +48,43 @@ export function ContactLocation({
               <MapPin strokeWidth={1.5} size={24} className="mt-1 shrink-0 text-accent" aria-hidden="true" />
               <div>
                 <h3 className="text-h4 font-display text-ink">{addressLabel}</h3>
-                {addressHref ? (
-                  <a href={addressHref} target="_blank" rel="noopener noreferrer" className="mt-2 block text-body text-link hover:underline">
-                    {address}
-                  </a>
-                ) : (
-                  <p className="mt-2 text-body text-ink-secondary">{address}</p>
-                )}
+                <a
+                  href={OFFICE_MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block text-body text-link hover:underline"
+                >
+                  {OFFICE.place}
+                  <span className="mt-1 block text-ink-secondary">{OFFICE_ADDRESS_LINE}</span>
+                </a>
+              </div>
+            </div>
+            <div className="mt-6 flex items-start gap-3">
+              <Phone strokeWidth={1.5} size={24} className="mt-1 shrink-0 text-accent" aria-hidden="true" />
+              <div>
+                <h3 className="text-h4 font-display text-ink">{phoneLabel}</h3>
+                <a
+                  href={`tel:${OFFICE.phoneTel}`}
+                  aria-label={`${phoneLabel}: ${OFFICE.phoneDisplay}`}
+                  className="mt-2 block text-body text-link hover:underline"
+                >
+                  {OFFICE.phoneDisplay}
+                </a>
+              </div>
+            </div>
+            <div className="mt-6 flex items-start gap-3">
+              <MessageCircle strokeWidth={1.5} size={24} className="mt-1 shrink-0 text-accent" aria-hidden="true" />
+              <div>
+                <h3 className="text-h4 font-display text-ink">{whatsappLabel}</h3>
+                <a
+                  href={OFFICE.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${whatsappLabel}: ${OFFICE.phoneDisplay}`}
+                  className="mt-2 block text-body text-link hover:underline"
+                >
+                  {OFFICE.phoneDisplay}
+                </a>
               </div>
             </div>
             <div className="mt-8 border-t border-line pt-6">

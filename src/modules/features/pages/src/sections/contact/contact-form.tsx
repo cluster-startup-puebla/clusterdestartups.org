@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { SectionHeader } from "@/modules/shared/ui/src/components";
 
 interface FieldProps {
@@ -21,7 +22,13 @@ interface ContactFormProps {
   profile: { label: string; options: string[] };
   infoCardLabel: string;
   submitLabel: string;
+  sendingLabel: string;
   successMessage: string;
+  alreadySentMessage: string;
+  errorMessage: string;
+  privacyNote: string;
+  privacyLinkLabel: string;
+  locale: "es" | "en";
   errors: {
     nameRequired: string;
     emailRequired: string;
@@ -30,8 +37,17 @@ interface ContactFormProps {
   };
 }
 
-const MAILTO = "contacto@clusterdestartups.org";
+const WEBHOOK_URL = "https://hook.us2.make.com/4xy5fcj1baogs2tv2m7mj5kskvv7fv6q";
+const SENT_KEY = "csi-contact-sent";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function hasSentFlag() {
+  try {
+    return localStorage.getItem(SENT_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
 
 export function ContactForm({
   eyebrow,
@@ -41,7 +57,13 @@ export function ContactForm({
   profile,
   infoCardLabel,
   submitLabel,
+  sendingLabel,
   successMessage,
+  alreadySentMessage,
+  errorMessage,
+  privacyNote,
+  privacyLinkLabel,
+  locale,
   errors,
 }: ContactFormProps) {
   const [name, setName] = useState("");
@@ -50,7 +72,14 @@ export function ContactForm({
   const [selectedProfile, setSelectedProfile] = useState(profile.options[0]);
   const [message, setMessage] = useState("");
   const [fieldErrors, setFieldErrors] = useState<Record<string, string | undefined>>({});
+  const [sending, setSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [alreadySent, setAlreadySent] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+
+  useEffect(() => {
+    if (hasSentFlag()) setAlreadySent(true);
+  }, []);
 
   function validate() {
     const next: Record<string, string | undefined> = {};
@@ -61,24 +90,62 @@ export function ContactForm({
     return next;
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (sending || alreadySent || hasSentFlag()) {
+      if (hasSentFlag()) setAlreadySent(true);
+      return;
+    }
+
     const next = validate();
     setFieldErrors(next);
-    if (Object.keys(next).length > 0) return;
+    if (Object.keys(next).length > 0) {
+      setSubmitted(false);
+      setSubmitError(false);
+      return;
+    }
 
-    const subject = `[Sitio web CSI] ${selectedProfile}`;
-    const body = [
-      `Nombre: ${name}`,
-      `Correo: ${email}`,
-      `Organización: ${organization || "—"}`,
-      `Perfil: ${selectedProfile}`,
-      "",
-      message,
-    ].join("\n");
+    setSending(true);
+    setSubmitted(false);
+    setSubmitError(false);
 
-    window.location.href = `mailto:${MAILTO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          organization: organization.trim(),
+          profile: selectedProfile,
+          message: message.trim(),
+          locale,
+          source: window.location.href,
+        }),
+      });
+
+      if (!response.ok) {
+        setSubmitError(true);
+        return;
+      }
+
+      try {
+        localStorage.setItem(SENT_KEY, "1");
+      } catch {
+        // The send already succeeded; the flag is only a device lock.
+      }
+      setName("");
+      setEmail("");
+      setOrganization("");
+      setMessage("");
+      setSelectedProfile(profile.options[0]);
+      setAlreadySent(true);
+      setSubmitted(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   const nameErrorId = "contact-name-error";
@@ -106,6 +173,7 @@ export function ContactForm({
                   autoComplete="name"
                   placeholder={fields.name.placeholder}
                   value={name}
+                  disabled={alreadySent}
                   onChange={(e) => setName(e.target.value)}
                   aria-invalid={Boolean(fieldErrors.name)}
                   aria-describedby={fieldErrors.name ? nameErrorId : undefined}
@@ -127,6 +195,7 @@ export function ContactForm({
                   autoComplete="email"
                   placeholder={fields.email.placeholder}
                   value={email}
+                  disabled={alreadySent}
                   onChange={(e) => setEmail(e.target.value)}
                   aria-invalid={Boolean(fieldErrors.email)}
                   aria-describedby={fieldErrors.email ? emailErrorId : undefined}
@@ -149,6 +218,7 @@ export function ContactForm({
                 autoComplete="organization"
                 placeholder={fields.organization.placeholder}
                 value={organization}
+                disabled={alreadySent}
                 onChange={(e) => setOrganization(e.target.value)}
               />
             </div>
@@ -160,6 +230,7 @@ export function ContactForm({
                 <button
                   key={option}
                   type="button"
+                  disabled={alreadySent}
                   onClick={() => setSelectedProfile(option)}
                   className={`rounded-full border px-3 py-1.5 text-small transition ${
                     selectedProfile === option
@@ -181,6 +252,7 @@ export function ContactForm({
                 rows={3}
                 placeholder={fields.message.placeholder}
                 value={message}
+                disabled={alreadySent}
                 onChange={(e) => setMessage(e.target.value)}
                 aria-invalid={Boolean(fieldErrors.message)}
                 aria-describedby={fieldErrors.message ? messageErrorId : undefined}
@@ -191,13 +263,29 @@ export function ContactForm({
                 </p>
               )}
             </div>
-            <button type="submit" className="btn btn-primary mt-4 w-full">
-              {submitLabel}
+            <p className="mt-4 text-small text-ink-muted">
+              {privacyNote}{" "}
+              <Link href="/aviso-de-privacidad" className="text-link">
+                {privacyLinkLabel}
+              </Link>
+              .
+            </p>
+            <button
+              type="submit"
+              className="btn btn-primary mt-4 w-full disabled:cursor-not-allowed disabled:opacity-70"
+              disabled={sending || alreadySent}
+            >
+              {sending ? sendingLabel : submitLabel}
             </button>
           </div>
-          {submitted && (
+          {(submitted || alreadySent) && (
             <p role="status" className="text-center text-small text-success">
-              {successMessage}
+              {submitted ? successMessage : alreadySentMessage}
+            </p>
+          )}
+          {submitError && (
+            <p role="alert" className="text-center text-small text-error">
+              {errorMessage}
             </p>
           )}
         </form>

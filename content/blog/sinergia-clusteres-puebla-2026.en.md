@@ -1,13 +1,13 @@
 ---
-title: "Sinergia Clústeres Puebla: 24 clusters build agreements to strengthen the state's economy"
-description: "The Cluster of Startups and Innovation participated in Sinergia Clústeres Puebla, where 10 clusters presented their capabilities and explored collaboration opportunities under the motto Know, Connect, Collaborate."
-excerpt: "Representatives from 24 productive clusters gathered at the William O. Jenkins Convention Center Auditorium to build agreements and strengthen Puebla's value chains."
+title: "CSI at Sinergia Clústeres: 24 clusters in Puebla"
+description: "The CSI took part in Sinergia Clústeres Puebla, where 24 productive clusters built agreements to strengthen Puebla's economy and value chains."
+excerpt: "The CSI was at Sinergia Clústeres Puebla. Representatives of 24 productive clusters built agreements for the state's value chains."
 date: "2026-09-10"
 author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
-tags: ["Sinergia Clústeres", "government", "Inter-Cluster Council", "Puebla", "productive clusters"]
+tags: ["CSI Puebla", "Sinergia Clústeres", "Inter-Cluster Council", "Puebla clusters", "economy"]
 image:
-  src: "/prensa/prensa-sinergia-clusteres-grupo.jpg"
+  src: "/prensa/prensa-sinergia-clusteres-grupo.webp"
   alt: "Participants of Sinergia Clústeres Puebla at the William O. Jenkins Convention Center Auditorium"
 ---
 

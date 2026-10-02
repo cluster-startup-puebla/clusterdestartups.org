@@ -19,8 +19,8 @@
   "Footer": {
     "name": "Startup and Innovation Cluster (CSI) A.C.",
     "hub": "Office",
-    "hubAddress": "Av. San Lorenzo Almecatla, Cuautlancingo",
-    "hubCity": "Cuautlancingo, Puebla",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
     "links": "Links",
     "madeIn": "Made in Puebla, Mexico.",
     "home": "Home",
@@ -28,6 +28,16 @@
     "governance": "Team",
     "companies": "Companies",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "instagram": "Instagram",
+    "privacy": "Privacy notice",
+    "cookies": "Cookie notice"
+  },
+  "CookieBanner": {
+    "text": "We use measurement cookies only if you accept them. The contact form uses your name, email, and message so we can reply.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "privacy": "Privacy notice",
+    "cookies": "Cookie notice"
   }
 }

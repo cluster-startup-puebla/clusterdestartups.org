@@ -27,6 +27,8 @@ Tono de marca: **discreta pero seria** — no busca ser protagonista visual, bus
 
 **Nota de exclusión:** este sistema no reutiliza el logotipo, nombre ni isotipo de "Krater32" (referencia de moodboard revisada). Todo elemento gráfico aquí es original para CSI / clusterdestartups.org.
 
+El favicon es una C blanca sobre un cuadrado redondeado `#e8186a`.
+
 ---
 
 ## 2. Paleta de color

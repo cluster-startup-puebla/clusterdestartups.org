@@ -1,13 +1,13 @@
 ---
-title: "Prompt to Product: 46 people built their first project with AI agents in Puebla"
-description: "The Cluster of Startups and Innovation A.C. and Cursor Puebla organized the Prompt to Product buildathon at Workósfera: a beginner-level workshop with Cursor credits and a working tool as the deliverable."
-excerpt: "Registration closed with a waiting list and 46 sign-ups: guided building, your own project with hands-on support, demos and a live raffle at the official Cursor workshop."
+title: "Prompt to Product: CSI and Cursor workshop in Puebla"
+description: "The CSI and Cursor Puebla organized Prompt to Product: 46 people built their first project with AI agents at a workshop in Puebla."
+excerpt: "The CSI and Cursor Puebla filled Prompt to Product: 46 sign-ups, a waiting list, and a working project with AI agents as the deliverable."
 date: "2026-08-27"
 author: "Clúster de Startups e Innovación A.C."
 category: "comunidad"
-tags: ["Cursor", "AI", "workshop", "community"]
+tags: ["CSI Puebla", "Cursor", "Prompt to Product", "AI agents", "Puebla workshop"]
 image:
-  src: "/blog/blog-cursor-workshop.jpg"
+  src: "/blog/blog-cursor-workshop.webp"
   alt: "Participants of the Prompt to Product workshop building with Cursor AI agents in Puebla"
 ---
 

@@ -1,7 +1,7 @@
 {
   "Contact": {
     "metaTitle": "Contacto | Clúster de Startups e Innovación (CSI)",
-    "metaDescription": "Escríbenos para unirte al clúster, proponer vinculación institucional o escribir como prensa. Visítanos en nuestra oficina en Cuautlancingo, Puebla.",
+    "metaDescription": "Escríbenos para unirte al clúster, proponer vinculación institucional o escribir como prensa. Visítanos en nuestra oficina en San Andrés Cholula, Puebla.",
     "form": {
       "eyebrow": "Escríbenos",
       "title": "Cuéntanos quién eres",
@@ -25,7 +25,12 @@
       "messageLabel": "Mensaje",
       "messagePlaceholder": "Cuéntanos en pocas líneas cómo podemos acompañarte.",
       "submitLabel": "Enviar mensaje",
-      "successMessage": "Gracias por escribirnos. Se abrió tu aplicación de correo con el mensaje listo para enviar; si no se abrió, escríbenos directamente a contacto@clusterdestartups.org.",
+      "sendingLabel": "Enviando…",
+      "successMessage": "Gracias por escribirnos. Recibimos tu mensaje y te responderemos pronto. Si lo prefieres, escríbenos a hola@clusterdestartups.org.",
+      "alreadySentMessage": "Ya enviaste un mensaje desde este dispositivo. Si necesitas escribirnos otra vez, usa hola@clusterdestartups.org.",
+      "errorMessage": "No pudimos enviar el mensaje. Intenta de nuevo o escríbenos a hola@clusterdestartups.org.",
+      "privacyNote": "Al enviar, aceptas que usemos estos datos solo para responderte, como se explica en el",
+      "privacyLinkLabel": "aviso de privacidad",
       "errors": {
         "nameRequired": "Escribe tu nombre.",
         "emailRequired": "Escribe tu correo electrónico.",
@@ -36,14 +41,16 @@
     "location": {
       "eyebrow": "Visítanos",
       "title": "Oficina del clúster",
-      "description": "Nuestra oficina está en Cuautlancingo, Puebla.",
+      "description": "Nuestra oficina está en San Andrés Cholula, Puebla.",
       "addressLabel": "Dirección",
-      "address": "Av. San Lorenzo Almecatla, Cuautlancingo, Puebla",
-      "addressHref": "https://maps.app.goo.gl/8EpnaYuVsiyjGYe98",
       "mapNote": "El mapa se carga desde Google Maps; al abrirlo también puedes consultar rutas de acceso.",
+      "phoneLabel": "Teléfono",
+      "whatsappLabel": "WhatsApp",
       "socialLabel": "Redes oficiales",
       "linkedinLabel": "LinkedIn",
-      "linkedinHref": "https://www.linkedin.com/company/cluster-startups-puebla/"
+      "linkedinHref": "https://www.linkedin.com/company/cluster-startups-puebla/",
+      "instagramLabel": "Instagram",
+      "instagramHref": "https://www.instagram.com/cluster_startups/"
     }
   }
 }

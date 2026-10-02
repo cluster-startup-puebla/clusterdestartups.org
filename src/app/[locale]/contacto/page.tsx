@@ -47,7 +47,13 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
         profile={{ label: t("form.profileLabel"), options: t.raw("form.profiles") }}
         infoCardLabel={t("form.infoCardLabel")}
         submitLabel={t("form.submitLabel")}
+        sendingLabel={t("form.sendingLabel")}
         successMessage={t("form.successMessage")}
+        alreadySentMessage={t("form.alreadySentMessage")}
+        errorMessage={t("form.errorMessage")}
+        privacyNote={t("form.privacyNote")}
+        privacyLinkLabel={t("form.privacyLinkLabel")}
+        locale={locale === "en" ? "en" : "es"}
         errors={{
           nameRequired: t("form.errors.nameRequired"),
           emailRequired: t("form.errors.emailRequired"),
@@ -60,12 +66,13 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
         title={t("location.title")}
         description={t("location.description")}
         addressLabel={t("location.addressLabel")}
-        address={t("location.address")}
-        addressHref={t("location.addressHref")}
         mapNote={t("location.mapNote")}
+        phoneLabel={t("location.phoneLabel")}
+        whatsappLabel={t("location.whatsappLabel")}
         socialLabel={t("location.socialLabel")}
         social={[
           { label: t("location.linkedinLabel"), href: t("location.linkedinHref") },
+          { label: t("location.instagramLabel"), href: t("location.instagramHref") },
         ]}
       />
     </main>

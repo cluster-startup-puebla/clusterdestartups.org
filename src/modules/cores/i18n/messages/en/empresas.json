@@ -14,6 +14,7 @@
       "industry": "Industry",
       "region": "Region",
       "clear": "Clear filters",
+      "filters": "Filters",
       "noResults": "No companies match these filters."
     },
     "batch": {

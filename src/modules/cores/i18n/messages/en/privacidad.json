@@ -1,0 +1,67 @@
+{
+  "Privacy": {
+    "metaTitle": "Privacy notice | Clúster de Startups e Innovación (CSI)",
+    "metaDescription": "Privacy notice of Clúster de Startups e Innovación (CSI) A.C.: contact-form data, the transfer to Make.com, and site measurement if you accept cookies.",
+    "eyebrow": "Personal data",
+    "title": "Privacy notice",
+    "updated": "Notice date: October 2, 2026",
+    "sections": [
+      {
+        "heading": "Data controller",
+        "paragraphs": [
+          "The controller of personal data is Clúster de Startups e Innovación (CSI) A.C., a civil association with RFC CSI260615EM5 and address at {officeAddress}.",
+          "This notice applies to https://clusterdestartups.org. It describes how the cluster handles personal data on that site under Mexico's Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP). It is the cluster's own notice: it is not legal advice and it is not a compliance certificate.",
+          "For privacy matters and to exercise your rights, email hola@clusterdestartups.org."
+        ]
+      },
+      {
+        "heading": "Data we collect",
+        "paragraphs": [
+          "The contact form asks for your name, email, organization (optional), profile, message, the language of the page, and the URL from which you submit the form.",
+          "We do not ask for sensitive data or financial data."
+        ]
+      },
+      {
+        "heading": "How we use your data",
+        "paragraphs": [
+          "We use this data for primary purposes: to reply to your contact request, to follow up on a membership inquiry, and to handle press or partnership requests.",
+          "The secondary purpose is to measure how the site is used. That measurement happens only if you accept cookies, as described in the cookies and measurement section. If you decline, we do not use your data for that purpose.",
+          "You can limit the use or disclosure of your data. To limit measurement, decline cookies. For any other limit, email hola@clusterdestartups.org."
+        ]
+      },
+      {
+        "heading": "Transfers",
+        "paragraphs": [
+          "Contact-form data is sent from your browser to a Make.com (Celonis) webhook in the United States. That service delivers it to the cluster's email so we can reply to your request.",
+          "This is an international transfer required for the primary purpose.",
+          "We do not sell personal data."
+        ]
+      },
+      {
+        "heading": "Cookies and measurement",
+        "paragraphs": [
+          "If you accept cookies, we measure site use with Google Tag Manager, container GTM-P4W4WZCS, and with the tags the cluster enables in that container.",
+          "If you decline cookies, measurement stays denied through Consent Mode.",
+          "You can change your mind by deleting the localStorage key csi-consent and reloading the page. The site will ask again."
+        ]
+      },
+      {
+        "heading": "ARCO rights",
+        "paragraphs": [
+          "You may request access, rectification, cancellation, or objection to the processing of your data (ARCO rights), and you may revoke your consent.",
+          "To exercise them, email hola@clusterdestartups.org with your name, how you want us to reply, and the right you want to exercise.",
+          "The response period is 20 business days, in accordance with article 32 of the LFPDPPP.",
+          "If the response does not satisfy you, you may go to the INAI: https://home.inai.org.mx"
+        ]
+      },
+      {
+        "heading": "Changes",
+        "paragraphs": [
+          "If this notice changes, we publish the new version on this same page.",
+          "The date of this notice is October 2, 2026."
+        ]
+      }
+    ],
+    "cookiesLinkLabel": "Read the cookie notice"
+  }
+}

@@ -1,3 +1,4 @@
+import { OFFICE, OFFICE_MAPS_URL } from "@/modules/cores/site/src/config/site";
 import { Button, NodeField } from "@/modules/shared/ui/src/components";
 
 interface HeroProps {
@@ -17,6 +18,23 @@ export function Hero({ eyebrow, title, description, primaryCta, imageSrc, imageA
     url: "https://clusterdestartups.org",
     areaServed: "Puebla, México",
     nonprofitStatus: "NonprofitType",
+    telephone: OFFICE.phoneTel,
+    hasMap: OFFICE_MAPS_URL,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: OFFICE.streetAddress,
+      postalCode: OFFICE.postalCode,
+      addressLocality: OFFICE.locality,
+      addressRegion: OFFICE.region,
+      addressCountry: OFFICE.countryCode,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: OFFICE.phoneTel,
+      contactType: "customer support",
+      availableLanguage: ["Spanish", "English"],
+      areaServed: "MX",
+    },
   };
 
   return (

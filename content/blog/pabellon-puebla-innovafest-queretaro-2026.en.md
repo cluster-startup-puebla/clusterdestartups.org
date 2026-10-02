@@ -1,13 +1,13 @@
 ---
-title: "The Cluster of Startups and Innovation operated the Puebla Pavilion at InnovaFest Querétaro 2026"
-description: "The Cluster of Startups and Innovation (CSI) A.C. from Puebla, led by its president Yamil Álvarez, organized and operated the Puebla Pavilion at InnovaFest Querétaro 2026; the InnovaFest Puebla Organizing Committee was agreed upon."
-excerpt: "Nine actors from the Puebla innovation ecosystem across eight exhibit modules at the Querétaro Centro de Congresos. InnovaFest's National Coordination visited the pavilion and the InnovaFest Puebla Organizing Committee was agreed upon."
+title: "Puebla Pavilion: the CSI at InnovaFest Querétaro 2026"
+description: "The CSI, Puebla's startup cluster, ran the Puebla Pavilion at InnovaFest Querétaro 2026 and set up the InnovaFest Puebla Organizing Committee."
+excerpt: "The CSI organized the Puebla Pavilion at InnovaFest Querétaro: nine ecosystem actors and the InnovaFest Puebla Organizing Committee."
 date: "2026-08-21"
 author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
-tags: ["InnovaFest", "Querétaro", "ecosystem", "Puebla"]
+tags: ["CSI Puebla", "InnovaFest Querétaro", "Puebla Pavilion", "innovation ecosystem", "startups"]
 image:
-  src: "/prensa/prensa-innovafest-queretaro.jpg"
+  src: "/prensa/prensa-innovafest-queretaro.webp"
   alt: "Actors of the Puebla innovation ecosystem at the Puebla Pavilion of InnovaFest Querétaro 2026, operated by the Cluster of Startups and Innovation A.C."
 ---
 

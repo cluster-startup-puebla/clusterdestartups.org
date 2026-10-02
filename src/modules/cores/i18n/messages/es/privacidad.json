@@ -1,0 +1,67 @@
+{
+  "Privacy": {
+    "metaTitle": "Aviso de privacidad | Clúster de Startups e Innovación (CSI)",
+    "metaDescription": "Aviso de privacidad del Clúster de Startups e Innovación (CSI) A.C.: datos del formulario de contacto, transferencia a Make.com y medición del sitio si aceptas cookies.",
+    "eyebrow": "Datos personales",
+    "title": "Aviso de privacidad",
+    "updated": "Fecha del aviso: 2 de octubre de 2026",
+    "sections": [
+      {
+        "heading": "Responsable",
+        "paragraphs": [
+          "El responsable de los datos personales es el Clúster de Startups e Innovación (CSI) A.C., asociación civil con RFC CSI260615EM5 y domicilio en {officeAddress}.",
+          "Este aviso aplica al sitio https://clusterdestartups.org. Describe cómo el clúster trata los datos personales en ese sitio, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP). Es el aviso del propio clúster: no es asesoría legal ni un certificado de cumplimiento.",
+          "Para asuntos de privacidad y para ejercer tus derechos, escribe a hola@clusterdestartups.org."
+        ]
+      },
+      {
+        "heading": "Datos que recabamos",
+        "paragraphs": [
+          "En el formulario de contacto pedimos tu nombre, tu correo, tu organización (opcional), tu perfil, tu mensaje, el idioma de la página y la URL desde la que envías el formulario.",
+          "No pedimos datos sensibles ni datos financieros."
+        ]
+      },
+      {
+        "heading": "Uso de los datos",
+        "paragraphs": [
+          "Usamos esos datos para finalidades primarias: responder tu solicitud de contacto, dar seguimiento a una solicitud de membresía, y atender asuntos de prensa o de vinculación.",
+          "La finalidad secundaria es medir el uso del sitio. Esa medición solo ocurre si aceptas las cookies, como se explica en la sección de cookies y medición. Si las rechazas, no usamos tus datos para esa finalidad.",
+          "Puedes limitar el uso o la divulgación de tus datos. Para la medición, rechaza las cookies. Para cualquier otra limitación, escribe a hola@clusterdestartups.org."
+        ]
+      },
+      {
+        "heading": "Transferencias",
+        "paragraphs": [
+          "Los datos del formulario se envían desde tu navegador a un webhook de Make.com (Celonis), en Estados Unidos. Ese servicio los entrega al correo del clúster para que podamos responder tu solicitud.",
+          "Es una transferencia internacional necesaria para la finalidad primaria.",
+          "No vendemos datos personales."
+        ]
+      },
+      {
+        "heading": "Cookies y medición",
+        "paragraphs": [
+          "Si aceptas las cookies, medimos el uso del sitio con Google Tag Manager, contenedor GTM-P4W4WZCS, y con las etiquetas que el clúster active en ese contenedor.",
+          "Si rechazas las cookies, la medición permanece negada mediante Consent Mode.",
+          "Puedes cambiar de opinión: borra la clave csi-consent de localStorage y recarga la página. El sitio volverá a preguntarte."
+        ]
+      },
+      {
+        "heading": "Derechos ARCO",
+        "paragraphs": [
+          "Puedes solicitar el acceso, la rectificación, la cancelación o la oposición al tratamiento de tus datos (derechos ARCO) y también revocar tu consentimiento.",
+          "Para ejercerlos, envía un correo a hola@clusterdestartups.org con tu nombre, el medio por el que quieres recibir la respuesta y el derecho que quieres ejercer.",
+          "El plazo de respuesta es de 20 días hábiles, conforme al artículo 32 de la LFPDPPP.",
+          "Si la respuesta no te satisface, puedes acudir al INAI: https://home.inai.org.mx"
+        ]
+      },
+      {
+        "heading": "Cambios",
+        "paragraphs": [
+          "Si este aviso cambia, publicamos la versión nueva en esta misma página.",
+          "La fecha de este aviso es el 2 de octubre de 2026."
+        ]
+      }
+    ],
+    "cookiesLinkLabel": "Consulta el aviso de cookies"
+  }
+}

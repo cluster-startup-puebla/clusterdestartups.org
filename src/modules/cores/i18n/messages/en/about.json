@@ -27,7 +27,7 @@
     "missionCardTitle": "Mission",
     "missionCardText": "Create the conditions for startups from Puebla to scale globally: connections between stakeholders, innovation infrastructure, and institutional support.",
     "visionCardTitle": "Vision",
-    "visionCardText": "For Puebla to become a Latin American innovation benchmark, where launching a tech startup is as easy as opening a traditional business.",
+    "visionCardText": "By 2030, starting a tech-based company will be easier than opening a traditional business, and Puebla will be a Latin American benchmark for innovation.",
     "helixEyebrow": "Triple Helix model",
     "helixTitle": "Government, academia, and industry at the same table",
     "helixDescription": "The cluster operates under the Triple Helix model: each stakeholder contributes resources, talent, and decision-making to accelerate the ecosystem.",
@@ -73,8 +73,6 @@
     "legalFactDateLabel": "Date of incorporation",
     "legalFactDateValue": "June 15, 2026",
     "legalCtaLabel": "Contact the cluster",
-    "legalFactAddressLabel": "Cluster office",
-    "legalFactAddressValue": "Av. San Lorenzo Almecatla, CERHAN II, Cuautlancingo, Puebla",
-    "legalFactAddressHref": "https://maps.app.goo.gl/8EpnaYuVsiyjGYe98"
+    "legalFactAddressLabel": "Cluster office"
   }
 }

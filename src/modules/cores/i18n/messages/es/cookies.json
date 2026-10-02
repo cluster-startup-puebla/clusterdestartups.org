@@ -1,0 +1,48 @@
+{
+  "Cookies": {
+    "metaTitle": "Aviso de cookies | Clúster de Startups e Innovación (CSI)",
+    "metaDescription": "Qué guarda clusterdestartups.org en tu navegador, cuándo se activan las cookies de medición de Google y cómo aceptarlas o rechazarlas.",
+    "eyebrow": "Transparencia",
+    "title": "Aviso de cookies",
+    "updated": "2 de octubre de 2026",
+    "sections": [
+      {
+        "heading": "Qué son las cookies",
+        "paragraphs": [
+          "Una cookie es un archivo pequeño que un sitio puede guardar en tu navegador. Este sitio también usa el almacenamiento local del navegador (localStorage) para recordar una preferencia en tu dispositivo.",
+          "El responsable de este sitio es el Clúster de Startups e Innovación (CSI) A.C. Si tienes dudas sobre este aviso, escribe a hola@clusterdestartups.org."
+        ]
+      },
+      {
+        "heading": "Qué guardamos en este sitio",
+        "paragraphs": [
+          "En el HTML de cada página está el contenedor de Google Tag Manager GTM-P4W4WZCS.",
+          "Antes de que ese contenedor cargue, un script de la página fija el modo de consentimiento de Google. Por defecto deniega ad_storage, ad_user_data, ad_personalization y analytics_storage. Esos cuatro permisos solo inician como concedidos si la clave csi-consent de localStorage ya tiene el valor granted. functionality_storage y security_storage quedan concedidos porque el sitio los necesita para funcionar; no sirven para medir ni para publicidad.",
+          "En localStorage guardamos dos claves. csi-consent recuerda si aceptaste o rechazaste la medición. csi-theme guarda si prefieres el tema claro o el oscuro y no es una cookie de seguimiento. Las cookies de medición de Google solo se activan después de que aceptas. Si rechazas, se mantienen apagadas."
+        ]
+      },
+      {
+        "heading": "Cómo aceptar o rechazar",
+        "paragraphs": [
+          "Al entrar verás un aviso con dos opciones: Aceptar y Rechazar.",
+          "Si eliges Aceptar, guardamos csi-consent con el valor granted y llamamos a gtag('consent', 'update') para conceder ad_storage, ad_user_data, ad_personalization y analytics_storage. A partir de ese momento pueden colocarse las cookies de medición de Google.",
+          "Si eliges Rechazar, guardamos csi-consent con el valor denied y actualizamos el consentimiento a denegado. Las cookies de medición permanecen apagadas."
+        ]
+      },
+      {
+        "heading": "Cómo cambiar de opinión",
+        "paragraphs": [
+          "Borra la clave csi-consent de localStorage y recarga la página. El aviso volverá a mostrarse para que elijas de nuevo.",
+          "También puedes borrar las cookies y los datos de este sitio desde los controles de tu navegador."
+        ]
+      },
+      {
+        "heading": "Aviso de privacidad",
+        "paragraphs": [
+          "El formulario de contacto no usa cookies. El tratamiento de los datos que envías se explica en el aviso de privacidad."
+        ]
+      }
+    ],
+    "privacyLinkLabel": "Lee el aviso de privacidad"
+  }
+}

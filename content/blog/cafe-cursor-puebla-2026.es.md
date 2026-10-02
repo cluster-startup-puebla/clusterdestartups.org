@@ -1,13 +1,13 @@
 ---
-title: "Cafe Cursor Puebla: 51 personas en el cafe takeover de IA"
-description: "Cafe Cursor Puebla reunió a 51 personas en formato Cafe Takeover en Workósfera: laptop, café y proyectos propios con Cursor, co-organizado por el equipo de comunidad del Clúster de Startups e Innovación."
-excerpt: "Sin conferencias ni programa rígido: codear, conectar, feedback real y comunidad, con créditos de Cursor Pro canjeables en el momento. El encuentro de IA con mayor asistencia documentada del año en Puebla."
+title: "Cafe Cursor Puebla: el CSI reunió a 51 personas en IA"
+description: "El CSI coorganizó Cafe Cursor Puebla: 51 personas en Workósfera con laptop, café y proyectos propios en Cursor, encuentro de IA del clúster."
+excerpt: "Sin conferencias: codear y conectar. El CSI coorganizó Cafe Cursor Puebla, el encuentro de IA con mayor asistencia documentada del año."
 date: "2026-05-14"
 author: "Clúster de Startups e Innovación A.C."
 category: "comunidad"
-tags: ["Cursor", "IA", "comunidad", "co-working"]
+tags: ["CSI Puebla", "Cafe Cursor", "Cursor", "inteligencia artificial", "comunidad tech"]
 image:
-  src: "/blog/blog-cafe-cursor.jpg"
+  src: "/blog/blog-cafe-cursor.webp"
   alt: "Comunidad de IA trabajando con laptops durante el Cafe Cursor Puebla en Workósfera"
 ---
 
