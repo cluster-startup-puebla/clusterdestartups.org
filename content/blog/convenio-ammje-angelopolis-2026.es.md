@@ -31,6 +31,6 @@ Un convenio de colaboración obliga a las dos partes a pasar de la foto al traba
 
 Días antes, el mismo presidente del Clúster estuvo en [UNLOCK Summit 2026](/es/blog/unlock-summit-zacatlan-2026/) como representante de SEDETRA, en un encuentro de mujeres emprendedoras en Zacatlán. El convenio con AMMJE Angelópolis sigue esa línea: la innovación de Puebla también se construye con quien ya dirige una empresa.
 
-## Cobertura
+## Más información
 
-Agradecemos a [Startupero](https://startupero.mx/de-las-alianzas-a-la-accion-ammje-angelopolis-define-su-siguiente-etapa/) y a [Perspectivas MX](https://perspectivas-mx.com/ammje-angelopolis-firma-dos-convenios-y-presenta-su-plan-de-trabajo-2026-2028-en-su-primera-reunion-ordinaria/) por cubrir la firma. La asociación que suscribió el convenio de colaboración es el Clúster de Startups e Innovación (CSI) A.C.
+Más información en [Startupero](https://startupero.mx/de-las-alianzas-a-la-accion-ammje-angelopolis-define-su-siguiente-etapa/) y en [Perspectivas MX](https://perspectivas-mx.com/ammje-angelopolis-firma-dos-convenios-y-presenta-su-plan-de-trabajo-2026-2028-en-su-primera-reunion-ordinaria/). Agradecemos a ambos medios por cubrir la firma. La asociación que suscribió el convenio de colaboración es el Clúster de Startups e Innovación (CSI) A.C.

@@ -16,6 +16,8 @@ export interface BlogPost {
   date: string;
   author: string;
   tags: string[];
+  /** Slugs del padrón (`companies.ts`) que esta nota vincula. */
+  companies?: string[];
   image?: BlogPostImage;
   /** Fotos extra, además de la portada. También se pueden insertar en el markdown. */
   images?: BlogPostImage[];

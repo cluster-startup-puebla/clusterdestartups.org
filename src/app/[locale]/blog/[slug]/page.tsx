@@ -3,8 +3,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
-import { getPost, getPostSlugs, CATEGORIES } from "@/modules/features/blog/src/services/markdown";
-import { SITE_URL } from "@/modules/cores/site/src/config/site";
+import { getPost, getPostSlugs, listPosts, CATEGORIES } from "@/modules/features/blog/src/services/markdown";
+import { RelatedNotes } from "@/modules/features/blog/src/components/related-notes";
+import { LinkedCompanies } from "@/modules/features/blog/src/components/linked-companies";
+import { getCompany, localize } from "@/data/companies";
+import { ORGANIZATION_ID, SITE_URL, WEBSITE_ID } from "@/modules/cores/site/src/config/site";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -66,6 +69,24 @@ export default async function BlogPostPage({
   const post = getPost(slug, locale);
   if (!post) notFound();
   const t = await getTranslations({ locale, namespace: "Blog" });
+  const relatedPosts = listPosts(locale).map(({ contentHtml, ...meta }) => {
+    void contentHtml;
+    return meta;
+  });
+
+  const linkedCompanies = (post.companies ?? [])
+    .map((companySlug) => getCompany(companySlug))
+    .filter((company) => company !== undefined)
+    .map((company) => ({
+      slug: company.slug,
+      name: company.name,
+      description: company.shortDescription
+        ? localize(company.shortDescription, locale)
+        : undefined,
+      logo: company.logo,
+      logoDark: company.logoDark,
+      logoInk: company.logoInk,
+    }));
 
   const isPress = post.category === CATEGORIES.press;
   const jsonLd = {
@@ -75,14 +96,26 @@ export default async function BlogPostPage({
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
-    author: { "@type": "Organization", name: post.author },
+    author: { "@id": ORGANIZATION_ID },
+    publisher: { "@id": ORGANIZATION_ID },
+    mainEntityOfPage: `${SITE_URL}/${locale}/blog/${slug}/`,
+    isPartOf: { "@id": WEBSITE_ID },
     image: [post.image, ...(post.images ?? [])]
       .filter((item): item is NonNullable<typeof item> => Boolean(item?.src))
       .map((item) => `${SITE_URL}${item.src}`),
     articleSection: post.category,
     url: `${SITE_URL}/${locale}/blog/${slug}/`,
     keywords: post.tags.join(", "),
-    inLanguage: locale,
+    inLanguage: locale === "en" ? "en" : "es-MX",
+    ...(linkedCompanies.length > 0
+      ? {
+          mentions: linkedCompanies.map((company) => ({
+            "@type": "Organization",
+            name: company.name,
+            url: `${SITE_URL}/${locale}/empresas/${company.slug}/`,
+          })),
+        }
+      : {}),
   };
 
   return (
@@ -113,12 +146,12 @@ export default async function BlogPostPage({
           </div>
           <h1 className="text-h1 mt-2 font-display">{post.title}</h1>
           <p className="text-body-lg mt-4 text-ink-secondary">{post.excerpt}</p>
-          <p className="mt-6 flex items-center gap-3 text-small text-ink-muted">
+          <p className="mt-6 flex flex-col items-start gap-1 text-small text-ink-muted md:flex-row md:items-center md:gap-3">
             <span>{post.author}</span>
-            <span aria-hidden="true">·</span>
-            <span>
-              {t("readingTime", { minutes: post.readingMinutes })}
+            <span aria-hidden="true" className="hidden md:inline">
+              ·
             </span>
+            <span>{t("readingTime", { minutes: post.readingMinutes })}</span>
           </p>
         </header>
 
@@ -140,7 +173,15 @@ export default async function BlogPostPage({
           className="article-body mt-12"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
+
+        <LinkedCompanies
+          companies={linkedCompanies}
+          label={t("clusterCompany")}
+          viewLabel={t("viewCompany")}
+        />
       </article>
+
+      <RelatedNotes posts={relatedPosts} currentSlug={slug} />
     </main>
   );
 }

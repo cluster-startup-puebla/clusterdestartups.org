@@ -38,6 +38,7 @@ export function CompanyRow({ company, locale, labels }: CompanyRowProps) {
         logo={company.logo}
         className="h-[46px] w-[91px] shrink-0 sm:h-[53px] sm:w-[122px]"
         dark={company.logoDark}
+        ink={company.logoInk}
       />
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-baseline gap-x-2">

@@ -69,6 +69,11 @@ export type Company = {
   logo?: string;
   /** Si el logo es claro/transparente, aplicar filter en modo claro para que sea visible. */
   logoDark?: boolean;
+  /**
+   * Wordmark en tinta oscura sobre transparente. En modo oscuro se invierte
+   * conservando el color de marca, para que la palabra no desaparezca.
+   */
+  logoInk?: boolean;
   /** Lote de ingreso al clúster. "early" = fundacionales. */
   batch?: string;
   /** Ubicación de la empresa (localized). */
@@ -394,6 +399,75 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'netv',
+    name: 'NETV',
+    logo: '/empresas/netv.webp',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Ecosistema phygital donde las empresas se conectan, venden, compran y aprenden después del evento.',
+      en: 'Phygital ecosystem where companies connect, sell, buy and learn after the event ends.'
+    },
+    industries: ['software'],
+    problem: {
+      es: 'El siguiente cliente, proveedor o socio ya está en el mercado, pero el contacto vive en tarjetas, grupos de WhatsApp y cafés pendientes. Un congreso dura unos días y lo que se habló ahí se pierde cuando termina.',
+      en: 'The next customer, supplier or partner is already in the market, but the contact lives on business cards, WhatsApp groups and coffees that never happen. A congress lasts a few days, and what was discussed there is lost when it ends.'
+    },
+    solution: {
+      es: 'NETV Business Global Community, comunidad empresarial nacida en Puebla, junta eso en un solo ecosistema. La inteligencia artificial detecta quién le sirve a quién, y los eventos y las herramientas comerciales convierten esa conexión en contrato. El Recinto Digital mantiene lobby, auditorios, expo y sala de negocios junto a lo presencial, y lo que pasa en el evento queda registrado para seguir vendiendo después.',
+      en: 'NETV Business Global Community, a business community born in Puebla, brings that into one ecosystem. Artificial intelligence finds who is useful to whom, and events plus commercial tools turn that connection into a contract. The Digital Venue keeps the lobby, auditoriums, expo and deal room alongside the in-person event, and what happens there stays on record so selling can continue afterward.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Eventos y Recinto Digital',
+          en: 'Events and Digital Venue'
+        },
+        description: {
+          es: 'Congresos, ferias y ruedas de negocio con lobby, auditorios, expo y sala de negocios. Lo presencial y lo digital viven en el mismo lugar.',
+          en: 'Congresses, fairs and business matchmaking with a lobby, auditoriums, an expo and a deal room. In-person and digital live in the same place.'
+        }
+      },
+      {
+        name: {
+          es: 'Hub Comercial',
+          en: 'Commercial Hub'
+        },
+        description: {
+          es: 'Marketplace, promociones con cupón, cotizaciones, pool de compras, trueque y foro empresarial.',
+          en: 'Marketplace, coupon promotions, quotes, a buying pool, barter and a business forum.'
+        }
+      },
+      {
+        name: {
+          es: 'Conexión',
+          en: 'Connection'
+        },
+        description: {
+          es: 'Redes de aliados, clientes y proveedores, con match por objetivo, giro y ciudad, más oportunidades, mesas de negociación y círculos.',
+          en: 'Networks of allies, customers and suppliers, with matching by goal, industry and city, plus opportunities, negotiation tables and circles.'
+        }
+      },
+      {
+        name: {
+          es: 'Academia',
+          en: 'Academy'
+        },
+        description: {
+          es: 'Cursos en vivo o grabados, evaluaciones, constancias verificables, mentoría y las memorias de cada congreso.',
+          en: 'Live or recorded courses, assessments, verifiable certificates, mentoring and the recordings of each congress.'
+        }
+      }
+    ],
+    contact: {
+      person: 'Francisco Vara',
+      role: 'CEO',
+      website: 'https://netv.app/'
+    }
+  },
+  {
     slug: 'oxtron',
     name: 'Oxtron',
     logo: '/empresas/oxtron.webp',
@@ -450,6 +524,76 @@ export const companies: readonly Company[] = [
       person: 'Yamil Álvarez',
       role: 'CEO',
       email: 'yamil@radek.mx'
+    }
+  },
+  {
+    slug: 'rocka',
+    name: 'Rocka',
+    logo: '/empresas/rocka.webp',
+    logoInk: true,
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Gestión comercial del asesor inmobiliario certificado: expediente, cita, contrato y firma.',
+      en: 'Commercial operations for certified real estate advisors: file, appointment, contract and signature.'
+    },
+    industries: ['software'],
+    problem: {
+      es: 'Certificarse dejó de ser opcional en estados clave, pero el asesor certificado sigue cerrando la operación en WhatsApp y Excel. El expediente, la cita, la negociación y el contrato no viven en un solo lugar, y el certificado no cambia la herramienta con la que trabaja. Las plataformas inmobiliarias, además, aceptan a cualquiera: la certificación no es requisito para entrar.',
+      en: 'Certification stopped being optional in key states, but the certified advisor still closes the deal in WhatsApp and Excel. The file, the appointment, the negotiation and the contract do not live in one place, and the certificate does not change the tool they work with. Real estate platforms also let anyone in: certification is not required to join.'
+    },
+    solution: {
+      es: 'Plataforma de gestión comercial solo para asesores certificados. Cubre el ciclo de la transacción en México: registro y verificación de quienes participan, expediente, citas, negociación, contrato digital y firma electrónica. El expediente usa los documentos con los que de verdad se compra y se vende aquí: escrituras, avalúo, predial, INE, CURP, constancia fiscal, Infonavit y Fovissste. La certificación es la puerta de entrada.',
+      en: 'A commercial-management platform only for certified advisors. It covers the transaction cycle in Mexico: registering and verifying the people involved, the file, appointments, negotiation, a digital contract and electronic signature. The file uses the documents a purchase and sale actually requires here: deeds, appraisal, property tax, INE, CURP, tax ID certificate, Infonavit and Fovissste. Certification is the way in.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Expediente',
+          en: 'Transaction file'
+        },
+        description: {
+          es: 'Escrituras, avalúo, predial, INE, CURP, constancia fiscal, Infonavit y Fovissste, en el formato con el que se cierra una operación en México.',
+          en: 'Deeds, appraisal, property tax, INE, CURP, tax ID certificate, Infonavit and Fovissste, in the form a transaction actually closes with in Mexico.'
+        }
+      },
+      {
+        name: {
+          es: 'Citas y negociación',
+          en: 'Appointments and negotiation'
+        },
+        description: {
+          es: 'La cita y la negociación del asesor quedan registradas en la misma plataforma.',
+          en: 'The advisor’s appointments and negotiation stay on the same platform.'
+        }
+      },
+      {
+        name: {
+          es: 'Contrato y firma',
+          en: 'Contract and signature'
+        },
+        description: {
+          es: 'Contrato digital y firma electrónica al cierre de la negociación.',
+          en: 'A digital contract and electronic signature when the negotiation closes.'
+        }
+      },
+      {
+        name: {
+          es: 'Verificación',
+          en: 'Verification'
+        },
+        description: {
+          es: 'Cada actor y cada documento pasa por verificación. Solo entran asesores certificados.',
+          en: 'Every party and every document goes through verification. Only certified advisors get in.'
+        }
+      }
+    ],
+    contact: {
+      person: 'Israel Moreno',
+      website: 'https://rocka.mx/',
+      email: 'contacto@rocka.mx'
     }
   },
   {
@@ -527,6 +671,7 @@ export const companies: readonly Company[] = [
     slug: 'the-x-chair',
     name: 'The X-Chair',
     logo: '/empresas/the-x-chair.webp',
+    logoInk: true,
     region: {
       es: 'México',
       en: 'Mexico'
@@ -546,7 +691,7 @@ export const companies: readonly Company[] = [
     },
     contact: {
       person: 'Eduardo Zárate Lara',
-      website: 'https://www.instagram.com/the_xchair/'
+      website: 'https://thexcompany.netlify.app'
     }
   }
 ];

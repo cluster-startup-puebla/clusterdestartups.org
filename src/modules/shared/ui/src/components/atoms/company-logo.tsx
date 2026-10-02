@@ -7,13 +7,20 @@ interface CompanyLogoProps {
   logo?: string;
   className?: string;
   dark?: boolean;
+  /** Dark wordmark. In dark theme, invert the ink and keep the brand color. */
+  ink?: boolean;
 }
 
-export function CompanyLogo({ name, logo, className = "size-14", dark = false }: CompanyLogoProps) {
+export function CompanyLogo({ name, logo, className = "size-14", dark = false, ink = false }: CompanyLogoProps) {
   const { theme, mounted } = useTheme();
 
   if (logo) {
-    const filter = mounted && dark && theme !== "dark" ? "brightness(0)" : "none";
+    const filter =
+      mounted && dark && theme !== "dark"
+        ? "brightness(0)"
+        : mounted && ink && theme === "dark"
+          ? "invert(1) hue-rotate(180deg)"
+          : "none";
 
     return (
       <span className={`${className} flex items-center justify-center rounded-md p-1.5`}>

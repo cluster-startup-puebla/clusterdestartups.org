@@ -35,6 +35,6 @@ Ahí entra el Clúster. La innovación de Puebla tiene que demostrar utilidad en
 
 En el mismo acto, la regidora Maru Fernández presentó la Expo Cultura Café y Arte Zacatlán 2026, prevista para los primeros días de octubre, con ponencias de productores y funcionarios del Cauca. Es la vitrina inmediata del hermanamiento. El trabajo de fondo —proceso, datos y tecnificación— es el que decide si esa expo se vuelve capacidad instalada.
 
-## Fuente
+## Más información
 
-Boletín del Gobierno Municipal de Zacatlán: [Zacatlán y Cauca, Colombia firman hermanamiento y hacen alianza estratégica procafé](https://zacatlan.gob.mx/boletines/2026/09/10/zacatlan-y-cauca-colombia-firman-hermanamiento-y-hacen-alianza-estrategica-procafe/). Agradecemos al Ayuntamiento el registro del acto. El [Clúster de Startups e Innovación](/es/quienes-somos/) asistió para seguir lo que ese convenio puede mover en tecnología y en el campo.
+Más información en el boletín del Gobierno Municipal de Zacatlán: [Zacatlán y Cauca, Colombia firman hermanamiento y hacen alianza estratégica procafé](https://zacatlan.gob.mx/boletines/2026/09/10/zacatlan-y-cauca-colombia-firman-hermanamiento-y-hacen-alianza-estrategica-procafe/). Agradecemos al Ayuntamiento el registro del acto. El [Clúster de Startups e Innovación](/es/quienes-somos/) asistió para seguir lo que ese convenio puede mover en tecnología y en el campo.

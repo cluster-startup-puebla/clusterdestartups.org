@@ -1,7 +1,7 @@
 {
   "Companies": {
-    "metaTitle": "Cluster companies",
-    "metaDescription": "Directory of startups and companies that are part of the Startup and Innovation Cluster in Puebla: what they build, the problems they solve, and how to reach them.",
+    "metaTitle": "Startup directory in Puebla",
+    "metaDescription": "Directory of startups in Puebla that belong to the Startup and Innovation Cluster: what they build, the problems they solve, and how to reach them.",
     "title": "Cluster companies",
     "subtitle": "Startups and companies connected through the cluster: what they build and the industries they serve.",
     "viewDetail": "View profile",
@@ -32,7 +32,9 @@
       "website": "Website",
       "demo": "Demo",
       "email": "Email",
-      "phone": "Phone"
+      "phone": "Phone",
+      "community": "In the community",
+      "readNote": "Read the note"
     }
   }
 }

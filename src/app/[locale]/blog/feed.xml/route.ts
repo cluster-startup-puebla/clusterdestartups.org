@@ -16,15 +16,15 @@ export async function GET(
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Blog" });
   const posts = listPosts(locale);
-  const blogUrl = `${SITE_URL}/${locale}/blog`;
+  const blogUrl = `${SITE_URL}/${locale}/blog/`;
 
   const items = posts
     .map(
       (post) => `
     <item>
       <title>${post.title}</title>
-      <link>${blogUrl}/${post.slug}/</link>
-      <guid isPermaLink="true">${blogUrl}/${post.slug}/</guid>
+      <link>${blogUrl}${post.slug}/</link>
+      <guid isPermaLink="true">${blogUrl}${post.slug}/</guid>
       <description>${post.description}</description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <author>${post.author}</author>
@@ -40,7 +40,7 @@ export async function GET(
     <link>${blogUrl}</link>
     <description>${t("description")}</description>
     <language>${locale}</language>
-    <atom:link href="${blogUrl}/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="${SITE_URL}/${locale}/blog/feed.xml" rel="self" type="application/rss+xml"/>
     ${items}
   </channel>
 </rss>`;

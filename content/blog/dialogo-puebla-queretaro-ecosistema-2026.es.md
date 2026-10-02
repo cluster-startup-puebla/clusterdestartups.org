@@ -29,6 +29,6 @@ Un ecosistema tecnológico no se decreta en un solo municipio. Se arma cuando la
 
 Para Puebla, el diálogo sirve si convierte esa vecindad en trabajo: startups poblanas que encuentren industria y talento en Querétaro, y proyectos queretanos que encuentren en Puebla capacidad de innovar. La reunión del 24 de septiembre abrió esa colaboración.
 
-## La publicación
+## Más información
 
-Agradecemos a Rodrigo Ruiz Ballesteros el registro de la reunión en [Instagram](https://www.instagram.com/p/DdsCbzYtWWN/). Esa nota mira hacia Querétaro. La asociación que se sentó a la mesa es el Clúster de Startups e Innovación (CSI) A.C., y desde aquí el acento está en Puebla: seguir el diálogo para que los dos ecosistemas tecnológicos se construyan juntos.
+Más información en el registro de la reunión en [Instagram](https://www.instagram.com/p/DdsCbzYtWWN/) y en la entrevista de [Alternativo MX](https://alternativo.mx/rodrigo-ruiz-bloque-innovacion-tecnologia-queretaro/) sobre BLOQUE. Agradecemos a Rodrigo Ruiz Ballesteros el registro. Esa nota mira hacia Querétaro. La asociación que se sentó a la mesa es el Clúster de Startups e Innovación (CSI) A.C., y desde aquí el acento está en Puebla: seguir el diálogo para que los dos ecosistemas tecnológicos se construyan juntos.

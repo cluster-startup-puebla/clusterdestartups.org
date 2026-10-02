@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
+import { HomePageJsonLd } from "@/modules/cores/site/src/components/site-json-ld";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { About } from "@/modules/features/pages/src/sections/home/about";
 import { ClosingCta } from "@/modules/features/pages/src/sections/home/closing-cta";
@@ -23,6 +24,23 @@ export async function generateMetadata({
     route: "/",
     title: t("metaTitle"),
     description: t("metaDescription"),
+    keywords:
+      locale === "en"
+        ? [
+            "startups in Puebla",
+            "Puebla startups",
+            "startup cluster",
+            "innovation cluster Puebla",
+            "Cluster Startups",
+          ]
+        : [
+            "startups en Puebla",
+            "Puebla startups",
+            "clúster de startups",
+            "cluster startups",
+            "innovación en Puebla",
+            "clúster de innovación",
+          ],
   });
 }
 
@@ -39,6 +57,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
   return (
     <>
+      <HomePageJsonLd locale={locale} title={t("metaTitle")} description={t("metaDescription")} />
       <Hero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}

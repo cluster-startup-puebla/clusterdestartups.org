@@ -1,4 +1,3 @@
-import { OFFICE, OFFICE_MAPS_URL } from "@/modules/cores/site/src/config/site";
 import { Button, NodeField } from "@/modules/shared/ui/src/components";
 import { HeroCarousel } from "./hero-carousel";
 
@@ -10,39 +9,9 @@ interface HeroProps {
 }
 
 export function Hero({ eyebrow, title, description, primaryCta }: HeroProps) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "NGO",
-    name: "Clúster de Startups e Innovación CSI A.C.",
-    url: "https://clusterdestartups.org",
-    areaServed: "Puebla, México",
-    nonprofitStatus: "NonprofitType",
-    telephone: OFFICE.phoneTel,
-    hasMap: OFFICE_MAPS_URL,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: OFFICE.streetAddress,
-      postalCode: OFFICE.postalCode,
-      addressLocality: OFFICE.locality,
-      addressRegion: OFFICE.region,
-      addressCountry: OFFICE.countryCode,
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: OFFICE.phoneTel,
-      contactType: "customer support",
-      availableLanguage: ["Spanish", "English"],
-      areaServed: "MX",
-    },
-  };
-
   return (
     <section className="hero-dark relative isolate overflow-hidden">
       <NodeField variant="hero" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <div className="container-site grid items-center gap-12 py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:py-32">
         <div>
           <p className="text-micro uppercase tracking-wider text-on-brand/70">{eyebrow}</p>

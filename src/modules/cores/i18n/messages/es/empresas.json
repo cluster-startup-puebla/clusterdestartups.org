@@ -1,7 +1,7 @@
 {
   "Companies": {
-    "metaTitle": "Empresas del clúster",
-    "metaDescription": "Directorio de empresas y startups que forman parte del Clúster de Startups e Innovación en Puebla: qué hacen, qué problema resuelven y cómo contactarlas.",
+    "metaTitle": "Directorio de startups en Puebla",
+    "metaDescription": "Directorio de startups en Puebla del Clúster de Startups e Innovación: qué hacen, qué problema resuelven y cómo contactarlas.",
     "title": "Empresas del clúster",
     "subtitle": "Startups y empresas conectadas por el clúster: qué construyen y en qué industrias sirven.",
     "viewDetail": "Ver ficha",
@@ -32,7 +32,9 @@
       "website": "Sitio",
       "demo": "Demo",
       "email": "Correo",
-      "phone": "Teléfono"
+      "phone": "Teléfono",
+      "community": "En la comunidad",
+      "readNote": "Leer la nota"
     }
   }
 }

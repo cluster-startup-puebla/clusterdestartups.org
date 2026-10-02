@@ -28,3 +28,7 @@ On the Cluster's side, that landing has a concrete aim. Economic spillover in th
 Galicia's ICT sector already carries weight. In July 2026, [Faro de Vigo](https://www.farodevigo.es/economia/2026/07/07/ineo-movilizo-20-millones-euros-proyectos-tecnologicos-132174439.html) reported INEO's 20-year balance and, with figures from the director of Igape, the sector's weight: 2.5% of Galicia's GDP, more than 23,000 jobs, and more than 3,100 companies. Igape itself keeps a [business antenna in Mexico City](https://igape.gal/es/mas-igape/igape-internacional), led by Adriana Cao, because Mexico is a strategic market for Galician companies.
 
 This meeting brings that relationship down to Puebla. A tech company that lands well does more than open an office: it hires local capacity, works with people who already build technology in the state, and leaves knowledge behind. The CSI put linkage and soft landing on the table so these three companies, and those that follow, have someone to do it with.
+
+## More information
+
+More information in the [INEO profile](https://www.ineo.org/ineo/la-asociacion), in the [Faro de Vigo](https://www.farodevigo.es/economia/2026/07/07/ineo-movilizo-20-millones-euros-proyectos-tecnologicos-132174439.html) account, and in [Igape's business antenna in Mexico City](https://igape.gal/es/mas-igape/igape-internacional). We thank INEO and those outlets for the public record of the sector. The October 1 meeting and the soft-landing offer are from the Cluster of Startups and Innovation (CSI) A.C.

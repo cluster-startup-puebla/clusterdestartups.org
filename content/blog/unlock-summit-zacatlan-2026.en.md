@@ -33,4 +33,4 @@ The Cluster president's presence, on behalf of SEDETRA, brings the startup ecosy
 
 ## More information
 
-The program and venue are at [UNLOCK Summit 2026](https://unlocksummit.io/unlock-summit-2026/). We thank [Parabólica](https://www.parabolica.mx/2026/estatal/item/11469-zacatlan-sede-de-la-cuarta-edicion-del-unlock-summit) for recording the venue. To meet the [Cluster of Startups and Innovation](/en/quienes-somos/), write to [prensa@clusterdestartups.org](mailto:prensa@clusterdestartups.org).
+More information at [UNLOCK Summit 2026](https://unlocksummit.io/unlock-summit-2026/) and in [Parabólica](https://www.parabolica.mx/2026/estatal/item/11469-zacatlan-sede-de-la-cuarta-edicion-del-unlock-summit)'s coverage. We thank Parabólica for recording the venue. To meet the [Cluster of Startups and Innovation](/en/quienes-somos/), write to [prensa@clusterdestartups.org](mailto:prensa@clusterdestartups.org).

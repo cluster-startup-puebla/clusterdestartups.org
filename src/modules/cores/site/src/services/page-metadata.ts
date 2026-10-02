@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
-import { SITE_URL } from "@/modules/cores/site/src/config/site";
+import { localeUrl } from "@/modules/cores/site/src/config/site";
 
 interface BuildMetadataProps {
   locale: string;
@@ -9,7 +9,8 @@ interface BuildMetadataProps {
   description: string;
   type?: "website" | "article";
   publishedTime?: string;
-  images?: { url: string; alt: string }[];
+  images?: { url: string; alt: string; width?: number; height?: number }[];
+  keywords?: string[];
 }
 
 export function buildMetadata({
@@ -20,18 +21,34 @@ export function buildMetadata({
   type = "website",
   publishedTime,
   images,
+  keywords,
 }: BuildMetadataProps): Metadata {
-  const url = `${SITE_URL}${route === "/" ? `/${locale}` : `/${locale}${route}`}`;
+  const url = localeUrl(locale, route);
   const languages = Object.fromEntries(
-    routing.locales.map((l) => [l, `${SITE_URL}/${l}${route === "/" ? "" : route}`]),
+    routing.locales.map((item) => [item, localeUrl(item, route)]),
   );
+  const ogLocale = locale === "en" ? "en_US" : "es_MX";
+  const shareImage = images?.length
+    ? images
+    : [
+        {
+          url: "/og.png",
+          width: 1200,
+          height: 630,
+          alt:
+            locale === "en"
+              ? "Startup and Innovation Cluster in Puebla"
+              : "Clúster de Startups e Innovación en Puebla",
+        },
+      ];
 
   return {
-    title,
+    title: route === "/" ? { absolute: title } : title,
     description,
+    ...(keywords?.length ? { keywords } : {}),
     alternates: {
       canonical: url,
-      languages: { ...languages, "x-default": `${SITE_URL}/es${route === "/" ? "" : route}` },
+      languages: { ...languages, "x-default": localeUrl("es", route) },
     },
     openGraph: {
       type,
@@ -39,14 +56,16 @@ export function buildMetadata({
       title,
       description,
       siteName: "Clúster de Startups e Innovación (CSI)",
-      locale,
+      locale: ogLocale,
+      alternateLocale: locale === "en" ? ["es_MX"] : ["en_US"],
       ...(publishedTime && { publishedTime }),
-      ...(images?.length && { images }),
+      images: shareImage,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: shareImage.map((image) => image.url),
     },
   };
 }

@@ -1,11 +1,11 @@
 {
   "Home": {
-    "metaTitle": "Clúster de Startups e Innovación CSI A.C. | Puebla",
-    "metaDescription": "A nonprofit that brings together government, academia and industry so that starting a tech startup in Puebla becomes easier than opening a traditional business. Explore the ecosystem and the Hub.",
+    "metaTitle": "Startups in Puebla | Startup and Innovation Cluster",
+    "metaDescription": "The startup and innovation cluster of Puebla, Mexico. We connect government, academia and industry so building a tech startup in Puebla is easier.",
     "hero": {
-      "eyebrow": "Clúster de Startups e Innovación A.C.",
+      "eyebrow": "Startup and innovation cluster in Puebla",
       "title": "By 2030, starting a tech-based company in Puebla will be easier than opening a traditional business.",
-      "description": "Government, academia, and industry working together since 2021 to make it happen in Puebla.",
+      "description": "The startup and innovation cluster of Puebla: government, academia and industry working together since 2021.",
       "primaryCta": "Explore the ecosystem",
       "carouselLabel": "The cluster in action",
       "pauseLabel": "Pause photos",
@@ -59,7 +59,7 @@
     "about": {
       "eyebrow": "About us",
       "title": "A nonprofit built on the Triple Helix model",
-      "description": "CSI A.C. brings government, academia and industry together around one goal: making tech entrepreneurship in Puebla the rule, not the exception. Nonprofit, open governance and measurable results.",
+      "description": "CSI A.C. is the startup and innovation cluster of Puebla. It brings government, academia and industry together so building a tech startup in the state becomes the rule. Nonprofit, open governance and measurable results.",
       "imageAlt": "Triple Helix model diagram: government, academia and industry",
       "linkLabel": "About us"
     },

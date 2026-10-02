@@ -71,6 +71,7 @@ interface Frontmatter {
   author: string;
   category?: string;
   tags: string[];
+  companies?: string[];
   image?: BlogPostImage;
   images?: BlogPostImage[];
 }
@@ -104,6 +105,9 @@ function parseFile(fileName: string): BlogPost {
     date: meta.date,
     author: meta.author,
     tags: meta.tags ?? [],
+    companies: Array.isArray(meta.companies)
+      ? meta.companies.filter((slug): slug is string => typeof slug === "string")
+      : [],
     image: meta.image,
     images: meta.images,
     readingMinutes: Math.max(1, Math.round(words / 200)),

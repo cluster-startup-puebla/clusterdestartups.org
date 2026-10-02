@@ -1,11 +1,11 @@
 {
   "Home": {
-    "metaTitle": "Clúster de Startups e Innovación CSI A.C. | Puebla",
-    "metaDescription": "Asociación civil que articula gobierno, academia y empresa para que sea más fácil abrir una startup tecnológica en Puebla. Conoce el ecosistema y el Hub.",
+    "metaTitle": "Startups en Puebla | Clúster de Startups e Innovación",
+    "metaDescription": "El clúster de startups e innovación de Puebla. Articulamos gobierno, academia y empresa para que emprender una startup tecnológica en Puebla sea más fácil.",
     "hero": {
-      "eyebrow": "Clúster de Startups e Innovación A.C.",
+      "eyebrow": "Clúster de startups e innovación en Puebla",
       "title": "Que en 2030 emprender una empresa de base tecnológica sea más fácil que abrir un negocio tradicional.",
-      "description": "Gobierno, academia y empresa trabajando juntos desde 2021 para lograrlo en Puebla.",
+      "description": "El clúster de startups e innovación de Puebla: gobierno, academia y empresa trabajando juntos desde 2021.",
       "primaryCta": "Conoce el ecosistema",
       "carouselLabel": "El clúster en acción",
       "pauseLabel": "Pausar fotos",
@@ -59,7 +59,7 @@
     "about": {
       "eyebrow": "Quiénes somos",
       "title": "Una asociación civil con modelo de Triple Hélice",
-      "description": "CSI A.C. articula gobierno, academia y empresa alrededor de un mismo objetivo: que emprender en tecnología en Puebla deje de ser una excepción y se vuelva la regla. Sin fines de lucro, con gobernanza abierta y resultados medibles.",
+      "description": "CSI A.C. es el clúster de startups e innovación de Puebla. Articula gobierno, academia y empresa para que emprender una startup tecnológica en el estado deje de ser la excepción. Sin fines de lucro, con gobernanza abierta y resultados medibles.",
       "imageAlt": "Diagrama del modelo de Triple Hélice: gobierno, academia y empresa",
       "linkLabel": "Quiénes somos"
     },

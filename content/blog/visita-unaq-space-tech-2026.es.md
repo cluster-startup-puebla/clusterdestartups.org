@@ -29,6 +29,6 @@ El día anterior, el CSI había abierto un [diálogo con el ecosistema tecnológ
 
 Para Puebla, la colaboración sirve si el talento, la innovación y el conocimiento de la UNAQ se encuentran con proyectos de base tecnológica del Clúster. Una startup Space Tech poblana puede ganar laboratorio, mentoría y un sector industrial que ya existe en Querétaro. La universidad gana equipos que llevan ese conocimiento a un modelo de negocio. El acercamiento del 25 de septiembre abre esa posibilidad.
 
-## El registro de la universidad
+## Más información
 
-Agradecemos a la UNAQ la recepción y el relato de la visita. La asociación que acudió es el Clúster de Startups e Innovación (CSI) A.C.
+Más información en la [Universidad Aeronáutica en Querétaro](https://www.unaq.edu.mx/), que registró la visita, y en sus áreas de [emprendimiento](https://www.unaq.edu.mx/servicios/emprendimiento/) y [desarrollo tecnológico](https://www.unaq.edu.mx/servicios/desarrollo-tecnologico/). Agradecemos a la UNAQ la recepción y el relato. La asociación que acudió es el Clúster de Startups e Innovación (CSI) A.C.

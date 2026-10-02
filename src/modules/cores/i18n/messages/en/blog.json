@@ -1,12 +1,16 @@
 {
   "Blog": {
     "title": "Blog",
-    "description": "Stories, guides, and analysis of the startup ecosystem in Mexico and Latin America.",
+    "metaTitle": "Startup and innovation blog in Puebla",
+    "description": "Notes from the cluster on startups and innovation in Puebla: community, alliances and the state's ecosystem.",
     "backToBlog": "← Back to blog",
     "readingTime": "{minutes} min read",
     "categoryPress": "Press room",
     "categoryCommunity": "Community",
     "readMore": "Read more →",
-    "allPosts": "All posts"
+    "allPosts": "All posts",
+    "relatedTitle": "Notes you may like",
+    "clusterCompany": "Cluster startup",
+    "viewCompany": "View profile"
   }
 }

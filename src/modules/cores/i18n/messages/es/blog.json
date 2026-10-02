@@ -1,12 +1,16 @@
 {
   "Blog": {
     "title": "Blog",
-    "description": "Historias, guías y análisis del ecosistema de startups en México y Latinoamérica.",
+    "metaTitle": "Blog de startups e innovación en Puebla",
+    "description": "Notas del clúster sobre startups e innovación en Puebla: comunidad, alianzas y el ecosistema del estado.",
     "backToBlog": "← Volver al blog",
     "readingTime": "{minutes} min de lectura",
     "categoryPress": "Sala de prensa",
     "categoryCommunity": "Comunidad",
     "readMore": "Leer más →",
-    "allPosts": "Todas las publicaciones"
+    "allPosts": "Todas las publicaciones",
+    "relatedTitle": "Notas que te pueden interesar",
+    "clusterCompany": "Startup del clúster",
+    "viewCompany": "Ver ficha"
   }
 }

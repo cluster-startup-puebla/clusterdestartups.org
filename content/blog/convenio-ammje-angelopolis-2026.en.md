@@ -31,6 +31,6 @@ A collaboration agreement requires both sides to move from the photograph to the
 
 Days earlier, the same Cluster president was at [UNLOCK Summit 2026](/en/blog/unlock-summit-zacatlan-2026/) as SEDETRA's representative, at a gathering of women entrepreneurs in Zacatlán. The agreement with AMMJE Angelópolis continues that line: innovation in Puebla is also built with people who already run a company.
 
-## Coverage
+## More information
 
-We thank [Startupero](https://startupero.mx/de-las-alianzas-a-la-accion-ammje-angelopolis-define-su-siguiente-etapa/) and [Perspectivas MX](https://perspectivas-mx.com/ammje-angelopolis-firma-dos-convenios-y-presenta-su-plan-de-trabajo-2026-2028-en-su-primera-reunion-ordinaria/) for covering the signing. The association that signed the collaboration agreement is the Cluster of Startups and Innovation (CSI) A.C.
+More information in [Startupero](https://startupero.mx/de-las-alianzas-a-la-accion-ammje-angelopolis-define-su-siguiente-etapa/) and in [Perspectivas MX](https://perspectivas-mx.com/ammje-angelopolis-firma-dos-convenios-y-presenta-su-plan-de-trabajo-2026-2028-en-su-primera-reunion-ordinaria/). We thank both outlets for covering the signing. The association that signed the collaboration agreement is the Cluster of Startups and Innovation (CSI) A.C.

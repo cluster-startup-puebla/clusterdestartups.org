@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
 import { listPosts } from "@/modules/features/blog/src/services/markdown";
 import { SITE_URL } from "@/modules/cores/site/src/config/site";
+import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { BlogList } from "@/modules/features/blog/src/components/blog-list";
 
@@ -18,12 +19,25 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Blog" });
-  const languages = Object.fromEntries(routing.locales.map((l) => [l, `${SITE_URL}/${l}/blog`]));
 
   return {
-    title: t("title"),
-    description: t("description"),
-    alternates: { canonical: `${SITE_URL}/${locale}/blog`, languages: { ...languages, "x-default": `${SITE_URL}/es/blog` } },
+    ...buildMetadata({
+      locale,
+      route: "/blog",
+      title: t("metaTitle"),
+      description: t("description"),
+    }),
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/blog/`,
+      languages: {
+        es: `${SITE_URL}/es/blog/`,
+        en: `${SITE_URL}/en/blog/`,
+        "x-default": `${SITE_URL}/es/blog/`,
+      },
+      types: {
+        "application/rss+xml": `${SITE_URL}/${locale}/blog/feed.xml`,
+      },
+    },
   };
 }
 

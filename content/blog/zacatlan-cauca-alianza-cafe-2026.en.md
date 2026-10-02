@@ -35,6 +35,6 @@ That is where the Cluster comes in. Innovation in Puebla has to prove useful in 
 
 At the same gathering, councilor Maru Fernández presented Expo Cultura Café y Arte Zacatlán 2026, planned for the first days of October, with talks by producers and officials from Cauca. It is the immediate shop window of the sister-city agreement. The underlying work —process, data, and technology in the field— is what decides whether that expo becomes installed capacity.
 
-## Source
+## More information
 
-Bulletin of the Municipal Government of Zacatlán: [Zacatlán y Cauca, Colombia firman hermanamiento y hacen alianza estratégica procafé](https://zacatlan.gob.mx/boletines/2026/09/10/zacatlan-y-cauca-colombia-firman-hermanamiento-y-hacen-alianza-estrategica-procafe/). We thank the municipality for the record of the signing. The [Cluster of Startups and Innovation](/en/quienes-somos/) attended to follow what that agreement can move in technology and in the field.
+More information in the bulletin of the Municipal Government of Zacatlán: [Zacatlán y Cauca, Colombia firman hermanamiento y hacen alianza estratégica procafé](https://zacatlan.gob.mx/boletines/2026/09/10/zacatlan-y-cauca-colombia-firman-hermanamiento-y-hacen-alianza-estrategica-procafe/). We thank the municipality for the record of the signing. The [Cluster of Startups and Innovation](/en/quienes-somos/) attended to follow what that agreement can move in technology and in the field.

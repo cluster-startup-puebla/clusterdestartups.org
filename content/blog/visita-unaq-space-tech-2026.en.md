@@ -29,6 +29,6 @@ The day before, the CSI had opened a [dialogue with Querétaro's technology ecos
 
 For Puebla, the collaboration works if UNAQ's talent, innovation, and knowledge meet technology-based projects from the Cluster. A Puebla Space Tech startup can gain a lab, mentorship, and an industrial sector that already exists in Querétaro. The university gains teams that carry that knowledge into a business model. The September 25 visit opens that possibility.
 
-## The university's record
+## More information
 
-We thank UNAQ for the welcome and for the account of the visit. The association that attended is the Cluster of Startups and Innovation (CSI) A.C.
+More information on the [Aeronautical University in Querétaro](https://www.unaq.edu.mx/) site, which recorded the visit, and in its [entrepreneurship](https://www.unaq.edu.mx/servicios/emprendimiento/) and [technology development](https://www.unaq.edu.mx/servicios/desarrollo-tecnologico/) areas. We thank UNAQ for the welcome and the account. The association that attended is the Cluster of Startups and Innovation (CSI) A.C.

@@ -29,6 +29,6 @@ A technology ecosystem is not decreed inside a single municipality. It takes sha
 
 For Puebla, the dialogue is useful if that proximity becomes work: Puebla startups that find industry and talent in Querétaro, and Querétaro projects that find in Puebla the capacity to innovate. The September 24 meeting opened that collaboration.
 
-## The post
+## More information
 
-We thank Rodrigo Ruiz Ballesteros for recording the meeting on [Instagram](https://www.instagram.com/p/DdsCbzYtWWN/). That note looks toward Querétaro. The association at the table is the Cluster of Startups and Innovation (CSI) A.C., and from here the emphasis is Puebla: keep the dialogue so the two technology ecosystems are built together.
+More information in the meeting record on [Instagram](https://www.instagram.com/p/DdsCbzYtWWN/) and in the [Alternativo MX](https://alternativo.mx/rodrigo-ruiz-bloque-innovacion-tecnologia-queretaro/) interview on BLOQUE. We thank Rodrigo Ruiz Ballesteros for the record. That note looks toward Querétaro. The association at the table is the Cluster of Startups and Innovation (CSI) A.C., and from here the emphasis is Puebla: keep the dialogue so the two technology ecosystems are built together.

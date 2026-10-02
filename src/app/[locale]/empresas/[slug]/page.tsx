@@ -7,6 +7,7 @@ import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { SITE_URL } from "@/modules/cores/site/src/config/site";
 import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
 import { companies, getCompany, localize, STARTUP_INDUSTRIES, type Company } from "@/data/companies";
+import { listPosts } from "@/modules/features/blog/src/services/markdown";
 import { toTelHref } from "@/lib/phone";
 import { withClusterUtm } from "@/lib/utm";
 
@@ -84,6 +85,7 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
 
   const person = company.contact?.person;
   const hasLinks = contactEntries.some((entry) => entry.value);
+  const notes = listPosts(locale).filter((post) => post.companies?.includes(company.slug));
 
   return (
     <article className="container-site py-16 lg:py-24">
@@ -92,7 +94,7 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
       </Link>
 
       <header className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-7">
-        <CompanyLogo name={company.name} logo={company.logo} className="size-20" dark={company.logoDark} />
+        <CompanyLogo name={company.name} logo={company.logo} className="size-20" dark={company.logoDark} ink={company.logoInk} />
         <div>
           <h1 className="text-h1 font-display text-ink">{company.name}</h1>
           <ul aria-label={t("detail.industry")} className="mt-4 flex flex-wrap gap-2">
@@ -176,6 +178,9 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
         {person && (
           <p className="mt-4 text-h4 font-display text-ink">{person}</p>
         )}
+        {company.contact?.role && (
+          <p className="text-small text-ink-muted">{company.contact.role}</p>
+        )}
         {hasLinks ? (
           <dl className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-14 sm:gap-y-4">
             {contactEntries.map(({ key, value, href, external }) =>
@@ -199,6 +204,51 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
           <p className="mt-4 text-small text-ink-muted">{t("pending")}</p>
         )}
       </section>
+
+      {notes.length > 0 && (
+        <section className="mt-6">
+          <h2 className="text-micro uppercase tracking-wider text-ink-muted">
+            {t("detail.community")}
+          </h2>
+          <ul className="mt-4 grid gap-4">
+            {notes.map((note) => (
+              <li key={note.slug}>
+                <Link
+                  href={`/blog/${note.slug}`}
+                  className="card group grid overflow-hidden transition hover:border-accent sm:grid-cols-[18rem_1fr]"
+                >
+                  {note.image && (
+                    <span className="bg-elevated relative block aspect-[16/9] sm:aspect-auto sm:h-full">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={note.image.src}
+                        alt={note.image.alt}
+                        loading="lazy"
+                        className="h-full w-full object-cover object-[center_62%] sm:absolute sm:inset-0"
+                      />
+                    </span>
+                  )}
+                  <span className="flex flex-col gap-2 p-5">
+                    <time dateTime={note.date} className="text-micro text-ink-muted">
+                      {new Date(note.date).toLocaleDateString(locale, {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                        timeZone: "UTC",
+                      })}
+                    </time>
+                    <span className="text-h4 font-display text-ink group-hover:text-brand">
+                      {note.title}
+                    </span>
+                    <span className="text-small text-ink-secondary">{note.excerpt}</span>
+                    <span className="text-small mt-auto text-link">{t("detail.readNote")} →</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </article>
   );
 }

@@ -28,3 +28,7 @@ El objetivo de ese aterrizaje, del lado del Clúster, es concreto. Derrama econ�
 El sector TIC gallego ya pesa. En julio de 2026, [Faro de Vigo](https://www.farodevigo.es/economia/2026/07/07/ineo-movilizo-20-millones-euros-proyectos-tecnologicos-132174439.html) recogió el balance de los 20 años de INEO y, con cifras de la directora del Igape, el peso del sector: 2,5% del PIB de Galicia, más de 23.000 empleos y más de 3.100 empresas. El propio Igape mantiene una [antena empresarial en la Ciudad de México](https://igape.gal/es/mas-igape/igape-internacional), a cargo de Adriana Cao, porque México es plaza estratégica para la empresa gallega.
 
 Esta reunión baja esa relación a Puebla. Una empresa TIC que aterriza bien no solo abre una oficina: contrata capacidad local, trabaja con quien ya construye tecnología en el estado y deja conocimiento que se queda. El CSI puso la vinculación y el soft landing sobre la mesa para que esas tres empresas, y las que sigan, tengan con quién hacerlo.
+
+## Más información
+
+Más información en la ficha de [INEO](https://www.ineo.org/ineo/la-asociacion), en el recuento de [Faro de Vigo](https://www.farodevigo.es/economia/2026/07/07/ineo-movilizo-20-millones-euros-proyectos-tecnologicos-132174439.html) y en la [antena del Igape en Ciudad de México](https://igape.gal/es/mas-igape/igape-internacional). Agradecemos a INEO y a esos medios el registro público del sector. La reunión del 1 de octubre y la oferta de soft landing son del Clúster de Startups e Innovación (CSI) A.C.

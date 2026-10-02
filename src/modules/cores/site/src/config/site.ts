@@ -1,5 +1,15 @@
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://clusterdestartups.org";
 
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+
+/** Absolute localized URL with the trailing slash `trailingSlash: true` expects. */
+export function localeUrl(locale: string, route = "/") {
+  const bare = route === "/" || route === "" ? "" : route.replace(/\/$/, "");
+  const path = bare.startsWith("/") || bare === "" ? bare : `/${bare}`;
+  return `${SITE_URL}/${locale}${path}/`;
+}
+
 /** Single source for the cluster office. Do not duplicate this address in copy. */
 export const OFFICE = {
   place: "Jobs Coworking Cholula | Gran Pirámide Plaza",
