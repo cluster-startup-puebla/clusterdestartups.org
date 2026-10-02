@@ -44,4 +44,4 @@ In Puebla, the plant and the startup rarely meet. Industry has the problem; the 
 
 The cluster joined for two reasons. The event belongs to a startup in the directory. And the format answers the gap the cluster works on every day: Puebla industry and startups meeting with a real problem on the table.
 
-[NETV’s profile](/empresas/netv) is already in the directory. If your company wants a seat at the next round, or your startup wants to listen before it offers, look at [membership](/membresias) or write to us.
+[NETV’s profile](/empresas/netv) is already in the directory. If your company wants a seat at the next round, or your startup wants to listen before it offers, [write to us](/contacto).

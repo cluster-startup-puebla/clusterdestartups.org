@@ -44,4 +44,4 @@ En Puebla, la planta y la startup se conocen poco. La industria tiene el problem
 
 El clúster la acompaña por dos razones. El evento es de una startup del padrón. Y el formato responde a la brecha que el clúster trabaja todos los días: que la industria poblana y las startups se encuentren con un problema real sobre la mesa.
 
-La ficha de [NETV](/empresas/netv) ya está en el directorio. Si tu empresa quiere sentarse en la siguiente rueda, o si tu startup quiere escuchar antes de ofrecer, revisa la [membresía](/membresias) o escríbenos.
+La ficha de [NETV](/empresas/netv) ya está en el directorio. Si tu empresa quiere sentarse en la siguiente rueda, o si tu startup quiere escuchar antes de ofrecer, [escríbenos](/contacto).
