@@ -44,8 +44,6 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         title={t("hero.title")}
         description={t("hero.description")}
         primaryCta={t("hero.primaryCta")}
-        imageSrc="/hub/hero-hub-general.jpg"
-        imageAlt={t("hero.imageAlt")}
       />
       <ImpactStats
         eyebrow={t("stats.eyebrow")}

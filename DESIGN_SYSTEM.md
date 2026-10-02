@@ -261,4 +261,5 @@ Los semánticos se mapean a clases (definidas en `globals.css` vía `@theme inli
 ## 11. Componentes adicionales
 
 - `hero-dark`: tratamiento fijo oscuro (fondo `#0E1420` + gradiente diagonal de Rosa Mexicano, texto blanco) para el Hero de Inicio. **No reacciona al modo claro/oscuro**: es una decisión de diseño intencional para la sección de mayor impacto. Clases auxiliares: `.hero-cta-secondary` (botón secundario sobre fondo oscuro).
+- Carrusel del hero: el título no rota. El marco usa `aspect-[16/10]`, `shadow-hero` y un velo `from-navy` solo en la base. La deriva y la barra de avance son las utilities `animate-hero-drift` y `animate-hero-progress` (tokens en `@theme`). Pausa al pasar el cursor, al enfocar y con `motion-reduce`. Cada foto abre su nota en otra pestaña con UTM `utm_campaign=home`.
 - Flag de secciones ocultas: `src/modules/cores/site/src/config/hidden-sections.ts` (`HIDDEN_SECTIONS`). Nav, footer y home consultan `isHiddenSection()` antes de renderizar enlaces; las rutas siguen existiendo por URL directa.

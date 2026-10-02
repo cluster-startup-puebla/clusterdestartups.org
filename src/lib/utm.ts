@@ -11,8 +11,8 @@ export function withClusterUtm(rawUrl: string, content: string) {
   return url.toString();
 }
 
-/** Marca un enlace de una nota. Las rutas internas se quedan relativas. */
-export function withNoteUtm(rawUrl: string, slug: string): string | null {
+/** Marca un enlace interno o externo. Las rutas internas se quedan relativas. */
+export function withNoteUtm(rawUrl: string, content: string, campaign = "blog"): string | null {
   const trimmed = rawUrl.trim();
   if (trimmed.startsWith("#")) return trimmed;
   if (/^(javascript|data|vbscript):/i.test(trimmed)) return null;
@@ -29,8 +29,8 @@ export function withNoteUtm(rawUrl: string, slug: string): string | null {
 
   url.searchParams.set("utm_source", UTM_SOURCE);
   url.searchParams.set("utm_medium", UTM_MEDIUM);
-  url.searchParams.set("utm_campaign", "blog");
-  url.searchParams.set("utm_content", slug);
+  url.searchParams.set("utm_campaign", campaign);
+  url.searchParams.set("utm_content", content);
 
   if (relative) return `${url.pathname}${url.search}${url.hash}`;
   return url.toString();

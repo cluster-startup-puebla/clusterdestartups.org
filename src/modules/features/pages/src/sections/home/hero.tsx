@@ -1,16 +1,15 @@
 import { OFFICE, OFFICE_MAPS_URL } from "@/modules/cores/site/src/config/site";
 import { Button, NodeField } from "@/modules/shared/ui/src/components";
+import { HeroCarousel } from "./hero-carousel";
 
 interface HeroProps {
   eyebrow: string;
   title: string;
   description: string;
   primaryCta: string;
-  imageSrc: string;
-  imageAlt: string;
 }
 
-export function Hero({ eyebrow, title, description, primaryCta, imageSrc, imageAlt }: HeroProps) {
+export function Hero({ eyebrow, title, description, primaryCta }: HeroProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NGO",
@@ -58,17 +57,7 @@ export function Hero({ eyebrow, title, description, primaryCta, imageSrc, imageA
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-lg border border-white/10" style={{ aspectRatio: "16 / 10" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            loading="eager"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-navy/45" aria-hidden="true" />
-          <div className="absolute inset-0 bg-brand-gradient opacity-30" aria-hidden="true" />
-        </div>
+        <HeroCarousel />
       </div>
     </section>
   );

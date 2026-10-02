@@ -7,35 +7,52 @@
       "title": "By 2030, starting a tech-based company in Puebla will be easier than opening a traditional business.",
       "description": "Government, academia, and industry working together since 2021 to make it happen in Puebla.",
       "primaryCta": "Explore the ecosystem",
-      "imageAlt": "People working at the CERHAN II Innovation Hub"
+      "carouselLabel": "The cluster in action",
+      "pauseLabel": "Pause photos",
+      "playLabel": "Resume photos",
+      "slideLabel": "Photo {current} of {total}",
+      "slides": {
+        "cafe": {
+          "alt": "Community with laptops at Cafe Cursor Puebla, under a palm roof",
+          "caption": "51 people building with AI"
+        },
+        "innovafest": {
+          "alt": "Puebla Pavilion team in front of the cluster booth at InnovaFest Querétaro",
+          "caption": "Puebla Pavilion at InnovaFest"
+        },
+        "sinergia": {
+          "alt": "Yamil Álvarez with representatives of Puebla's clusters at Sinergia Clústeres",
+          "caption": "24 clusters in one room"
+        }
+      }
     },
     "stats": {
       "eyebrow": "Impact in numbers",
-      "title": "What we build today, measured against 2030 goals",
-      "description": "Every figure starts from a verifiable baseline and carries a concrete target for the end of 2030.",
-      "todayNote": "Current figure, as of the last quarter.",
-      "goalNote": "Institutional target for 2030.",
-      "footnote": "Reference figures updated by the governing board; the 2030 targets are documented in the institutional plan.",
+      "title": "What the cluster has today",
+      "description": "Current figures for the ecosystem. The 2030 targets are still to be defined.",
+      "todayNote": "Current figure.",
+      "goalNote": "2030 target: to be defined.",
+      "footnote": "Today's figures. The 2030 targets are still to be defined.",
       "items": {
         "companies": {
           "value": "48",
           "label": "Active companies in the cluster",
-          "note": "Today · 2030 target: 150"
+          "note": "Today · 2030 target: to be defined"
         },
         "hubSpace": {
           "value": "1,800",
           "label": "Square meters of the Hub at CERHAN II",
-          "note": "Today · 2030 target: 4,500 m²"
+          "note": "Today · 2030 target: to be defined"
         },
         "nodes": {
           "value": "7",
           "label": "Cluster nodes in operation",
-          "note": "Today · 2030 target: 12"
+          "note": "Today · 2030 target: to be defined"
         },
         "industries": {
           "value": "5",
           "label": "Industries connected to startups",
-          "note": "Today · 2030 target: 10"
+          "note": "Today · 2030 target: to be defined"
         }
       }
     },

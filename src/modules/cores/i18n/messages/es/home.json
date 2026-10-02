@@ -7,35 +7,52 @@
       "title": "Que en 2030 emprender una empresa de base tecnológica sea más fácil que abrir un negocio tradicional.",
       "description": "Gobierno, academia y empresa trabajando juntos desde 2021 para lograrlo en Puebla.",
       "primaryCta": "Conoce el ecosistema",
-      "imageAlt": "Personas trabajando en el Hub de Innovación CERHAN II"
+      "carouselLabel": "El clúster en acción",
+      "pauseLabel": "Pausar fotos",
+      "playLabel": "Reanudar fotos",
+      "slideLabel": "Foto {current} de {total}",
+      "slides": {
+        "cafe": {
+          "alt": "Comunidad con laptops en Cafe Cursor Puebla, bajo un techo de palma",
+          "caption": "51 personas construyendo con IA"
+        },
+        "innovafest": {
+          "alt": "Equipo del Pabellón Puebla frente al stand del clúster en InnovaFest Querétaro",
+          "caption": "Pabellón Puebla en InnovaFest"
+        },
+        "sinergia": {
+          "alt": "Yamil Álvarez con representantes de los clústeres de Puebla en Sinergia Clústeres",
+          "caption": "24 clústeres en una sola sala"
+        }
+      }
     },
     "stats": {
       "eyebrow": "Cifras de impacto",
-      "title": "Lo que construimos hoy, medido con metas al 2030",
-      "description": "Cada cifra parte de un punto de origen verificable y tiene una meta concreta de cierre de 2030.",
-      "todayNote": "Cifra actual, al cierre del último trimestre.",
-      "goalNote": "Meta institucional al 2030.",
-      "footnote": "Cifras de referencia actualizadas por el consejo directivo; las metas 2030 están documentadas en el plan institucional.",
+      "title": "Lo que el clúster tiene hoy",
+      "description": "Cifras actuales del ecosistema. Las metas al 2030 están por definir.",
+      "todayNote": "Cifra actual.",
+      "goalNote": "Meta 2030: por definir.",
+      "footnote": "Cifras de hoy. Las metas al 2030 están por definir.",
       "items": {
         "companies": {
           "value": "48",
           "label": "Empresas activas en el clúster",
-          "note": "Hoy · Meta 2030: 150"
+          "note": "Hoy · Meta 2030: por definir"
         },
         "hubSpace": {
           "value": "1,800",
           "label": "Metros cuadrados del Hub en CERHAN II",
-          "note": "Hoy · Meta 2030: 4,500 m²"
+          "note": "Hoy · Meta 2030: por definir"
         },
         "nodes": {
           "value": "7",
           "label": "Nodos del clúster en operación",
-          "note": "Hoy · Meta 2030: 12"
+          "note": "Hoy · Meta 2030: por definir"
         },
         "industries": {
           "value": "5",
           "label": "Industrias vinculadas con startups",
-          "note": "Hoy · Meta 2030: 10"
+          "note": "Hoy · Meta 2030: por definir"
         }
       }
     },

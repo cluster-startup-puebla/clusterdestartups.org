@@ -142,6 +142,11 @@
   /* Sombras */
   --shadow-card: var(--card-shadow);
   --shadow-cta: 0 4px 12px rgb(232 24 106 / 0.25);
+  --shadow-hero: 0 28px 70px -28px rgb(14 20 32 / 0.72);
+
+  /* Motion del carrusel del hero */
+  --animate-hero-drift: hero-drift 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-hero-progress: hero-progress 7s linear forwards;
 
   /* Layout */
   --container-site: 80rem;
@@ -349,5 +354,23 @@
   }
   .hero-dark .hero-cta-secondary:hover {
     border-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
