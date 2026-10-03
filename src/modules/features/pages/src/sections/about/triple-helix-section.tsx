@@ -1,5 +1,6 @@
 import { Building2, GraduationCap, Landmark } from "lucide-react";
-import { ImageFrame, SectionHeader } from "@/modules/shared/ui/src/components";
+import { SectionHeader } from "@/modules/shared/ui/src/components";
+import { TripleHelixDiagram } from "../home/triple-helix-diagram";
 
 interface HelixActor {
   title: string;
@@ -10,7 +11,7 @@ interface TripleHelixSectionProps {
   eyebrow: string;
   title: string;
   description: string;
-  image: { src: string; alt: string };
+  diagramLabel: string;
   actors: HelixActor[];
 }
 
@@ -20,7 +21,7 @@ export function TripleHelixSection({
   eyebrow,
   title,
   description,
-  image,
+  diagramLabel,
   actors,
 }: TripleHelixSectionProps) {
   return (
@@ -28,7 +29,14 @@ export function TripleHelixSection({
       <div className="container-site">
         <SectionHeader eyebrow={eyebrow} title={title} description={description} />
         <div className="mt-12 grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-          <ImageFrame src={image.src} alt={image.alt} ratio="4 / 3" />
+          <div className="overflow-hidden rounded-md border border-line bg-elevated px-4 py-6 sm:px-6">
+            <TripleHelixDiagram
+              label={diagramLabel}
+              government={actors[0]?.title ?? ""}
+              academia={actors[1]?.title ?? ""}
+              industry={actors[2]?.title ?? ""}
+            />
+          </div>
           <ul className="flex flex-col gap-6">
             {actors.map((actor, i) => {
               const Icon = ICONS[i % ICONS.length];

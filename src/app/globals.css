@@ -364,6 +364,66 @@
   .hero-dark .hero-cta-secondary:hover {
     border-color: rgba(255, 255, 255, 0.7);
   }
+
+  /* Franja de aliados: fondo claro fijo. Los lockups oficiales son tinta oscura
+     o traen su propia placa; sobre navy desaparecen. */
+  .allies-band {
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .allies-marquee {
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  }
+  .allies-track {
+    display: flex;
+    width: max-content;
+    animation: allies-marquee 48s linear infinite;
+  }
+  .allies-marquee:hover .allies-track {
+    animation-play-state: paused;
+  }
+  .allies-group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+  .allies-cluster {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+@keyframes allies-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .allies-marquee {
+    mask-image: none;
+  }
+  .allies-track {
+    animation: none;
+    width: 100%;
+  }
+  .allies-group[aria-hidden="true"] {
+    display: none;
+  }
+  .allies-group {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+    row-gap: 1.5rem;
+  }
 }
 
 @keyframes hero-drift {

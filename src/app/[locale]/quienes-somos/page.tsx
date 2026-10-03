@@ -86,10 +86,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
         eyebrow={t("helixEyebrow")}
         title={t("helixTitle")}
         description={t("helixDescription")}
-        image={{
-          src: "/quienes-somos/diagrama-triple-helice-detalle.svg",
-          alt: t("helixImageAlt"),
-        }}
+        diagramLabel={t("helixImageAlt")}
         actors={[
           { title: t("helixGovTitle"), text: t("helixGovText") },
           { title: t("helixAcademyTitle"), text: t("helixAcademyText") },

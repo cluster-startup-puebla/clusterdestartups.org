@@ -1,13 +1,16 @@
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { ArrowRight } from "lucide-react";
-import { ImageFrame, SectionHeader } from "@/modules/shared/ui/src/components";
+import { SectionHeader } from "@/modules/shared/ui/src/components";
+import { TripleHelixDiagram } from "./triple-helix-diagram";
 
 interface AboutProps {
   eyebrow: string;
   title: string;
   description: string;
-  imageSrc: string;
-  imageAlt: string;
+  diagramLabel: string;
+  government: string;
+  academia: string;
+  industry: string;
   linkLabel: string;
 }
 
@@ -15,8 +18,10 @@ export function About({
   eyebrow,
   title,
   description,
-  imageSrc,
-  imageAlt,
+  diagramLabel,
+  government,
+  academia,
+  industry,
   linkLabel,
 }: AboutProps) {
   return (
@@ -36,7 +41,14 @@ export function About({
             <ArrowRight strokeWidth={1.5} className="h-4 w-4" aria-hidden />
           </Link>
         </div>
-        <ImageFrame src={imageSrc} alt={imageAlt} ratio="4 / 3" />
+        <div className="overflow-hidden rounded-md border border-line bg-elevated px-4 py-6 sm:px-6">
+          <TripleHelixDiagram
+            label={diagramLabel}
+            government={government}
+            academia={academia}
+            industry={industry}
+          />
+        </div>
       </div>
     </section>
   );

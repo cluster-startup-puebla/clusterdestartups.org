@@ -38,3 +38,27 @@ jobs:
           protocol: ftps
           local-dir: out/
           server-dir: ./
+
+      # Siguiente paso, todavía no: purgar la caché de nginx de cPanel
+      # después del upload. El FTP no la toca. Las URLs con barra final
+      # (/es/empresas/) pueden seguir sirviendo el HTML del deploy anterior
+      # aunque index.html ya sea nuevo. Un archivo nuevo (otra ruta) sí
+      # aparece al momento. Un archivo reemplazado en la misma ruta
+      # (por ejemplo /empresas/the-x-chair.webp) también queda en el
+      # servidor, pero el navegador puede conservar la copia vieja.
+      #
+      # Cuando haya token de API del usuario de cPanel, agregar este paso
+      # y los secretos CPANEL_HOST, CPANEL_USERNAME y CPANEL_API_TOKEN:
+      #
+      # - name: Purgar caché nginx
+      #   env:
+      #     CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+      #     CPANEL_USERNAME: ${{ secrets.CPANEL_USERNAME }}
+      #     CPANEL_API_TOKEN: ${{ secrets.CPANEL_API_TOKEN }}
+      #   run: |
+      #     curl -fsS \
+      #       -H "Authorization: cpanel ${CPANEL_USERNAME}:${CPANEL_API_TOKEN}" \
+      #       "https://${CPANEL_HOST}:2083/execute/NginxCaching/clear_cache"
+      #
+      # Endpoint: NginxCaching::clear_cache
+      # https://api.docs.cpanel.net/specifications/cpanel.openapi/nginxcaching/clear_cache
