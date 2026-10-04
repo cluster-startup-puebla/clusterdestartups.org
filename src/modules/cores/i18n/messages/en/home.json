@@ -41,7 +41,6 @@
       "description": "The totals are for the cluster. The map names the activity in each municipality.",
       "mapLabel": "Map of Puebla. Highlighted: Zacatlán, Puebla, Amozoc and Cholula.",
       "hint": "Hover or tap a municipality.",
-      "footnote": "People reached: estimated reach, not a registration list. People trained: +160 from the community and +150 from UNLOCK.",
       "totals": [
         { "value": "+2,500", "label": "People reached" },
         { "value": "+500", "label": "People directly impacted" },

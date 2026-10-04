@@ -41,7 +41,6 @@
       "description": "Los totales son del clúster. El mapa dice la actividad de cada municipio.",
       "mapLabel": "Mapa de Puebla. En color: Zacatlán, Puebla, Amozoc y Cholula.",
       "hint": "Pasa el cursor o toca un municipio.",
-      "footnote": "Personas alcanzadas: alcance estimado, no una lista de registro. Personas capacitadas: +160 de comunidad y +150 de UNLOCK.",
       "totals": [
         { "value": "+2,500", "label": "Personas alcanzadas" },
         { "value": "+500", "label": "Personas impactadas directamente" },

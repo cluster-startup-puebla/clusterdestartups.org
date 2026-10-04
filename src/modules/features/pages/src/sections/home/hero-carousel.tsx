@@ -1,28 +1,39 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Pause, Play } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { withNoteUtm } from "@/lib/utm";
 
+const HERO_IMAGE_SIZES = "(min-width: 1024px) 560px, 100vw";
+
 const SLIDES = [
   {
     id: "cafe",
-    src: "/blog/blog-cafe-cursor.webp",
+    src: "/blog/blog-cafe-cursor-800.webp",
+    srcSet: "/blog/blog-cafe-cursor-800.webp 800w, /blog/blog-cafe-cursor.webp 1600w",
+    width: 800,
+    height: 450,
     path: "/blog/cafe-cursor-puebla-2026/",
     frame: "object-[center_42%]",
     content: "hero-cafe-cursor",
   },
   {
     id: "innovafest",
-    src: "/prensa/prensa-innovafest-queretaro.webp",
+    src: "/prensa/prensa-innovafest-queretaro-800.webp",
+    srcSet: "/prensa/prensa-innovafest-queretaro-800.webp 800w, /prensa/prensa-innovafest-queretaro.webp 1600w",
+    width: 800,
+    height: 450,
     path: "/blog/pabellon-puebla-innovafest-queretaro-2026/",
     frame: "object-center",
     content: "hero-innovafest",
   },
   {
     id: "sinergia",
-    src: "/prensa/prensa-sinergia-clusteres-grupo.webp",
+    src: "/prensa/prensa-sinergia-clusteres-grupo-800.webp",
+    srcSet: "/prensa/prensa-sinergia-clusteres-grupo-800.webp 800w, /prensa/prensa-sinergia-clusteres-grupo.webp 1280w",
+    width: 800,
+    height: 533,
     path: "/blog/sinergia-clusteres-puebla-2026/",
     frame: "object-[center_62%]",
     content: "hero-sinergia",
@@ -35,11 +46,22 @@ export function HeroCarousel() {
   const t = useTranslations("Home");
   const locale = useLocale();
   const [index, setIndex] = useState(0);
+  const [seen, setSeen] = useState<ReadonlySet<number>>(() => new Set([0]));
   const [userPaused, setUserPaused] = useState(false);
   const [holding, setHolding] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
   const paused = userPaused || holding || reduceMotion;
+
+  const activate = useCallback((next: number) => {
+    setIndex(next);
+    setSeen((visited) => {
+      if (visited.has(next)) return visited;
+      const updated = new Set(visited);
+      updated.add(next);
+      return updated;
+    });
+  }, []);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -52,10 +74,10 @@ export function HeroCarousel() {
   useEffect(() => {
     if (paused) return;
     const timer = window.setInterval(() => {
-      setIndex((current) => (current + 1) % SLIDES.length);
+      activate((index + 1) % SLIDES.length);
     }, INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, [paused, index]);
+  }, [activate, paused, index]);
 
   return (
     <div
@@ -74,6 +96,7 @@ export function HeroCarousel() {
     >
       <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-white/15 shadow-hero">
         {SLIDES.map((slide, slideIndex) => {
+          if (!seen.has(slideIndex)) return null;
           const active = slideIndex === index;
           const href = withNoteUtm(`/${locale}${slide.path}`, slide.content, "home") ?? `/${locale}${slide.path}`;
           return (
@@ -89,9 +112,15 @@ export function HeroCarousel() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={slide.src}
+                srcSet={slide.srcSet}
+                sizes={HERO_IMAGE_SIZES}
+                width={slide.width}
+                height={slide.height}
                 alt={active ? t(`hero.slides.${slide.id}.alt`) : ""}
                 className={`h-full w-full scale-105 object-cover motion-reduce:transform-none ${slide.frame} ${active ? "motion-safe:animate-hero-drift" : ""}`}
+                decoding="async"
                 loading={slideIndex === 0 ? "eager" : "lazy"}
+                {...(slideIndex === 0 ? { fetchPriority: "high" as const } : {})}
               />
               <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-navy/80 via-navy/35 to-transparent" />
               <p className="absolute inset-x-5 bottom-8 text-small font-medium text-on-brand">
@@ -117,11 +146,15 @@ export function HeroCarousel() {
               <button
                 key={slide.id}
                 type="button"
-                className={`h-2 rounded-full transition-[width,background-color] duration-300 ${active ? "w-8 bg-brand" : "w-2 bg-white/40 hover:bg-white/70"}`}
+                className="group inline-flex min-h-6 min-w-6 items-center justify-center"
                 aria-current={active ? "true" : undefined}
                 aria-label={t("hero.slideLabel", { current: slideIndex + 1, total: SLIDES.length })}
-                onClick={() => setIndex(slideIndex)}
-              />
+                onClick={() => activate(slideIndex)}
+              >
+                <span
+                  className={`h-2 rounded-full transition-[width,background-color] duration-300 ${active ? "w-8 bg-brand" : "w-2 bg-white/40 group-hover:bg-white/70"}`}
+                />
+              </button>
             );
           })}
         </div>

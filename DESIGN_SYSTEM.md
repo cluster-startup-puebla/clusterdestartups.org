@@ -220,6 +220,8 @@ Los semánticos se mapean a clases (definidas en `globals.css` vía `@theme inli
 
 > Regla: usar **utilities semánticas** (`bg-surface`, `text-ink`) en el markup, nunca hex directo. Para forzar valores del modo contrario usar el variant `dark:` (ej. `dark:bg-navy`).
 
+Los `<a class="text-link">` llevan subrayado (`text-underline-offset: 0.18em`) para no depender solo del color (WCAG 1.4.1). La clase `.btn` no se subraya.
+
 ### Tipografía
 
 - `font-display` → Archivo (con `font-stretch: 125%` aplicado por CSS a headings/display).

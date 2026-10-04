@@ -26,7 +26,7 @@ export function LocaleSwitcher() {
           type="button"
           onClick={() => switchTo(l)}
           aria-current={l === locale}
-          className={`rounded-full px-2 py-0.5 uppercase transition ${
+          className={`inline-flex min-h-6 min-w-6 shrink-0 items-center justify-center rounded-full px-2 uppercase transition ${
             l === locale ? "bg-accent text-on-accent font-semibold" : "text-ink-secondary hover:text-ink"
           }`}
         >

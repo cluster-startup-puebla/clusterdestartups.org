@@ -29,6 +29,8 @@ function AllyImage({ logo, hidden }: { logo: AllyLogo; hidden: boolean }) {
     <img
       src={logo.src}
       alt={hidden ? "" : logo.alt}
+      loading="lazy"
+      decoding="async"
       className={`object-contain ${logo.frame ?? DEFAULT_FRAME}`}
     />
   );
@@ -59,7 +61,9 @@ function AllyGroup({ logos, copy }: { logos: AllyItem[]; copy: number }) {
 export function AlliesMarquee({ label, logos }: AlliesMarqueeProps) {
   return (
     <section aria-label={label} className="allies-band overflow-hidden py-8">
-      <p className="text-center text-micro uppercase tracking-wider text-navy/60">{label}</p>
+      <p className="text-center text-micro uppercase tracking-wider text-ink-secondary dark:text-navy">
+        {label}
+      </p>
       <div className="allies-marquee mt-5">
         <div className="allies-track">
           {Array.from({ length: COPIES }, (_, copy) => (

@@ -14,7 +14,7 @@ export function Hero({ eyebrow, title, description, primaryCta }: HeroProps) {
       <NodeField variant="hero" />
       <div className="container-site grid items-center gap-12 py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:py-32">
         <div>
-          <p className="text-micro uppercase tracking-wider text-on-brand/70">{eyebrow}</p>
+          <p className="text-micro uppercase tracking-wider text-on-brand">{eyebrow}</p>
           <h1 className="mt-6 max-w-3xl text-h2 font-display text-white sm:text-h1">
             {title}
           </h1>

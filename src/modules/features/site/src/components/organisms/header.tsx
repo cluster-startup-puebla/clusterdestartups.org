@@ -43,7 +43,7 @@ export function Header() {
     <>
       <a
         href="#contenido"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-brand focus:px-5 focus:py-3 focus:font-bold focus:text-on-brand"
+        className="fixed left-4 -top-32 z-[60] rounded-full bg-brand-dark px-5 py-3 font-bold text-on-brand focus:top-4"
       >
         {t("skipToContent")}
       </a>

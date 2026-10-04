@@ -15,7 +15,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="rounded-full border border-line p-2 text-ink-secondary transition hover:text-accent"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink-secondary transition hover:text-accent"
     >
       <span className="sr-only">
         <span className="dark:hidden">Modo oscuro</span>

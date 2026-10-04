@@ -14,7 +14,6 @@ interface ActivityProps {
   description: string;
   mapLabel: string;
   hint: string;
-  footnote: string;
   totals: ActivityTotal[];
   places: ActivityPlace[];
 }
@@ -25,7 +24,6 @@ export function Activity({
   description,
   mapLabel,
   hint,
-  footnote,
   totals,
   places,
 }: ActivityProps) {
@@ -44,7 +42,6 @@ export function Activity({
         <div className="mt-12">
           <PueblaMap label={mapLabel} hint={hint} places={places} />
         </div>
-        <p className="mt-8 text-small text-ink-muted">{footnote}</p>
       </div>
     </section>
   );

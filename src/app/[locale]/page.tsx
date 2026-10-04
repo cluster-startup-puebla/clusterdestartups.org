@@ -69,6 +69,14 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   return (
     <>
       <HomePageJsonLd locale={locale} title={t("metaTitle")} description={t("metaDescription")} />
+      <link
+        rel="preload"
+        as="image"
+        href="/blog/blog-cafe-cursor-800.webp"
+        imageSrcSet="/blog/blog-cafe-cursor-800.webp 800w, /blog/blog-cafe-cursor.webp 1600w"
+        imageSizes="(min-width: 1024px) 560px, 100vw"
+        fetchPriority="high"
+      />
       <Hero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
@@ -96,7 +104,6 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         description={t("activity.description")}
         mapLabel={t("activity.mapLabel")}
         hint={t("activity.hint")}
-        footnote={t("activity.footnote")}
         totals={t.raw("activity.totals") as ActivityTotal[]}
         places={t.raw("activity.places") as ActivityPlace[]}
       />

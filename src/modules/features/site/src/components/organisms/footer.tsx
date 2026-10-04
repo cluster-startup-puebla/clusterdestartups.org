@@ -32,7 +32,7 @@ export async function Footer() {
             href={OFFICE_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 block text-small text-ink-secondary hover:text-link"
+            className="mt-3 block text-small text-ink-secondary underline decoration-line/80 underline-offset-4 hover:text-link"
           >
             <span className="block font-medium text-ink">{OFFICE.place}</span>
             <span className="mt-1 block">{OFFICE_ADDRESS_LINE}</span>
