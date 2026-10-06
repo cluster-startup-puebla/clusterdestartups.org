@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
-import { getTranslations } from "next-intl/server";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { listPosts } from "@/modules/features/blog/src/services/markdown";
 import { SITE_URL } from "@/modules/cores/site/src/config/site";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
@@ -58,8 +56,7 @@ export default async function BlogPage({ params }: PageProps<"/[locale]/blog">) 
         <p className="mt-4 text-body-lg text-ink-secondary">{t("description")}</p>
       </header>
 
-      <Suspense fallback={null}>
-        <BlogList
+      <BlogList
           posts={posts}
           locale={locale}
           labels={{
@@ -69,7 +66,6 @@ export default async function BlogPage({ params }: PageProps<"/[locale]/blog">) 
             readMore: t("readMore"),
           }}
         />
-      </Suspense>
     </main>
   );
 }

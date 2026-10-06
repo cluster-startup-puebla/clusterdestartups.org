@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Badge, ImageFrame } from "@/modules/shared/ui/src/components";
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 import type { PostMeta } from "@/modules/features/blog/src/interfaces/blog.interface";
@@ -19,14 +19,26 @@ interface BlogListProps {
   };
 }
 
+function categoryFromLocation() {
+  if (typeof window === "undefined") return null;
+  return new URLSearchParams(window.location.search).get("categoria");
+}
+
 export function BlogList({ posts, locale, labels }: BlogListProps) {
-  const params = useSearchParams();
-  const categoria = params.get("categoria");
+  const [categoria, setCategoria] = useState<string | null>(null);
+
+  useEffect(() => {
+    const apply = () => setCategoria(categoryFromLocation());
+    apply();
+    window.addEventListener("popstate", apply);
+    return () => window.removeEventListener("popstate", apply);
+  }, []);
+
   const visible =
     categoria === PRESS
-      ? posts.filter((p) => p.category === PRESS)
+      ? posts.filter((post) => post.category === PRESS)
       : categoria === COMMUNITY
-        ? posts.filter((p) => p.category === COMMUNITY)
+        ? posts.filter((post) => post.category === COMMUNITY)
         : posts;
 
   const filters = [
@@ -39,14 +51,15 @@ export function BlogList({ posts, locale, labels }: BlogListProps) {
     <>
       <nav aria-label="Filtro de categoría" className="mb-8 flex flex-wrap gap-3">
         {filters.map((filter) => (
-            <Link
-              key={filter.label}
-              href={filter.value ? `/blog?categoria=${filter.value}` : "/blog"}
-              className={`btn ${filter.active ? "btn-primary" : "btn-secondary"} px-5 py-2.5 text-small`}
-              aria-pressed={filter.active}
-            >
-              {filter.label}
-            </Link>
+          <Link
+            key={filter.label}
+            href={filter.value ? `/blog?categoria=${filter.value}` : "/blog"}
+            className={`btn ${filter.active ? "btn-primary" : "btn-secondary"} px-5 py-2.5 text-small`}
+            aria-pressed={filter.active}
+            onClick={() => setCategoria(filter.value)}
+          >
+            {filter.label}
+          </Link>
         ))}
       </nav>
 
@@ -57,7 +70,9 @@ export function BlogList({ posts, locale, labels }: BlogListProps) {
             href={`/blog/${post.slug}`}
             className="card group flex flex-col overflow-hidden transition hover:border-accent"
           >
-            {post.image && <ImageFrame src={post.image.src} alt={post.image.alt} />}
+            {post.image && (
+              <ImageFrame src={post.image.src} alt={post.image.alt} width={1600} height={900} />
+            )}
             <div className="flex flex-1 flex-col gap-3 p-6">
               <div className="flex items-center gap-3">
                 <time dateTime={post.date} className="text-micro text-ink-muted">
@@ -68,15 +83,11 @@ export function BlogList({ posts, locale, labels }: BlogListProps) {
                     timeZone: "UTC",
                   })}
                 </time>
-                <Badge>
-                  {post.category === PRESS ? labels.press : labels.community}
-                </Badge>
+                <Badge>{post.category === PRESS ? labels.press : labels.community}</Badge>
               </div>
               <h2 className="text-h4 font-display text-ink">{post.title}</h2>
               <p className="text-small text-ink-secondary">{post.excerpt}</p>
-              <span className="text-small mt-auto text-link group-hover:underline">
-                {labels.readMore}
-              </span>
+              <span className="text-small mt-auto text-link">{labels.readMore}</span>
             </div>
           </Link>
         ))}
