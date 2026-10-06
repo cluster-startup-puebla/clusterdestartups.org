@@ -3,40 +3,24 @@ import path from "node:path";
 
 const outDir = path.join(process.cwd(), "out");
 
-fs.writeFileSync(
-  path.join(outDir, "index.html"),
-  `<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0;url=/es/">
-    <link rel="canonical" href="/es/">
-    <title>Clúster de Startups</title>
-  </head>
-  <body>
-    <script>window.location.replace("/es/");</script>
-    <a href="/es/">Ir al clúster</a>
-  </body>
-</html>
-`,
-);
-
 function flattenMetadataFile(name) {
   const asFile = path.join(outDir, name);
-  const asDir = asFile;
-  if (!fs.existsSync(asDir) || !fs.statSync(asDir).isDirectory()) return;
+  if (!fs.existsSync(asFile) || !fs.statSync(asFile).isDirectory()) return;
   const nested = ["index.xml", "index.txt", "index.html"]
-    .map((file) => path.join(asDir, file))
+    .map((file) => path.join(asFile, file))
     .find((file) => fs.existsSync(file));
   if (!nested) return;
   const tmp = `${asFile}.tmp`;
   fs.renameSync(nested, tmp);
-  fs.rmSync(asDir, { recursive: true, force: true });
+  fs.rmSync(asFile, { recursive: true, force: true });
   fs.renameSync(tmp, asFile);
 }
 
 flattenMetadataFile("sitemap.xml");
 flattenMetadataFile("robots.txt");
+
+const rootIndex = path.join(outDir, "index.html");
+if (fs.existsSync(rootIndex)) fs.rmSync(rootIndex);
 
 fs.writeFileSync(
   path.join(outDir, ".htaccess"),
@@ -44,8 +28,16 @@ fs.writeFileSync(
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteRule ^index\\.html$ /es/ [R=301,L]
+  RewriteRule ^$ /es/ [R=301,L]
   RewriteRule ^sitemap\\.xml/$ /sitemap.xml [R=301,L]
   RewriteRule ^robots\\.txt/$ /robots.txt [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -64,7 +56,6 @@ fs.writeFileSync(
     Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
 
-  # <If> is merged after FilesMatch, so hashed /_next/static/ files (including woff2) stay immutable.
   <If "%{REQUEST_URI} =~ m#^/_next/static/#">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </If>
@@ -72,4 +63,4 @@ fs.writeFileSync(
 `,
 );
 
-console.log("index.html redirect written to out/");
+console.log("root 301 and .htaccess written to out/");
