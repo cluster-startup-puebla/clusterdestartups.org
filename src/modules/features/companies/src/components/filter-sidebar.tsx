@@ -28,6 +28,7 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
   const [query, setQuery] = useState(searchValue);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setQuery(searchValue);
   }, [searchValue]);
 

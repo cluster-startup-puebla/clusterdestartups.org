@@ -82,6 +82,7 @@ export function RelatedNotes({ posts, currentSlug }: RelatedNotesProps) {
     const prev = readStored();
     const next = pickRelated(posts, currentSlug, prev);
     writeStored({ slug: currentSlug, shown: next.map((post) => post.slug) });
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPicked(next);
   }, [posts, currentSlug]);
 
