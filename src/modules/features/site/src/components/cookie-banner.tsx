@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 
@@ -17,6 +16,7 @@ declare global {
 
 function updateConsent(value: Consent) {
   localStorage.setItem(CONSENT_KEY, value);
+  document.documentElement.dataset.cookies = "set";
   window.dataLayer = window.dataLayer || [];
   window.gtag =
     window.gtag ||
@@ -33,22 +33,13 @@ function updateConsent(value: Consent) {
 
 export function CookieBanner() {
   const t = useTranslations("CookieBanner");
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const stored = localStorage.getItem(CONSENT_KEY);
-    if (stored !== "granted" && stored !== "denied") setVisible(true);
-  }, []);
-
-  if (!visible) return null;
 
   function choose(value: Consent) {
     updateConsent(value);
-    setVisible(false);
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-elevated p-4 shadow-lg">
+    <div className="cookie-banner fixed inset-x-0 bottom-0 z-50 border-t border-line bg-elevated p-4 shadow-lg">
       <div className="container-site flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <p className="text-small text-ink-secondary">
           {t("text")}{" "}

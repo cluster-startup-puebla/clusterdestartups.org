@@ -5,7 +5,7 @@ import { useServerInsertedHTML } from "next/navigation";
 
 const themeScript = `(function(){try{var t=localStorage.getItem("csi-theme");if(t){document.documentElement.dataset.theme=t}}catch(e){}})();`;
 
-const gtmConsentScript = `(function(){window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};var c="denied";try{if(localStorage.getItem("csi-consent")==="granted")c="granted";}catch(e){}window.gtag("consent","default",{ad_storage:c,ad_user_data:c,ad_personalization:c,analytics_storage:c,functionality_storage:"granted",security_storage:"granted"});})();`;
+const gtmConsentScript = `(function(){window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};var c="denied";try{var s=localStorage.getItem("csi-consent");if(s==="granted"||s==="denied"){document.documentElement.dataset.cookies="set";if(s==="granted")c="granted"}}catch(e){}window.gtag("consent","default",{ad_storage:c,ad_user_data:c,ad_personalization:c,analytics_storage:c,functionality_storage:"granted",security_storage:"granted"});})();`;
 
 /**
  * Scripts that must run from the initial HTML, before React hydrates.

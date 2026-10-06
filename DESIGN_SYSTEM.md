@@ -236,6 +236,7 @@ Los `<a class="text-link">` llevan subrayado (`text-underline-offset: 0.18em`) p
 - `input`
 - `bg-brand-gradient`
 - `container-site` (contenedor 1280px con padding lateral responsivo)
+- `cookie-banner` (barra fija al pie; se oculta con `html[data-cookies="set"]` para no parpadear)
 
 ### Ejemplo
 
