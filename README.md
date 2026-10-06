@@ -1,3 +1,5 @@
+Sitio del Clúster de Startups e Innovación (CSI) A.C. El desarrollo local usa `pnpm`.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
