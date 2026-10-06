@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
-import { localeUrl } from "@/modules/cores/site/src/config/site";
+import { SITE_URL, localeUrl } from "@/modules/cores/site/src/config/site";
 
 interface BuildMetadataProps {
   locale: string;
@@ -32,7 +32,7 @@ export function buildMetadata({
     ? images
     : [
         {
-          url: "/og.png",
+          url: `${SITE_URL}/og.png`,
           width: 1200,
           height: 630,
           alt:
