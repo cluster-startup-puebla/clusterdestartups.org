@@ -11,6 +11,7 @@ import { ClosingCta } from "@/modules/features/pages/src/sections/home/closing-c
 import { CompaniesStrip } from "@/modules/features/pages/src/sections/home/companies-strip";
 import { Hero } from "@/modules/features/pages/src/sections/home/hero";
 import { Stories } from "@/modules/features/pages/src/sections/home/stories";
+import { RegisterStartupCta } from "@/modules/features/pages/src/sections/shared/register-startup-cta";
 
 const STORY_SLUGS = [
   "cafe-cursor-puebla-2026",
@@ -58,6 +59,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Home" });
+  const register = await getTranslations({ locale, namespace: "RegisterStartup" });
 
   const posts = STORY_SLUGS.flatMap((slug) => {
     const post = getPost(slug, locale);
@@ -119,6 +121,11 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         title={t("companies.title")}
         description={t("companies.description")}
         linkLabel={t("companies.linkLabel")}
+      />
+      <RegisterStartupCta
+        title={register("title")}
+        description={register("description")}
+        label={register("label")}
       />
       <About
         eyebrow={t("about.eyebrow")}

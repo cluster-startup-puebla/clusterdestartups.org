@@ -6,6 +6,7 @@ import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { NodeField } from "@/modules/shared/ui/src/components";
 import { CompanyDirectory } from "@/modules/features/companies/src";
 import { companies } from "@/data/companies";
+import { RegisterStartupCta } from "@/modules/features/pages/src/sections/shared/register-startup-cta";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -30,6 +31,7 @@ export default async function CompaniesPage({ params }: PageProps<"/[locale]/emp
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Companies" });
+  const register = await getTranslations({ locale, namespace: "RegisterStartup" });
 
   const labels = {
     search: t("filter.search"),
@@ -57,6 +59,11 @@ export default async function CompaniesPage({ params }: PageProps<"/[locale]/emp
           </Suspense>
         </div>
       </div>
+      <RegisterStartupCta
+        title={register("title")}
+        description={register("description")}
+        label={register("label")}
+      />
     </section>
   );
 }

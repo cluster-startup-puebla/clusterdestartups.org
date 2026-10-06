@@ -39,5 +39,10 @@
     "reject": "Reject",
     "privacy": "Privacy notice",
     "cookies": "Cookie notice"
+  },
+  "RegisterStartup": {
+    "title": "Register your startup in the directory",
+    "description": "Write to us so we can publish your profile in the cluster directory.",
+    "label": "Register your startup in the directory"
   }
 }

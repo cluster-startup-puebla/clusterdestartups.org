@@ -39,5 +39,10 @@
     "reject": "Rechazar",
     "privacy": "Aviso de privacidad",
     "cookies": "Aviso de cookies"
+  },
+  "RegisterStartup": {
+    "title": "Registra tu startup en el directorio",
+    "description": "Escríbenos para publicar tu ficha en el padrón de empresas del clúster.",
+    "label": "Registra tu startup en el directorio"
   }
 }
