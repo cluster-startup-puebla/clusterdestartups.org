@@ -8,6 +8,7 @@ import { RelatedNotes } from "@/modules/features/blog/src/components/related-not
 import { LinkedCompanies } from "@/modules/features/blog/src/components/linked-companies";
 import { getCompany, localize } from "@/data/companies";
 import { ORGANIZATION_ID, SITE_URL, WEBSITE_ID } from "@/modules/cores/site/src/config/site";
+import { RegisterStartupCta } from "@/modules/features/pages/src/sections/shared/register-startup-cta";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -29,8 +30,18 @@ export async function generateMetadata({
     routing.locales.map((l) => [l, `${SITE_URL}/${l}/blog/${slug}/`]),
   );
   const image = post.image
-    ? { url: `${SITE_URL}${post.image.src}`, alt: post.image.alt }
-    : undefined;
+    ? {
+        url: `${SITE_URL}${post.image.src}`,
+        alt: post.image.alt,
+        width: 1200,
+        height: 630,
+      }
+    : {
+        url: `${SITE_URL}/og.png`,
+        alt: post.title,
+        width: 1200,
+        height: 630,
+      };
 
   return {
     title: post.title,
@@ -45,14 +56,14 @@ export async function generateMetadata({
       publishedTime: post.date,
       authors: post.author,
       tags: post.tags,
-      images: image ? [image] : undefined,
+      images: [image],
       siteName: "Clúster de Startups e Innovación (CSI)",
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: image ? [image.url] : undefined,
+      images: [image.url],
     },
     alternates: {
       canonical: url,
@@ -69,6 +80,7 @@ export default async function BlogPostPage({
   const post = getPost(slug, locale);
   if (!post) notFound();
   const t = await getTranslations({ locale, namespace: "Blog" });
+  const register = await getTranslations({ locale, namespace: "RegisterStartup" });
   const relatedPosts = listPosts(locale).map(({ contentHtml, ...meta }) => {
     void contentHtml;
     return meta;
@@ -96,7 +108,11 @@ export default async function BlogPostPage({
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
-    author: { "@id": ORGANIZATION_ID },
+    author: {
+      "@type": "Organization",
+      name: "Clúster de Startups e Innovación (CSI) A.C.",
+      url: `${SITE_URL}/es/`,
+    },
     publisher: { "@id": ORGANIZATION_ID },
     mainEntityOfPage: `${SITE_URL}/${locale}/blog/${slug}/`,
     isPartOf: { "@id": WEBSITE_ID },
@@ -119,7 +135,8 @@ export default async function BlogPostPage({
   };
 
   return (
-    <main className="container-site py-16 lg:py-24">
+    <>
+    <div className="container-site py-16 lg:py-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -182,6 +199,12 @@ export default async function BlogPostPage({
       </article>
 
       <RelatedNotes posts={relatedPosts} currentSlug={slug} />
-    </main>
+    </div>
+      <RegisterStartupCta
+        title={register("title")}
+        description={register("description")}
+        label={register("label")}
+      />
+    </>
   );
 }
