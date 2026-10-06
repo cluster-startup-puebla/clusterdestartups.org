@@ -12,14 +12,14 @@ import { Header } from "@/modules/features/site/src/components/organisms/header"
 import { Footer } from "@/modules/features/site/src/components/organisms/footer";
 import { CookieBanner } from "@/modules/features/site/src/components/cookie-banner";
 import { DocumentScripts } from "./document-scripts";
+import { AnalyticsClicks } from "@/modules/cores/analytics/src/analytics-clicks";
 import "../globals.css";
 
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
   display: "swap",
-  // Axes are only valid when weight is omitted or "variable". Static 600/700
-  // cuts omit the wdth axis, so font-stretch: 125% on headings would not apply.
+  preload: false,
   weight: "variable",
   axes: ["wdth"],
 });
@@ -28,6 +28,7 @@ const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
   weight: ["400", "500", "600"],
 });
 
@@ -111,6 +112,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           <main id="contenido" className="flex-1">{children}</main>
           <Footer />
           <CookieBanner />
+          <AnalyticsClicks />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { SectionHeader } from "@/modules/shared/ui/src/components";
+import { track } from "@/modules/cores/analytics/src/track";
 
 interface FieldProps {
   label: string;
@@ -78,6 +79,8 @@ export function ContactForm({
   const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
+    // Restore the device lock after hydration; localStorage is not available during SSR.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (hasSentFlag()) setAlreadySent(true);
   }, []);
 
@@ -141,6 +144,7 @@ export function ContactForm({
       setSelectedProfile(profile.options[0]);
       setAlreadySent(true);
       setSubmitted(true);
+      track("registro_startup", { locale, profile: selectedProfile });
     } catch {
       setSubmitError(true);
     } finally {
