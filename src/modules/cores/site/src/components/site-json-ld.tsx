@@ -1,7 +1,7 @@
 import { OFFICE, OFFICE_MAPS_URL, ORGANIZATION_ID, SITE_URL, WEBSITE_ID, localeUrl } from "@/modules/cores/site/src/config/site";
 
 const organization = {
-  "@type": "NGO",
+  "@type": "Organization",
   "@id": ORGANIZATION_ID,
   name: "Clúster de Startups e Innovación (CSI) A.C.",
   legalName: "Clúster de Startups e Innovación (CSI) A.C.",
