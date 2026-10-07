@@ -9,6 +9,7 @@ import { LinkedCompanies } from "@/modules/features/blog/src/components/linked-c
 import { getCompany, localize } from "@/data/companies";
 import { ORGANIZATION_ID, SITE_URL, WEBSITE_ID } from "@/modules/cores/site/src/config/site";
 import { RegisterStartupCta } from "@/modules/features/pages/src/sections/shared/register-startup-cta";
+import { shareImageFor } from "@/modules/features/blog/src/services/share-image";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -29,19 +30,7 @@ export async function generateMetadata({
   const languages = Object.fromEntries(
     routing.locales.map((l) => [l, `${SITE_URL}/${l}/blog/${slug}/`]),
   );
-  const image = post.image
-    ? {
-        url: `${SITE_URL}${post.image.src}`,
-        alt: post.image.alt,
-        width: 1200,
-        height: 630,
-      }
-    : {
-        url: `${SITE_URL}/og.png`,
-        alt: post.title,
-        width: 1200,
-        height: 630,
-      };
+  const image = shareImageFor(post.image?.src, post.image?.alt ?? post.title);
 
   return {
     title: post.title,
