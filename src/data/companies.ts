@@ -668,6 +668,68 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'safe-mobility',
+    name: 'SAFE Mobility',
+    logo: '/empresas/safe-mobility.webp',
+    logoInk: true,
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Transporte especializado para personas con movilidad limitada, en vehículos adaptados y con app propia.',
+      en: 'Specialized transport for people with limited mobility, in adapted vehicles and with its own app.'
+    },
+    industries: ['mobility'],
+    problem: {
+      es: 'Quien usa silla de ruedas, muletas o andadera, o quien ya necesita ayuda para subir y bajar, depende de otra persona para salir. El transporte común no sube una silla ni acompaña el traslado. La cita, el trabajo y la vida social se quedan en casa.',
+      en: 'Someone who uses a wheelchair, crutches or a walker, or who already needs help getting in and out, depends on another person to leave the house. Ordinary transport does not load a wheelchair or accompany the trip. The appointment, the job and social life stay at home.'
+    },
+    solution: {
+      es: 'Transporte puerta a puerta para personas con movilidad limitada. La empresa lo presenta como el primer servicio privado de este tipo en México. Los vehículos se adaptan en una planta propia, con ingeniería de SAFE Mobility y transformación certificada por Stellantis y Renault. La app deja pedir el viaje al momento o programarlo, ver el costo antes de confirmar y compartir el recorrido en vivo: cada unidad lleva tres cámaras. Cubre traslados médicos, laborales, de placer y cotidianos, de un solo viaje o recurrentes, cortos o de larga distancia. La atención incluye personal con licenciatura en fisioterapia y conductores capacitados para este servicio.',
+      en: 'Door-to-door transport for people with limited mobility. The company presents it as the first private service of its kind in Mexico. Vehicles are adapted in its own plant, with SAFE Mobility engineering and a conversion certified by Stellantis and Renault. The app lets someone request a ride on the spot or schedule it, see the fare before confirming and share the trip live: each vehicle carries three cameras. It covers medical, work, leisure and everyday trips, one-off or recurring, short or long distance. The service includes staff with a physiotherapy degree and drivers trained for this work.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Viajes adaptados',
+          en: 'Adapted trips'
+        },
+        description: {
+          es: 'Unidades para silla de ruedas, muletas, andadera u otro apoyo. Viajes únicos o recurrentes, cortos o de larga distancia.',
+          en: 'Vehicles for a wheelchair, crutches, a walker or another aid. One-off or recurring trips, short or long distance.'
+        }
+      },
+      {
+        name: {
+          es: 'App SAFE',
+          en: 'SAFE app'
+        },
+        description: {
+          es: 'El viaje se pide al momento o se programa, el costo se ve antes de confirmar y el recorrido se comparte en tiempo real.',
+          en: 'The trip is requested on the spot or scheduled, the fare is shown before confirming and the ride is shared in real time.'
+        }
+      },
+      {
+        name: {
+          es: 'Transformación de vehículos',
+          en: 'Vehicle conversion'
+        },
+        description: {
+          es: 'Planta propia que convierte un auto de serie en una unidad accesible, con certificación de Stellantis y Renault.',
+          en: 'An in-house plant that turns a production car into an accessible vehicle, with Stellantis and Renault certification.'
+        }
+      }
+    ],
+    contact: {
+      person: 'Sergio Juárez',
+      role: 'CEO',
+      website: 'https://www.safemobility.com.mx/',
+      email: 'contacto@safemobility.mx',
+      phone: '221 101 0178'
+    }
+  },
+  {
     slug: 'the-x-chair',
     name: 'The X-Chair',
     logo: '/empresas/the-x-chair.webp',
