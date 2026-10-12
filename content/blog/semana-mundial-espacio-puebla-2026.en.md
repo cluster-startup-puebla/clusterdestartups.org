@@ -1,7 +1,7 @@
 ---
 title: "The CSI at the World Space Week inauguration"
 description: "On October 5, 2026 Yamil Álvarez joined Mexico's World Space Week inauguration and announced the pact for space outreach."
-excerpt: "The CSI thanked Regenia and Denzel Carrillo for the invitation. The space-outreach pact will be signed on Saturday, October 10."
+excerpt: "The CSI thanked Regenia and Denzel Carrillo for the invitation. On October 10, at the UPAEP closing, the conveners issued the manifesto toward the pact."
 date: "2026-10-05"
 author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
@@ -37,7 +37,7 @@ In Mexico the week is organized as [World Space Week Mexico](https://sme-mexico.
 
 ## The pact for space outreach
 
-In that participation the Cluster announced the signing of the **pact for space outreach**. It will take place on Saturday, October 10, 2026. The time is still to be confirmed. Invited to the signing are [INAOE](https://www.inaoep.mx/), [UPAEP](https://upaep.mx/licenciaturas/ingenieria-aeroespacial), the [CSI](/en/quienes-somos/), and further actors still to be confirmed.
+In that participation the Cluster announced the pact. On Saturday, October 10, at the national closing at UPAEP, the conveners issued the manifesto of collaboration. The signing of the Pact for the Development of the Aerospace Sector in Puebla is set for November 30, 2026. The account of that closing is in [this note](/en/blog/cierre-semana-mundial-espacio-puebla-2026/).
 
 INAOE, the National Institute of Astrophysics, Optics and Electronics, is based in Tonantzintla and is already an [ally of the Cluster](/en/alianzas/) in applied research. UPAEP trains aerospace engineers in Puebla. The pact places that outreach next to the startup ecosystem.
 

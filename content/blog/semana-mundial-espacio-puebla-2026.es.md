@@ -1,7 +1,7 @@
 ---
 title: "El CSI en la inauguración de la Semana Mundial del Espacio"
 description: "El 5 de octubre de 2026 Yamil Álvarez participó en la inauguración nacional de la Semana Mundial del Espacio y anunció el pacto de divulgación del espacio."
-excerpt: "El CSI agradeció a Regenia y a Denzel Carrillo la invitación. La firma del pacto por la divulgación del espacio será el sábado 10 de octubre."
+excerpt: "El CSI agradeció a Regenia y a Denzel Carrillo la invitación. El 10 de octubre, en el cierre en la UPAEP, se emitió el manifiesto rumbo al pacto."
 date: "2026-10-05"
 author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
@@ -37,7 +37,7 @@ En México, la semana se organiza como [Semana Mundial del Espacio México](http
 
 ## El pacto por la divulgación del espacio
 
-En esa participación el Clúster anunció la firma del **pacto por la divulgación del espacio**. Será el sábado 10 de octubre de 2026. La hora está por confirmar. A la firma están invitados el [INAOE](https://www.inaoep.mx/), la [UPAEP](https://upaep.mx/licenciaturas/ingenieria-aeroespacial), el [CSI](/es/quienes-somos/) y más actores por confirmar.
+En esa participación el Clúster anunció el pacto. El sábado 10 de octubre, en el cierre nacional en la UPAEP, los convocantes emitieron el manifiesto de colaboración. La firma del Pacto por el Desarrollo del Sector Aeroespacial en Puebla queda para el 30 de noviembre de 2026. El relato de ese cierre está en [esta nota](/es/blog/cierre-semana-mundial-espacio-puebla-2026/).
 
 El INAOE, Instituto Nacional de Astrofísica, Óptica y Electrónica, tiene sede en Tonantzintla y ya es [aliado del Clúster](/es/alianzas/) en investigación aplicada. La UPAEP forma ingeniería aeroespacial en Puebla. El pacto junta esa divulgación con el ecosistema de startups.
 
