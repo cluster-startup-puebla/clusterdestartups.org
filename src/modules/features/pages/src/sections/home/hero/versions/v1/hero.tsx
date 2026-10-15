@@ -1,14 +1,8 @@
 import { Button, NodeField } from "@/modules/shared/ui/src/components";
-import { HeroCarousel } from "./hero-carousel";
+import type { HeroProps } from "../../types";
+import { HeroCarousel } from "./carousel";
 
-interface HeroProps {
-  eyebrow: string;
-  title: string;
-  description: string;
-  primaryCta: string;
-}
-
-export function Hero({ eyebrow, title, description, primaryCta }: HeroProps) {
+export function HeroV1({ eyebrow, title, description, primaryCta }: HeroProps) {
   return (
     <section className="hero-dark relative isolate overflow-hidden">
       <NodeField variant="hero" />

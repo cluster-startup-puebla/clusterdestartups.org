@@ -1,0 +1,32 @@
+export const SLIDES = [
+  {
+    id: "cafe",
+    src: "/blog/blog-cafe-cursor-800.webp",
+    srcSet: "/blog/blog-cafe-cursor-800.webp 800w, /blog/blog-cafe-cursor.webp 1600w",
+    width: 800,
+    height: 450,
+    path: "/blog/cafe-cursor-puebla-2026/",
+    frame: "object-[center_42%]",
+    content: "hero-cafe-cursor",
+  },
+  {
+    id: "unlock",
+    src: "/prensa/prensa-unlock-summit-2026.webp",
+    srcSet: "/prensa/prensa-unlock-summit-2026.webp 1024w",
+    width: 1024,
+    height: 723,
+    path: "/blog/unlock-summit-zacatlan-2026/",
+    frame: "object-[center_38%]",
+    content: "hero-unlock",
+  },
+  {
+    id: "innovafest",
+    src: "/prensa/prensa-innovafest-queretaro-02.webp",
+    srcSet: "/prensa/prensa-innovafest-queretaro-02.webp 1600w",
+    width: 1600,
+    height: 899,
+    path: "/blog/pabellon-puebla-innovafest-queretaro-2026/",
+    frame: "object-center",
+    content: "hero-innovafest",
+  },
+] as const;

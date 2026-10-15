@@ -397,13 +397,18 @@ html[data-cookies="set"] .cookie-banner {
     display: flex;
     flex-shrink: 0;
     align-items: center;
-    gap: 3rem;
-    padding-right: 3rem;
+    gap: 4.5rem;
+    padding-right: 4.5rem;
   }
   .allies-cluster {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+  }
+  .allies-family {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
 }
 

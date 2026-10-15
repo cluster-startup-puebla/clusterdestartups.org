@@ -82,7 +82,7 @@ export default async function AlliancesPage({ params }: PageProps<"/[locale]/ali
         partner={{
           name: t("plasticos"),
           relation: t("plasticosRelation"),
-          logo: { src: "/logos/logo-cluster-plasticos.svg", alt: t("logoPlasticosAlt") },
+          logo: { src: "/aliados/logo-cluster-plasticos.png", alt: t("logoPlasticosAlt") },
         }}
       />
       <AlliancesCouncil

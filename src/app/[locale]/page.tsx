@@ -9,7 +9,7 @@ import { Activity, type ActivityPlace, type ActivityTotal } from "@/modules/feat
 import { AlliesMarquee } from "@/modules/features/pages/src/sections/home/allies-marquee";
 import { ClosingCta } from "@/modules/features/pages/src/sections/home/closing-cta";
 import { CompaniesStrip } from "@/modules/features/pages/src/sections/home/companies-strip";
-import { Hero } from "@/modules/features/pages/src/sections/home/hero";
+import { Hero, heroPreload } from "@/modules/features/pages/src/sections/home/hero";
 import { Stories } from "@/modules/features/pages/src/sections/home/stories";
 import { RegisterStartupCta } from "@/modules/features/pages/src/sections/shared/register-startup-cta";
 
@@ -71,14 +71,16 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   return (
     <>
       <HomePageJsonLd locale={locale} title={t("metaTitle")} description={t("metaDescription")} />
-      <link
-        rel="preload"
-        as="image"
-        href="/blog/blog-cafe-cursor-800.webp"
-        imageSrcSet="/blog/blog-cafe-cursor-800.webp 800w, /blog/blog-cafe-cursor.webp 1600w"
-        imageSizes="(min-width: 1024px) 560px, 100vw"
-        fetchPriority="high"
-      />
+      {heroPreload ? (
+        <link
+          rel="preload"
+          as="image"
+          href={heroPreload.href}
+          imageSrcSet={heroPreload.imageSrcSet}
+          imageSizes={heroPreload.imageSizes}
+          fetchPriority="high"
+        />
+      ) : null}
       <Hero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
@@ -96,7 +98,14 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
               { src: "/aliados/logo-secihti.png", alt: t("allies.secihti"), frame: "h-14 w-auto sm:h-16" },
             ],
           },
-          { src: "/aliados/logo-cluster-agro.png", alt: t("allies.agro"), frame: "h-24 w-auto sm:h-28" },
+          {
+            roomy: true,
+            logos: [
+              { src: "/aliados/logo-cluster-agro.png", alt: t("allies.agro"), frame: "h-20 w-auto sm:h-24" },
+              { src: "/aliados/logo-cluster-plasticos.png", alt: t("allies.plasticos"), frame: "h-16 w-auto sm:h-20" },
+              { src: "/aliados/logo-cluster-energetico.png", alt: t("allies.energetico"), frame: "h-12 w-auto max-w-48 sm:h-14" },
+            ],
+          },
           { src: "/aliados/logo-ammje.png", alt: t("allies.ammje"), frame: "h-12 w-auto sm:h-14" },
         ]}
       />

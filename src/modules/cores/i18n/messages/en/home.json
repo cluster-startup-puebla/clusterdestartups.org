@@ -4,12 +4,13 @@
     "metaDescription": "The startup and innovation cluster of Puebla, Mexico. We connect government, academia and industry so building a tech startup in Puebla is easier.",
     "hero": {
       "eyebrow": "Startup and innovation cluster in Puebla",
-      "title": "By 2030, starting a tech-based company in Puebla will be easier than opening a traditional business.",
+      "title": "By 2030\ncreating a startup\nwill be easier\nthan opening\na traditional\nbusiness.",
       "description": "The startup and innovation cluster of Puebla: government, academia and industry working together since 2021.",
       "primaryCta": "Explore the ecosystem",
       "carouselLabel": "The cluster in action",
       "pauseLabel": "Pause photos",
       "playLabel": "Resume photos",
+      "nextLabel": "Next photo",
       "slideLabel": "Photo {current} of {total}",
       "slides": {
         "cafe": {
@@ -17,8 +18,12 @@
           "caption": "51 people building with AI"
         },
         "innovafest": {
-          "alt": "Puebla Pavilion team in front of the cluster booth at InnovaFest Querétaro",
+          "alt": "Conversation at the Puebla Pavilion booth during InnovaFest Querétaro",
           "caption": "Puebla Pavilion at InnovaFest"
+        },
+        "unlock": {
+          "alt": "Yamil Álvarez, president of the Cluster of Startups and Innovation, during the opening of UNLOCK Summit 2026 in Zacatlán, Puebla",
+          "caption": "UNLOCK Summit in Zacatlán"
         },
         "sinergia": {
           "alt": "Yamil Álvarez with representatives of Puebla's clusters at Sinergia Clústeres",
@@ -33,7 +38,9 @@
       "secihti": "Secretariat of Science, Humanities, Technology and Innovation",
       "cincoDeMayo": "Puebla Cinco de Mayo",
       "agro": "Puebla Agri-food Cluster",
-      "ammje": "AMMJE Angelópolis"
+      "ammje": "AMMJE Angelópolis",
+      "plasticos": "Plastics and Circular Economy Cluster",
+      "energetico": "Puebla Energy Cluster"
     },
     "activity": {
       "eyebrow": "Across the state",

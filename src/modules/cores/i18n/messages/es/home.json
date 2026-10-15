@@ -4,12 +4,13 @@
     "metaDescription": "El clúster de startups e innovación de Puebla. Articulamos gobierno, academia y empresa para que emprender una startup tecnológica en Puebla sea más fácil.",
     "hero": {
       "eyebrow": "Clúster de startups e innovación en Puebla",
-      "title": "Que en 2030 emprender una empresa de base tecnológica sea más fácil que abrir un negocio tradicional.",
+      "title": "Que en 2030\ncrear una Startup\nsea más fácil\nque abrir\nun negocio\ntradicional.",
       "description": "El clúster de startups e innovación de Puebla: gobierno, academia y empresa trabajando juntos desde 2021.",
       "primaryCta": "Conoce el ecosistema",
       "carouselLabel": "El clúster en acción",
       "pauseLabel": "Pausar fotos",
       "playLabel": "Reanudar fotos",
+      "nextLabel": "Siguiente foto",
       "slideLabel": "Foto {current} de {total}",
       "slides": {
         "cafe": {
@@ -17,8 +18,12 @@
           "caption": "51 personas construyendo con IA"
         },
         "innovafest": {
-          "alt": "Equipo del Pabellón Puebla frente al stand del clúster en InnovaFest Querétaro",
+          "alt": "Conversación en el stand del Pabellón Puebla durante InnovaFest Querétaro",
           "caption": "Pabellón Puebla en InnovaFest"
+        },
+        "unlock": {
+          "alt": "Yamil Álvarez, presidente del Clúster de Startups e Innovación, durante la apertura de UNLOCK Summit 2026 en Zacatlán, Puebla",
+          "caption": "UNLOCK Summit en Zacatlán"
         },
         "sinergia": {
           "alt": "Yamil Álvarez con representantes de los clústeres de Puebla en Sinergia Clústeres",
@@ -33,7 +38,9 @@
       "secihti": "Secretaría de Ciencia, Humanidades, Tecnología e Innovación",
       "cincoDeMayo": "Puebla Cinco de Mayo",
       "agro": "Clúster Agroalimentario Puebla",
-      "ammje": "AMMJE Angelópolis"
+      "ammje": "AMMJE Angelópolis",
+      "plasticos": "Clúster de Plásticos y Economía Circular",
+      "energetico": "Clúster Energético de Puebla"
     },
     "activity": {
       "eyebrow": "En el estado",

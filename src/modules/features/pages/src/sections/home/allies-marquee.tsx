@@ -7,6 +7,8 @@ interface AllyLogo {
 
 interface AllyCluster {
   logos: AllyLogo[];
+  /** Lockups need more air than crests. */
+  roomy?: boolean;
 }
 
 type AllyItem = AllyLogo | AllyCluster;
@@ -43,7 +45,10 @@ function AllyGroup({ logos, copy }: { logos: AllyItem[]; copy: number }) {
     <ul aria-hidden={hidden || undefined} className="allies-group">
       {logos.map((item) =>
         isCluster(item) ? (
-          <li key={item.logos.map((logo) => logo.src).join("|")} className="allies-cluster shrink-0">
+          <li
+            key={item.logos.map((logo) => logo.src).join("|")}
+            className={`${item.roomy ? "allies-family" : "allies-cluster"} shrink-0`}
+          >
             {item.logos.map((logo) => (
               <AllyImage key={logo.src} logo={logo} hidden={hidden} />
             ))}
