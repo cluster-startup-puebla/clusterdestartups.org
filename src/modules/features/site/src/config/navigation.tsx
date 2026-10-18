@@ -11,6 +11,7 @@ export const NAV_ITEMS = [
   { key: "alliances", href: "/alianzas" },
   { key: "memberships", href: "/membresias" },
   { key: "press", href: "/prensa" },
+  { key: "media", href: "/medios" },
   { key: "contact", href: "/contacto" },
 ].filter((item) => !isHiddenSection(item.href));
 
