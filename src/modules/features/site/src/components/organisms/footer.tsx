@@ -11,6 +11,7 @@ const FOOTER_LINKS = [
   { key: "companies", href: "/empresas" },
   { key: "blog", href: "/blog" },
   { key: "contact", href: "/contacto" },
+  { key: "media", href: "/medios" },
 ].filter((item) => !isHiddenSection(item.href));
 
 export async function Footer() {

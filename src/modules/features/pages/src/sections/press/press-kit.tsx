@@ -1,4 +1,5 @@
-import { ImageFrame, SectionHeader } from "@/modules/shared/ui/src/components";
+import { Link } from "@/modules/cores/i18n/src/config/routing";
+import { SectionHeader } from "@/modules/shared/ui/src/components";
 
 interface PressKitProps {
   eyebrow: string;
@@ -8,8 +9,9 @@ interface PressKitProps {
   data: { label: string; value: string }[];
   contactLabel: string;
   contactValue: string;
-  downloadsLabel: string;
-  downloads: { label: string; href: string }[];
+  mediaLabel: string;
+  mediaDescription: string;
+  mediaCta: string;
 }
 
 export function PressKit({
@@ -20,8 +22,9 @@ export function PressKit({
   data,
   contactLabel,
   contactValue,
-  downloadsLabel,
-  downloads,
+  mediaLabel,
+  mediaDescription,
+  mediaCta,
 }: PressKitProps) {
   return (
     <section className="bg-surface-subtle py-16 lg:py-24">
@@ -49,28 +52,12 @@ export function PressKit({
               </div>
             </dl>
           </div>
-          <div>
-            <h3 className="text-h3 font-display text-ink">{downloadsLabel}</h3>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
-              {downloads.map((item) => (
-                <div key={item.href} className="flex flex-col gap-4">
-                  <ImageFrame
-                    src={item.href}
-                    alt={item.label}
-                    ratio="3 / 2"
-                  />
-                  <a
-                    href={item.href}
-                    download
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary self-start"
-                  >
-                    {item.label}
-                  </a>
-                </div>
-              ))}
-            </div>
+          <div className="card h-fit p-8">
+            <h3 className="text-h3 font-display text-ink">{mediaLabel}</h3>
+            <p className="mt-4 text-body text-ink-secondary">{mediaDescription}</p>
+            <Link href="/medios" className="btn btn-secondary mt-6">
+              {mediaCta}
+            </Link>
           </div>
         </div>
       </div>

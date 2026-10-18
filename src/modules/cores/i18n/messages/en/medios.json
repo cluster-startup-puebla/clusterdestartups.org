@@ -1,0 +1,174 @@
+{
+  "Media": {
+    "metaTitle": "Media",
+    "metaDescription": "Media kit of the Startup and Innovation Cluster (CSI): SVG logos, boilerplate, and institutional facts.",
+    "heroEyebrow": "Media kit",
+    "heroTitle": "Media",
+    "heroDescription": "Logos, the correct name, and institutional facts for stories, interviews, and cluster materials.",
+    "downloadLabel": "Download the kit",
+    "downloadHref": "/medios/kit-medios-csi.zip",
+    "contactLabel": "Email the press desk",
+    "contactEmail": "hola@clusterdestartups.org",
+    "copyLabel": "Copy",
+    "copiedLabel": "Copied",
+    "naming": {
+      "eyebrow": "How to name us",
+      "title": "Text ready to quote",
+      "description": "Use these as written. The correct name is Clúster de Startups e Innovación (CSI).",
+      "items": [
+        {
+          "label": "One line",
+          "text": "The Startup and Innovation Cluster (CSI) is the business organization that brings together government, academia, and industry so that building a tech company in Puebla is easier."
+        },
+        {
+          "label": "One paragraph",
+          "text": "The Startup and Innovation Cluster (CSI) is the business organization that connects government, academia, and industry so tech startups in Puebla can be created and scaled. It has operated as a network since 2021 and was formally established on June 15, 2026, with its office in San Andrés Cholula. More at clusterdestartups.org."
+        },
+        {
+          "label": "Short text",
+          "text": "The Startup and Innovation Cluster (CSI) is a business organization based in San Andrés Cholula, Puebla. It brings together government, academia, and industry under the triple-helix model so that creating and scaling a tech startup in the state is easier. The network has operated since 2021. It was formally established on June 15, 2026, and on June 23 of that year the Ministry of Economic Development and Labor of the State of Puebla recognized it as an interlocutor of the innovation ecosystem. Its mission is to create connections, infrastructure, and institutional support so startups from Puebla can scale. Its vision is that, by 2030, starting a tech-based company will be easier than opening a traditional business, and that Puebla will be a Latin American benchmark for innovation. Contact: hola@clusterdestartups.org."
+        }
+      ]
+    },
+    "facts": {
+      "eyebrow": "Fact sheet",
+      "title": "Institutional information",
+      "description": "Facts for verifying the organization. The headquarters listed here is the cluster office.",
+      "items": [
+        { "label": "Name", "value": "Clúster de Startups e Innovación (CSI)" },
+        { "label": "Type", "value": "Business organization" },
+        { "label": "Short name", "value": "CSI" },
+        { "label": "Established", "value": "June 15, 2026" },
+        { "label": "Headquarters", "value": "{officeAddress}" },
+        { "label": "Website", "value": "https://clusterdestartups.org" },
+        { "label": "Contact", "value": "hola@clusterdestartups.org" },
+        { "label": "LinkedIn", "value": "https://www.linkedin.com/company/cluster-startups-puebla/" },
+        { "label": "Instagram", "value": "https://www.instagram.com/cluster_startups/" }
+      ]
+    },
+    "logos": {
+      "eyebrow": "Logos",
+      "title": "Official files",
+      "description": "The logo is a three-line wordmark. There is no separate symbol: do not use the favicon C as the brand mark.",
+      "svgLabel": "SVG",
+      "pngLabel": "PNG",
+      "items": [
+        {
+          "name": "Full color",
+          "use": "Light backgrounds. This is the default.",
+          "preview": "/medios/logo-csi.svg",
+          "svg": "/medios/logo-csi.svg",
+          "png": "/medios/logo-csi.png",
+          "surface": "light"
+        },
+        {
+          "name": "Reversed",
+          "use": "White, for a dark background or a dark photograph.",
+          "preview": "/medios/logo-csi-negativo.svg",
+          "svg": "/medios/logo-csi-negativo.svg",
+          "png": "/medios/logo-csi-negativo.png",
+          "surface": "dark"
+        },
+        {
+          "name": "Black",
+          "use": "One ink, on a light background.",
+          "preview": "/medios/logo-csi-negro.svg",
+          "svg": "/medios/logo-csi-negro.svg",
+          "png": "/medios/logo-csi-negro.png",
+          "surface": "light"
+        }
+      ]
+    },
+    "rules": {
+      "eyebrow": "Usage",
+      "title": "Logo rules",
+      "items": [
+        "Do not recolor, stretch, rotate, crop, or add a shadow, outline, or background.",
+        "The reversed logo belongs only on a dark background with enough contrast.",
+        "Leave clear space around it at least as tall as the word “de”.",
+        "On screen, the wordmark stays at least 120 px wide.",
+        "Do not retype it in Archivo, Raleway, or any other font: use the file."
+      ]
+    },
+    "brand": {
+      "eyebrow": "Brand",
+      "title": "Color and type",
+      "description": "The logo inks and the interface pink are different colors. Do not swap one for the other.",
+      "colorsLabel": "Color",
+      "typeLabel": "Type",
+      "typeNote": "Archivo and Raleway are the site fonts. The wordmark is not rebuilt with them.",
+      "colors": [
+        {
+          "name": "Logo magenta",
+          "hex": "#A81C70",
+          "swatch": "logo-magenta",
+          "note": "STARTUPS and INNOVACIÓN"
+        },
+        {
+          "name": "Logo gray",
+          "hex": "#5A5A5C",
+          "swatch": "logo-ink",
+          "note": "Clúster de, and the e"
+        },
+        {
+          "name": "Mexican pink",
+          "hex": "#E8186A",
+          "swatch": "brand",
+          "note": "Interface and accents. Do not recolor the logo with it."
+        },
+        {
+          "name": "CSI navy",
+          "hex": "#16284F",
+          "swatch": "navy",
+          "note": "Institutional text and dark backgrounds."
+        },
+        {
+          "name": "White",
+          "hex": "#FFFFFF",
+          "swatch": "on-brand",
+          "note": "Reversed logo and text on navy or pink."
+        }
+      ],
+      "types": [
+        { "name": "Archivo", "role": "Headings" },
+        { "name": "Raleway", "role": "Body" }
+      ]
+    },
+    "people": {
+      "eyebrow": "Spokespeople",
+      "title": "Who to interview",
+      "description": "For an interview, email hola@clusterdestartups.org. The full team is on the governance page.",
+      "teamLabel": "See the team",
+      "items": [
+        {
+          "name": "Yamil Álvarez",
+          "role": "President",
+          "description": "Legal representative of the cluster. Responsible for institutional vision and strategic alliances.",
+          "image": "/gobernanza/yamil.png",
+          "imageAlt": "Yamil Álvarez, president of the cluster"
+        },
+        {
+          "name": "Álvaro Castillo",
+          "role": "Vice President",
+          "description": "Coordinates the day-to-day operation of the ecosystem and the articulation between nodes, committees, and partners.",
+          "image": "/gobernanza/alvaro-castillo.png",
+          "imageAlt": "Álvaro Castillo, vice president of the cluster"
+        }
+      ]
+    },
+    "links": {
+      "eyebrow": "Context",
+      "title": "Useful pages",
+      "items": [
+        { "label": "Who we are", "href": "/quienes-somos" },
+        { "label": "Team", "href": "/gobernanza" },
+        { "label": "Press room", "href": "/prensa" },
+        { "label": "Contact", "href": "/contacto" }
+      ]
+    },
+    "license": {
+      "title": "Permitted use",
+      "text": "Editorial coverage and cluster materials may use these files without extra permission. For commercial use, merchandise, or co-branding, email hola@clusterdestartups.org."
+    }
+  }
+}

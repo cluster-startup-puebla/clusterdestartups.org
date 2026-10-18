@@ -68,8 +68,15 @@ const PAGES: { path: string; es: string; en: string; aboutEs: string; aboutEn: s
     path: "/prensa",
     es: "Sala de prensa",
     en: "Press room",
-    aboutEs: "Presencia pública del clúster y kit de prensa.",
-    aboutEn: "Public presence of the cluster and press kit.",
+    aboutEs: "Presencia pública del clúster y comunicados.",
+    aboutEn: "Public presence of the cluster and news releases.",
+  },
+  {
+    path: "/medios",
+    es: "Medios",
+    en: "Media kit",
+    aboutEs: "Logotipos oficiales, cómo nombrar al clúster y datos para prensa.",
+    aboutEn: "Official logos, how to name the cluster, and facts for the press.",
   },
   {
     path: "/blog",

@@ -18,6 +18,7 @@ const ROUTES = [
   { path: "/alianzas", file: "src/app/[locale]/alianzas/page.tsx", priority: 0.7, frequency: "monthly" as const },
   { path: "/membresias", file: "src/app/[locale]/membresias/page.tsx", priority: 0.8, frequency: "monthly" as const },
   { path: "/prensa", file: "src/app/[locale]/prensa/page.tsx", priority: 0.7, frequency: "weekly" as const },
+  { path: "/medios", file: "src/app/[locale]/medios/page.tsx", priority: 0.6, frequency: "monthly" as const },
   { path: "/contacto", file: "src/app/[locale]/contacto/page.tsx", priority: 0.7, frequency: "yearly" as const },
   { path: "/blog", file: "src/app/[locale]/blog/page.tsx", priority: 0.9, frequency: "weekly" as const },
   { path: "/aviso-de-privacidad", file: "src/app/[locale]/aviso-de-privacidad/page.tsx", priority: 0.2, frequency: "yearly" as const },

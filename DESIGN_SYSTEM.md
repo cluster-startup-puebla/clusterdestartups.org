@@ -42,6 +42,8 @@ El favicon es una C blanca sobre un cuadrado redondeado `#e8186a`.
 | `--brand-primary-light` | Rosa Mexicano claro | `#FF4D93` | Estados sobre fondo oscuro, gradientes |
 | `--brand-secondary` | Navy CSI | `#16284F` | Texto institucional, footer, headers oscuros |
 | `--brand-secondary-light` | Navy claro | `#28406F` | Superficies secundarias en modo oscuro |
+| `--logo-magenta` | Magenta del wordmark | `#A81C70` | Tinta de STARTUPS e INNOVACIÓN. No recolorea la interfaz ni se sustituye por el rosa |
+| `--logo-ink` | Gris del wordmark | `#5A5A5C` | Tinta de «Clúster de» y de la «e» |
 
 ### 2.2 Modo Claro (default)
 

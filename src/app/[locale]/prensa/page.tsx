@@ -51,8 +51,9 @@ export default async function PressPage({ params }: PageProps<"/[locale]/prensa"
         }))}
         contactLabel={t("kit.contactLabel")}
         contactValue={t("kit.contactValue")}
-        downloadsLabel={t("kit.downloadsLabel")}
-        downloads={t.raw("kit.downloads")}
+        mediaLabel={t("kit.mediaLabel")}
+        mediaDescription={t("kit.mediaDescription")}
+        mediaCta={t("kit.mediaCta")}
       />
     </main>
   );

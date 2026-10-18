@@ -1,0 +1,174 @@
+{
+  "Media": {
+    "metaTitle": "Medios",
+    "metaDescription": "Kit de medios del Clúster de Startups e Innovación (CSI): logotipos en SVG, cómo nombrarnos y datos institucionales.",
+    "heroEyebrow": "Kit de medios",
+    "heroTitle": "Medios",
+    "heroDescription": "Logotipos, nombre correcto y datos institucionales para notas, entrevistas y materiales del clúster.",
+    "downloadLabel": "Descargar kit",
+    "downloadHref": "/medios/kit-medios-csi.zip",
+    "contactLabel": "Escribir a prensa",
+    "contactEmail": "hola@clusterdestartups.org",
+    "copyLabel": "Copiar",
+    "copiedLabel": "Copiado",
+    "naming": {
+      "eyebrow": "Cómo nombrarnos",
+      "title": "Textos listos para citar",
+      "description": "Úsalos tal cual. El nombre correcto es Clúster de Startups e Innovación (CSI).",
+      "items": [
+        {
+          "label": "Una línea",
+          "text": "El Clúster de Startups e Innovación (CSI) es el organismo empresarial que articula gobierno, academia y empresa para que emprender tecnología en Puebla sea más fácil."
+        },
+        {
+          "label": "Un párrafo",
+          "text": "El Clúster de Startups e Innovación (CSI) es el organismo empresarial que conecta gobierno, academia y empresa para que las startups tecnológicas de Puebla puedan crearse y escalar. Trabaja como red desde 2021 y se constituyó el 15 de junio de 2026, con sede en San Andrés Cholula. Más información en clusterdestartups.org."
+        },
+        {
+          "label": "Texto corto",
+          "text": "El Clúster de Startups e Innovación (CSI) es un organismo empresarial con sede en San Andrés Cholula, Puebla. Articula gobierno, academia y empresa bajo el modelo de triple hélice para que crear y escalar una startup tecnológica en el estado sea más fácil. La red opera desde 2021. El 15 de junio de 2026 se constituyó formalmente y el 23 de junio de ese año la Secretaría de Desarrollo Económico y Trabajo del Estado de Puebla lo reconoció como interlocutor del ecosistema de innovación. Su misión es generar conexión entre actores, infraestructura y acompañamiento institucional para que las startups poblanas escalen. Su visión es que, hacia 2030, emprender una empresa de base tecnológica sea más fácil que abrir un negocio tradicional, y que Puebla sea un referente latinoamericano de innovación. Contacto: hola@clusterdestartups.org."
+        }
+      ]
+    },
+    "facts": {
+      "eyebrow": "Ficha",
+      "title": "Datos institucionales",
+      "description": "Información para verificar al organismo. La sede es la oficina del clúster.",
+      "items": [
+        { "label": "Nombre", "value": "Clúster de Startups e Innovación (CSI)" },
+        { "label": "Figura", "value": "Organismo empresarial" },
+        { "label": "Siglas", "value": "CSI" },
+        { "label": "Constitución", "value": "15 de junio de 2026" },
+        { "label": "Sede", "value": "{officeAddress}" },
+        { "label": "Sitio", "value": "https://clusterdestartups.org" },
+        { "label": "Contacto", "value": "hola@clusterdestartups.org" },
+        { "label": "LinkedIn", "value": "https://www.linkedin.com/company/cluster-startups-puebla/" },
+        { "label": "Instagram", "value": "https://www.instagram.com/cluster_startups/" }
+      ]
+    },
+    "logos": {
+      "eyebrow": "Logotipos",
+      "title": "Archivos oficiales",
+      "description": "El logotipo es un wordmark de tres líneas. No hay isotipo aparte: no uses la C del favicon como marca.",
+      "svgLabel": "SVG",
+      "pngLabel": "PNG",
+      "items": [
+        {
+          "name": "A color",
+          "use": "Fondo claro. Es la versión por defecto.",
+          "preview": "/medios/logo-csi.svg",
+          "svg": "/medios/logo-csi.svg",
+          "png": "/medios/logo-csi.png",
+          "surface": "light"
+        },
+        {
+          "name": "Negativo",
+          "use": "En blanco, para fondo oscuro o fotografía oscura.",
+          "preview": "/medios/logo-csi-negativo.svg",
+          "svg": "/medios/logo-csi-negativo.svg",
+          "png": "/medios/logo-csi-negativo.png",
+          "surface": "dark"
+        },
+        {
+          "name": "Negro",
+          "use": "Una tinta, sobre fondo claro.",
+          "preview": "/medios/logo-csi-negro.svg",
+          "svg": "/medios/logo-csi-negro.svg",
+          "png": "/medios/logo-csi-negro.png",
+          "surface": "light"
+        }
+      ]
+    },
+    "rules": {
+      "eyebrow": "Uso",
+      "title": "Reglas del logotipo",
+      "items": [
+        "No lo recolores, estires, rotes, recortes ni le agregues sombra, contorno o fondo propio.",
+        "El negativo solo va sobre un fondo oscuro con contraste suficiente.",
+        "Deja alrededor un espacio libre al menos tan alto como la palabra «de».",
+        "En pantalla, el wordmark no baja de 120 px de ancho.",
+        "No lo reescribas con Archivo, Raleway ni otra fuente: usa el archivo."
+      ]
+    },
+    "brand": {
+      "eyebrow": "Marca",
+      "title": "Color y tipografía",
+      "description": "La tinta del logotipo y el rosa de la interfaz son colores distintos. No sustituyas una por la otra.",
+      "colorsLabel": "Color",
+      "typeLabel": "Tipografía",
+      "typeNote": "Archivo y Raleway son las fuentes del sitio. El wordmark no se reconstruye con ellas.",
+      "colors": [
+        {
+          "name": "Magenta del logotipo",
+          "hex": "#A81C70",
+          "swatch": "logo-magenta",
+          "note": "STARTUPS e INNOVACIÓN"
+        },
+        {
+          "name": "Gris del logotipo",
+          "hex": "#5A5A5C",
+          "swatch": "logo-ink",
+          "note": "Clúster de, y la e"
+        },
+        {
+          "name": "Rosa Mexicano",
+          "hex": "#E8186A",
+          "swatch": "brand",
+          "note": "Interfaz y acentos. No recolorea el logotipo."
+        },
+        {
+          "name": "Navy CSI",
+          "hex": "#16284F",
+          "swatch": "navy",
+          "note": "Texto institucional y fondos oscuros."
+        },
+        {
+          "name": "Blanco",
+          "hex": "#FFFFFF",
+          "swatch": "on-brand",
+          "note": "Logotipo negativo y texto sobre navy o rosa."
+        }
+      ],
+      "types": [
+        { "name": "Archivo", "role": "Titulares" },
+        { "name": "Raleway", "role": "Texto" }
+      ]
+    },
+    "people": {
+      "eyebrow": "Voceros",
+      "title": "A quién entrevistar",
+      "description": "Para una entrevista, escribe a hola@clusterdestartups.org. El equipo completo está en la página de gobernanza.",
+      "teamLabel": "Ver el equipo",
+      "items": [
+        {
+          "name": "Yamil Álvarez",
+          "role": "Presidente",
+          "description": "Representante legal del clúster. Responsable de la visión institucional y las alianzas estratégicas.",
+          "image": "/gobernanza/yamil.png",
+          "imageAlt": "Yamil Álvarez, presidente del clúster"
+        },
+        {
+          "name": "Álvaro Castillo",
+          "role": "Vicepresidente",
+          "description": "Coordina la operación diaria del ecosistema y la articulación entre nodos, comités y aliados.",
+          "image": "/gobernanza/alvaro-castillo.png",
+          "imageAlt": "Álvaro Castillo, vicepresidente del clúster"
+        }
+      ]
+    },
+    "links": {
+      "eyebrow": "Contexto",
+      "title": "Páginas útiles",
+      "items": [
+        { "label": "Quiénes somos", "href": "/quienes-somos" },
+        { "label": "Equipo", "href": "/gobernanza" },
+        { "label": "Sala de prensa", "href": "/prensa" },
+        { "label": "Contacto", "href": "/contacto" }
+      ]
+    },
+    "license": {
+      "title": "Uso permitido",
+      "text": "La cobertura editorial y los materiales del clúster pueden usar estos archivos sin permiso extra. Para uso comercial, merchandising o co-branding, escribe a hola@clusterdestartups.org."
+    }
+  }
+}

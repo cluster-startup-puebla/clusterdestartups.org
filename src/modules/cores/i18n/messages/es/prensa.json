@@ -15,31 +15,23 @@
       "dataLabel": "Datos institucionales",
       "data": [
         {
-          "label": "Nombre legal",
-          "value": "Clúster de Startups e Innovación (CSI) A.C."
+          "label": "Nombre",
+          "value": "Clúster de Startups e Innovación (CSI)"
         },
         {
-          "label": "RFC",
-          "value": "CSI260615EM5"
+          "label": "Figura",
+          "value": "Organismo empresarial"
         },
         {
           "label": "Sede",
           "value": "{officeAddress}"
         }
       ],
-      "contactLabel": "Contacto de prensa",
-      "contactValue": "prensa@clusterdestartups.org",
-      "downloadsLabel": "Descargas de logos",
-      "downloads": [
-        {
-          "label": "Logo en fondo claro",
-          "href": "/logos/logo-csi-fondo-claro.svg"
-        },
-        {
-          "label": "Logo en fondo oscuro",
-          "href": "/logos/logo-csi-fondo-oscuro.svg"
-        }
-      ]
+      "contactLabel": "Contacto",
+      "contactValue": "hola@clusterdestartups.org",
+      "mediaLabel": "Kit de medios",
+      "mediaDescription": "Logotipos en SVG, textos para citar y reglas de uso.",
+      "mediaCta": "Abrir el kit de medios"
     }
   }
 }

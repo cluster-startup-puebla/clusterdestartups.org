@@ -16,6 +16,9 @@
   --brand-secondary: #16284f;
   --brand-secondary-light: #28406f;
   --brand-gradient: linear-gradient(135deg, #e8186a 0%, #16284f 100%);
+  /* Tintas del wordmark. No sustituyen al rosa de interfaz. */
+  --logo-magenta: #a81c70;
+  --logo-ink: #5a5a5c;
 }
 /* ============================================================
    Modo Claro (default)
@@ -78,6 +81,8 @@
   --color-navy: var(--brand-secondary);
   --color-navy-light: var(--brand-secondary-light);
   --color-on-brand: var(--text-on-brand);
+  --color-logo-magenta: var(--logo-magenta);
+  --color-logo-ink: var(--logo-ink);
 
   /* Acento interactivo (reacciona al modo) */
   --color-accent: var(--brand-accent);

@@ -15,7 +15,7 @@ const organization = {
     "Startup and Innovation Cluster",
   ],
   url: `${SITE_URL}/es/`,
-  logo: `${SITE_URL}/logos/logo-csi-fondo-claro.svg`,
+  logo: `${SITE_URL}/medios/logo-csi.svg`,
   image: `${SITE_URL}/og.png`,
   email: "hola@clusterdestartups.org",
   telephone: OFFICE.phoneTel,

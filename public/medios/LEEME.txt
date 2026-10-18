@@ -1,0 +1,26 @@
+Kit de medios — Clúster de Startups e Innovación (CSI)
+https://clusterdestartups.org/es/medios/
+
+logo-csi.svg / logo-csi.png
+  A color. Fondo claro. Versión por defecto.
+
+logo-csi-negativo.svg / logo-csi-negativo.png
+  Blanco. Fondo oscuro o fotografía oscura.
+
+logo-csi-negro.svg / logo-csi-negro.png
+  Negro, una tinta. Fondo claro.
+
+No recolorear, estirar, rotar, recortar ni agregar sombra, contorno o fondo propio.
+Uso editorial y materiales del clúster: permitido.
+Uso comercial, merchandising o co-branding: hola@clusterdestartups.org
+
+Media kit — Cluster of Startups and Innovation (CSI)
+https://clusterdestartups.org/en/medios/
+
+logo-csi — full color, light backgrounds.
+logo-csi-negativo — white, dark backgrounds.
+logo-csi-negro — black, one ink, light backgrounds.
+
+Do not recolor, stretch, rotate, crop, or add a shadow, outline, or background.
+Editorial use and cluster materials: allowed.
+Commercial use, merchandise, or co-branding: hola@clusterdestartups.org
