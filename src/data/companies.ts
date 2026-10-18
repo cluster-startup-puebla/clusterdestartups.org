@@ -45,6 +45,7 @@ export const STARTUP_INDUSTRIES = {
   industry40: { es: "Industria 4.0", en: "Industry 4.0" },
   logistics: { es: "Logística", en: "Logistics" },
   mobility: { es: "Movilidad", en: "Mobility" },
+  proptech: { es: "Proptech", en: "Proptech" },
   software: { es: "Software", en: "Software" },
 } as const satisfies Record<string, LocalizedText>;
 
@@ -539,7 +540,7 @@ export const companies: readonly Company[] = [
       es: 'Gestión comercial del asesor inmobiliario certificado: expediente, cita, contrato y firma.',
       en: 'Commercial operations for certified real estate advisors: file, appointment, contract and signature.'
     },
-    industries: ['software'],
+    industries: ['proptech'],
     problem: {
       es: 'Certificarse dejó de ser opcional en estados clave, pero el asesor certificado sigue cerrando la operación en WhatsApp y Excel. El expediente, la cita, la negociación y el contrato no viven en un solo lugar, y el certificado no cambia la herramienta con la que trabaja. Las plataformas inmobiliarias, además, aceptan a cualquiera: la certificación no es requisito para entrar.',
       en: 'Certification stopped being optional in key states, but the certified advisor still closes the deal in WhatsApp and Excel. The file, the appointment, the negotiation and the contract do not live in one place, and the certificate does not change the tool they work with. Real estate platforms also let anyone in: certification is not required to join.'
@@ -735,8 +736,8 @@ export const companies: readonly Company[] = [
     logo: '/empresas/the-x-chair.webp',
     logoInk: true,
     region: {
-      es: 'México',
-      en: 'Mexico'
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
     },
     shortDescription: {
       es: 'Silla de ruedas controlada por la mente, con interfaz cerebro-computadora.',
