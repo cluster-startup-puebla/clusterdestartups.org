@@ -179,6 +179,67 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'hexa-group',
+    name: 'Hexa Group',
+    logo: '/empresas/hexa-group.webp',
+    logoDark: true,
+    region: {
+      es: 'Playa del Carmen, Quintana Roo, México',
+      en: 'Playa del Carmen, Quintana Roo, Mexico'
+    },
+    shortDescription: {
+      es: 'Biotecnología que convierte plásticos en proteína para alimento de animales acuáticos.',
+      en: 'Biotechnology that turns plastics into protein for aquatic animal feed.'
+    },
+    industries: ['climatech', 'agtech'],
+    problem: {
+      es: 'El plástico sigue acumulándose y, al mismo tiempo, la piscicultura y los animales acuáticos exóticos necesitan proteína de alto rendimiento a un costo que puedan pagar.',
+      en: 'Plastic keeps piling up and, at the same time, fish farming and exotic aquatic animals need high-performance protein at a cost they can pay.'
+    },
+    solution: {
+      es: 'Hexa Group usa insectos para digerir plásticos y convertirlos en bio-proteínas. Con eso produce alimento de alta proteína, de costo competitivo y alto rendimiento, para animales acuáticos exóticos y piscicultura.',
+      en: 'Hexa Group uses insects to digest plastics and turn them into bio-proteins. From that it produces high-protein feed, at a competitive cost and with high performance, for exotic aquatic animals and fish farming.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Bio-procesamiento ecológico',
+          en: 'Ecological bioprocessing'
+        },
+        description: {
+          es: 'Insectos digieren plásticos y los convierten en proteína de alta calidad para la industria animal.',
+          en: 'Insects digest plastics and turn them into high-quality protein for the animal industry.'
+        }
+      },
+      {
+        name: {
+          es: 'Alimento de alta proteína',
+          en: 'High-protein feed'
+        },
+        description: {
+          es: 'Alimento para animales acuáticos exóticos y piscicultura, de costo competitivo y alto rendimiento.',
+          en: 'Feed for exotic aquatic animals and fish farming, at a competitive cost and with high performance.'
+        }
+      },
+      {
+        name: {
+          es: 'Consultoría en biotecnología',
+          en: 'Biotechnology consulting'
+        },
+        description: {
+          es: 'Asesoría para empresas que quieren implementar tecnologías sostenibles de bio-procesamiento.',
+          en: 'Advice for companies that want to implement sustainable bioprocessing technologies.'
+        }
+      }
+    ],
+    contact: {
+      person: 'Isaac de la Rosa',
+      role: 'Director General',
+      website: 'https://hexagroup.lat/',
+      email: 'direccion@hexagroup.lat'
+    }
+  },
+  {
     slug: 'karggu',
     name: 'Karggu',
     logo: '/empresas/karggu.webp',
