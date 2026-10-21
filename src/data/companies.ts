@@ -47,6 +47,7 @@ export const STARTUP_INDUSTRIES = {
   mobility: { es: "Movilidad", en: "Mobility" },
   proptech: { es: "Proptech", en: "Proptech" },
   software: { es: "Software", en: "Software" },
+  sportstech: { es: "Sportstech", en: "Sportstech" },
 } as const satisfies Record<string, LocalizedText>;
 
 export type StartupIndustry = keyof typeof STARTUP_INDUSTRIES;
@@ -191,7 +192,7 @@ export const companies: readonly Company[] = [
       es: 'Biotecnología que convierte plásticos en proteína para alimento de animales acuáticos.',
       en: 'Biotechnology that turns plastics into protein for aquatic animal feed.'
     },
-    industries: ['climatech', 'agtech'],
+    industries: ['agtech'],
     problem: {
       es: 'El plástico sigue acumulándose y, al mismo tiempo, la piscicultura y los animales acuáticos exóticos necesitan proteína de alto rendimiento a un costo que puedan pagar.',
       en: 'Plastic keeps piling up and, at the same time, fish farming and exotic aquatic animals need high-performance protein at a cost they can pay.'
@@ -543,7 +544,7 @@ export const companies: readonly Company[] = [
       es: 'Plataforma de huella de carbono alimentaria e inventario de emisiones con captura de CO₂.',
       en: 'Food carbon footprint platform and emissions inventory with CO₂ capture.'
     },
-    industries: ['climatech', 'agtech'],
+    industries: ['climatech'],
     problem: {
       es: 'Los compradores europeos y estadounidenses ya exigen trazabilidad ambiental para dejar entrar un producto, y el exportador mexicano no tiene con qué responder: medir la huella de cada producto pide análisis de ciclo de vida, y el reporte de emisiones se rearma a mano cada año. En polímeros y petroquímica hay además un desperdicio doble: el CO₂ de proceso se ventea como residuo mientras la planta sigue comprando insumos convencionales.',
       en: 'European and US buyers already demand environmental traceability before letting a product in, and Mexican exporters have no way to answer: measuring each product’s footprint requires life-cycle assessment, and the emissions report is rebuilt by hand every year. In polymers and petrochemicals the waste is twofold: process CO₂ is vented while the plant keeps buying conventional feedstock.'
@@ -557,6 +558,71 @@ export const companies: readonly Company[] = [
       role: 'CEO',
       website: 'https://www.oxtron.mx/es/',
       email: 'info@oxtron.mx'
+    }
+  },
+  {
+    slug: 'padel-360',
+    name: 'Padel 360',
+    logo: '/empresas/padel-360.webp',
+    logoInk: true,
+    shortDescription: {
+      es: 'Liga amateur de pádel por equipos en México, con tres formatos y categoría asignada por evaluación.',
+      en: 'Amateur team padel league in Mexico, with three formats and a category assigned by evaluation.'
+    },
+    industries: ['sportstech'],
+    problem: {
+      es: 'Las ligas amateur se rompen cuando la categoría la declara el jugador, entran incorporaciones para una serie decisiva y las alineaciones se ajustan al ver las parejas rivales. Una serie la puede cargar una sola pareja: no hacen falta jugadores de todas las categorías.',
+      en: 'Amateur leagues break when the player declares the category, signings arrive for a decisive series and lineups are adjusted after the rival pairs are known. One pair can carry a series: players from every category are not required.'
+    },
+    solution: {
+      es: 'Padel 360 organiza una liga por equipos en México. Cada serie enfrenta a dos equipos en cuatro canchas y reparte cuatro puntos, uno por cancha, sin bonos: ganar en Elite vale lo mismo que ganar en Rising. Los formatos 100% varonil, 100% femenil y 360 son competencias aparte, cada una con su cuadro, su calendario y su tabla. La categoría la asigna un panel de tres coaches, cada movimiento de roster conserva fecha, responsable y motivo, y las alineaciones se revelan al mismo tiempo. Lo oficial se registra en WePadel.app.',
+      en: 'Padel 360 organizes a team league in Mexico. Each series pits two teams across four courts and splits four points, one per court, with no bonuses: a win on Elite is worth the same as a win on Rising. The 100% men, 100% women and 360 formats are separate competitions, each with its own draw, calendar and table. A panel of three coaches assigns the category, every roster move keeps the date, the person responsible and the reason, and lineups are revealed at the same time. What counts as official is recorded on WePadel.app.'
+    },
+    catalog: [
+      {
+        name: {
+          es: '100% Varonil',
+          en: '100% men'
+        },
+        description: {
+          es: 'Cuatro canchas por serie, equipo íntegramente varonil, con cuadro, calendario y tabla propios. Primera jornada el 10 de octubre de 2026.',
+          en: 'Four courts per series, an all-men team, with its own draw, calendar and table. First matchday on 10 October 2026.'
+        }
+      },
+      {
+        name: {
+          es: '100% Femenil',
+          en: '100% women'
+        },
+        description: {
+          es: 'Mismo esquema que el varonil: cuatro canchas por serie y tabla propia. No es una categoría dentro de otro formato.',
+          en: 'The same setup as the all-men format: four courts per series and its own table. It is not a category inside another format.'
+        }
+      },
+      {
+        name: {
+          es: 'Formato 360',
+          en: '360 format'
+        },
+        description: {
+          es: 'Las cuatro canchas las juegan parejas de un hombre y una mujer del mismo equipo. Misma serie y mismos puntos; cambia cómo se forma la pareja. Arranque previsto en 2027.',
+          en: 'All four courts are played by pairs of one man and one woman from the same team. Same series and same points; what changes is how the pair is formed. Start planned for 2027.'
+        }
+      },
+      {
+        name: {
+          es: 'Evaluación',
+          en: 'Evaluation'
+        },
+        description: {
+          es: 'Un panel de tres coaches clasifica al jugador en 360 Elite, Master, Advanced o Rising, por consenso o mayoría. Sin evaluación no hay categoría.',
+          en: 'A panel of three coaches places the player in 360 Elite, Master, Advanced or Rising, by consensus or majority. Without an evaluation there is no category.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://padel360league.com',
+      phone: '+52 221 198 8001'
     }
   },
   {
@@ -816,6 +882,73 @@ export const companies: readonly Company[] = [
     contact: {
       person: 'Eduardo Zárate Lara',
       website: 'https://thexcompany.netlify.app'
+    }
+  },
+  {
+    slug: 'wepadel',
+    name: 'WePadel',
+    logo: '/empresas/wepadel.webp',
+    logoInk: true,
+    shortDescription: {
+      es: 'Plataforma para jugar, organizar y hacer crecer una comunidad de pádel.',
+      en: 'Platform to play, organize and grow a padel community.'
+    },
+    industries: ['sportstech'],
+    problem: {
+      es: 'El pádel de una comunidad vive repartido en varias apps y un grupo de WhatsApp. El historial se queda en el club donde se jugó, y la categoría la declara el jugador, no quien organiza.',
+      en: 'A community’s padel lives across several apps and a WhatsApp group. The record stays at the club where it was played, and the player declares the category, not the organizer.'
+    },
+    solution: {
+      es: 'WePadel junta jugadores, clubes, coaches y comunidades en una sola plataforma. El perfil, el historial y el ranking viajan con el jugador aunque cambie de club. Torneos, ligas, retas, canchas, clases y clínicas quedan registrados, y el ranking se recalcula con cada resultado. Con una membresía se reservan canchas con créditos en cualquier club afiliado.',
+      en: 'WePadel brings players, clubs, coaches and communities into one platform. The profile, the record and the ranking travel with the player even if they change clubs. Tournaments, leagues, matches, courts, classes and clinics stay on record, and the ranking recalculates with every result. One membership books courts with credits at any affiliated club.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Retas',
+          en: 'Matches'
+        },
+        description: {
+          es: 'Partidos recurrentes entre amigos, con parejas, rondas y ranking en vivo.',
+          en: 'Recurring matches among friends, with pairs, rounds and a live ranking.'
+        }
+      },
+      {
+        name: {
+          es: 'Ligas',
+          en: 'Leagues'
+        },
+        description: {
+          es: 'Jornadas, tabla, ascensos y resultados, con el ranking recalculado a partir de cada resultado.',
+          en: 'Matchdays, the table, promotions and results, with the ranking recalculated from every result.'
+        }
+      },
+      {
+        name: {
+          es: 'Torneos',
+          en: 'Tournaments'
+        },
+        description: {
+          es: 'Inscripciones, grupos, cuadros y resultados en un solo lugar. La categoría la valida quien organiza.',
+          en: 'Entries, groups, draws and results in one place. The organizer validates the category.'
+        }
+      },
+      {
+        name: {
+          es: 'WePadel Pass',
+          en: 'WePadel Pass'
+        },
+        description: {
+          es: 'Una membresía para reservar con créditos en cualquier club afiliado, sin pagar en mostrador ni abrir una cuenta por club.',
+          en: 'One membership to book with credits at any affiliated club, without paying at the desk or opening an account per club.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://www.wepadel.app/',
+      demo: 'https://www.wepadel.app/ranking',
+      email: 'hola@wepadel.app',
+      phone: '+52 55 1798 4284'
     }
   }
 ];
