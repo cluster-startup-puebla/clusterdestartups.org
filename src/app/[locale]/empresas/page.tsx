@@ -49,7 +49,10 @@ export default async function CompaniesPage({ params }: PageProps<"/[locale]/emp
       <NodeField variant="sparse" />
       <div className="container-site pb-16 lg:pb-24">
         <header className="max-w-2xl">
-          <h1 className="text-h1 font-display text-ink">{t("title")}</h1>
+          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <h1 className="text-h1 font-display text-ink">{t("title")}</h1>
+            <p className="text-small text-ink-muted">{t("count", { count: companies.length })}</p>
+          </div>
           <p className="text-body-lg mt-4 text-ink-secondary">{t("subtitle")}</p>
         </header>
 
