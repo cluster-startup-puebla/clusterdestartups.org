@@ -40,6 +40,7 @@ export const STARTUP_INDUSTRIES = {
   agtech: { es: "Agtech", en: "Agtech" },
   climatech: { es: "Climatech", en: "Climatech" },
   edtech: { es: "Edtech", en: "Edtech" },
+  gametech: { es: "Gametech", en: "Gametech" },
   healthtech: { es: "Healthtech", en: "Healthtech" },
   hrtech: { es: "HR Tech", en: "HR Tech" },
   industry40: { es: "Industria 4.0", en: "Industry 4.0" },
@@ -459,6 +460,64 @@ export const companies: readonly Company[] = [
       demo: 'https://andon.milevadynamics.com/tablero',
       email: 'Josedaniel.martinez@milevadynamics.com',
       phone: '222 954 3666'
+    }
+  },
+  {
+    slug: 'nemiki',
+    name: 'Nemiki',
+    logo: '/empresas/nemiki.webp',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Juego indie mexicano de pixel art donde jugar regenera el hábitat del axolote.',
+      en: 'Mexican indie pixel-art game where playing regenerates the axolotl habitat.'
+    },
+    industries: ['gametech'],
+    problem: {
+      es: 'La basura y la contaminación dañaron el hábitat del axolote y de muchas más especies. Acercar a más jóvenes a la naturaleza y financiar la conservación de ese bosque siguen siendo dos tareas distintas.',
+      en: 'Trash and pollution have damaged the habitat of the axolotl and of many other species. Bringing more young people closer to nature and funding the conservation of that forest are still two separate tasks.'
+    },
+    solution: {
+      es: 'Nemiki es un juego indie mexicano de pixel art, todavía en desarrollo, donde jugar es regenerar. Exploras un mundo herido, devuelves la vida al agua y al bosque, y acompañas a los axolotes de vuelta a su hábitat. El bosque del juego es real: está en Puebla, y parte de los ingresos financia su restauración. Lo co-crean con Villa Atl, que gestiona ese bosque con jóvenes, y con Xolokali, el refugio donde los axolotes se reproducen y se estudian. La mayor parte de los ingresos va a ese trabajo.',
+      en: 'Nemiki is a Mexican indie pixel-art game, still in development, where playing is regenerating. You explore a wounded world, bring life back to the water and the forest, and accompany the axolotls back to their habitat. The forest in the game is real: it is in Puebla, and part of the revenue funds its restoration. They co-create it with Villa Atl, which manages that forest with young people, and with Xolokali, the refuge where axolotls reproduce and are studied. Most of the revenue goes to that work.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Restaura hábitats reales',
+          en: 'Restore real habitats'
+        },
+        description: {
+          es: 'Limpias ecosistemas, recuperas suelo y plantas donde ya no había nada. Cada misión nace de una acción de restauración en el mundo real.',
+          en: 'You clean ecosystems, recover soil and plant where there was nothing. Each mission comes from a restoration action in the real world.'
+        }
+      },
+      {
+        name: {
+          es: 'Axolote del altiplano',
+          en: 'Plateau axolotl'
+        },
+        description: {
+          es: 'La especie que resiste en el altiplano mexicano: cómo vive, qué la amenaza y qué necesita para volver.',
+          en: 'The species that holds on in the Mexican plateau: how it lives, what threatens it and what it needs to return.'
+        }
+      },
+      {
+        name: {
+          es: 'Co-creación scout',
+          en: 'Scout co-creation'
+        },
+        description: {
+          es: 'Los retos ambientales y las enseñanzas scout inspiran el juego. Los jugadores comparten sus experiencias.',
+          en: 'Environmental challenges and scout teachings inspire the game. Players share their experiences.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://www.nemiki.com.mx/',
+      email: 'nemiki.game@gmail.com'
     }
   },
   {
