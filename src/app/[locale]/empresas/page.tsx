@@ -45,9 +45,9 @@ export default async function CompaniesPage({ params }: PageProps<"/[locale]/emp
   };
 
   return (
-    <section className="relative isolate overflow-hidden py-16 lg:py-24">
+    <section className="relative isolate overflow-hidden pt-16 lg:pt-24 -mb-24">
       <NodeField variant="sparse" />
-      <div className="container-site">
+      <div className="container-site pb-16 lg:pb-24">
         <header className="max-w-2xl">
           <h1 className="text-h1 font-display text-ink">{t("title")}</h1>
           <p className="text-body-lg mt-4 text-ink-secondary">{t("subtitle")}</p>
