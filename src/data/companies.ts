@@ -182,6 +182,76 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'empowershe',
+    name: 'EmpowerShe',
+    logo: '/empresas/empowershe.webp',
+    region: {
+      es: 'México',
+      en: 'Mexico'
+    },
+    shortDescription: {
+      es: 'Educación STEAM para niñas y jóvenes, con una app que funciona sin internet y talleres presenciales.',
+      en: 'STEAM education for girls and young women, with an app that works offline and in-person workshops.'
+    },
+    industries: ['edtech'],
+    problem: {
+      es: 'En México, solo el 36% de quienes estudian ingeniería son mujeres. El 65% de las escuelas públicas no tiene computadoras ni internet, así que muchas niñas no llegan a la ciencia desde la primaria.',
+      en: 'In Mexico, only 36% of engineering students are women. 65% of public schools have neither computers nor internet, so many girls never reach science in primary school.'
+    },
+    solution: {
+      es: 'EmpowerShe es una asociación civil que diseña educación STEAM para niñas y jóvenes, sobre todo en comunidades en situación de vulnerabilidad. La app funciona sin conexión. Los talleres los imparten embajadoras y hay mentoría. EmpowerShe Raíces lleva el programa, gratuito y adaptado al idioma local, a comunidades rurales e indígenas.',
+      en: 'EmpowerShe is a civil association that designs STEAM education for girls and young women, especially in vulnerable communities. The app works offline. Ambassadors teach the workshops and there is mentoring. EmpowerShe Raíces takes the program, free and adapted to the local language, to rural and indigenous communities.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'EmpowerHer',
+          en: 'EmpowerHer'
+        },
+        description: {
+          es: 'App STEAM que funciona sin internet, con cursos, experimentos, videos e historias de mujeres en ciencia, más mentorías virtuales.',
+          en: 'An offline STEAM app with courses, experiments, videos and stories of women in science, plus virtual mentoring.'
+        }
+      },
+      {
+        name: {
+          es: 'EmpowerLab',
+          en: 'EmpowerLab'
+        },
+        description: {
+          es: 'La app más talleres presenciales de STEAM y habilidades blandas, impartidos por embajadoras.',
+          en: 'The app plus in-person STEAM and soft-skills workshops, taught by ambassadors.'
+        }
+      },
+      {
+        name: {
+          es: 'EmpowerShe Raíces',
+          en: 'EmpowerShe Raíces'
+        },
+        description: {
+          es: 'Programa gratuito para comunidades rurales e indígenas, con contenidos adaptados al idioma y al contexto local.',
+          en: 'A free program for rural and indigenous communities, with content adapted to the local language and context.'
+        }
+      },
+      {
+        name: {
+          es: 'Empowering Futures',
+          en: 'Empowering Futures'
+        },
+        description: {
+          es: 'Donación de dispositivos para llevar la app a comunidades sin acceso a internet.',
+          en: 'Device donations so the app can reach communities without internet access.'
+        }
+      }
+    ],
+    contact: {
+      person: 'Ximena Ortiz Gómez',
+      role: 'CEO',
+      website: 'https://empowershe.org/',
+      email: 'empower.shee@gmail.com'
+    }
+  },
+  {
     slug: 'hexa-group',
     name: 'Hexa Group',
     logo: '/empresas/hexa-group.webp',
