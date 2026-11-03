@@ -49,6 +49,7 @@ export const STARTUP_INDUSTRIES = {
   proptech: { es: "Proptech", en: "Proptech" },
   software: { es: "Software", en: "Software" },
   sportstech: { es: "Sportstech", en: "Sportstech" },
+  taxtech: { es: "Taxtech", en: "Taxtech" },
 } as const satisfies Record<string, LocalizedText>;
 
 export type StartupIndustry = keyof typeof STARTUP_INDUSTRIES;
@@ -685,6 +686,56 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'plataforma-luca',
+    name: 'Plataforma Luca',
+    logo: '/empresas/plataforma-luca.webp',
+    logoInk: true,
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Facturas, XML del SAT e ingresos y gastos para negocios y despachos contables.',
+      en: 'Invoices, SAT XML and income and expenses for businesses and accounting firms.'
+    },
+    industries: ['taxtech'],
+    problem: {
+      es: 'El negocio lleva ingresos, gastos y facturas repartidos entre Excel, el portal del SAT y carpetas. El despacho sigue a cada cliente con archivos sueltos, correos y reportes armados a mano.',
+      en: 'A business keeps income, expenses and invoices split across Excel, the SAT portal and folders. An accounting firm tracks each client through loose files, email and reports built by hand.'
+    },
+    solution: {
+      es: 'LUCA es la plataforma de Paytax Accounting S.C. para organizar esa información fiscal. LUCA Lite descarga los XML del SAT, muestra ingresos, egresos y flujo de efectivo, emite facturas y deja a la mano la constancia de situación fiscal, la opinión de cumplimiento y el buzón tributario. LUCA Pro junta varios RFC en un panel: tareas por contador, entregables por periodo, validador de CFDI y reportes. No presenta declaraciones ni calcula impuestos.',
+      en: 'LUCA is the platform of Paytax Accounting S.C. for organizing that fiscal information. LUCA Lite downloads XML from the SAT, shows income, expenses and cash flow, issues invoices and keeps the tax status certificate, the compliance opinion and the tax mailbox at hand. LUCA Pro brings several RFCs into one panel: tasks per accountant, deliverables by period, a CFDI validator and reports. It does not file returns or calculate taxes.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'LUCA Lite',
+          en: 'LUCA Lite'
+        },
+        description: {
+          es: 'Para empresas, profesionistas y freelancers. Descarga XML y PDF del SAT, emite facturas y muestra ingresos, egresos y flujo de efectivo. El plan cuesta $249 MXN al mes e incluye 15 timbres.',
+          en: 'For businesses, professionals and freelancers. Downloads XML and PDF from the SAT, issues invoices and shows income, expenses and cash flow. The plan is $249 MXN a month and includes 15 stamps.'
+        }
+      },
+      {
+        name: {
+          es: 'LUCA Pro',
+          en: 'LUCA Pro'
+        },
+        description: {
+          es: 'Para contadores independientes y despachos. RFC sin límite, tareas por contador, descarga masiva de XML, constancias y opinión de cumplimiento. No incluye timbres.',
+          en: 'For independent accountants and firms. Unlimited RFCs, tasks per accountant, bulk XML download, tax status certificates and compliance opinions. Stamps are not included.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://plataformaluca.com/',
+      email: 'contacto@plataformaluca.com',
+      phone: '+52 221 416 9232'
+    }
+  },
+  {
     slug: 'radek',
     name: 'Radek',
     logo: '/empresas/radek.webp',
@@ -914,6 +965,65 @@ export const companies: readonly Company[] = [
       website: 'https://www.safemobility.com.mx/',
       email: 'contacto@safemobility.mx',
       phone: '221 101 0178'
+    }
+  },
+  {
+    slug: 'taxbox',
+    name: 'Taxbox',
+    logo: '/empresas/taxbox.webp',
+    logoInk: true,
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    shortDescription: {
+      es: 'Diagnóstico fiscal y declaración anual para personas que cobran por nómina.',
+      en: 'Tax diagnosis and annual return for people paid by payroll.'
+    },
+    industries: ['taxtech'],
+    problem: {
+      es: 'Quien cobra por nómina no siempre sabe si su declaración anual saldrá con saldo a favor o por pagar, ni si el SAT le debe una devolución o hay un asunto fiscal que atender.',
+      en: 'Someone paid by payroll does not always know whether the annual return will come out with a balance in their favor or an amount due, or whether the SAT owes a refund or there is a tax matter to address.'
+    },
+    solution: {
+      es: 'Taxbox revisa la información fiscal de personas con ingresos por nómina, entrega un resultado preliminar y lo explica. Si hay devolución, acompaña el proceso; si hay algo que atender, orienta con especialistas. El servicio prepara y presenta la declaración anual, revisa deducciones y se conecta al SAT.',
+      en: 'Taxbox reviews the tax information of people with payroll income, returns a preliminary result and explains it. If there is a refund, it stays with them through the process; if something needs attention, specialists guide them. The service prepares and files the annual return, reviews deductions and connects to the SAT.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Taxbox LITE',
+          en: 'Taxbox LITE'
+        },
+        description: {
+          es: 'Presentación automática de la declaración anual, revisión de deducciones y conexión al SAT. El cobro es un porcentaje de la devolución, solo si el SAT devuelve.',
+          en: 'Automatic filing of the annual return, a deduction review and a connection to the SAT. The fee is a percentage of the refund, and only if the SAT pays it back.'
+        }
+      },
+      {
+        name: {
+          es: 'Taxbox PAY',
+          en: 'Taxbox PAY'
+        },
+        description: {
+          es: 'Análisis y presentación de la declaración cuando sale impuesto a pagar, con acuse y línea de captura.',
+          en: 'Analysis and filing of the return when tax is due, with the acknowledgment and the payment slip.'
+        }
+      },
+      {
+        name: {
+          es: 'Taxbox PREMIUM',
+          en: 'Taxbox PREMIUM'
+        },
+        description: {
+          es: 'Revisión por contador certificado, corrección de errores del SAT, asesoría fiscal y presentación del formato electrónico de devolución.',
+          en: 'Review by a certified accountant, correction of SAT errors, tax advice and filing of the electronic refund form.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://taxbox.mx/',
+      email: 'hola@taxbox.com.mx'
     }
   },
   {
