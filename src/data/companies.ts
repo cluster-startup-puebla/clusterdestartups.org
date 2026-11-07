@@ -252,6 +252,72 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'gogotrack',
+    name: 'GoGoTrack',
+    logo: '/empresas/gogotrack.webp',
+    logoInk: true,
+    shortDescription: {
+      es: 'GPS, checadores y conteo de pasajeros para flotillas de transporte público.',
+      en: 'GPS, checkers and passenger counts for public transport fleets.'
+    },
+    industries: ['mobility'],
+    problem: {
+      es: 'El concesionario no ve en un solo lugar dónde va cada unidad, si cumplió los tiempos de la ruta ni cuántos pasajeros subieron de verdad. El recaudo queda en lo que reporte el chofer o el checador.',
+      en: 'The concession holder cannot see, in one place, where each vehicle is, whether it kept the route times, or how many passengers actually boarded. Fare collection depends on what the driver or the checker reports.'
+    },
+    solution: {
+      es: 'GoGoTrack conecta el GPS, los sensores y el video de la unidad con una plataforma para transporte público, privado o de carga. El concesionario rastrea la flotilla, registra entradas y salidas en puntos de checado, cuenta subidas y bajadas, y compara ese conteo con el recaudo. GoGoPay cobra a bordo con tarjeta, Google Pay y Apple Pay.',
+      en: 'GoGoTrack connects the vehicle GPS, sensors and video to one platform for public, private or freight transport. The concession holder tracks the fleet, records arrivals and departures at check points, counts boardings and alightings, and compares that count with fare collection. GoGoPay takes cards, Google Pay and Apple Pay on board.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'GPS',
+          en: 'GPS'
+        },
+        description: {
+          es: 'Ubicación de la flotilla en tiempo real, con rutas, paradas, geocercas, alertas y reportes, en web y en app.',
+          en: 'Real-time fleet location, with routes, stops, geofences, alerts and reports, on the web and in the app.'
+        }
+      },
+      {
+        name: {
+          es: 'Checadores virtuales',
+          en: 'Virtual checkers'
+        },
+        description: {
+          es: 'Puntos de checado por ruta, con registro de entradas, salidas y tiempos de recorrido.',
+          en: 'Check points along the route, with a record of arrivals, departures and trip times.'
+        }
+      },
+      {
+        name: {
+          es: 'Contador de pasajeros',
+          en: 'Passenger counter'
+        },
+        description: {
+          es: 'Subidas y bajadas por unidad, con sensor, barras o cámara, para comparar el conteo con el recaudo.',
+          en: 'Boardings and alightings per vehicle, by sensor, bars or camera, so the count can be compared with fare collection.'
+        }
+      },
+      {
+        name: {
+          es: 'GoGoPay',
+          en: 'GoGoPay'
+        },
+        description: {
+          es: 'Terminal a bordo para cobrar con tarjeta de crédito o débito, Google Pay y Apple Pay.',
+          en: 'An onboard terminal for credit and debit cards, Google Pay and Apple Pay.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://gogotrack.mx/',
+      email: 'gogotrackmx@gmail.com',
+      phone: '+52 222 177 0159'
+    }
+  },
+  {
     slug: 'hexa-group',
     name: 'Hexa Group',
     logo: '/empresas/hexa-group.webp',
