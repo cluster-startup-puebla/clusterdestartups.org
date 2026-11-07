@@ -1255,6 +1255,67 @@ export const companies: readonly Company[] = [
       email: 'hola@wepadel.app',
       phone: '+52 55 1798 4284'
     }
+  },
+  {
+    slug: 'xiah',
+    name: 'XiA\'H',
+    logo: '/empresas/xiah.webp',
+    region: {
+      es: 'México',
+      en: 'Mexico'
+    },
+    shortDescription: {
+      es: 'Ingredientes bioactivos de plantas medicinales para la industria del bienestar.',
+      en: 'Bioactive ingredients from medicinal plants for the wellness industry.'
+    },
+    industries: ['healthtech'],
+    problem: {
+      es: 'Las plantas medicinales se han usado por siglos contra el estrés, la inflamación y el bienestar, pero esa tradición no llega lista para una formulación industrial: hay que elegir la combinación, extraerla y dejarla estable y absorbible.',
+      en: 'Medicinal plants have been used for centuries for stress, inflammation and wellbeing, but that tradition does not arrive ready for an industrial formulation: the combination has to be chosen, extracted and made stable and absorbable.'
+    },
+    solution: {
+      es: 'XiA\'H parte de plantas medicinales mexicanas y de su uso tradicional. Selecciona el perfil herbal, extrae y purifica, hace una bioconversión con bacterias y encapsula el resultado en un polvo listo para formular. Lo ofrece a la industria del bienestar y la salud.',
+      en: 'XiA\'H starts from Mexican medicinal plants and their traditional use. It selects the herbal profile, extracts and purifies, runs a bioconversion with bacteria and encapsulates the result as a powder ready to formulate. It offers that to the wellness and health industry.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Abastecimiento',
+          en: 'Sourcing'
+        },
+        description: {
+          es: 'Plantas medicinales mexicanas de uso tradicional, integradas a formulaciones con criterio científico.',
+          en: 'Mexican medicinal plants from traditional use, built into formulations with a scientific criterion.'
+        }
+      },
+      {
+        name: {
+          es: 'Formulaciones poliherbales',
+          en: 'Polyherbal formulations'
+        },
+        description: {
+          es: 'Combinan varias plantas para que actúen juntas, en vez de aislar un solo compuesto.',
+          en: 'They combine several plants so they work together, instead of isolating a single compound.'
+        }
+      },
+      {
+        name: {
+          es: 'Estabilización',
+          en: 'Stabilization'
+        },
+        description: {
+          es: 'Procesos de extracción que dejan el ingrediente estable y listo para integrarse a un producto.',
+          en: 'Extraction processes that leave the ingredient stable and ready to go into a product.'
+        }
+      }
+    ],
+    contact: {
+      person: 'Daniela Cabral Porras',
+      role: 'CEO',
+      website: 'https://www.xiah.com.mx/',
+      email: 'info@xiah.com.mx',
+      phone: '+52 81 2608 5317'
+    }
   }
 ];
 
