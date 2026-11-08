@@ -16,6 +16,9 @@
       "region": "Región",
       "clear": "Limpiar filtros",
       "filters": "Filtros",
+      "close": "Cerrar",
+      "remove": "Quitar",
+      "active": "Filtros activos",
       "noResults": "No se encontraron empresas con estos filtros."
     },
     "batch": {

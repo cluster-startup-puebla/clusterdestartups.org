@@ -73,7 +73,6 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [condensed, setCondensed] = useState(false);
-  const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     const update = () => setCondensed(window.scrollY > 24);
@@ -83,10 +82,6 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    const current = ITEMS.find(
-      (entry) => entry.type === "menu" && entry.items.some((item) => isActive(pathname, item.href)),
-    );
-    setExpanded(current && current.type === "menu" ? current.key : null);
     setOpen(false);
   }, [pathname]);
 
@@ -179,42 +174,26 @@ export function Header() {
                       href={entry.href}
                       aria-current={isActive(pathname, entry.href) ? "page" : undefined}
                       className={linkClass(isActive(pathname, entry.href), true)}
-                      onClick={() => setOpen(false)}
                     >
                       {t(entry.key)}
                     </Link>
                   </li>
                 ) : (
-                  <li key={entry.key}>
-                    <button
-                      type="button"
-                      className="flex w-full items-center justify-between py-3 text-body text-ink-secondary"
-                      aria-expanded={expanded === entry.key}
-                      onClick={() => setExpanded(expanded === entry.key ? null : entry.key)}
-                    >
-                      {t(entry.key)}
-                      <ChevronDown
-                        size={16}
-                        strokeWidth={2}
-                        className={`transition ${expanded === entry.key ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                    {expanded === entry.key && (
-                      <ul className="pb-2 pl-3">
-                        {entry.items.map((item) => (
-                          <li key={item.href}>
-                            <Link
-                              href={item.href}
-                              aria-current={isActive(pathname, item.href) ? "page" : undefined}
-                              className={linkClass(isActive(pathname, item.href), true)}
-                              onClick={() => setOpen(false)}
-                            >
-                              {t(item.key)}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                  <li key={entry.key} className="pt-2">
+                    <p className="py-2 text-micro uppercase tracking-wide text-ink-muted">{t(entry.key)}</p>
+                    <ul className="border-l border-line pl-3">
+                      {entry.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            aria-current={isActive(pathname, item.href) ? "page" : undefined}
+                            className={linkClass(isActive(pathname, item.href), true)}
+                          >
+                            {t(item.key)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </li>
                 ),
               )}

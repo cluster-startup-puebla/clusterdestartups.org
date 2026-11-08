@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
-import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
+import { Badge, CompanyLogo, VerifiedMark } from "@/modules/shared/ui/src/components";
 import { getCompany, localize, STARTUP_INDUSTRIES } from "@/data/companies";
 import {
   founderCompany,
@@ -65,9 +65,10 @@ function CompanyRefRow({ slugs }: { slugs: readonly string[] }) {
               dark={company.logoDark}
               ink={company.logoInk}
             />
-            <span className="inline-flex items-center gap-0.5 text-small leading-snug text-ink-secondary group-hover:text-brand">
-              {company.name}
-              <ChevronRight size={14} strokeWidth={2} aria-hidden="true" className="shrink-0" />
+            <span className="inline-flex items-center gap-1 text-small leading-snug text-ink-secondary">
+              <span className="group-hover:text-brand">{company.name}</span>{" "}
+              <VerifiedMark verified={company.verified} className="inline-block size-3.5 align-[-0.15em]" />
+              <ChevronRight size={14} strokeWidth={2} aria-hidden="true" className="shrink-0 group-hover:text-brand" />
             </span>
           </Link>
         </li>
@@ -160,7 +161,10 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
                   closeLabel={t("closePhoto")}
                 />
                 <div className="pb-1">
-                  <h1 className="text-h1 font-display text-ink">{founder.name}</h1>
+                  <h1 className="text-h1 font-display text-ink">
+                    {founder.name}{" "}
+                    <VerifiedMark verified={founder.verified} className="inline-block size-6 align-[-0.15em]" />
+                  </h1>
                   {company && founder.role && (
                     <p className="mt-1 text-body text-ink-secondary">
                       {t("roleAt", { role: founder.role, company: company.name })}
@@ -235,7 +239,10 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
                   dark={company.logoDark}
                   ink={company.logoInk}
                 />
-                <h2 className="text-h4 font-display text-ink">{company.name}</h2>
+                <h2 className="text-h4 font-display text-ink">
+                  {company.name}{" "}
+                  <VerifiedMark verified={company.verified} className="inline-block size-4 align-[-0.15em]" />
+                </h2>
               </div>
               {description && (
                 <p className="mt-4 text-small text-ink-secondary">{description}</p>
@@ -275,7 +282,10 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
                     <Link href={`/fundadores/${item.slug}`} className="group flex items-center gap-3 rounded-md py-1">
                       <FounderAvatar name={item.name} photo={item.photo} className="size-10 text-micro" />
                       <span className="min-w-0 flex-1">
-                        <span className="block text-small leading-snug text-ink group-hover:text-brand">{item.name}</span>
+                        <span className="block text-small leading-snug text-ink">
+                          <span className="group-hover:text-brand">{item.name}</span>{" "}
+                          <VerifiedMark verified={item.verified} className="inline-block size-3.5 align-[-0.15em]" />
+                        </span>
                         {item.role && (
                           <span className="block text-micro text-ink-muted">{item.role}</span>
                         )}

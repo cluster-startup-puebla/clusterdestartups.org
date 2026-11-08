@@ -63,6 +63,11 @@ export type CatalogItem = {
 export type Company = {
   /** Segmento de URL. En inglés la ruta es /companies/<slug>. */
   slug: string;
+  /**
+   * La empresa confirmó la ficha. `true` muestra el sello.
+   * Una ficha de captación entra en `false` hasta que acepten la revisión.
+   */
+  verified: boolean;
   name: string;
   /**
    * Ruta del logo dentro de `public/`, p. ej. `/empresas/radek.webp`.
@@ -123,6 +128,7 @@ export function localize<T>(value: Record<Locale, T>, locale: string): T {
 export const companies: readonly Company[] = [
   {
     slug: 'concora',
+    verified: true,
     name: 'Concora',
     logo: '/empresas/concora.webp',
     region: {
@@ -183,6 +189,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'empowershe',
+    verified: true,
     name: 'EmpowerShe',
     logo: '/empresas/empowershe.webp',
     region: {
@@ -253,6 +260,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'gogotrack',
+    verified: true,
     name: 'GoGoTrack',
     logo: '/empresas/gogotrack.webp',
     logoInk: true,
@@ -321,6 +329,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'hexa-group',
+    verified: true,
     name: 'Hexa Group',
     logo: '/empresas/hexa-group.webp',
     logoDark: true,
@@ -382,6 +391,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'karggu',
+    verified: true,
     name: 'Karggu',
     logo: '/empresas/karggu.webp',
     batch: 'early',
@@ -409,6 +419,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'kigo',
+    verified: true,
     name: 'Kigo',
     logo: '/empresas/kigo.webp',
     region: {
@@ -498,6 +509,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'kotemah',
+    verified: true,
     name: 'Kotemah',
     logo: '/empresas/kotemah.webp',
     batch: 'early',
@@ -572,6 +584,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'mileva-dynamics',
+    verified: true,
     name: 'Mileva Dynamics',
     logo: '/empresas/mileva-dynamics.webp',
     batch: 'early',
@@ -603,6 +616,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'nemiki',
+    verified: true,
     name: 'Nemiki',
     logo: '/empresas/nemiki.webp',
     region: {
@@ -661,6 +675,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'netv',
+    verified: true,
     name: 'NETV',
     logo: '/empresas/netv.webp',
     region: {
@@ -730,6 +745,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'oxtron',
+    verified: true,
     name: 'Oxtron',
     logo: '/empresas/oxtron.webp',
     logoDark: true,
@@ -760,6 +776,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'padel-360',
+    verified: true,
     name: 'Padel 360',
     logo: '/empresas/padel-360.webp',
     logoInk: true,
@@ -819,12 +836,15 @@ export const companies: readonly Company[] = [
       }
     ],
     contact: {
+      person: 'Daniel Campos',
+      role: 'Fundador',
       website: 'https://padel360league.com',
       phone: '+52 221 198 8001'
     }
   },
   {
     slug: 'plataforma-luca',
+    verified: true,
     name: 'Plataforma Luca',
     logo: '/empresas/plataforma-luca.webp',
     logoInk: true,
@@ -875,6 +895,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'radek',
+    verified: true,
     name: 'Radek',
     logo: '/empresas/radek.webp',
     logoDark: true,
@@ -904,6 +925,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'rocka',
+    verified: true,
     name: 'Rocka',
     logo: '/empresas/rocka.webp',
     logoInk: true,
@@ -974,6 +996,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'sabia',
+    verified: true,
     name: 'Sabia',
     logo: '/empresas/sabia.webp',
     logoDark: true,
@@ -1045,6 +1068,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'safe-mobility',
+    verified: true,
     name: 'SAFE Mobility',
     logo: '/empresas/safe-mobility.webp',
     logoInk: true,
@@ -1107,6 +1131,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'taxbox',
+    verified: true,
     name: 'Taxbox',
     logo: '/empresas/taxbox.webp',
     logoInk: true,
@@ -1166,6 +1191,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'the-x-chair',
+    verified: true,
     name: 'The X-Chair',
     logo: '/empresas/the-x-chair.webp',
     logoInk: true,
@@ -1193,6 +1219,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'traixo',
+    verified: true,
     name: 'Traixo',
     logo: '/empresas/traixo.webp',
     logoInk: true,
@@ -1244,6 +1271,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'wepadel',
+    verified: true,
     name: 'WePadel',
     logo: '/empresas/wepadel.webp',
     logoInk: true,
@@ -1303,6 +1331,8 @@ export const companies: readonly Company[] = [
       }
     ],
     contact: {
+      person: 'Daniel Campos',
+      role: 'Fundador',
       website: 'https://www.wepadel.app/',
       demo: 'https://www.wepadel.app/ranking',
       email: 'hola@wepadel.app',
@@ -1311,6 +1341,7 @@ export const companies: readonly Company[] = [
   },
   {
     slug: 'xiah',
+    verified: true,
     name: 'XiA\'H',
     logo: '/empresas/xiah.webp',
     region: {

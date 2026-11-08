@@ -3,7 +3,7 @@
 import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/modules/cores/i18n/src/config/routing";
-import { Badge } from "@/modules/shared/ui/src/components";
+import { Badge, VerifiedMark } from "@/modules/shared/ui/src/components";
 import { localize, STARTUP_INDUSTRIES } from "@/data/companies";
 import { founderCompany, type Founder } from "@/data/founders";
 import { FounderAvatar } from "./founder-avatar";
@@ -27,7 +27,10 @@ export function FounderRow({ founder, locale }: FounderRowProps) {
     >
       <FounderAvatar name={founder.name} photo={founder.photo} className="size-12 text-small" />
       <div className="min-w-0 flex-1">
-        <h2 className="text-body-lg font-display text-ink group-hover:text-brand">{founder.name}</h2>
+        <h2 className="text-body-lg font-display text-ink">
+          <span className="group-hover:text-brand">{founder.name}</span>{" "}
+          <VerifiedMark verified={founder.verified} className="inline-block size-4 align-[-0.15em]" />
+        </h2>
         {company && founder.role && (
           <p className="mt-0.5 text-small text-ink-secondary">
             {t("roleAt", { role: founder.role, company: company.name })}
@@ -43,7 +46,8 @@ export function FounderRow({ founder, locale }: FounderRowProps) {
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={company.logo} alt="" className="size-4 object-contain" />
               )}
-              {company.name}
+              {company.name}{" "}
+              <VerifiedMark verified={company.verified} className="inline-block size-3 align-[-0.15em]" />
             </span>
           )}
         </div>

@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
+import { useTranslations } from "next-intl";
 import { FilterSidebar } from "./filter-sidebar";
 import { CompanyList } from "./company-list";
 import { localize, STARTUP_INDUSTRIES, type Company, type StartupIndustry } from "@/data/companies";
@@ -22,6 +23,7 @@ interface CompanyDirectoryProps {
 }
 
 export function CompanyDirectory({ companies, locale, labels }: CompanyDirectoryProps) {
+  const t = useTranslations("Companies");
   const searchParams = useSearchParams();
 
   const batchFilters = searchParams.getAll("batch");
@@ -126,11 +128,18 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
   }, [companies, locale, labels]);
 
   return (
-    <div className="flex flex-col gap-8 lg:flex-row">
+    <div className="flex flex-col gap-6 lg:flex-row lg:gap-8">
       <FilterSidebar
         sections={filterSections}
         searchPlaceholder={labels.search}
-        labels={{ clear: labels.clear, search: labels.search, filters: labels.filters }}
+        labels={{
+          clear: labels.clear,
+          search: labels.search,
+          filters: labels.filters,
+          close: t("filter.close"),
+          remove: t("filter.remove"),
+          active: t("filter.active"),
+        }}
       />
       <div className="min-w-0 flex-1">
         <CompanyList

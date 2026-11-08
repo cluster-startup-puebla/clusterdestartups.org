@@ -1,4 +1,4 @@
-import { CompanyLogo } from "@/modules/shared/ui/src/components";
+import { CompanyLogo, VerifiedMark } from "@/modules/shared/ui/src/components";
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 
 export interface LinkedCompany {
@@ -8,6 +8,7 @@ export interface LinkedCompany {
   logo?: string;
   logoDark?: boolean;
   logoInk?: boolean;
+  verified?: boolean;
 }
 
 interface LinkedCompaniesProps {
@@ -37,8 +38,9 @@ export function LinkedCompanies({ companies, label, viewLabel }: LinkedCompanies
                 className="size-14 shrink-0 bg-elevated"
               />
               <span className="min-w-0 flex-1">
-                <span className="block text-body font-display text-ink group-hover:text-brand">
-                  {company.name}
+                <span className="block text-body font-display text-ink">
+                  <span className="group-hover:text-brand">{company.name}</span>{" "}
+                  <VerifiedMark verified={company.verified} className="inline-block size-4 align-[-0.15em]" />
                 </span>
                 {company.description && (
                   <span className="mt-1 block text-small text-ink-secondary">

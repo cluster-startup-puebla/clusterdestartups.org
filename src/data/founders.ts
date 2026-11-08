@@ -19,6 +19,11 @@ const TEC_PUEBLA: FounderPlace = {
 
 export type Founder = {
   slug: string;
+  /**
+   * La persona confirmó la ficha. `true` muestra el sello.
+   * Una ficha de captación entra en `false` hasta que acepten la revisión.
+   */
+  verified: boolean;
   name: string;
   role?: string;
   companySlug: string;
@@ -34,6 +39,7 @@ export type Founder = {
 export const founders: readonly Founder[] = [
   {
     slug: "fatima-gaytan",
+    verified: true,
     name: "Fátima Gaytán",
     role: "CEO",
     companySlug: "concora",
@@ -47,28 +53,35 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "mauro-daniel-munguia",
+    verified: true,
     name: "Mauro Daniel Munguia Manzanarez",
-    role: "CEO",
+    role: "Cofundador y CEO",
     companySlug: "the-x-chair",
     photo: "/fundadores/mauro-daniel-munguia.webp",
     linkedin: "https://www.linkedin.com/in/mauro-munguia/",
     bio: {
-      es: "Ingeniero mecatrónico y CEO de The X-Chair.",
-      en: "Mechatronic engineer and CEO of The X-Chair.",
+      es: "Cofundador y CEO de The X-Company. Ingeniero mecatrónico: junta el desarrollo tecnológico con lo que pide el mercado.",
+      en: "Co-founder and CEO of The X-Company. Mechatronic engineer: he connects the technology with what the market needs.",
     },
     alumnusOf: [TEC_PUEBLA],
   },
   {
     slug: "eduardo-zarate-lara",
+    verified: true,
     name: "Eduardo Zárate Lara",
-    role: "CTO",
+    role: "Cofundador y CTO",
     companySlug: "the-x-chair",
     photo: "/fundadores/eduardo-zarate-lara.webp",
     linkedin: "https://www.linkedin.com/in/eduardozaratelara/",
+    bio: {
+      es: "Cofundador y CTO de The X-Company. Ingeniero mecatrónico: integra los sistemas y la automatización de cada solución.",
+      en: "Co-founder and CTO of The X-Company. Mechatronic engineer: he integrates the systems and the automation of each solution.",
+    },
     alumnusOf: [TEC_PUEBLA],
   },
   {
     slug: "ximena-ortiz-gomez",
+    verified: true,
     name: "Ximena Ortiz Gómez",
     role: "CEO",
     companySlug: "empowershe",
@@ -82,6 +95,7 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "isaac-de-la-rosa",
+    verified: true,
     name: "Isaac de la Rosa",
     role: "Director General",
     companySlug: "hexa-group",
@@ -94,6 +108,7 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "daniela-cabral-porras",
+    verified: true,
     name: "Daniela Cabral Porras",
     role: "CEO",
     companySlug: "xiah",
@@ -106,6 +121,7 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "carlos-anaya",
+    verified: true,
     name: "Carlos Anaya Rodríguez",
     role: "CEO",
     companySlug: "kigo",
@@ -119,6 +135,7 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "jazmin-salazar",
+    verified: true,
     name: "Jazmín Salazar",
     role: "CEO",
     companySlug: "oxtron",
@@ -131,6 +148,7 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "sergio-juarez",
+    verified: true,
     name: "Sergio Juárez",
     role: "CEO",
     companySlug: "safe-mobility",
@@ -143,6 +161,7 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "francisco-vara",
+    verified: true,
     name: "Francisco Vara",
     role: "CEO",
     companySlug: "netv",
@@ -155,6 +174,7 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "rodrigo-ruiz",
+    verified: true,
     name: "Rodrigo Ruiz",
     role: "CEO",
     companySlug: "kotemah",
@@ -168,20 +188,37 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "yamil-alvarez",
+    verified: true,
     name: "Yamil Álvarez",
     role: "CEO",
     companySlug: "radek",
     photo: "/fundadores/yamil-alvarez.webp",
     linkedin: "https://www.linkedin.com/in/yamilalvarez1",
     bio: {
-      es: "Cofundador y CEO de Radek.",
-      en: "Co-founder and CEO of Radek.",
+      es: "Ingeniero en Negocios y Tecnologías de la Información por el Tec de Monterrey, campus Puebla, y estudiante de la Maestría en Dirección y Finanzas en la UPAEP. Preside y fundó el Clúster de Startups e Innovación; viene de una empresa familiar de artes gráficas con más de 70 años en Puebla.",
+      en: "He holds a degree in Business and Information Technology Engineering from Tecnológico de Monterrey, Puebla campus, and is studying a master's in Management and Finance at UPAEP. He chairs and founded the Startup and Innovation Cluster, and comes from a family graphic-arts company with more than 70 years in Puebla.",
     },
     alsoAt: [{ companySlug: "karggu", role: "Cofundador" }],
+    alumnusOf: [TEC_PUEBLA],
+  },
+  {
+    slug: "daniel-campos",
+    verified: true,
+    name: "Daniel Campos",
+    role: "Fundador",
+    companySlug: "wepadel",
+    photo: "/fundadores/daniel-campos.webp",
+    linkedin: "https://www.linkedin.com/in/daniel-campos-vlz/",
+    bio: {
+      es: "Fundador de WePadel y de Padel 360.",
+      en: "Founder of WePadel and Padel 360.",
+    },
+    alsoAt: [{ companySlug: "padel-360", role: "Fundador" }],
     alumnusOf: [{ name: "Tecnológico de Monterrey", logo: TEC_LOGO }],
   },
   {
     slug: "daniel-martinez",
+    verified: true,
     name: "Daniel Martínez",
     role: "CEO",
     companySlug: "mileva-dynamics",
@@ -190,6 +227,7 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "lenin-perez",
+    verified: true,
     name: "Lenin Pérez",
     role: "Fundador",
     companySlug: "gogotrack",
@@ -197,12 +235,14 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "israel-reyes",
+    verified: true,
     name: "Israel Reyes",
     companySlug: "rocka",
     photo: "/fundadores/israel-reyes.webp",
   },
   {
     slug: "alvaro-castillo",
+    verified: true,
     name: "Álvaro Castillo",
     role: "CEO",
     companySlug: "sabia",
@@ -215,6 +255,7 @@ export const founders: readonly Founder[] = [
   },
   {
     slug: "manuel-ariel-ocampo",
+    verified: true,
     name: "Manuel Ariel Ocampo",
     role: "CEO",
     companySlug: "traixo",

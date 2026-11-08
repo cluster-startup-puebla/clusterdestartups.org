@@ -87,6 +87,7 @@ export default async function BlogPostPage({
       logo: company.logo,
       logoDark: company.logoDark,
       logoInk: company.logoInk,
+      verified: company.verified,
     }));
 
   const isPress = post.category === CATEGORIES.press;

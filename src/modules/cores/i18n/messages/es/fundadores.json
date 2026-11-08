@@ -26,6 +26,9 @@
       "region": "Región",
       "clear": "Limpiar filtros",
       "filters": "Filtros",
+      "close": "Cerrar",
+      "remove": "Quitar",
+      "active": "Filtros activos",
       "noResults": "Ningún founder coincide con estos filtros."
     }
   }

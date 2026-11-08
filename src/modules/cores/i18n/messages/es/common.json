@@ -47,6 +47,9 @@
     "privacy": "Aviso de privacidad",
     "cookies": "Aviso de cookies"
   },
+  "Verified": {
+    "label": "Verificado"
+  },
   "RegisterStartup": {
     "title": "Registra tu startup en el directorio",
     "description": "Escríbenos para publicar tu ficha en el padrón de empresas del clúster.",

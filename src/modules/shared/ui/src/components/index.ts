@@ -1,5 +1,6 @@
 export { Button } from "./atoms/button";
 export { Badge } from "./atoms/badge";
+export { VerifiedMark } from "./atoms/verified-mark";
 export { SectionHeader } from "./atoms/section-header";
 export { Stat } from "./atoms/stat";
 export { ImageFrame } from "./atoms/image-frame";

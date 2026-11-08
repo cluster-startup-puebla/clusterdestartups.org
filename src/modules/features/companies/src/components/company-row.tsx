@@ -2,7 +2,7 @@
 
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { useTranslations } from "next-intl";
-import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
+import { Badge, CompanyLogo, VerifiedMark } from "@/modules/shared/ui/src/components";
 import { localize, STARTUP_INDUSTRIES, type Company } from "@/data/companies";
 
 interface CompanyRowProps {
@@ -42,8 +42,9 @@ export function CompanyRow({ company, locale, labels }: CompanyRowProps) {
       />
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-baseline gap-x-2">
-          <h2 className="max-w-full text-body-lg font-display text-ink group-hover:text-brand">
-            {company.name}
+          <h2 className="text-body-lg font-display text-ink">
+            <span className="group-hover:text-brand">{company.name}</span>{" "}
+            <VerifiedMark verified={company.verified} className="inline-block size-4 align-[-0.15em]" />
           </h2>
           {region && (
             <span className="text-micro text-ink-muted">{region}</span>

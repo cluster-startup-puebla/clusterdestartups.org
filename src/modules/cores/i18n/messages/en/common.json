@@ -47,6 +47,9 @@
     "privacy": "Privacy notice",
     "cookies": "Cookie notice"
   },
+  "Verified": {
+    "label": "Verified"
+  },
   "RegisterStartup": {
     "title": "Register your startup in the directory",
     "description": "Write to us so we can publish your profile in the cluster directory.",

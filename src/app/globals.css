@@ -304,6 +304,17 @@ html[data-cookies="set"] .cookie-banner {
     padding: 0.25rem 0.75rem;
   }
 
+  /* Sello de ficha confirmada. El rosa sigue a --brand-accent (claro/oscuro)
+     y la palomita usa --on-accent para no perder contraste. */
+  .verified-mark {
+    color: var(--brand-accent);
+    fill: var(--brand-accent);
+  }
+  .verified-mark path:last-child {
+    fill: none;
+    stroke: var(--on-accent);
+  }
+
   .input {
     background: var(--bg-subtle);
     border: 1px solid var(--border-default);

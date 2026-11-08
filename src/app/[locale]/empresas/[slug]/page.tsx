@@ -6,7 +6,7 @@ import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { SITE_URL } from "@/modules/cores/site/src/config/site";
-import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
+import { Badge, CompanyLogo, VerifiedMark } from "@/modules/shared/ui/src/components";
 import { companies, getCompany, localize, STARTUP_INDUSTRIES, type Company } from "@/data/companies";
 import { founderRoleAt, getFoundersByCompany } from "@/data/founders";
 import { FounderAvatar } from "@/modules/features/founders/src";
@@ -100,7 +100,10 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
       <header className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-7">
         <CompanyLogo name={company.name} logo={company.logo} className="size-20" dark={company.logoDark} ink={company.logoInk} />
         <div>
-          <h1 className="text-h1 font-display text-ink">{company.name}</h1>
+          <h1 className="text-h1 font-display text-ink">
+            {company.name}{" "}
+            <VerifiedMark verified={company.verified} className="inline-block size-6 align-[-0.15em]" />
+          </h1>
           <ul aria-label={t("detail.industry")} className="mt-4 flex flex-wrap gap-2">
             {industries.map((industry) => (
               <li key={industry}>
@@ -186,7 +189,10 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
                 <Link href={`/fundadores/${item.slug}`} className="group flex items-center gap-3">
                   <FounderAvatar name={item.name} photo={item.photo} className="size-12 text-small" />
                   <span className="min-w-0 flex-1">
-                    <span className="block text-body font-display text-ink group-hover:text-brand">{item.name}</span>
+                    <span className="block text-body font-display text-ink">
+                      <span className="group-hover:text-brand">{item.name}</span>{" "}
+                      <VerifiedMark verified={item.verified} className="inline-block size-4 align-[-0.15em]" />
+                    </span>
                     {founderRoleAt(item, company.slug) && (
                       <span className="block text-small text-ink-secondary">
                         {founderRoleAt(item, company.slug)}

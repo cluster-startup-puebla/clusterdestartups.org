@@ -16,6 +16,9 @@
       "region": "Region",
       "clear": "Clear filters",
       "filters": "Filters",
+      "close": "Close",
+      "remove": "Remove",
+      "active": "Active filters",
       "noResults": "No companies match these filters."
     },
     "batch": {
