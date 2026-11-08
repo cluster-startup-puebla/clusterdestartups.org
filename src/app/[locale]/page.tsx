@@ -88,6 +88,13 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             ],
           },
           {
+            logos: [
+              { src: "/aliados/logo-ditco-buap.png", alt: t("allies.ditco"), frame: "h-9 w-auto sm:h-10" },
+              { src: "/aliados/logo-incubadora-buap.png", alt: t("allies.incubadora"), frame: "h-10 w-auto sm:h-12" },
+              { src: "/aliados/logo-buap.png", alt: t("allies.buap"), frame: "h-10 w-auto sm:h-12" },
+            ],
+          },
+          {
             roomy: true,
             logos: [
               { src: "/aliados/logo-cluster-agro.png", alt: t("allies.agro"), frame: "h-20 w-auto sm:h-24" },

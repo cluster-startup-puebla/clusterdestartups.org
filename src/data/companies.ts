@@ -524,6 +524,65 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'evolution-360',
+    verified: true,
+    name: 'Evolution 360',
+    logo: '/empresas/evolution-360.webp',
+    logoDark: true,
+    region: { es: 'Puebla, México', en: 'Puebla, Mexico' },
+    shortDescription: {
+      es: 'Consultoría, capacitación, eventos, software y comunidad para clubes, gimnasios y academias.',
+      en: 'Consulting, training, events, software, and community for clubs, gyms, and academies.'
+    },
+    industries: ['sportstech', 'software'],
+    problem: {
+      es: 'La mayoría de los clubes se administran desde la pasión por el deporte, no desde la gestión. Se van los socios, las ventas dependen del boca a boca y casi todo el ingreso sale de la cuota mensual.',
+      en: 'Most clubs are run from a love of the sport, not from management. Members leave, sales depend on word of mouth, and almost all the income comes from the monthly fee.'
+    },
+    solution: {
+      es: 'Evolution 360 junta consultoría, capacitación, eventos, software y comunidad para clubes deportivos, gimnasios y academias. La Metodología 360 parte de un diagnóstico con los datos del club y cierra con un plan de 90 días y cinco indicadores.',
+      en: 'Evolution 360 brings consulting, training, events, software, and community together for sports clubs, gyms, and academies. The 360 Method starts from a diagnosis built on the club’s own data and ends with a 90-day plan and five indicators.'
+    },
+    catalog: [
+      {
+        name: { es: 'Consultoría', en: 'Consulting' },
+        description: {
+          es: 'Diagnóstico de captación, retención, ventas, marketing, finanzas y experiencia del cliente, y un plan de 90 días con metas. La consultoría presencial cubre Puebla y su zona metropolitana; la remota, el resto de México.',
+          en: 'A diagnosis of acquisition, retention, sales, marketing, finance, and customer experience, plus a 90-day plan with targets. In-person consulting covers Puebla and its metro area; remote consulting covers the rest of Mexico.'
+        }
+      },
+      {
+        name: { es: 'Academy', en: 'Academy' },
+        description: {
+          es: 'Certificaciones propias para coaches y para el personal de servicio y ventas, con rúbrica de evidencia y vigencia de dos años. El folio se puede verificar en el sitio.',
+          en: 'Its own certifications for coaches and for service and sales staff, with an evidence rubric and a two-year term. The folio can be checked on the site.'
+        }
+      },
+      {
+        name: { es: 'Club 360', en: 'Club 360' },
+        description: {
+          es: 'Software de gestión de club orientado a retención: socios, cobranza, acceso, alertas de deserción y el tablero del diagnóstico. Está en lista de espera, con beta prevista para 2027.',
+          en: 'Club management software built around retention: members, billing, access, churn alerts, and the diagnosis dashboard. It is on a waitlist, with a beta planned for 2027.'
+        }
+      },
+      {
+        name: { es: 'INTELLIGENCE', en: 'INTELLIGENCE' },
+        description: {
+          es: 'App para entrenadores de baloncesto que captura la estadística del partido con reglamento FIBA, funciona sin conexión y se instala desde el navegador. Licencia de un solo pago.',
+          en: 'An app for basketball coaches that captures the game’s stats under FIBA rules, works offline, and installs from the browser. One-time license.'
+        }
+      }
+    ],
+    contact: {
+      person: 'Leonel De Aquino',
+      role: 'CEO',
+      website: 'https://evolution360.mx/',
+      demo: 'https://evolution360.mx/estadistica/index.html',
+      email: 'info@evolution360.mx',
+      phone: '+52 222 299 4241'
+    }
+  },
+  {
     slug: 'figgo',
     verified: false,
     name: 'Figgo',
@@ -691,6 +750,61 @@ export const companies: readonly Company[] = [
       website: 'https://gogotrack.mx/',
       email: 'gogotrackmx@gmail.com',
       phone: '+52 222 177 0159'
+    }
+  },
+  {
+    slug: 'happia',
+    verified: true,
+    name: 'HappIA',
+    logo: '/empresas/happia.webp',
+    logoInk: true,
+    shortDescription: {
+      es: 'Plataforma de felicidad laboral que toma el pulso del equipo por WhatsApp y anticipa el burnout.',
+      en: 'Workplace happiness platform that takes the team pulse over WhatsApp and flags burnout early.'
+    },
+    industries: ['hrtech'],
+    problem: {
+      es: 'La rotación duele en cualquier industria. La encuesta anual de clima se queda en un cajón y el burnout aparece cuando la gente ya se está yendo.',
+      en: 'Turnover hurts in any industry. The yearly climate survey sits in a drawer, and burnout shows up once people are already leaving.'
+    },
+    solution: {
+      es: 'HappIA es una plataforma de Happiness as a Service. Toma el pulso del equipo en 5 segundos con check-ins anónimos por WhatsApp, agrupa las respuestas de al menos 4 personas para que un líder no las ate a alguien, señala el burnout antes de que se vuelva rotación y lo convierte en micro-acciones con el modelo SMILE.',
+      en: 'HappIA is a Happiness as a Service platform. It takes the team pulse in 5 seconds with anonymous WhatsApp check-ins, groups answers in blocks of at least 4 people so a leader cannot tie them to someone, flags burnout before it becomes turnover, and turns that pulse into micro-actions with the SMILE model.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Check-ins por WhatsApp',
+          en: 'WhatsApp check-ins'
+        },
+        description: {
+          es: 'Micro-interacciones de pocos segundos, sin descargar una app, para escuchar al equipo antes de que el estrés sea un problema.',
+          en: 'Check-ins of a few seconds, with no app to download, to hear the team before stress becomes a problem.'
+        }
+      },
+      {
+        name: {
+          es: 'Alertas y tableros',
+          en: 'Alerts and dashboards'
+        },
+        description: {
+          es: 'Tableros predictivos y alertas tempranas de burnout y fricción, para decidir con el pulso del equipo.',
+          en: 'Predictive dashboards and early alerts for burnout and friction, so decisions follow the team pulse.'
+        }
+      },
+      {
+        name: {
+          es: 'Modelo SMILE',
+          en: 'SMILE model'
+        },
+        description: {
+          es: 'Ciclo Sense, Mobilize, Inspire, Lead with Data y Evaluate: del pulso a propuestas de acción para los líderes.',
+          en: 'The Sense, Mobilize, Inspire, Lead with Data and Evaluate cycle: from the pulse to actions for leaders.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://happia.lat/'
     }
   },
   {
@@ -1069,6 +1183,7 @@ export const companies: readonly Company[] = [
     verified: true,
     name: 'NETV',
     logo: '/empresas/netv.webp',
+    logoMark: '/empresas/netv-mark.webp',
     region: {
       es: 'Puebla, México',
       en: 'Puebla, Mexico'

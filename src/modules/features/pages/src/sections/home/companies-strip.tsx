@@ -11,7 +11,7 @@ interface CompaniesStripProps {
 }
 
 export function CompaniesStrip({ eyebrow, title, description, linkLabel }: CompaniesStripProps) {
-  const listed = companies.filter((company) => company.logo);
+  const listed = companies.filter((company) => company.verified && company.logo);
   if (listed.length === 0) return null;
 
   return (

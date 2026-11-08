@@ -74,17 +74,46 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
     [pathname, router],
   );
 
+  // router.replace is async. A second click in that gap must edit the query
+  // we just wrote, not the React snapshot that does not have it yet.
+  const draft = useRef<URLSearchParams | null>(null);
+
+  const readParams = useCallback(() => {
+    if (draft.current) return new URLSearchParams(draft.current.toString());
+    return new URLSearchParams(searchParams.toString());
+  }, [searchParams]);
+
+  const commitParams = useCallback(
+    (params: URLSearchParams) => {
+      draft.current = new URLSearchParams(params.toString());
+      replaceParams(params);
+    },
+    [replaceParams],
+  );
+
+  useEffect(() => {
+    if (!draft.current) return;
+    if (draft.current.toString() === searchParams.toString()) {
+      draft.current = null;
+      return;
+    }
+    const handle = window.setTimeout(() => {
+      draft.current = null;
+    }, 500);
+    return () => window.clearTimeout(handle);
+  }, [searchParams]);
+
   useEffect(() => {
     const next = query;
     if (next === searchValue) return;
     const handle = window.setTimeout(() => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = readParams();
       if (next.trim()) params.set("q", next);
       else params.delete("q");
-      replaceParams(params);
+      commitParams(params);
     }, 250);
     return () => window.clearTimeout(handle);
-  }, [query, searchValue, searchParams, replaceParams]);
+  }, [query, searchValue, readParams, commitParams]);
 
   const hasActiveFilters = useMemo(() => {
     return searchValue.length > 0 || sections.some((section) => searchParams.has(section.key));
@@ -92,14 +121,14 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
 
   const createParamUpdate = useCallback(
     (key: string, value: string, checked: boolean) => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = readParams();
       const section = sections.find((entry) => entry.key === key);
       const defaults = section?.defaultValues;
 
       if (section?.selection === "single") {
         params.delete(key);
         if (checked && !defaults?.includes(value)) params.set(key, value);
-        replaceParams(params);
+        commitParams(params);
         return;
       }
 
@@ -120,22 +149,19 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
       } else if (!matchesDefault) {
         current.forEach((entry) => params.append(key, entry));
       }
-      replaceParams(params);
+      commitParams(params);
     },
-    [searchParams, replaceParams, sections],
+    [readParams, commitParams, sections],
   );
 
   const clearFilters = useCallback(() => {
     setQuery("");
     setOpenKey(null);
     const params = new URLSearchParams();
-    const theme = searchParams.get("theme");
+    const theme = readParams().get("theme");
     if (theme === "dark" || theme === "light") params.set("theme", theme);
-    const qs = params.toString();
-    replaceWithoutJump(() => {
-      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-    }, asideRef.current);
-  }, [pathname, router, searchParams]);
+    commitParams(params);
+  }, [readParams, commitParams]);
 
   const isSelected = useCallback(
     (key: string, value: string) => {
@@ -278,18 +304,7 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
               <li key={`${chip.key}-${chip.value}`}>
                 <button
                   type="button"
-                  onPointerDown={(event) => {
-                    event.preventDefault();
-                    event.currentTarget.dataset.toggled = "1";
-                    createParamUpdate(chip.key, chip.value, false);
-                  }}
-                  onClick={(event) => {
-                    if (event.currentTarget.dataset.toggled) {
-                      delete event.currentTarget.dataset.toggled;
-                      return;
-                    }
-                    createParamUpdate(chip.key, chip.value, false);
-                  }}
+                  onClick={() => createParamUpdate(chip.key, chip.value, false)}
                   aria-label={`${labels.remove} ${chip.label}`}
                   className={`inline-flex min-h-11 max-w-full items-center gap-2 rounded-full bg-brand px-4 text-left text-small text-on-brand ${focusRing}`}
                 >
@@ -361,29 +376,6 @@ function FilterGroups({
               return (
                 <li key={option.value}>
                   <label
-                    onPointerDown={(event) => {
-                      event.preventDefault();
-                      event.currentTarget.dataset.toggled = "1";
-                      if (section.selection === "single" && selected) return;
-                      onToggle(
-                        section.key,
-                        option.value,
-                        section.selection === "single" ? true : !selected,
-                      );
-                    }}
-                    onClick={(event) => {
-                      if (event.currentTarget.dataset.toggled) {
-                        delete event.currentTarget.dataset.toggled;
-                        return;
-                      }
-                      event.preventDefault();
-                      if (section.selection === "single" && selected) return;
-                      onToggle(
-                        section.key,
-                        option.value,
-                        section.selection === "single" ? true : !selected,
-                      );
-                    }}
                     className={`flex min-h-11 cursor-pointer items-center gap-3 rounded-sm px-2 text-small ${
                       selected
                         ? "bg-surface-subtle text-ink"
@@ -394,20 +386,7 @@ function FilterGroups({
                       type={section.selection === "single" ? "radio" : "checkbox"}
                       name={section.selection === "single" ? section.key : undefined}
                       checked={selected}
-                      tabIndex={0}
-                      onKeyDown={(event) => {
-                        if (event.key !== " " && event.key !== "Enter") return;
-                        event.preventDefault();
-                        if (section.selection === "single" && selected) return;
-                        onToggle(
-                          section.key,
-                          option.value,
-                          section.selection === "single" ? true : !selected,
-                        );
-                      }}
                       onChange={(event) => {
-                        const label = event.currentTarget.closest("label");
-                        if (label?.dataset.toggled) return;
                         if (section.selection === "single") {
                           if (selected) return;
                           onToggle(section.key, option.value, true);

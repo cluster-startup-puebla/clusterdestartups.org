@@ -171,10 +171,36 @@ export const founders: readonly Founder[] = [
     photo: "/fundadores/francisco-vara.webp",
     linkedin: "https://www.linkedin.com/in/francisco-vara",
     bio: {
-      es: "Fundador y CEO de NETV, una comunidad empresarial que deja el evento convertido en una red permanente de negocios. Estudió en la UDLAP.",
-      en: "Founder and CEO of NETV, a business community that turns an event into a lasting network of deals. He studied at UDLAP.",
+      es: "Fundador y CEO de NETV, una comunidad empresarial que deja el evento convertido en una red permanente de negocios. En Evolution 360 es CIO. Estudió en la UDLAP.",
+      en: "Founder and CEO of NETV, a business community that turns an event into a lasting network of deals. At Evolution 360 he is CIO. He studied at UDLAP.",
     },
+    alsoAt: [{ companySlug: "evolution-360", role: "CIO" }],
     alumnusOf: [{ universitySlug: "udlap" }],
+  },
+  {
+    slug: "leonel-de-aquino",
+    verified: true,
+    name: "Leonel De Aquino",
+    role: "CEO",
+    companySlug: "evolution-360",
+    photo: "/fundadores/leonel-de-aquino.webp",
+    linkedin: "https://www.linkedin.com/in/leonel-de-aquino-martín-a83b4511/",
+    bio: {
+      es: "CEO de Evolution 360. Consultor de administración, mercadotecnia y ventas en la industria deportiva, con más de 25 años en el sector.",
+      en: "CEO of Evolution 360. Consultant in management, marketing and sales for the sports industry, with more than 25 years in the field.",
+    },
+  },
+  {
+    slug: "felipe-gonzalez-roldan",
+    verified: true,
+    name: "Felipe González Roldán",
+    role: "CSSPO",
+    companySlug: "evolution-360",
+    photo: "/fundadores/felipe-gonzalez-roldan.webp",
+    bio: {
+      es: "CSSPO de Evolution 360.",
+      en: "CSSPO at Evolution 360.",
+    },
   },
   {
     slug: "rodrigo-ruiz",
