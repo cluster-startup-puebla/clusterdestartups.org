@@ -265,11 +265,12 @@ function FramePuebla({ points }: { points: readonly (readonly [number, number])[
     if (points.length === 0) return;
     const nearby = points.filter(([lat, lng]) => kmFromPuebla(lat, lng) <= PUEBLA_RADIUS_KM);
     const frame = nearby.length > 0 ? nearby : points;
-    if (frame.length === 1) {
-      map.setView(frame[0], 12);
+    const bounds = frame.map(([lat, lng]): [number, number] => [lat, lng]);
+    if (bounds.length === 1) {
+      map.setView(bounds[0], 12);
       return;
     }
-    map.fitBounds(L.latLngBounds(frame as [number, number][]), {
+    map.fitBounds(L.latLngBounds(bounds), {
       padding: [48, 48],
       maxZoom: 12,
     });
