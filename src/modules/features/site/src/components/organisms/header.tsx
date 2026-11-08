@@ -45,7 +45,7 @@ const NAV: NavEntry[] = [
 ];
 
 function visibleNav(entries: NavEntry[]): NavEntry[] {
-  return entries.flatMap((entry) => {
+  return entries.flatMap((entry): NavEntry[] => {
     if (entry.type === "link") {
       return isHiddenSection(entry.href) ? [] : [entry];
     }
