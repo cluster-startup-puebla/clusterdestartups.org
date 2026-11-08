@@ -1,5 +1,5 @@
-import { companies } from "@/data/companies";
-import { founders } from "@/data/founders";
+import { companies, getCompany } from "@/data/companies";
+import { founderCompany, founders, type Founder } from "@/data/founders";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { listPosts } from "@/modules/features/blog/src/services/markdown";
 import { localeUrl, SITE_URL } from "@/modules/cores/site/src/config/site";
@@ -108,7 +108,29 @@ function link(label: string, href: string, about?: string) {
 }
 
 function companyBlurb(company: (typeof companies)[number]) {
-  return (company.shortDescription?.es ?? company.solution?.es ?? "").replace(/\s+/g, " ").trim();
+  const summary = sentence(company.shortDescription?.es ?? company.solution?.es ?? "");
+  const english = localeUrl("en", `/empresas/${company.slug}`);
+  return [summary, `Inglés: ${english}`].filter(Boolean).join(". ");
+}
+
+function sentence(value: string) {
+  return value.replace(/\s+/g, " ").trim().replace(/\.+$/, "");
+}
+
+function founderAbout(founder: Founder) {
+  const company = founderCompany(founder);
+  const primary =
+    founder.role && company ? `${founder.role} de ${company.name}` : (company?.name ?? "");
+  const also = (founder.alsoAt ?? []).flatMap((place) => {
+    const other = getCompany(place.companySlug);
+    if (!other) return [];
+    return [place.role ? `${place.role} de ${other.name}` : other.name];
+  });
+  const bio = sentence(founder.bio?.es ?? "");
+  const lead = bio || primary;
+  const extra = also.filter((item) => item && !lead.includes(item)).join("; ");
+  const english = localeUrl("en", `/fundadores/${founder.slug}`);
+  return [lead, extra, `Inglés: ${english}`].filter(Boolean).join(". ");
 }
 
 export function GET() {
@@ -145,7 +167,7 @@ ${englishPages.join("\n")}
 
 ## Founders
 
-${founders.map((founder) => link(founder.name, localeUrl("es", `/fundadores/${founder.slug}`))).join("\n")}
+${founders.map((founder) => link(founder.name, localeUrl("es", `/fundadores/${founder.slug}`), founderAbout(founder))).join("\n")}
 
 ## Empresas del clúster
 
