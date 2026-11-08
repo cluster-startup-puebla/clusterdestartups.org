@@ -193,6 +193,7 @@ export const founders: readonly Founder[] = [
     name: "Lenin Pérez",
     role: "Fundador",
     companySlug: "gogotrack",
+    photo: "/fundadores/lenin-perez.webp",
   },
   {
     slug: "israel-reyes",
