@@ -1,5 +1,6 @@
 import { companies, getCompany } from "@/data/companies";
 import { founderCompany, founders, type Founder } from "@/data/founders";
+import { getCompaniesByUniversity, universities } from "@/data/universities";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { listPosts } from "@/modules/features/blog/src/services/markdown";
 import { localeUrl, SITE_URL } from "@/modules/cores/site/src/config/site";
@@ -43,6 +44,13 @@ const PAGES: { path: string; es: string; en: string; aboutEs: string; aboutEn: s
     en: "Founders",
     aboutEs: "Directorio de las personas que fundan y dirigen las startups del clúster.",
     aboutEn: "Directory of the people who found and lead the cluster's startups.",
+  },
+  {
+    path: "/universidades",
+    es: "Universidades",
+    en: "Universities",
+    aboutEs: "Universidades de donde salen founders y startups del directorio.",
+    aboutEn: "Universities behind founders and startups in the directory.",
   },
   {
     path: "/hub",
@@ -168,6 +176,18 @@ ${englishPages.join("\n")}
 ## Founders
 
 ${founders.map((founder) => link(founder.name, localeUrl("es", `/fundadores/${founder.slug}`), founderAbout(founder))).join("\n")}
+
+## Universidades
+
+${universities
+  .map((university) => {
+    const startups = getCompaniesByUniversity(university.slug)
+      .map((company) => company.name)
+      .join(", ");
+    const english = localeUrl("en", `/universidades/${university.slug}`);
+    return link(university.name, localeUrl("es", `/universidades/${university.slug}`), [startups, `Inglés: ${english}`].filter(Boolean).join(". "));
+  })
+  .join("\n")}
 
 ## Empresas del clúster
 

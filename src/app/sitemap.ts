@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { companies } from "@/data/companies";
 import { founders } from "@/data/founders";
+import { universities } from "@/data/universities";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { getPost, listPosts } from "@/modules/features/blog/src/services/markdown";
 import { localeUrl } from "@/modules/cores/site/src/config/site";
@@ -15,6 +16,7 @@ const ROUTES = [
   { path: "/gobernanza", file: "src/app/[locale]/gobernanza/page.tsx", priority: 0.8, frequency: "monthly" as const },
   { path: "/empresas", file: "src/app/[locale]/empresas/page.tsx", priority: 0.9, frequency: "weekly" as const },
   { path: "/fundadores", file: "src/app/[locale]/fundadores/page.tsx", priority: 0.8, frequency: "weekly" as const },
+  { path: "/universidades", file: "src/app/[locale]/universidades/page.tsx", priority: 0.7, frequency: "monthly" as const },
   { path: "/hub", file: "src/app/[locale]/hub/page.tsx", priority: 0.8, frequency: "monthly" as const },
   { path: "/nodos", file: "src/app/[locale]/nodos/page.tsx", priority: 0.8, frequency: "monthly" as const },
   { path: "/alianzas", file: "src/app/[locale]/alianzas/page.tsx", priority: 0.7, frequency: "monthly" as const },
@@ -33,6 +35,7 @@ function mtime(rel: string) {
 
 const COMPANIES_MODIFIED = mtime("src/data/companies.ts");
 const FOUNDERS_MODIFIED = mtime("src/data/founders.ts");
+const UNIVERSITIES_MODIFIED = mtime("src/data/universities.ts");
 
 function languageAlternates(route: string, locales: readonly string[] = routing.locales) {
   const languages: Record<string, string> = {};
@@ -72,6 +75,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: localeUrl(locale, pathName),
         lastModified: FOUNDERS_MODIFIED,
+        changeFrequency: "monthly",
+        priority: 0.6,
+        alternates: languageAlternates(pathName),
+      });
+    }
+
+    for (const university of universities) {
+      const pathName = `/universidades/${university.slug}`;
+      entries.push({
+        url: localeUrl(locale, pathName),
+        lastModified: UNIVERSITIES_MODIFIED,
         changeFrequency: "monthly",
         priority: 0.6,
         alternates: languageAlternates(pathName),

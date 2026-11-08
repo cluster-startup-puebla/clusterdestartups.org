@@ -31,6 +31,7 @@ const NAV: NavEntry[] = [
     items: [
       { key: "startups", href: "/empresas" },
       { key: "founders", href: "/fundadores" },
+      { key: "universities", href: "/universidades" },
     ],
   },
   {

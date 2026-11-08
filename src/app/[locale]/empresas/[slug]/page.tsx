@@ -226,7 +226,7 @@ async function CompanyDetail({
                         {founderRoleAt(item, company.slug)}
                       </span>
                     )}
-                    {item.bio && (
+                    {item.companySlug === company.slug && item.bio && (
                       <span className="mt-1 block text-small text-ink-secondary">
                         {localize(item.bio, locale)}
                       </span>

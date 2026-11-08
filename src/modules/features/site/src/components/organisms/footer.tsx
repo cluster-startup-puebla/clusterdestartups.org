@@ -10,6 +10,7 @@ const FOOTER_LINKS = [
   { key: "governance", href: "/gobernanza" },
   { key: "companies", href: "/empresas" },
   { key: "founders", href: "/fundadores" },
+  { key: "universities", href: "/universidades" },
   { key: "blog", href: "/blog" },
   { key: "contact", href: "/contacto" },
   { key: "media", href: "/medios" },

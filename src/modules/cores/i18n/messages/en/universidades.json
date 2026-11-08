@@ -1,0 +1,18 @@
+{
+  "Universities": {
+    "title": "Universities",
+    "metaTitle": "Universities",
+    "metaDescription": "Universities behind founders and startups in the Startup and Innovation Cluster.",
+    "subtitle": "Founders and startups in the directory come from these universities.",
+    "count": "{count} in the directory",
+    "foundersCount": "{count} founders",
+    "startupsCount": "{count} startups",
+    "home": "Home",
+    "index": "Universities",
+    "founders": "Founders",
+    "startups": "Alumni startups",
+    "incubated": "Incubated here",
+    "emptyFounders": "No founders from this university are in the directory yet.",
+    "emptyStartups": "No startups from this university are in the directory yet."
+  }
+}

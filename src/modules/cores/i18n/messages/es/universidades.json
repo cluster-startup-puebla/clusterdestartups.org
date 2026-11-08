@@ -1,0 +1,18 @@
+{
+  "Universities": {
+    "title": "Universidades",
+    "metaTitle": "Universidades",
+    "metaDescription": "Universidades de donde salen founders y startups del Clúster de Startups e Innovación.",
+    "subtitle": "De aquí salen founders y startups del directorio.",
+    "count": "{count} en el directorio",
+    "foundersCount": "{count} founders",
+    "startupsCount": "{count} startups",
+    "home": "Inicio",
+    "index": "Universidades",
+    "founders": "Founders",
+    "startups": "Startups de egresados",
+    "incubated": "Incubadas aquí",
+    "emptyFounders": "Todavía no hay founders de esta universidad en el directorio.",
+    "emptyStartups": "Todavía no hay startups de esta universidad en el directorio."
+  }
+}

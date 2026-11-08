@@ -103,6 +103,13 @@ export type Company = {
   };
   /** Slug anterior. Sigue abriendo esta ficha y muestra el aviso hacia `slug`. */
   previousSlug?: string;
+  /**
+   * Universidad que incubó la startup. Slug de `universities`.
+   * No se infiere porque un founder haya estudiado ahí: hace falta
+   * marcarlo. Sin este campo la ficha de la universidad no la lista
+   * como incubada.
+   */
+  incubatedAt?: string;
   /** Descripción corta de una línea para el listado. */
   shortDescription?: LocalizedText;
   /** Verticales de `STARTUP_INDUSTRIES`. Una o dos, nunca una frase. */

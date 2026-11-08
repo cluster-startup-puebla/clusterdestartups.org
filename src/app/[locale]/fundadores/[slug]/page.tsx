@@ -12,8 +12,10 @@ import {
   founders,
   getFounder,
   type Founder,
-  type FounderPlace,
+  type FounderCompanyRef,
+  type FounderEducation,
 } from "@/data/founders";
+import { getUniversity } from "@/data/universities";
 import { FounderAvatar, FounderPhoto } from "@/modules/features/founders/src";
 
 export function generateStaticParams() {
@@ -43,32 +45,36 @@ export async function generateMetadata({
   });
 }
 
-function CompanyRefRow({ slugs }: { slugs: readonly string[] }) {
-  const listed = slugs
-    .map((slug) => getCompany(slug))
-    .filter((company) => company !== undefined);
+function CompanyRefRow({ places }: { places: readonly FounderCompanyRef[] }) {
+  const listed = places.flatMap((place) => {
+    const company = getCompany(place.companySlug);
+    return company ? [{ company, role: place.role }] : [];
+  });
 
   if (listed.length === 0) return null;
 
   return (
-    <ul className="mt-5 flex flex-wrap gap-10">
-      {listed.map((company) => (
+    <ul className="mt-5 grid gap-6 sm:grid-cols-2">
+      {listed.map(({ company, role }) => (
         <li key={company.slug}>
           <Link
             href={`/empresas/${company.slug}`}
-            className="group flex w-36 flex-col items-center gap-3 text-center"
+            className="group flex items-center gap-4"
           >
             <CompanyLogo
               name={company.name}
               logo={company.logo}
-              className="h-12 w-36"
+              className="h-12 w-28 shrink-0"
               dark={company.logoDark}
               ink={company.logoInk}
             />
-            <span className="inline-flex items-center gap-1 text-small leading-snug text-ink-secondary">
-              <span className="group-hover:text-brand">{company.name}</span>{" "}
-              <VerifiedMark verified={company.verified} className="inline-block size-3.5 align-[-0.15em]" />
-              <ChevronRight size={14} strokeWidth={2} aria-hidden="true" className="shrink-0 group-hover:text-brand" />
+            <span className="min-w-0">
+              <span className="inline-flex items-center gap-1 text-small leading-snug text-ink">
+                <span className="group-hover:text-brand">{company.name}</span>{" "}
+                <VerifiedMark verified={company.verified} className="inline-block size-3.5 align-[-0.15em]" />
+                <ChevronRight size={14} strokeWidth={2} aria-hidden="true" className="shrink-0 text-ink-muted group-hover:text-brand" />
+              </span>
+              {role ? <span className="mt-0.5 block text-micro text-ink-muted">{role}</span> : null}
             </span>
           </Link>
         </li>
@@ -77,20 +83,41 @@ function CompanyRefRow({ slugs }: { slugs: readonly string[] }) {
   );
 }
 
-function PlaceRow({ places }: { places: readonly FounderPlace[] }) {
+function UniversityRow({
+  places,
+  locale,
+}: {
+  places: readonly FounderEducation[];
+  locale: string;
+}) {
+  const listed = places.flatMap((place) => {
+    const university = getUniversity(place.universitySlug);
+    if (!university) return [];
+    return [{ university, campus: place.campus ? localize(place.campus, locale) : undefined }];
+  });
+  if (listed.length === 0) return null;
+
   return (
     <ul className="mt-5 flex flex-wrap gap-10">
-      {places.map((place) => (
-        <li key={place.name} className="flex w-32 flex-col items-center gap-3 text-center">
-          <span className="flex size-16 items-center justify-center overflow-hidden rounded-lg border border-line bg-surface">
-            {place.logo ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={place.logo} alt="" className="size-full object-cover" />
-            ) : (
-              <span className="font-display text-body text-ink">{place.name.slice(0, 1)}</span>
-            )}
-          </span>
-          <span className="text-small leading-snug text-ink-secondary">{place.name}</span>
+      {listed.map(({ university, campus }) => (
+        <li key={university.slug}>
+          <Link
+            href={`/universidades/${university.slug}`}
+            className="group flex w-36 flex-col items-center gap-3 text-center"
+          >
+            <span className="flex size-16 items-center justify-center overflow-hidden rounded-lg border border-line bg-elevated">
+              {university.logo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={university.logo} alt="" className="size-full object-contain" />
+              ) : (
+                <span className="font-display text-body text-ink">{university.shortName.slice(0, 1)}</span>
+              )}
+            </span>
+            <span className="text-small leading-snug text-ink-secondary">
+              <span className="group-hover:text-brand">{university.shortName}</span>
+              {campus ? <span className="mt-1 block text-micro text-ink-muted">{campus}</span> : null}
+            </span>
+          </Link>
         </li>
       ))}
     </ul>
@@ -203,9 +230,7 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
                 <section className="mt-10 border-t border-line pt-8">
                   <h2 className="text-h4 font-display text-ink">{t("alsoAt")}</h2>
                   <CompanyRefRow
-                    slugs={founder.alsoAt
-                      .map((place) => place.companySlug)
-                      .filter((slug) => slug !== founder.companySlug)}
+                    places={founder.alsoAt.filter((place) => place.companySlug !== founder.companySlug)}
                   />
                 </section>
               )}
@@ -213,14 +238,14 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
               {founder.previouslyAt && founder.previouslyAt.length > 0 && (
                 <section className="mt-10 border-t border-line pt-8">
                   <h2 className="text-h4 font-display text-ink">{t("previously")}</h2>
-                  <PlaceRow places={founder.previouslyAt} />
+                  <CompanyRefRow places={founder.previouslyAt} />
                 </section>
               )}
 
               {founder.alumnusOf && founder.alumnusOf.length > 0 && (
                 <section className="mt-10 border-t border-line pt-8">
                   <h2 className="text-h4 font-display text-ink">{t("education")}</h2>
-                  <PlaceRow places={founder.alumnusOf} />
+                  <UniversityRow places={founder.alumnusOf} locale={locale} />
                 </section>
               )}
             </div>
