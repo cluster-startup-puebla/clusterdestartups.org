@@ -48,7 +48,7 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
   const industries = (company.industries ?? []).map((id) =>
     localize(STARTUP_INDUSTRIES[id], locale),
   );
-  const isPending = !industries.length && !company.problem && !company.solution;
+  const isPending = !company.verified;
 
   const contactEntries: {
     key: ContactKey;
@@ -113,6 +113,12 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
           </ul>
         </div>
       </header>
+
+      {!company.solution && company.shortDescription && (
+        <p className="mt-8 max-w-2xl text-body text-ink-secondary">
+          {localize(company.shortDescription, locale)}
+        </p>
+      )}
 
       {isPending && (
         <p className="card mt-10 p-6 text-body text-ink-secondary">{t("pendingNote")}</p>

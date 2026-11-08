@@ -271,6 +271,20 @@ export const founders: readonly Founder[] = [
       en: "Creator and founder of Traixo, a collaborative shipping platform.",
     },
   },
+  {
+    slug: "emanuel-basilio-vergara",
+    verified: false,
+    name: "Emanuel Basilio Vergara",
+    role: "CEO",
+    companySlug: "nutriiapp",
+    photo: "/fundadores/emanuel-basilio-vergara.webp",
+    linkedin: "https://www.linkedin.com/in/emanuel-basilio-vergara-8b6269222/",
+    bio: {
+      es: "CEO de NutriiApp. Estudió en la UPAEP.",
+      en: "CEO of NutriiApp. He studied at UPAEP.",
+    },
+    alumnusOf: [{ name: "UPAEP", logo: "/fundadores/upaep.webp" }],
+  },
 ];
 
 export function getFounder(slug: string) {

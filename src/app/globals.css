@@ -317,6 +317,22 @@ html[data-cookies="set"] .cookie-banner {
     stroke: var(--on-accent);
   }
 
+  /* Ficha todavía sin confirmar. Sin relleno de marca, para que no compita con el sello rosa. */
+  .badge-muted {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-full);
+    color: var(--text-muted);
+    font-family: var(--font-body), sans-serif;
+    font-size: var(--text-micro);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    padding: 0.2rem 0.55rem;
+    text-transform: uppercase;
+  }
+
   .input {
     background: var(--bg-subtle);
     border: 1px solid var(--border-default);
@@ -475,4 +491,102 @@ html[data-cookies="set"] .cookie-banner {
   to {
     transform: scaleX(1);
   }
+}
+
+/* Mapa del directorio. El aislamiento evita que los z-index de Leaflet
+   tapen el header. Teselas CARTO sin etiquetas; el popup sigue los tokens. */
+.company-map {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  background: var(--bg-subtle);
+}
+
+.company-map-canvas,
+.company-map .leaflet-container {
+  height: calc(100svh - 16rem);
+  min-height: 24rem;
+  max-height: 40rem;
+  width: 100%;
+  background: var(--bg-subtle);
+  font-family: var(--font-body), sans-serif;
+}
+
+.company-map .leaflet-tile-pane {
+  filter: grayscale(0.9) contrast(0.82) brightness(1.06);
+}
+
+[data-theme="dark"] .company-map .leaflet-tile-pane {
+  filter: grayscale(0.35) contrast(0.92) brightness(0.9);
+}
+
+.company-map .leaflet-control-attribution {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: 0.6875rem;
+}
+
+.company-map .leaflet-control-attribution a {
+  color: var(--text-muted);
+}
+
+.company-map-marker {
+  background: transparent;
+  border: 0;
+}
+
+.company-map-marker-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--brand-primary);
+  color: var(--text-on-brand);
+  border: 2px solid var(--text-on-brand);
+  box-shadow: 0 1px 4px rgb(22 40 79 / 0.35);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.company-map .leaflet-bar a {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-bottom-color: var(--border-default);
+}
+
+.company-map .leaflet-bar a:hover,
+.company-map .leaflet-bar a:focus {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.company-map .leaflet-popup-content-wrapper,
+.company-map .leaflet-popup-tip {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  box-shadow: var(--card-shadow);
+}
+
+.company-map .leaflet-popup-content {
+  margin: 0.75rem 1rem;
+}
+
+.company-map .leaflet-popup-content a {
+  color: var(--link);
+  font-weight: 600;
+}
+
+.company-map .leaflet-popup-close-button {
+  color: var(--text-muted);
+}
+
+.company-map .leaflet-container a.leaflet-popup-close-button:hover {
+  color: var(--text-primary);
 }

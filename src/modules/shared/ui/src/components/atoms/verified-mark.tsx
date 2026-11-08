@@ -11,7 +11,9 @@ export function VerifiedMark({
   className?: string;
 }) {
   const t = useTranslations("Verified");
-  if (!verified) return null;
+  if (!verified) {
+    return <span className="badge-muted align-middle">{t("review")}</span>;
+  }
 
   return (
     <BadgeCheck

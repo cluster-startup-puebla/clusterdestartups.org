@@ -48,7 +48,8 @@
     "cookies": "Cookie notice"
   },
   "Verified": {
-    "label": "Verified"
+    "label": "Verified",
+    "review": "In review"
   },
   "RegisterStartup": {
     "title": "Register your startup in the directory",

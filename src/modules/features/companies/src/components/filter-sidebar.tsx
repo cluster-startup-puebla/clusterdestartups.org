@@ -1,13 +1,17 @@
 "use client";
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronDown, X } from "lucide-react";
 
 interface FilterSection {
   key: string;
   label: string;
   options: { value: string; label: string; count: number }[];
+  /** One value at a time. Unchecking returns to defaultValues instead of an empty set. */
+  selection?: "single";
+  /** Selected when this key is missing from the URL. */
+  defaultValues?: string[];
 }
 
 interface FilterSidebarProps {
@@ -26,11 +30,19 @@ interface FilterSidebarProps {
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand";
 
-function replaceWithoutJump(update: () => void) {
+function replaceWithoutJump(update: () => void, anchor: HTMLElement | null) {
   const y = window.scrollY;
+  const top = anchor?.getBoundingClientRect().top ?? null;
   update();
   const restore = () => {
-    if (Math.abs(window.scrollY - y) > 2) window.scrollTo(0, y);
+    if (anchor && top !== null) {
+      const drift = anchor.getBoundingClientRect().top - top;
+      if (Math.abs(drift) > 1) {
+        window.scrollBy(0, drift);
+        return;
+      }
+    }
+    if (y > 0 && window.scrollY === 0) window.scrollTo(0, y);
   };
   window.requestAnimationFrame(restore);
   window.setTimeout(restore, 60);
@@ -41,6 +53,7 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
+  const asideRef = useRef<HTMLElement>(null);
   const [openKey, setOpenKey] = useState<string | null>(null);
 
   const searchValue = searchParams.get("q") ?? "";
@@ -56,7 +69,7 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
       const qs = params.toString();
       replaceWithoutJump(() => {
         router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-      });
+      }, asideRef.current);
     },
     [pathname, router],
   );
@@ -80,16 +93,36 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
   const createParamUpdate = useCallback(
     (key: string, value: string, checked: boolean) => {
       const params = new URLSearchParams(searchParams.toString());
-      if (checked) {
-        params.append(key, value);
-      } else {
-        const existing = params.getAll(key);
+      const section = sections.find((entry) => entry.key === key);
+      const defaults = section?.defaultValues;
+
+      if (section?.selection === "single") {
         params.delete(key);
-        existing.filter((entry) => entry !== value).forEach((entry) => params.append(key, entry));
+        if (checked && !defaults?.includes(value)) params.set(key, value);
+        replaceParams(params);
+        return;
+      }
+
+      let current = params.getAll(key).filter((entry) => entry !== "none");
+      if (defaults && !params.has(key)) current = [...defaults];
+      if (checked) {
+        if (!current.includes(value)) current.push(value);
+      } else {
+        current = current.filter((entry) => entry !== value);
+      }
+      params.delete(key);
+      const matchesDefault =
+        defaults !== undefined &&
+        current.length === defaults.length &&
+        defaults.every((entry) => current.includes(entry));
+      if (current.length === 0 && defaults) {
+        params.append(key, "none");
+      } else if (!matchesDefault) {
+        current.forEach((entry) => params.append(key, entry));
       }
       replaceParams(params);
     },
-    [searchParams, replaceParams],
+    [searchParams, replaceParams, sections],
   );
 
   const clearFilters = useCallback(() => {
@@ -101,17 +134,33 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
     const qs = params.toString();
     replaceWithoutJump(() => {
       router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-    });
+    }, asideRef.current);
   }, [pathname, router, searchParams]);
 
   const isSelected = useCallback(
-    (key: string, value: string) => searchParams.getAll(key).includes(value),
-    [searchParams],
+    (key: string, value: string) => {
+      const section = sections.find((entry) => entry.key === key);
+      const values = searchParams.getAll(key).filter((entry) => entry !== "none");
+      const defaults = section?.defaultValues;
+      if (section?.selection === "single") {
+        if (values.includes("all")) return value === "all";
+        if (values.length === 0) return defaults?.includes(value) ?? false;
+        return values.includes(value);
+      }
+      if (values.length === 0 && defaults) return defaults.includes(value);
+      return values.includes(value);
+    },
+    [searchParams, sections],
   );
 
   const selectedChips = sections.flatMap((section) =>
     section.options
-      .filter((option) => isSelected(section.key, option.value))
+      .filter((option) => {
+        const values = searchParams.getAll(section.key);
+        if (!values.includes(option.value)) return false;
+        if (section.selection === "single" && section.defaultValues?.includes(option.value)) return false;
+        return true;
+      })
       .map((option) => ({ ...option, key: section.key })),
   );
 
@@ -129,7 +178,7 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
   }, [openSection]);
 
   return (
-    <aside aria-label={labels.filters} className="w-full shrink-0 lg:w-64">
+    <aside ref={asideRef} aria-label={labels.filters} className="w-full shrink-0 lg:w-64">
       <input
         type="search"
         placeholder={searchPlaceholder}
@@ -145,9 +194,19 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
             const selectedCount = section.options.filter((option) =>
               isSelected(section.key, option.value),
             ).length;
+            const explicitValues = searchParams
+              .getAll(section.key)
+              .filter((entry) => entry !== "none");
             const single = section.options.length === 1;
             const open = openKey === section.key;
-            const active = selectedCount > 0;
+            const active =
+              section.selection === "single"
+                ? explicitValues.length > 0 &&
+                  !(
+                    section.defaultValues?.length === explicitValues.length &&
+                    section.defaultValues.every((entry) => explicitValues.includes(entry))
+                  )
+                : selectedCount > 0;
 
             if (single) {
               const option = section.options[0];
@@ -183,8 +242,14 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
                 }`}
               >
                 {section.label}
-                {selectedCount > 0 && (
-                  <span className={active ? "text-on-brand" : "text-ink-muted"}>{selectedCount}</span>
+                {section.selection === "single" ? null : (
+                  <span
+                    className={`min-w-4 text-center tabular-nums ${
+                      selectedCount > 0 ? (active ? "text-on-brand" : "text-ink-muted") : "invisible"
+                    }`}
+                  >
+                    {selectedCount > 0 ? selectedCount : 0}
+                  </span>
                 )}
                 <ChevronDown
                   aria-hidden="true"
@@ -213,7 +278,18 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
               <li key={`${chip.key}-${chip.value}`}>
                 <button
                   type="button"
-                  onClick={() => createParamUpdate(chip.key, chip.value, false)}
+                  onPointerDown={(event) => {
+                    event.preventDefault();
+                    event.currentTarget.dataset.toggled = "1";
+                    createParamUpdate(chip.key, chip.value, false);
+                  }}
+                  onClick={(event) => {
+                    if (event.currentTarget.dataset.toggled) {
+                      delete event.currentTarget.dataset.toggled;
+                      return;
+                    }
+                    createParamUpdate(chip.key, chip.value, false);
+                  }}
                   aria-label={`${labels.remove} ${chip.label}`}
                   className={`inline-flex min-h-11 max-w-full items-center gap-2 rounded-full bg-brand px-4 text-left text-small text-on-brand ${focusRing}`}
                 >
@@ -285,6 +361,29 @@ function FilterGroups({
               return (
                 <li key={option.value}>
                   <label
+                    onPointerDown={(event) => {
+                      event.preventDefault();
+                      event.currentTarget.dataset.toggled = "1";
+                      if (section.selection === "single" && selected) return;
+                      onToggle(
+                        section.key,
+                        option.value,
+                        section.selection === "single" ? true : !selected,
+                      );
+                    }}
+                    onClick={(event) => {
+                      if (event.currentTarget.dataset.toggled) {
+                        delete event.currentTarget.dataset.toggled;
+                        return;
+                      }
+                      event.preventDefault();
+                      if (section.selection === "single" && selected) return;
+                      onToggle(
+                        section.key,
+                        option.value,
+                        section.selection === "single" ? true : !selected,
+                      );
+                    }}
                     className={`flex min-h-11 cursor-pointer items-center gap-3 rounded-sm px-2 text-small ${
                       selected
                         ? "bg-surface-subtle text-ink"
@@ -292,11 +391,30 @@ function FilterGroups({
                     }`}
                   >
                     <input
-                      type="checkbox"
+                      type={section.selection === "single" ? "radio" : "checkbox"}
+                      name={section.selection === "single" ? section.key : undefined}
                       checked={selected}
-                      onChange={(event) =>
-                        onToggle(section.key, option.value, event.target.checked)
-                      }
+                      tabIndex={0}
+                      onKeyDown={(event) => {
+                        if (event.key !== " " && event.key !== "Enter") return;
+                        event.preventDefault();
+                        if (section.selection === "single" && selected) return;
+                        onToggle(
+                          section.key,
+                          option.value,
+                          section.selection === "single" ? true : !selected,
+                        );
+                      }}
+                      onChange={(event) => {
+                        const label = event.currentTarget.closest("label");
+                        if (label?.dataset.toggled) return;
+                        if (section.selection === "single") {
+                          if (selected) return;
+                          onToggle(section.key, option.value, true);
+                          return;
+                        }
+                        onToggle(section.key, option.value, event.currentTarget.checked);
+                      }}
                       className={`size-5 shrink-0 accent-brand ${focusRing}`}
                     />
                     <span className="min-w-0 flex-1">{option.label}</span>

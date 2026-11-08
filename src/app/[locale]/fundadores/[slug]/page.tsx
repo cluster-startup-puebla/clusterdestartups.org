@@ -135,7 +135,7 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
         <div className="min-w-0">
           <header className="card overflow-hidden">
             <div className="relative h-36 overflow-hidden rounded-t-md bg-surface-subtle sm:h-44">
-              {company?.logo && (
+              {(company?.logoMark ?? company?.logo) && (
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 grid grid-cols-4 place-items-center gap-6 p-6 opacity-40 sm:grid-cols-6 dark:opacity-55"
@@ -144,7 +144,7 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       key={index}
-                      src={company.logo}
+                      src={company.logoMark ?? company.logo}
                       alt=""
                       className="max-h-10 w-full object-contain brightness-0 dark:invert"
                     />

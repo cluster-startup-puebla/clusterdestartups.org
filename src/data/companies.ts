@@ -76,6 +76,11 @@ export type Company = {
    * oscuro y un PNG con fondo blanco se ve como recuadro pegado.
    */
   logo?: string;
+  /**
+   * Símbolo sin la placa de color, para el banner del fundador.
+   * Hace falta cuando `logo` es un ícono relleno: la silueta si no pinta el recuadro entero.
+   */
+  logoMark?: string;
   /** Si el logo es claro/transparente, aplicar filter en modo claro para que sea visible. */
   logoDark?: boolean;
   /**
@@ -87,6 +92,15 @@ export type Company = {
   batch?: string;
   /** Ubicación de la empresa (localized). */
   region?: LocalizedText;
+  /**
+   * Punto del mapa del directorio. Calle publicada o lugar asignado.
+   * Sin este campo la empresa no se pinta.
+   */
+  location?: {
+    address: string;
+    lat: number;
+    lng: number;
+  };
   /** Descripción corta de una línea para el listado. */
   shortDescription?: LocalizedText;
   /** Verticales de `STARTUP_INDUSTRIES`. Una o dos, nunca una frase. */
@@ -127,6 +141,57 @@ export function localize<T>(value: Record<Locale, T>, locale: string): T {
 /** Orden alfabético por nombre. */
 export const companies: readonly Company[] = [
   {
+    slug: 'celunova',
+    verified: false,
+    name: 'CeluNova',
+    logo: '/empresas/celunova.webp',
+    logoDark: true,
+    region: {
+      es: 'México',
+      en: 'Mexico'
+    },
+    shortDescription: {
+      es: 'Startup de tecnología climática de México que transforma residuos de piña en celulosa y almidón.',
+      en: 'Climate-tech startup from Mexico that turns pineapple waste into cellulose and starch.'
+    },
+    industries: ['climatech'],
+    problem: {
+      es: 'Cada año se desperdician 88 millones de toneladas de residuos de piña y la mayoría se quema, liberando CO₂. La celulosa tradicional tala hasta 17 árboles por tonelada, y el almidón de maíz compite con la producción de alimentos.',
+      en: 'Every year, 88 million tons of pineapple waste are wasted and most of it is burned, releasing CO₂. Traditional cellulose production cuts down 17 trees per ton, and corn starch competes with food production.'
+    },
+    solution: {
+      es: 'Con química verde y procesos biotecnológicos extrae celulosa de la hoja de la piña y almidón del tallo y la cáscara, y los convierte en materias primas de alto valor. Por cada tonelada de producto evita la tala de 17 árboles, reduce cerca de 66% el uso de agua y químicos, valoriza 7 toneladas de residuos de piña y recorta 5.5 toneladas de CO₂.',
+      en: 'With green chemistry and biotechnological processes, it extracts cellulose from pineapple leaves and starch from the stem and skin, and turns them into high-value raw materials. Per ton of product, it saves 17 trees from deforestation, cuts water and chemical use by about 66%, valorizes 7 tons of pineapple waste and cuts 5.5 tons of CO₂.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Celulosa',
+          en: 'Cellulose'
+        },
+        description: {
+          es: 'Fibra suave, parecida al algodón, obtenida de la hoja de la piña. Sirve para papel, pañales, aislamiento y textiles.',
+          en: 'Soft, cotton-like fiber from pineapple leaves. Used for paper, diapers, insulation and textiles.'
+        }
+      },
+      {
+        name: {
+          es: 'Almidón',
+          en: 'Starch'
+        },
+        description: {
+          es: 'Base biodegradable extraída del tallo y la cáscara de la piña, para bioplásticos, cerámica y más.',
+          en: 'Biodegradable base extracted from the pineapple stem and skin, for bioplastics, ceramics and more.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://celunova.com.mx',
+      email: 'contacto@celunova.com.mx',
+      phone: '+52 993 2024 320'
+    }
+  },
+  {
     slug: 'concora',
     verified: true,
     name: 'Concora',
@@ -134,6 +199,11 @@ export const companies: readonly Company[] = [
     region: {
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
+    },
+    location: {
+      address: 'Puebla, México',
+      lat: 19.043798,
+      lng: -98.198151,
     },
     shortDescription: {
       es: 'Plataforma que conecta juventudes con oportunidades y empresas con talento junior mediante retos.',
@@ -188,6 +258,137 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'cravely',
+    verified: false,
+    name: 'Cravely',
+    logo: '/empresas/cravely.webp',
+    logoInk: true,
+    location: {
+      address: 'Jacarandas 3922, Ánimas, 72400 Puebla, Pue.',
+      lat: 19.042271,
+      lng: -98.234675,
+    },
+    shortDescription: {
+      es: 'Marketplace donde las marcas publican campañas y los creadores aplican, y centraliza las reseñas de restaurantes.',
+      en: 'Marketplace where brands publish campaigns and creators apply, and it centralizes restaurant reviews.'
+    },
+    problem: {
+      es: 'Las marcas pierden horas en cada campaña de creadores: revisan perfiles de Instagram uno por uno, cierran por DM o WhatsApp sin contrato y después no siguen entregables ni fechas. En restaurantes, las opiniones llegan a la vez por Google, TripAdvisor, Uber Eats, Instagram y delivery, y el equipo de operación no alcanza a leerlas.',
+      en: 'Brands lose hours on every creator campaign: they review Instagram profiles one by one, close deals over DM or WhatsApp with no contract, and then do not track deliverables or dates. At restaurants, opinions arrive at once from Google, TripAdvisor, Uber Eats, Instagram and delivery, and the operations team cannot get through them.'
+    },
+    solution: {
+      es: 'El Marketplace publica la campaña de la marca y recibe postulaciones de creadores. La negociación, el contrato, las entregas, las aprobaciones y el pago quedan en la plataforma. La cuenta no tiene mensualidad: el cobro es al aceptar la colaboración. Las agencias asignan campañas y revisan los entregables de su roster. Para restaurantes, Cravely centraliza reseñas de Google, TripAdvisor, Yelp y más, detecta patrones con IA y alerta cuando llega algo grave. En el inicio, esa escucha social figura como próximamente.',
+      en: 'The Marketplace publishes the brand campaign and takes applications from creators. Negotiation, the contract, deliverables, approvals and payment stay on the platform. The account has no monthly fee: the charge comes when the collaboration is accepted. Agencies assign campaigns and review deliverables for their roster. For restaurants, Cravely centralizes reviews from Google, TripAdvisor, Yelp and more, finds patterns with AI and alerts when something serious arrives. On the homepage, that social listening is listed as coming soon.'
+    },
+    catalog: [
+      {
+        name: { es: 'Marketplace', en: 'Marketplace' },
+        description: {
+          es: 'Campañas ilimitadas, postulaciones de creadores, contratos, entregas y pagos en la misma plataforma. Sin suscripción mensual: se cobra al aceptar la colaboración. Las agencias asignan campañas y dan seguimiento a los entregables de su roster.',
+          en: 'Unlimited campaigns, creator applications, contracts, deliverables and payments on the same platform. No monthly subscription: the charge comes when the collaboration is accepted. Agencies assign campaigns and track deliverables for their roster.'
+        }
+      },
+      {
+        name: { es: 'Social Listening', en: 'Social Listening' },
+        description: {
+          es: 'Centraliza reseñas de Google, TripAdvisor y apps de delivery, con análisis de reputación por IA, alertas de reseñas negativas y comparativa de sucursales. En los precios del inicio aparece como próximamente. La propuesta cobra $29 USD al mes a restaurantes individuales y $79 USD al mes a grupos; el plan de grupos incluye el Marketplace. El plan de agencias de marketing está como próximamente.',
+          en: 'Centralizes reviews from Google, TripAdvisor and delivery apps, with AI reputation analysis, negative-review alerts and branch comparison. On the homepage pricing it is listed as coming soon. The proposal charges $29 USD per month for individual restaurants and $79 USD per month for groups; the group plan includes the Marketplace. The marketing-agency plan is listed as coming soon.'
+        }
+      },
+      {
+        name: { es: 'Programa Restaurantes Fundadores', en: 'Founding Restaurants program' },
+        description: {
+          es: 'Acceso anticipado antes del lanzamiento público, precio preferencial de por vida y participación en el desarrollo con el equipo fundador. Pago único de $100 USD y 20 cupos.',
+          en: 'Early access before the public launch, a preferential price for life and a part in development with the founding team. One-time payment of $100 USD and 20 spots.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://cravely.io',
+      email: 'privacidad@cravely.io'
+    }
+  },
+  {
+    slug: 'cuponerapp',
+    verified: false,
+    name: 'Cuponerapp',
+    logo: '/empresas/cuponerapp.webp',
+    logoDark: true,
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    location: {
+      address: 'Calzada Zavaleta 1108 Int. 1104, Santa Cruz Buenavista, 72150 Puebla',
+      lat: 19.067006,
+      lng: -98.249838,
+    },
+    shortDescription: {
+      es: 'Plataforma digital de cupones, promociones y beneficios publicados por comercios y anunciantes.',
+      en: 'Digital platform for coupons, promotions and benefits published by merchants and advertisers.'
+    },
+    solution: {
+      es: 'Cuponerapp reúne cupones, promociones y beneficios de comercios y anunciantes en una app para iOS y Android y en el sitio web. En Shop el cupón se compra en línea, con tarjeta o efectivo, y se canjea en tienda dictando el folio. En la modalidad presencial se muestra el folio al pedir la cuenta. La app cubre las dos modalidades y avisa de ofertas exclusivas cerca de la ubicación; el sitio web solo permite Shop. Cuponerapp PRO es la suscripción con cupones exclusivos y acceso anticipado a ofertas. Integra lleva ese catálogo a empresas, para colaboradores o clientes. Viajes Cuponerapp vende paquetes todo incluido a 12 meses sin intereses.',
+      en: 'Cuponerapp brings together coupons, promotions and benefits from merchants and advertisers in an iOS and Android app and on the website. In Shop the coupon is bought online, with a card or cash, and redeemed in store by giving the code. In person, the code is shown when asking for the check. The app covers both modes and sends alerts for exclusive offers nearby; the website only supports Shop. Cuponerapp PRO is the subscription with exclusive coupons and early access to offers. Integra takes that catalog to companies, for employees or customers. Viajes Cuponerapp sells all-inclusive packages at 12 months with no interest.'
+    },
+    catalog: [
+      {
+        name: { es: 'Shop', en: 'Shop' },
+        description: {
+          es: 'Compra el cupón en línea con tarjeta de crédito, débito o efectivo y canjéalo en el establecimiento dictando el folio.',
+          en: 'Buy the coupon online with a credit card, debit card or cash and redeem it at the venue by giving the code.'
+        }
+      },
+      {
+        name: { es: 'Cupón presencial', en: 'In-person coupon' },
+        description: {
+          es: 'En el local se ordena y, al pedir la cuenta, se muestra el folio al cajero o al encargado.',
+          en: 'At the venue you order and, when asking for the check, show the code to the cashier or the person in charge.'
+        }
+      },
+      {
+        name: { es: 'Cuponerapp PRO', en: 'Cuponerapp PRO' },
+        description: {
+          es: 'Suscripción con cupones exclusivos y acceso anticipado a ofertas. El plan mensual cuesta $99 y se puede cancelar cuando se quiera; el anual cuesta $949, incluye dos meses y tiene garantía de devolución de 30 días.',
+          en: 'A subscription with exclusive coupons and early access to offers. The monthly plan costs $99 and can be canceled at any time; the annual plan costs $949, includes two months and has a 30-day refund guarantee.'
+        }
+      },
+      {
+        name: { es: 'Integra', en: 'Integra' },
+        description: {
+          es: 'Beneficios digitales para colaboradores o clientes: cupones, promociones, tarjetas de regalo, experiencias y rewards, por la app, en marca blanca o por API. Cubre México y da servicio en Perú.',
+          en: 'Digital benefits for employees or customers: coupons, promotions, gift cards, experiences and rewards, through the app, white label or an API. It covers Mexico and also serves Peru.'
+        }
+      },
+      {
+        name: { es: 'Viajes Cuponerapp', en: 'Viajes Cuponerapp' },
+        description: {
+          es: 'Paquetes de viaje todo incluido a 12 meses sin intereses.',
+          en: 'All-inclusive travel packages at 12 months with no interest.'
+        }
+      },
+      {
+        name: { es: 'Reservas', en: 'Reservations' },
+        description: {
+          es: 'Reservaciones de restaurante en tiempo real desde la app, sin llamadas y sin comisión por cubierto.',
+          en: 'Real-time restaurant reservations from the app, with no phone calls and no per-cover fee.'
+        }
+      },
+      {
+        name: { es: 'Para tu marca', en: 'For your brand' },
+        description: {
+          es: 'El comercio publica promociones en la red. No hay inversión inicial ni pagos recurrentes: se paga por resultados, y el panel administra, activa y mide los cupones.',
+          en: 'The business publishes promotions on the network. There is no setup fee and no recurring payments: it pays for results, and the dashboard manages, activates and measures the coupons.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://www.cuponerapp.com',
+      email: 'cuponerapp.media@gmail.com',
+      phone: '+52 222 277 0955'
+    }
+  },
+  {
     slug: 'empowershe',
     verified: true,
     name: 'EmpowerShe',
@@ -195,6 +396,11 @@ export const companies: readonly Company[] = [
     region: {
       es: 'México',
       en: 'Mexico'
+    },
+    location: {
+      address: 'Puebla, Puebla',
+      lat: 19.043798,
+      lng: -98.198151,
     },
     shortDescription: {
       es: 'Educación STEAM para niñas y jóvenes, con una app que funciona sin internet y talleres presenciales.',
@@ -259,11 +465,164 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'fifty-fifty-card',
+    verified: false,
+    name: 'Fifty Fifty Card',
+    logo: '/empresas/fifty-fifty-card.webp',
+    logoInk: true,
+    location: {
+      address: 'Av. Teziutlán Sur 71, La Paz, 72160 Puebla',
+      lat: 19.053511,
+      lng: -98.228862,
+    },
+    shortDescription: {
+      es: 'Membresía para reservar en restaurantes de Puebla y la Ciudad de México con 50% de descuento en alimentos.',
+      en: 'Membership to book restaurants in Puebla and Mexico City with 50% off food.'
+    },
+    problem: {
+      es: 'En horarios de menor demanda las mesas se quedan vacías y el restaurante sigue cargando sus gastos fijos. Prefiere una mesa ocupada que una vacía.',
+      en: 'In lower-demand hours tables stay empty while the restaurant still carries its fixed costs. It would rather have an occupied table than an empty one.'
+    },
+    solution: {
+      es: 'Quien reserva desde la app obtiene 50% de descuento en alimentos en más de 200 restaurantes de Puebla y la Ciudad de México. El restaurante no paga comisión ni mensualidad: elige días, horarios y mesas, y el descuento no incluye bebidas ni propina.',
+      en: 'Booking in the app gets 50% off food at more than 200 restaurants in Puebla and Mexico City. The restaurant pays no commission and no monthly fee: it chooses the days, hours and tables, and the discount does not include drinks or tip.'
+    },
+    catalog: [
+      {
+        name: { es: 'Membresía', en: 'Membership' },
+        description: {
+          es: 'La primera reservación es gratis, sin membresía, y la página también anuncia el primer mes gratis. Después, el plan mensual cuesta $150 MXN al mes, IVA incluido, y se puede cancelar antes de que termine el periodo. Los términos contemplan además un plan anual y reservaciones ilimitadas.',
+          en: 'The first reservation is free, without a membership, and the page also advertises the first month free. After that, the monthly plan is $150 MXN a month, tax included, and it can be cancelled before the period ends. The terms also include an annual plan and unlimited reservations.'
+        }
+      },
+      {
+        name: { es: 'Reserva con 50% en alimentos', en: 'Reservation with 50% off food' },
+        description: {
+          es: 'El 50% aplica solo a alimentos, en los días y horarios que publica el restaurante, y cubre a 2 personas. Hay que pedir al menos una bebida por persona, consumir en el lugar y no juntarlo con otra promoción. Bebidas y propina van aparte.',
+          en: 'The 50% applies only to food, on the days and hours the restaurant publishes, and covers 2 people. Each person must order at least one drink, the meal is dine-in, and it cannot be combined with another promotion. Drinks and tip are separate.'
+        }
+      },
+      {
+        name: { es: 'Alta de restaurante', en: 'Restaurant listing' },
+        description: {
+          es: 'El restaurante se afilia gratis y recibe reservas confirmadas en su app, sin comisión por venta. Decide cuántas mesas ofrece y cuándo cierra la disponibilidad. El descuento no cubre bebidas ni propina, y el costo del alimento queda por debajo del 50% del precio de venta.',
+          en: 'The restaurant joins for free and receives confirmed reservations in its app, with no commission on the sale. It decides how many tables to offer and when to close availability. The discount does not cover drinks or tip, and the food cost stays under 50% of the sale price.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://www.fiftyfiftycard.mx',
+      email: 'info@fiftyfiftycard.mx',
+      phone: '+52 221 256 6699'
+    }
+  },
+  {
+    slug: 'figgo',
+    verified: false,
+    name: 'Figgo',
+    logo: '/empresas/figgo.webp',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    location: {
+      address: 'Venustiano Carranza 205, San Baltazar Campeche, 72550 Puebla',
+      lat: 19.023535,
+      lng: -98.204740,
+    },
+    shortDescription: {
+      es: 'Virtech ofrece Figgo Enterprise, plataforma de logística para empresas de mensajería y paquetería.',
+      en: 'Virtech offers Figgo Enterprise, a logistics platform for courier and parcel companies.'
+    },
+    industries: ['logistics'],
+    problem: {
+      es: 'Cuesta coordinar con repartidores y equipos, planear las rutas a mano consume horas y el cliente no ve el estado de su envío. Los procesos manuales dejan guías incorrectas y paquetes perdidos.',
+      en: 'It is hard to coordinate with couriers and teams, planning routes by hand takes hours, and the customer cannot see the status of the shipment. Manual processes leave incorrect guides and lost packages.'
+    },
+    solution: {
+      es: 'Figgo Enterprise, de Virtech SA de CV, genera guías masivas desde Excel, el panel o la API, y guías impresas con la marca del cliente. Rastrea el paquete en tiempo real, calcula la ruta con la distancia, el tráfico y las ventanas horarias, y guarda la evidencia con código QR, fotografía y geolocalización. Incluye una app para repartidores y avisos automáticos al cliente. Virtech fue fundada hace 8 años y tiene presencia en 8 países.',
+      en: 'Figgo Enterprise, from Virtech SA de CV, creates waybills in bulk from Excel, the admin panel or the API, and printed waybills with the customer brand. It tracks the parcel in real time, calculates the route from distance, traffic and delivery time windows, and stores proof with a QR code, a photo and geolocation. It includes a courier app and automatic updates for the customer. Virtech was founded 8 years ago and has a presence in 8 countries.'
+    },
+    catalog: [
+      {
+        name: { es: 'Integración con los sistemas de tus clientes', en: 'Integration with customer systems' },
+        description: {
+          es: 'Conecta la plataforma con los sistemas que el cliente ya usa, como su tienda en línea o su sistema de almacén.',
+          en: 'Connects the platform to the systems the customer already uses, such as their online store or warehouse system.'
+        }
+      },
+      {
+        name: { es: 'Subusuarios para tus clientes', en: 'Sub-users for your customers' },
+        description: {
+          es: 'Cuentas secundarias para que cada cliente gestione solo sus entregas.',
+          en: 'Secondary accounts so each customer manages only their own deliveries.'
+        }
+      },
+      {
+        name: { es: 'Creación masiva de guías', en: 'Bulk waybill creation' },
+        description: {
+          es: 'Genera guías desde Excel, el panel administrativo o la API.',
+          en: 'Creates waybills from Excel, the admin panel or the API.'
+        }
+      },
+      {
+        name: { es: 'Guías impresas personalizadas', en: 'Custom printed waybills' },
+        description: {
+          es: 'La guía lleva el logo, los datos y las instrucciones de la empresa, y puede incluir un campo para que el cliente firme al recibir.',
+          en: 'The waybill carries the company logo, details and instructions, and can include a field for the customer to sign on delivery.'
+        }
+      },
+      {
+        name: { es: 'Rastreo de paquetes', en: 'Parcel tracking' },
+        description: {
+          es: 'Seguimiento en tiempo real para que el cliente sepa dónde va su envío.',
+          en: 'Real-time tracking so the customer knows where the shipment is.'
+        }
+      },
+      {
+        name: { es: 'Optimización de rutas dinámicas', en: 'Dynamic route optimization' },
+        description: {
+          es: 'Calcula la ruta con la distancia, el tráfico y las ventanas horarias de entrega.',
+          en: 'Calculates the route from distance, traffic and the delivery time windows.'
+        }
+      },
+      {
+        name: { es: 'Evidencias de recolección y entrega', en: 'Pickup and delivery proof' },
+        description: {
+          es: 'Registra cada recolección o entrega con código QR, fotografía y geolocalización.',
+          en: 'Records each pickup or delivery with a QR code, a photo and geolocation.'
+        }
+      },
+      {
+        name: { es: 'Generación de reportes', en: 'Reports' },
+        description: {
+          es: 'Reportes personalizados y exportables de la operación.',
+          en: 'Custom operational reports that can be exported.'
+        }
+      },
+      {
+        name: { es: 'Notificaciones al cliente final', en: 'End-customer notifications' },
+        description: {
+          es: 'Avisos automáticos del estado del envío.',
+          en: 'Automatic updates on the shipment status.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://virtech.mx'
+    }
+  },
+  {
     slug: 'gogotrack',
     verified: true,
     name: 'GoGoTrack',
     logo: '/empresas/gogotrack.webp',
     logoInk: true,
+    location: {
+      address: 'Calle 3 Sur, Centro Histórico de Puebla, 72530',
+      lat: 19.041271,
+      lng: -98.202416,
+    },
     shortDescription: {
       es: 'GPS, checadores y conteo de pasajeros para flotillas de transporte público.',
       en: 'GPS, checkers and passenger counts for public transport fleets.'
@@ -337,6 +696,11 @@ export const companies: readonly Company[] = [
       es: 'Playa del Carmen, Quintana Roo, México',
       en: 'Playa del Carmen, Quintana Roo, Mexico'
     },
+    location: {
+      address: 'Playa del Carmen, Quintana Roo',
+      lat: 20.646285,
+      lng: -87.080787,
+    },
     shortDescription: {
       es: 'Biotecnología que convierte plásticos en proteína para alimento de animales acuáticos.',
       en: 'Biotechnology that turns plastics into protein for aquatic animal feed.'
@@ -399,6 +763,11 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
+    location: {
+      address: 'Puebla, Puebla',
+      lat: 19.043798,
+      lng: -98.198151,
+    },
     shortDescription: {
       es: 'Plataforma que conecta paquetería, cliente y destinatario con tracking, Carta Porte y control de saldos.',
       en: 'Platform connecting carriers, customers and recipients with tracking, Carta Porte and balance control.'
@@ -425,6 +794,11 @@ export const companies: readonly Company[] = [
     region: {
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
+    },
+    location: {
+      address: 'Calle Villa Juárez 6, La Paz, 72160 Puebla',
+      lat: 19.051956,
+      lng: -98.226905,
     },
     shortDescription: {
       es: 'Plataforma de accesos, identidad y pagos para estacionamientos, residencias, escuelas y corporativos.',
@@ -517,6 +891,11 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
+    location: {
+      address: 'Priv. 25 Poniente 4306, Belisario Domínguez, 72180 Puebla',
+      lat: 19.049929,
+      lng: -98.234400,
+    },
     shortDescription: {
       es: 'Equipos de manipulación de carga en gravedad cero y exoesqueletos para la industria.',
       en: 'Zero-gravity load handling equipment and exoskeletons for industry.'
@@ -591,6 +970,11 @@ export const companies: readonly Company[] = [
     region: {
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
+    },
+    location: {
+      address: 'Av. Roble, Sanctorum, Cuautlancingo, 72710',
+      lat: 19.113969,
+      lng: -98.246631,
     },
     shortDescription: {
       es: 'Sistema Andon de control de presencia y productividad por reconocimiento facial en planta.',
@@ -682,6 +1066,11 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
+    location: {
+      address: 'Puebla',
+      lat: 19.043798,
+      lng: -98.198151,
+    },
     shortDescription: {
       es: 'Ecosistema phygital donde las empresas se conectan, venden, compran y aprenden después del evento.',
       en: 'Phygital ecosystem where companies connect, sell, buy and learn after the event ends.'
@@ -744,6 +1133,131 @@ export const companies: readonly Company[] = [
     }
   },
   {
+    slug: 'nubix',
+    verified: false,
+    name: 'Nubix',
+    logo: '/empresas/nubix.webp',
+    region: {
+      es: 'San Andrés Cholula, Puebla, México',
+      en: 'San Andrés Cholula, Puebla, Mexico'
+    },
+    location: {
+      address: 'Torre Inxignia, Blvd. Vía Atlixcáyotl 2210, 72197 San Andrés Cholula',
+      lat: 19.022389,
+      lng: -98.244806,
+    },
+    shortDescription: {
+      es: 'Procesamiento, diagnóstico y entrega de resultados en la nube para laboratorios, hospitales y consultorios.',
+      en: 'Cloud processing, diagnosis and delivery of results for labs, hospitals and medical offices.'
+    },
+    industries: ['healthtech'],
+    problem: {
+      es: 'El diagnóstico tardaba días: faltaban radiólogos accesibles y el resultado quedaba lejos del paciente por la distancia, los servidores locales y el papel. En laboratorio e imagen, el expediente se imprimía, se transcribía a mano y había que recogerlo en sucursal.',
+      en: 'Diagnosis took days: radiologists were hard to reach, and the result stayed far from the patient because of distance, local servers and paper. In the lab and in imaging, the record was printed, transcribed by hand and had to be picked up at the branch.'
+    },
+    solution: {
+      es: 'Nubix digitaliza el laboratorio, el hospital y el consultorio con procesamiento, diagnóstico y entrega de resultados en la nube. La plataforma guarda el estudio, lo muestra en el navegador y lo envía al paciente; la interpretación remota cubre imagenología, radiología y cardiología, y el tiempo de respuesta pasa de días a horas.',
+      en: 'Nubix digitizes the lab, the hospital and the medical office with cloud processing, diagnosis and delivery of results. The platform stores the study, shows it in the browser and sends it to the patient; remote interpretation covers imaging, radiology and cardiology, and turnaround goes from days to hours.'
+    },
+    catalog: [
+      {
+        name: { es: 'NUBIX RIS/PACS', en: 'NUBIX RIS/PACS' },
+        description: {
+          es: 'PACS y RIS en la nube para agendar, ver y compartir estudios desde el navegador. Las imágenes se guardan 10 años y el paciente y el médico referente entran por un portal.',
+          en: 'Cloud PACS and RIS to schedule, view and share studies from the browser. Images are stored for 10 years, and the patient and the referring physician open them through a portal.'
+        }
+      },
+      {
+        name: { es: 'NUBIX Lab', en: 'NUBIX Lab' },
+        description: {
+          es: 'Une recepción, análisis y validación bioquímica en una pantalla, desde la orden hasta el diagnóstico. El reporte sale por enlace cifrado en WhatsApp o correo, y la muestra se rastrea con etiqueta.',
+          en: 'Joins reception, analysis and biochemical validation on one screen, from the order to the diagnosis. The report goes out by encrypted link on WhatsApp or email, and the sample is tracked with a label.'
+        }
+      },
+      {
+        name: { es: 'scanx', en: 'scanx' },
+        description: {
+          es: 'Interpretación remota de imagenología, radiología y cardiología por especialistas certificados, integrada a la plataforma. El estudio se asigna a distancia y el reporte queda en la nube.',
+          en: 'Remote interpretation of imaging, radiology and cardiology by certified specialists, built into the platform. The study is assigned at a distance and the report stays in the cloud.'
+        }
+      },
+      {
+        name: { es: 'proxa', en: 'proxa' },
+        description: {
+          es: 'Lleva radiología portátil y toma de muestras a donde está el paciente, y conecta la unidad móvil con el flujo en la nube. El reporte sale por WhatsApp, SMS o correo cuando la matriz lo valida.',
+          en: 'Takes portable radiology and sample collection to where the patient is, and connects the mobile unit to the cloud workflow. The report goes out by WhatsApp, SMS or email once the central site validates it.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://nubix.cloud',
+      email: 'soluciones@theia.com.mx'
+    }
+  },
+  {
+    slug: 'nutriiapp',
+    verified: false,
+    name: 'NutriiApp',
+    logo: '/empresas/nutriiapp.webp',
+    logoMark: '/empresas/nutriiapp-mark.webp',
+    region: {
+      es: 'Puebla, México',
+      en: 'Puebla, Mexico'
+    },
+    location: {
+      address: 'C. Tecamachalco 94, La Paz, 72160 Puebla',
+      lat: 19.055490,
+      lng: -98.230007,
+    },
+    shortDescription: {
+      es: 'Nutrición personalizada para empresas, con báscula en sede, planes a la medida y seguimiento continuo.',
+      en: 'Personalized nutrition for companies, with an on-site scale, tailored plans and ongoing follow-up.'
+    },
+    industries: ['healthtech'],
+    problem: {
+      es: 'La evidencia de NOM-030 y NOM-035 vive en carpetas sueltas y correos. El expediente de salud no es de la empresa: no ve el historial clínico, las notas ni las respuestas individuales a los cuestionarios.',
+      en: 'NOM-030 and NOM-035 evidence lives in loose folders and email. The health record does not belong to the company: it does not see the clinical history, the notes or the individual questionnaire answers.'
+    },
+    solution: {
+      es: 'NutriiApp instala en la sede la estación NutriiPoint, una báscula de bioimpedancia en comodato, sin costo de compra del equipo. La persona se mide desde su app: mientras la sesión está activa otro teléfono no puede tomarla, y caduca sola. Con esa medición arma un plan quincenal, ajustado al presupuesto de alimentación, y lo sigue en iOS o Android con recetas, rutinas y acceso privado a nutrición y salud mental. La empresa solo ve indicadores agregados y anónimos: adopción, promedios de bienestar y un expediente de NOM-030 y NOM-035 listo para exportar. El expediente individual se queda con la persona, también cuando deja la empresa. El programa está en validación privada. El reporte no sustituye la responsabilidad de la empresa ante la STPS.',
+      en: 'NutriiApp installs the NutriiPoint station on site, a bioimpedance scale on loan, with no equipment purchase. The person weighs in from their app: while the session is active no other phone can take it, and it expires on its own. From that reading it builds a plan every two weeks, adjusted to the food budget, and the person follows it on iOS or Android with recipes, routines and private access to nutrition and mental health. The company only sees anonymous aggregate indicators: adoption, well-being averages and a NOM-030 and NOM-035 file ready to export. The individual record stays with the person, including after they leave the company. The program is in private validation. The report does not replace the responsibility the company keeps before the STPS.'
+    },
+    catalog: [
+      {
+        name: { es: 'NutriiPoint', en: 'NutriiPoint' },
+        description: {
+          es: 'Báscula de bioimpedancia NutriiScale, entregada como estación NutriiPoint en comodato y sin costo de compra. La instalan en la sede con espacio estable, electricidad y conectividad. La sesión se abre en la app de la persona, otro teléfono no puede tomarla y caduca sola.',
+          en: 'NutriiScale bioimpedance scale, delivered as a NutriiPoint station on loan and with no purchase cost. They install it on site with a stable space, power and connectivity. The session opens in the person\'s app, no other phone can take it and it expires on its own.'
+        }
+      },
+      {
+        name: { es: 'App NutriiApp', en: 'NutriiApp app' },
+        description: {
+          es: 'App para iOS y Android, en validación privada. Plan quincenal según la bioimpedancia y el presupuesto de alimentación, con recetas, seguimiento, rutinas de entrenamiento y acceso privado a nutrición y salud mental. Si hay conductas alimentarias de riesgo, el plan automático se suspende y la atención se canaliza con un especialista. Ante embarazo, lactancia, una condición crónica o si la persona es menor de 18 años, el plan automático no se genera.',
+          en: 'iOS and Android app, in private validation. A plan every two weeks from the bioimpedance reading and the food budget, with recipes, follow-up, training routines and private access to nutrition and mental health. If there are risky eating behaviors, the automatic plan stops and care is referred to a specialist. In pregnancy, breastfeeding, a chronic condition or if the person is under 18, the automatic plan is not generated.'
+        }
+      },
+      {
+        name: { es: 'Panel corporativo', en: 'Corporate panel' },
+        description: {
+          es: 'Adopción, niveles de actividad, avance general, promedios de bienestar y control operativo de plantilla, en indicadores agregados y anónimos. No muestra el expediente individual, el historial clínico ni las respuestas a la NOM-035.',
+          en: 'Adoption, activity levels, overall progress, well-being averages and operational headcount control, as anonymous aggregate indicators. It does not show the individual record, the clinical history or the NOM-035 answers.'
+        }
+      },
+      {
+        name: { es: 'Evidencia NOM-030 y NOM-035', en: 'NOM-030 and NOM-035 evidence' },
+        description: {
+          es: 'Expediente exportable con fecha de corte, alcance, población cubierta, instrumentos aplicados y resultados agregados, con sello de tiempo. Los cuestionarios de factores de riesgo psicosocial se contestan en la app y las respuestas individuales quedan protegidas. La empresa sigue siendo el sujeto obligado ante la NOM.',
+          en: 'Exportable file with cutoff date, scope, covered population, instruments used and aggregate results, with a timestamp. Psychosocial risk questionnaires are answered in the app and the individual responses stay protected. The company remains the party obligated under the NOM.'
+        }
+      }
+    ],
+    contact: {
+      website: 'https://nutriiapp.com.mx',
+      email: 'hola@nutriiapp.com.mx'
+    }
+  },
+  {
     slug: 'oxtron',
     verified: true,
     name: 'Oxtron',
@@ -753,6 +1267,11 @@ export const companies: readonly Company[] = [
     region: {
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
+    },
+    location: {
+      address: 'Puebla, México',
+      lat: 19.043798,
+      lng: -98.198151,
     },
     shortDescription: {
       es: 'Plataforma de huella de carbono alimentaria e inventario de emisiones con captura de CO₂.',
@@ -780,6 +1299,11 @@ export const companies: readonly Company[] = [
     name: 'Padel 360',
     logo: '/empresas/padel-360.webp',
     logoInk: true,
+    location: {
+      address: 'Puebla',
+      lat: 19.043798,
+      lng: -98.198151,
+    },
     shortDescription: {
       es: 'Liga amateur de pádel por equipos en México, con tres formatos y categoría asignada por evaluación.',
       en: 'Amateur team padel league in Mexico, with three formats and a category assigned by evaluation.'
@@ -852,6 +1376,11 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
+    location: {
+      address: 'A Poniente de la 16 de Septiembre 4114, El Carmen Huexotitla, 72534 Puebla',
+      lat: 19.029386,
+      lng: -98.208181,
+    },
     shortDescription: {
       es: 'Facturas, XML del SAT e ingresos y gastos para negocios y despachos contables.',
       en: 'Invoices, SAT XML and income and expenses for businesses and accounting firms.'
@@ -904,6 +1433,11 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
+    location: {
+      address: 'Av. Roble, Sanctorum, Cuautlancingo, 72710',
+      lat: 19.113969,
+      lng: -98.246631,
+    },
     shortDescription: {
       es: 'Convierte el desarrollo interno de empresas consolidadas en un negocio digital aparte.',
       en: 'Turns in-house development at established companies into a separate digital business.'
@@ -932,6 +1466,11 @@ export const companies: readonly Company[] = [
     region: {
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
+    },
+    location: {
+      address: 'Av. Roble, Sanctorum, Cuautlancingo, 72710',
+      lat: 19.113969,
+      lng: -98.246631,
     },
     shortDescription: {
       es: 'Gestión comercial del asesor inmobiliario certificado: expediente, cita, contrato y firma.',
@@ -1005,6 +1544,11 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
+    location: {
+      address: 'Puebla',
+      lat: 19.043798,
+      lng: -98.198151,
+    },
     shortDescription: {
       es: 'Integración de sistemas e implementación de IA que estandarizan y automatizan procesos.',
       en: 'Systems integration and AI implementation that standardizes and automates processes.'
@@ -1076,6 +1620,11 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
+    location: {
+      address: 'Calle Guadalupe Victoria 619, San Baltazar Campeche, 72550 Puebla',
+      lat: 19.014730,
+      lng: -98.202484,
+    },
     shortDescription: {
       es: 'Transporte especializado para personas con movilidad limitada, en vehículos adaptados y con app propia.',
       en: 'Specialized transport for people with limited mobility, in adapted vehicles and with its own app.'
@@ -1139,6 +1688,11 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
+    location: {
+      address: 'A Poniente de la 16 de Septiembre 4114, El Carmen Huexotitla, 72534 Puebla',
+      lat: 19.029386,
+      lng: -98.208181,
+    },
     shortDescription: {
       es: 'Diagnóstico fiscal y declaración anual para personas que cobran por nómina.',
       en: 'Tax diagnosis and annual return for people paid by payroll.'
@@ -1199,6 +1753,11 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
+    location: {
+      address: 'Puebla, México',
+      lat: 19.043798,
+      lng: -98.198151,
+    },
     shortDescription: {
       es: 'Silla de ruedas controlada por la mente, con interfaz cerebro-computadora.',
       en: 'Mind-controlled wheelchair with a brain-computer interface.'
@@ -1226,6 +1785,11 @@ export const companies: readonly Company[] = [
     region: {
       es: 'México',
       en: 'Mexico'
+    },
+    location: {
+      address: 'Puebla',
+      lat: 19.043798,
+      lng: -98.198151,
     },
     shortDescription: {
       es: 'Marketplace de envíos colaborativos: conecta paquetes con viajeros verificados que ya van de camino.',
@@ -1275,6 +1839,11 @@ export const companies: readonly Company[] = [
     name: 'WePadel',
     logo: '/empresas/wepadel.webp',
     logoInk: true,
+    location: {
+      address: 'Tecnológico de Monterrey Campus Puebla, Blvd. Vía Atlixcáyotl 5718, Puebla',
+      lat: 19.020559,
+      lng: -98.244652,
+    },
     shortDescription: {
       es: 'Plataforma para jugar, organizar y hacer crecer una comunidad de pádel.',
       en: 'Platform to play, organize and grow a padel community.'
@@ -1347,6 +1916,11 @@ export const companies: readonly Company[] = [
     region: {
       es: 'México',
       en: 'Mexico'
+    },
+    location: {
+      address: 'Monterrey, Nuevo León',
+      lat: 25.680202,
+      lng: -100.315258,
     },
     shortDescription: {
       es: 'Ingredientes bioactivos de plantas medicinales para la industria del bienestar.',
