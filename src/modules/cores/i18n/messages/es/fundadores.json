@@ -14,7 +14,10 @@
     "follow": "Sigue a {name}",
     "linkedinHint": "Conectar en LinkedIn",
     "previously": "Antes en",
+    "alsoAt": "También en",
     "education": "Estudió en",
+    "viewPhoto": "Ver foto de {name}",
+    "closePhoto": "Cerrar",
     "related": "También de {company}",
     "company": "Su startup",
     "filter": {

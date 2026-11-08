@@ -312,6 +312,8 @@ export const companies: readonly Company[] = [
       }
     ],
     contact: {
+      person: 'Lenin Pérez',
+      role: 'Fundador',
       website: 'https://gogotrack.mx/',
       email: 'gogotrackmx@gmail.com',
       phone: '+52 222 177 0159'
@@ -965,7 +967,7 @@ export const companies: readonly Company[] = [
       }
     ],
     contact: {
-      person: 'Israel Moreno',
+      person: 'Israel Reyes',
       website: 'https://rocka.mx/',
       email: 'contacto@rocka.mx'
     }
@@ -1187,6 +1189,57 @@ export const companies: readonly Company[] = [
     contact: {
       person: 'Eduardo Zárate Lara',
       website: 'https://thexcompany.netlify.app'
+    }
+  },
+  {
+    slug: 'traixo',
+    name: 'Traixo',
+    logo: '/empresas/traixo.webp',
+    logoInk: true,
+    region: {
+      es: 'México',
+      en: 'Mexico'
+    },
+    shortDescription: {
+      es: 'Marketplace de envíos colaborativos: conecta paquetes con viajeros verificados que ya van de camino.',
+      en: 'Collaborative shipping marketplace: it matches packages with verified travelers who are already on the way.'
+    },
+    industries: ['logistics'],
+    problem: {
+      es: 'La paquetería tradicional no usa el espacio que ya va vacío en un viaje. Quien necesita enviar un paquete y quien ya va a esa ruta no tienen dónde coincidir, coordinar la entrega y pagar con el dinero retenido hasta que el envío avanza.',
+      en: 'Traditional parcel service does not use the space that already travels empty on a trip. Someone who needs to send a package and someone already heading that way have no place to match, arrange the handoff and pay with the money held until the shipment moves forward.'
+    },
+    solution: {
+      es: 'Traixo conecta al remitente con un viajero verificado. El remitente publica origen, destino, tamaño y precio; el viajero publica su ruta y sus fechas. La plataforma hace el match, el chat para acordar la entrega y el cobro por Stripe, con el pago retenido hasta que el envío avanza. Al completar el trayecto, el viajero cobra sus ganancias menos la comisión de la app.',
+      en: 'Traixo connects the sender with a verified traveler. The sender posts origin, destination, size and price; the traveler posts the route and the dates. The platform handles the match, the chat to agree on the handoff and the Stripe charge, with the payment held until the shipment moves forward. When the trip is done, the traveler is paid their earnings minus the app commission.'
+    },
+    catalog: [
+      {
+        name: {
+          es: 'Enviar paquete',
+          en: 'Send a package'
+        },
+        description: {
+          es: 'El remitente publica el envío, elige un viaje compatible, paga y sigue el estado hasta la entrega.',
+          en: 'The sender posts the shipment, picks a compatible trip, pays and follows the status through delivery.'
+        }
+      },
+      {
+        name: {
+          es: 'Viajar y colaborar',
+          en: 'Travel and collaborate'
+        },
+        description: {
+          es: 'El viajero publica su ruta y sus fechas, acepta envíos compatibles y cobra al completar el trayecto, menos la comisión.',
+          en: 'The traveler posts the route and the dates, accepts compatible shipments and gets paid when the trip is done, minus the commission.'
+        }
+      }
+    ],
+    contact: {
+      person: 'Manuel Ariel Ocampo',
+      role: 'CEO',
+      website: 'https://traixo.com/',
+      email: 'soporte@traixo.com'
     }
   },
   {

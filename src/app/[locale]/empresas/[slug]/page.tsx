@@ -8,7 +8,7 @@ import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { SITE_URL } from "@/modules/cores/site/src/config/site";
 import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
 import { companies, getCompany, localize, STARTUP_INDUSTRIES, type Company } from "@/data/companies";
-import { getFoundersByCompany } from "@/data/founders";
+import { founderRoleAt, getFoundersByCompany } from "@/data/founders";
 import { FounderAvatar } from "@/modules/features/founders/src";
 import { listPosts } from "@/modules/features/blog/src/services/markdown";
 import { toTelHref } from "@/lib/phone";
@@ -187,8 +187,10 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
                   <FounderAvatar name={item.name} photo={item.photo} className="size-12 text-small" />
                   <span className="min-w-0 flex-1">
                     <span className="block text-body font-display text-ink group-hover:text-brand">{item.name}</span>
-                    {item.role && (
-                      <span className="block text-small text-ink-secondary">{item.role}</span>
+                    {founderRoleAt(item, company.slug) && (
+                      <span className="block text-small text-ink-secondary">
+                        {founderRoleAt(item, company.slug)}
+                      </span>
                     )}
                   </span>
                   <ChevronRight size={16} strokeWidth={2} aria-hidden="true" className="shrink-0 text-ink-muted transition group-hover:text-brand" />

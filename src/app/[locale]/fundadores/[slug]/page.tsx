@@ -6,7 +6,7 @@ import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
-import { localize, STARTUP_INDUSTRIES } from "@/data/companies";
+import { getCompany, localize, STARTUP_INDUSTRIES } from "@/data/companies";
 import {
   founderCompany,
   founders,
@@ -14,7 +14,7 @@ import {
   type Founder,
   type FounderPlace,
 } from "@/data/founders";
-import { FounderAvatar } from "@/modules/features/founders/src";
+import { FounderAvatar, FounderPhoto } from "@/modules/features/founders/src";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -41,6 +41,39 @@ export async function generateMetadata({
       : `${founder.name}${company ? ` · ${company.name}` : ""}`,
     images: founder.photo ? [{ url: founder.photo, alt: founder.name }] : undefined,
   });
+}
+
+function CompanyRefRow({ slugs }: { slugs: readonly string[] }) {
+  const listed = slugs
+    .map((slug) => getCompany(slug))
+    .filter((company) => company !== undefined);
+
+  if (listed.length === 0) return null;
+
+  return (
+    <ul className="mt-5 flex flex-wrap gap-10">
+      {listed.map((company) => (
+        <li key={company.slug}>
+          <Link
+            href={`/empresas/${company.slug}`}
+            className="group flex w-36 flex-col items-center gap-3 text-center"
+          >
+            <CompanyLogo
+              name={company.name}
+              logo={company.logo}
+              className="h-12 w-36"
+              dark={company.logoDark}
+              ink={company.logoInk}
+            />
+            <span className="inline-flex items-center gap-0.5 text-small leading-snug text-ink-secondary group-hover:text-brand">
+              {company.name}
+              <ChevronRight size={14} strokeWidth={2} aria-hidden="true" className="shrink-0" />
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function PlaceRow({ places }: { places: readonly FounderPlace[] }) {
@@ -104,21 +137,27 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
               {company?.logo && (
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 grid grid-cols-4 place-items-center gap-6 p-6 opacity-10 sm:grid-cols-6"
+                  className="absolute inset-0 grid grid-cols-4 place-items-center gap-6 p-6 opacity-40 sm:grid-cols-6 dark:opacity-55"
                 >
                   {Array.from({ length: 12 }, (_, index) => (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img key={index} src={company.logo} alt="" className="max-h-10 w-full object-contain" />
+                    <img
+                      key={index}
+                      src={company.logo}
+                      alt=""
+                      className="max-h-10 w-full object-contain dark:brightness-0 dark:invert"
+                    />
                   ))}
                 </div>
               )}
             </div>
             <div className="px-6 pb-8 sm:px-8">
               <div className="relative z-10 -mt-14 flex flex-col gap-4 sm:flex-row sm:items-end">
-                <FounderAvatar
+                <FounderPhoto
                   name={founder.name}
                   photo={founder.photo}
-                  className="size-28 border-4 border-surface bg-surface text-h3 shadow-sm"
+                  openLabel={t("viewPhoto", { name: founder.name })}
+                  closeLabel={t("closePhoto")}
                 />
                 <div className="pb-1">
                   <h1 className="text-h1 font-display text-ink">{founder.name}</h1>
@@ -144,15 +183,26 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
                     href={founder.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-3 rounded-lg border border-line bg-surface px-4 py-3 transition hover:bg-surface-subtle"
+                    className="mt-4 flex w-full max-w-xs items-center gap-3 rounded-md border border-line px-4 py-3 transition hover:bg-surface-subtle"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/icons/linkedin.svg" alt="" className="size-10 shrink-0 rounded-md" />
+                    <img src="/icons/linkedin.svg" alt="" className="size-10 shrink-0" />
                     <span>
                       <span className="block text-body font-semibold text-ink">LinkedIn</span>
                       <span className="block text-small text-ink-muted">{t("linkedinHint")}</span>
                     </span>
                   </a>
+                </section>
+              )}
+
+              {founder.alsoAt && founder.alsoAt.length > 0 && (
+                <section className="mt-10 border-t border-line pt-8">
+                  <h2 className="text-h4 font-display text-ink">{t("alsoAt")}</h2>
+                  <CompanyRefRow
+                    slugs={founder.alsoAt
+                      .map((place) => place.companySlug)
+                      .filter((slug) => slug !== founder.companySlug)}
+                  />
                 </section>
               )}
 

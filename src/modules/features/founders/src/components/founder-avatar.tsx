@@ -1,20 +1,12 @@
+import { User } from "lucide-react";
+
 interface FounderAvatarProps {
   name: string;
   photo?: string;
   className?: string;
 }
 
-function initials(name: string) {
-  return name
-    .split(/\s+/)
-    .filter((part) => part.length > 1)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("")
-    .toUpperCase();
-}
-
-export function FounderAvatar({ name, photo, className = "size-12" }: FounderAvatarProps) {
+export function FounderAvatar({ photo, className = "size-12" }: FounderAvatarProps) {
   if (photo) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
@@ -29,9 +21,9 @@ export function FounderAvatar({ name, photo, className = "size-12" }: FounderAva
   return (
     <span
       aria-hidden="true"
-      className={`inline-flex shrink-0 items-center justify-center rounded-full bg-brand font-display text-on-brand ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center rounded-full bg-surface-subtle text-ink-muted ${className}`}
     >
-      {initials(name)}
+      <User className="size-1/2" strokeWidth={2} />
     </span>
   );
 }
