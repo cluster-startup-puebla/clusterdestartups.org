@@ -24,6 +24,8 @@ export type Founder = {
    * Una ficha de captación entra en `false` hasta que acepten la revisión.
    */
   verified: boolean;
+  /** Solo cuando la bio en inglés usa «she». Quien no lo tiene no entra al filtro. */
+  woman?: boolean;
   name: string;
   role?: string;
   companySlug: string;
@@ -40,6 +42,7 @@ export const founders: readonly Founder[] = [
   {
     slug: "fatima-gaytan",
     verified: true,
+    woman: true,
     name: "Fátima Gaytán",
     role: "CEO",
     companySlug: "concora",
@@ -82,6 +85,7 @@ export const founders: readonly Founder[] = [
   {
     slug: "ximena-ortiz-gomez",
     verified: true,
+    woman: true,
     name: "Ximena Ortiz Gómez",
     role: "CEO",
     companySlug: "empowershe",
@@ -109,6 +113,7 @@ export const founders: readonly Founder[] = [
   {
     slug: "daniela-cabral-porras",
     verified: true,
+    woman: true,
     name: "Daniela Cabral Porras",
     role: "CEO",
     companySlug: "xiah",
@@ -136,6 +141,7 @@ export const founders: readonly Founder[] = [
   {
     slug: "jazmin-salazar",
     verified: true,
+    woman: true,
     name: "Jazmín Salazar",
     role: "CEO",
     companySlug: "oxtron",

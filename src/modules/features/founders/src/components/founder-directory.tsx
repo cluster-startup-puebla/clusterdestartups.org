@@ -26,7 +26,9 @@ export function FounderDirectory({ founders, locale, labels }: FounderDirectoryP
   const searchParams = useSearchParams();
   const industryFilters = searchParams.getAll("industry");
   const regionFilters = searchParams.getAll("region");
+  const womanFilters = searchParams.getAll("woman");
   const searchQuery = searchParams.get("q")?.trim().toLowerCase() ?? "";
+  const womanLabel = t("filter.woman");
 
   const filtered = useMemo(() => {
     return founders.filter((founder) => {
@@ -39,13 +41,14 @@ export function FounderDirectory({ founders, locale, labels }: FounderDirectoryP
         const region = company?.region ? localize(company.region, locale) : "";
         if (!regionFilters.includes(region)) return false;
       }
+      if (womanFilters.includes("1") && founder.woman !== true) return false;
       if (searchQuery) {
         const haystack = `${founder.name} ${company?.name ?? ""}`.toLowerCase();
         if (!haystack.includes(searchQuery)) return false;
       }
       return true;
     });
-  }, [founders, locale, industryFilters, regionFilters, searchQuery]);
+  }, [founders, locale, industryFilters, regionFilters, womanFilters, searchQuery]);
 
   const filterSections = useMemo(() => {
     const industryCounts = new Map<StartupIndustry, number>();
@@ -63,6 +66,7 @@ export function FounderDirectory({ founders, locale, labels }: FounderDirectoryP
     }
 
     const industryOrder = Object.keys(STARTUP_INDUSTRIES) as StartupIndustry[];
+    const womanCount = founders.filter((founder) => founder.woman === true).length;
 
     return [
       {
@@ -83,8 +87,16 @@ export function FounderDirectory({ founders, locale, labels }: FounderDirectoryP
           .sort((a, b) => b[1] - a[1])
           .map(([value, count]) => ({ value, label: value, count })),
       },
+      {
+        key: "woman",
+        label: womanLabel,
+        options:
+          womanCount > 0
+            ? [{ value: "1", label: womanLabel, count: womanCount }]
+            : [],
+      },
     ].filter((section) => section.options.length > 0);
-  }, [founders, locale, labels]);
+  }, [founders, locale, labels, womanLabel]);
 
   return (
     <div className="flex flex-col gap-6 lg:flex-row lg:gap-8">

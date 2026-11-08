@@ -162,7 +162,9 @@
    ============================================================ */
 @layer base {
   html {
-    scroll-behavior: smooth;
+    /* Instantáneo. `smooth` animaba el scroll-to-top de cada navegación
+       y la ficha se veía bajar desde donde iba la lista. */
+    scroll-behavior: auto;
   }
 
   body {

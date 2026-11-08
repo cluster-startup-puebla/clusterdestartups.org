@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Archivo, Raleway } from "next/font/google";
 import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
@@ -13,6 +14,8 @@ import { Footer } from "@/modules/features/site/src/components/organisms/footer"
 import { CookieBanner } from "@/modules/features/site/src/components/cookie-banner";
 import { DocumentScripts } from "./document-scripts";
 import { AnalyticsClicks } from "@/modules/cores/analytics/src/analytics-clicks";
+import { ThemeUrlSync } from "@/modules/cores/theme/src/components/theme-url-sync";
+import { ScrollToTop } from "@/modules/cores/site/src/components/scroll-to-top";
 import "../globals.css";
 
 const archivo = Archivo({
@@ -114,6 +117,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           <CookieBanner />
           <AnalyticsClicks />
         </NextIntlClientProvider>
+        <ScrollToTop />
+        <Suspense fallback={null}>
+          <ThemeUrlSync />
+        </Suspense>
       </body>
     </html>
   );

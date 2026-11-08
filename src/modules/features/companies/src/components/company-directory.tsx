@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { FilterSidebar } from "./filter-sidebar";
 import { CompanyList } from "./company-list";
 import { localize, STARTUP_INDUSTRIES, type Company, type StartupIndustry } from "@/data/companies";
+import { getFoundersByCompany } from "@/data/founders";
 
 interface CompanyDirectoryProps {
   companies: readonly Company[];
@@ -29,7 +30,9 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
   const batchFilters = searchParams.getAll("batch");
   const industryFilters = searchParams.getAll("industry");
   const regionFilters = searchParams.getAll("region");
+  const womanFilters = searchParams.getAll("woman");
   const searchQuery = searchParams.get("q")?.trim().toLowerCase() ?? "";
+  const womanLabel = t("filter.woman");
 
   const filtered = useMemo(() => {
     let result = [...companies];
@@ -52,6 +55,12 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
       });
     }
 
+    if (womanFilters.includes("1")) {
+      result = result.filter((company) =>
+        getFoundersByCompany(company.slug).some((founder) => founder.woman === true),
+      );
+    }
+
     if (searchQuery) {
       result = result.filter((c) => {
         const nameMatch = c.name.toLowerCase().includes(searchQuery);
@@ -63,7 +72,7 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
     }
 
     return result;
-  }, [companies, locale, batchFilters, industryFilters, regionFilters, searchQuery]);
+  }, [companies, locale, batchFilters, industryFilters, regionFilters, womanFilters, searchQuery]);
 
   const filterSections = useMemo(() => {
     const batchCounts = new Map<string, number>();
@@ -88,6 +97,9 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
     };
 
     const industryOrder = Object.keys(STARTUP_INDUSTRIES) as StartupIndustry[];
+    const womanCount = companies.filter((company) =>
+      getFoundersByCompany(company.slug).some((founder) => founder.woman === true),
+    ).length;
 
     const sections = [
       {
@@ -117,6 +129,14 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
           .sort((a, b) => b[1] - a[1])
           .map(([value, count]) => ({ value, label: value, count })),
       },
+      {
+        key: "woman",
+        label: womanLabel,
+        options:
+          womanCount > 0
+            ? [{ value: "1", label: womanLabel, count: womanCount }]
+            : [],
+      },
     ];
 
     return sections.filter((section) => {
@@ -125,7 +145,7 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
         section.options.length === 1 && section.options[0].count === companies.length;
       return !coversEveryone;
     });
-  }, [companies, locale, labels]);
+  }, [companies, locale, labels, womanLabel]);
 
   return (
     <div className="flex flex-col gap-6 lg:flex-row lg:gap-8">

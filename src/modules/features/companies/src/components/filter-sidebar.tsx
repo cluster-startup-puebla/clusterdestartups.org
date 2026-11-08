@@ -1,8 +1,8 @@
 "use client";
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { SlidersHorizontal, X } from "lucide-react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { ChevronDown, X } from "lucide-react";
 
 interface FilterSection {
   key: string;
@@ -41,15 +41,10 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
-  const panelId = useId();
+  const [openKey, setOpenKey] = useState<string | null>(null);
 
   const searchValue = searchParams.get("q") ?? "";
   const [query, setQuery] = useState(searchValue);
-  const [open, setOpen] = useState(false);
-  const asideRef = useRef<HTMLElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
-  const panelWasOpen = useRef(false);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -99,44 +94,42 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
 
   const clearFilters = useCallback(() => {
     setQuery("");
+    setOpenKey(null);
+    const params = new URLSearchParams();
+    const theme = searchParams.get("theme");
+    if (theme === "dark" || theme === "light") params.set("theme", theme);
+    const qs = params.toString();
     replaceWithoutJump(() => {
-      router.replace(pathname, { scroll: false });
+      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
     });
-  }, [pathname, router]);
+  }, [pathname, router, searchParams]);
+
+  const isSelected = useCallback(
+    (key: string, value: string) => searchParams.getAll(key).includes(value),
+    [searchParams],
+  );
 
   const selectedChips = sections.flatMap((section) =>
     section.options
-      .filter((option) => searchParams.getAll(section.key).includes(option.value))
+      .filter((option) => isSelected(section.key, option.value))
       .map((option) => ({ ...option, key: section.key })),
   );
 
-  const activeCount = selectedChips.length;
+  const openSection = sections.find((section) => section.key === openKey && section.options.length > 1);
 
   useEffect(() => {
-    if (!open) {
-      if (panelWasOpen.current) triggerRef.current?.focus();
-      panelWasOpen.current = false;
-      return;
-    }
-
-    panelWasOpen.current = true;
-    asideRef.current?.scrollIntoView({ block: "start", behavior: "auto" });
-    closeRef.current?.focus();
-  }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
+    if (!openSection) return;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       event.preventDefault();
-      setOpen(false);
+      setOpenKey(null);
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [openSection]);
 
   return (
-    <aside ref={asideRef} aria-label={labels.filters} className="w-full shrink-0 scroll-mt-20 lg:w-64">
+    <aside aria-label={labels.filters} className="w-full shrink-0 lg:w-64">
       <input
         type="search"
         placeholder={searchPlaceholder}
@@ -146,41 +139,78 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
         className="input min-h-11 w-full"
       />
 
-      <div className="mt-3 lg:hidden">
-        <div className="flex flex-wrap items-center gap-2">
-          {sections.length > 0 && (
-            <button
-              ref={triggerRef}
-              type="button"
-              className={`btn btn-secondary min-h-11 min-w-44 flex-1 px-4 text-small ${focusRing}`}
-              aria-expanded={open}
-              aria-controls={panelId}
-              onClick={() => setOpen((value) => !value)}
-            >
-              <SlidersHorizontal aria-hidden="true" strokeWidth={2} className="size-5 shrink-0" />
-              {labels.filters}
-              {activeCount > 0 && (
-                <span className="inline-flex min-h-6 min-w-6 items-center justify-center rounded-full bg-brand px-1.5 text-micro text-on-brand">
-                  {activeCount}
-                </span>
-              )}
-            </button>
-          )}
-          {hasActiveFilters && (
-            <button
-              type="button"
-              onClick={clearFilters}
-              className={`inline-flex min-h-11 items-center px-3 text-small text-link ${focusRing}`}
-            >
-              {labels.clear}
-            </button>
-          )}
+      <div className="mt-4 lg:hidden">
+        <div className="flex flex-wrap gap-2" role="group" aria-label={labels.filters}>
+          {sections.map((section) => {
+            const selectedCount = section.options.filter((option) =>
+              isSelected(section.key, option.value),
+            ).length;
+            const single = section.options.length === 1;
+            const open = openKey === section.key;
+            const active = selectedCount > 0;
+
+            if (single) {
+              const option = section.options[0];
+              return (
+                <button
+                  key={section.key}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => createParamUpdate(section.key, option.value, !active)}
+                  className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-small ${focusRing} ${
+                    active
+                      ? "border-brand bg-brand text-on-brand"
+                      : "border-line bg-surface text-ink"
+                  }`}
+                >
+                  {option.label}
+                </button>
+              );
+            }
+
+            return (
+              <button
+                key={section.key}
+                type="button"
+                aria-expanded={open}
+                onClick={() => setOpenKey(open ? null : section.key)}
+                className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-small ${focusRing} ${
+                  active
+                    ? "border-brand bg-brand text-on-brand"
+                    : open
+                      ? "border-brand bg-surface text-ink"
+                      : "border-line bg-surface text-ink"
+                }`}
+              >
+                {section.label}
+                {selectedCount > 0 && (
+                  <span className={active ? "text-on-brand" : "text-ink-muted"}>{selectedCount}</span>
+                )}
+                <ChevronDown
+                  aria-hidden="true"
+                  strokeWidth={2}
+                  className={`size-4 shrink-0 transition ${open ? "rotate-180" : ""}`}
+                />
+              </button>
+            );
+          })}
         </div>
+
+        {openSection && (
+          <div className="card mt-3 p-2">
+            <FilterGroups
+              sections={[openSection]}
+              isSelected={isSelected}
+              onToggle={createParamUpdate}
+              hideLegend
+            />
+          </div>
+        )}
 
         {selectedChips.length > 0 && (
           <ul aria-label={labels.active} className="mt-3 flex flex-wrap gap-2">
             {selectedChips.map((chip) => (
-              <li key={`${chip.key}-${chip.value}`} className="max-w-full">
+              <li key={`${chip.key}-${chip.value}`}>
                 <button
                   type="button"
                   onClick={() => createParamUpdate(chip.key, chip.value, false)}
@@ -195,42 +225,21 @@ export function FilterSidebar({ sections, searchPlaceholder, labels }: FilterSid
           </ul>
         )}
 
-        {open && (
-          <div
-            id={panelId}
-            role="region"
-            aria-label={labels.filters}
-            className="card mt-3"
+        {hasActiveFilters && (
+          <button
+            type="button"
+            onClick={clearFilters}
+            className={`mt-3 inline-flex min-h-11 items-center text-small text-link ${focusRing}`}
           >
-            <div className="flex items-center justify-between gap-2 border-b border-line ps-4">
-              <h2 className="text-body font-display text-ink">{labels.filters}</h2>
-              <button
-                ref={closeRef}
-                type="button"
-                onClick={() => setOpen(false)}
-                aria-label={labels.close}
-                className={`inline-flex size-11 shrink-0 items-center justify-center rounded-full text-ink ${focusRing}`}
-              >
-                <X aria-hidden="true" strokeWidth={2} />
-              </button>
-            </div>
-            <div className="max-h-[min(12rem,34dvh)] overflow-y-auto overscroll-contain px-2 py-2">
-              <FilterGroups
-                sections={sections}
-                isSelected={(key, value) => searchParams.getAll(key).includes(value)}
-                onToggle={createParamUpdate}
-                stickyLabels
-                className="space-y-5"
-              />
-            </div>
-          </div>
+            {labels.clear}
+          </button>
         )}
       </div>
 
       <div className="mt-6 hidden lg:block">
         <FilterGroups
           sections={sections}
-          isSelected={(key, value) => searchParams.getAll(key).includes(value)}
+          isSelected={isSelected}
           onToggle={createParamUpdate}
           className="space-y-6"
         />
@@ -252,26 +261,24 @@ function FilterGroups({
   sections,
   isSelected,
   onToggle,
-  stickyLabels = false,
+  hideLegend = false,
   className,
 }: {
   sections: FilterSection[];
   isSelected: (key: string, value: string) => boolean;
   onToggle: (key: string, value: string, checked: boolean) => void;
-  stickyLabels?: boolean;
+  hideLegend?: boolean;
   className?: string;
 }) {
   return (
     <div className={className}>
       {sections.map((section) => (
         <fieldset key={section.key} className="min-w-0 border-0 p-0">
-          <legend
-            className={`text-body font-display text-ink px-2 ${
-              stickyLabels ? "sticky top-0 z-10 bg-elevated py-2" : "mb-2"
-            }`}
-          >
-            {section.label}
-          </legend>
+          {hideLegend ? (
+            <legend className="sr-only">{section.label}</legend>
+          ) : (
+            <legend className="mb-2 px-2 text-body font-display text-ink">{section.label}</legend>
+          )}
           <ul className="space-y-1">
             {section.options.map((option) => {
               const selected = isSelected(section.key, option.value);

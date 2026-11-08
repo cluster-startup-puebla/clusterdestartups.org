@@ -186,7 +186,7 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
           <ul className="mt-4 grid gap-4">
             {companyFounders.map((item) => (
               <li key={item.slug}>
-                <Link href={`/fundadores/${item.slug}`} className="group flex items-center gap-3">
+                <Link href={`/fundadores/${item.slug}`} className="group flex items-start gap-3">
                   <FounderAvatar name={item.name} photo={item.photo} className="size-12 text-small" />
                   <span className="min-w-0 flex-1">
                     <span className="block text-body font-display text-ink">
@@ -196,6 +196,11 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
                     {founderRoleAt(item, company.slug) && (
                       <span className="block text-small text-ink-secondary">
                         {founderRoleAt(item, company.slug)}
+                      </span>
+                    )}
+                    {item.bio && (
+                      <span className="mt-1 block text-small text-ink-secondary">
+                        {localize(item.bio, locale)}
                       </span>
                     )}
                   </span>
