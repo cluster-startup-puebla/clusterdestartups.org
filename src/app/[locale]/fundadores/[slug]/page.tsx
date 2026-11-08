@@ -146,7 +146,7 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
                       key={index}
                       src={company.logo}
                       alt=""
-                      className="max-h-10 w-full object-contain dark:brightness-0 dark:invert"
+                      className="max-h-10 w-full object-contain brightness-0 dark:invert"
                     />
                   ))}
                 </div>
