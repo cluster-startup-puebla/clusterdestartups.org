@@ -3,7 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { OFFICE_ADDRESS_WITH_PLACE, OFFICE_MAPS_URL } from "@/modules/cores/site/src/config/site";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
-import { SectionHeader } from "@/modules/shared/ui/src/components";
 import { OriginTimelineSection } from "@/modules/features/pages/src/sections/about/origin-timeline-section";
 import { MissionVisionSection } from "@/modules/features/pages/src/sections/about/mission-vision-section";
 import { TripleHelixSection } from "@/modules/features/pages/src/sections/about/triple-helix-section";
@@ -36,16 +35,14 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
 
   return (
     <>
-      <section className="bg-surface py-16 lg:py-24">
-        <div className="container-site">
-          <SectionHeader
-            as="h1"
-            eyebrow={t("heroEyebrow")}
-            title={t("heroTitle")}
-            description={t("heroDescription")}
-          />
-        </div>
-      </section>
+      <MissionVisionSection
+        kicker={t("heroTitle")}
+        title={t("missionTitle")}
+        association={t("heroEyebrow")}
+        lead={t("heroDescription")}
+        mission={{ title: t("missionCardTitle"), text: t("missionCardText") }}
+        vision={{ title: t("visionCardTitle"), text: t("visionCardText") }}
+      />
       <OriginTimelineSection
         eyebrow={t("originEyebrow")}
         title={t("originTitle")}
@@ -74,13 +71,6 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/quienes
           //   description: t("originItem4Description"),
           // },
         ]}
-      />
-      <MissionVisionSection
-        eyebrow={t("missionEyebrow")}
-        title={t("missionTitle")}
-        description={t("missionDescription")}
-        mission={{ title: t("missionCardTitle"), text: t("missionCardText") }}
-        vision={{ title: t("visionCardTitle"), text: t("visionCardText") }}
       />
       <TripleHelixSection
         eyebrow={t("helixEyebrow")}

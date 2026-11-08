@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
-import { ProfileCard, SectionHeader } from "@/modules/shared/ui/src/components";
-// import { TransparencyNotice } from "@/modules/features/pages/src/sections/governance/transparency-notice";
+import { GovernanceIndex } from "@/modules/features/pages/src/sections/governance/governance-index";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -27,95 +26,5 @@ export async function generateMetadata({
 export default async function GovernancePage({ params }: PageProps<"/[locale]/gobernanza">) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "Governance" });
-
-  return (
-    <section className="py-16 lg:py-24">
-      <div className="container-site">
-        <SectionHeader
-          as="h1"
-          eyebrow={t("heroEyebrow")}
-          title={t("heroTitle")}
-          description={t("heroDescription")}
-        />
-
-        <div className="mt-16 flex flex-col items-center gap-12">
-          <div className="w-full max-w-sm">
-            <ProfileCard
-              name="Yamil Álvarez"
-              role={t("boardYamilRole")}
-              description={t("boardYamilDescription")}
-              image={{ src: "/gobernanza/yamil.png", alt: t("boardYamilRole") }}
-              badge={t("founderBadge")}
-            />
-          </div>
-
-          <div className="grid w-full gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <ProfileCard
-              name="Daniel Martínez"
-              role={t("boardDanielRole")}
-              description={t("boardDanielDescription")}
-              image={{ src: "/gobernanza/daniel.png", alt: t("boardDanielRole") }}
-              badge={t("founderBadge")}
-            />
-            <ProfileCard
-              name="Álvaro Castillo"
-              role={t("boardAlvaroRole")}
-              description={t("boardAlvaroDescription")}
-              image={{ src: "/gobernanza/alvaro-castillo.png", alt: t("boardAlvaroRole") }}
-              badge={t("founderBadge")}
-            />
-            <ProfileCard
-              name="Rodrigo Ruiz"
-              role={t("boardRodrigoRole")}
-              description={t("boardRodrigoDescription")}
-              image={{ src: "/gobernanza/rodrigo-ruiz.png", alt: t("boardRodrigoRole") }}
-              badge={t("founderBadge")}
-            />
-          </div>
-        </div>
-
-        <div className="mt-24">
-          <SectionHeader
-            eyebrow={t("vigilanciaEyebrow")}
-            title={t("vigilanciaTitle")}
-            description={t("vigilanciaDescription")}
-          />
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            <ProfileCard
-              name="Oliver Salman"
-              role="Miembro del comité de vigilancia"
-              image={{ src: "/gobernanza/oliver-sahlmann.png", alt: "Oliver Salman" }}
-            />
-            <ProfileCard
-              name="Héctor Gama"
-              role="Miembro del comité de vigilancia"
-              image={{ src: "/gobernanza/ey-hector-armando-gama-site.jpg", alt: "Héctor Gama" }}
-            />
-          </div>
-        </div>
-
-        <div className="mt-24">
-          <SectionHeader
-            eyebrow={t("honoraryEyebrow")}
-            title={t("honoraryTitle")}
-            description={t("honoraryDescription")}
-          />
-          <div className="mt-12">
-            <div className="w-full max-w-sm">
-              <ProfileCard
-                name="Pablo Nuño"
-                role={t("honoraryPabloRole")}
-                image={{ src: "/gobernanza/pablo.jpeg", alt: t("honoraryPabloRole") }}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* <div className="mt-24">
-          <TransparencyNotice title={t("transparencyTitle")} text={t("transparencyText")} />
-        </div> */}
-      </div>
-    </section>
-  );
+  return <GovernanceIndex locale={locale} />;
 }

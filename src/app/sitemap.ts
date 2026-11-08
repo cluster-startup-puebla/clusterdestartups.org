@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import fs from "node:fs";
 import path from "node:path";
 import { companies } from "@/data/companies";
+import { committees } from "@/data/committees";
 import { founders } from "@/data/founders";
 import { universities } from "@/data/universities";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
@@ -36,6 +37,7 @@ function mtime(rel: string) {
 const COMPANIES_MODIFIED = mtime("src/data/companies.ts");
 const FOUNDERS_MODIFIED = mtime("src/data/founders.ts");
 const UNIVERSITIES_MODIFIED = mtime("src/data/universities.ts");
+const COMMITTEES_MODIFIED = mtime("src/data/committees.ts");
 
 function languageAlternates(route: string, locales: readonly string[] = routing.locales) {
   const languages: Record<string, string> = {};
@@ -86,6 +88,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: localeUrl(locale, pathName),
         lastModified: UNIVERSITIES_MODIFIED,
+        changeFrequency: "monthly",
+        priority: 0.6,
+        alternates: languageAlternates(pathName),
+      });
+    }
+
+    for (const committee of committees) {
+      const pathName = `/gobernanza/${committee.slug}`;
+      entries.push({
+        url: localeUrl(locale, pathName),
+        lastModified: COMMITTEES_MODIFIED,
         changeFrequency: "monthly",
         priority: 0.6,
         alternates: languageAlternates(pathName),

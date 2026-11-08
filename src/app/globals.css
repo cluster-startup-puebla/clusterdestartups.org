@@ -318,6 +318,78 @@ html[data-cookies="set"] .cookie-banner {
   }
 
   /* Ficha todavía sin confirmar. Sin relleno de marca, para que no compita con el sello rosa. */
+  .org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .org-chart-stem {
+    display: none;
+    width: 1px;
+    height: 2rem;
+    background: var(--border-default);
+  }
+
+  .org-chart-row {
+    display: grid;
+    width: 100%;
+    max-width: 56rem;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .org-chart-row[data-cols="2"] {
+    max-width: 36rem;
+  }
+
+  .org-chart-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .org-chart-stem {
+      display: block;
+    }
+
+    .org-chart-row[data-cols="2"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .org-chart-row[data-cols="3"] {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .org-chart-row[data-cols="2"] .org-chart-cell:has(.org-chart-stem)::before,
+    .org-chart-row[data-cols="3"] .org-chart-cell:has(.org-chart-stem)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 1px;
+      background: var(--border-default);
+    }
+
+    .org-chart-row[data-cols="2"] .org-chart-cell:first-child::before,
+    .org-chart-row[data-cols="3"] .org-chart-cell:first-child::before {
+      left: 50%;
+      right: 0;
+    }
+
+    .org-chart-row[data-cols="2"] .org-chart-cell:last-child::before,
+    .org-chart-row[data-cols="3"] .org-chart-cell:last-child::before {
+      left: 0;
+      right: 50%;
+    }
+
+    .org-chart-row[data-cols="3"] .org-chart-cell:nth-child(2)::before {
+      left: 0;
+      right: 0;
+    }
+  }
+
   .badge-muted {
     display: inline-flex;
     align-items: center;

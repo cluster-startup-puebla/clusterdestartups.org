@@ -239,6 +239,7 @@ Los `<a class="text-link">` llevan subrayado (`text-underline-offset: 0.18em`) p
 - `bg-brand-gradient`
 - `container-site` (contenedor 1280px con padding lateral responsivo)
 - `cookie-banner` (barra fija al pie; se oculta con `html[data-cookies="set"]` para no parpadear)
+- `org-chart`, `org-chart-stem`, `org-chart-row`, `org-chart-cell` (organigrama de Equipo: presidente arriba, mesa en fila, líneas `border-line`)
 
 ### Ejemplo
 

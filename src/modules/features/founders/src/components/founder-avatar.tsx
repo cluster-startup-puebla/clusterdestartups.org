@@ -6,14 +6,14 @@ interface FounderAvatarProps {
   className?: string;
 }
 
-export function FounderAvatar({ photo, className = "size-12" }: FounderAvatarProps) {
+export function FounderAvatar({ photo, className = "size-12 object-center" }: FounderAvatarProps) {
   if (photo) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src={photo}
         alt=""
-        className={`aspect-square shrink-0 rounded-full object-cover object-center ${className}`}
+        className={`aspect-square shrink-0 rounded-full object-cover ${className}`}
       />
     );
   }
