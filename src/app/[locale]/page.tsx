@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { HomePageJsonLd } from "@/modules/cores/site/src/components/site-json-ld";
 import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
-import { getPost } from "@/modules/features/blog/src/services/markdown";
+import { latestPosts } from "@/modules/features/blog/src/services/markdown";
 import { About } from "@/modules/features/pages/src/sections/home/about";
 import { Activity, type ActivityPlace, type ActivityTotal } from "@/modules/features/pages/src/sections/home/activity";
 import { AlliesMarquee } from "@/modules/features/pages/src/sections/home/allies-marquee";
@@ -12,12 +12,6 @@ import { CompaniesStrip } from "@/modules/features/pages/src/sections/home/compa
 import { Hero, heroPreload } from "@/modules/features/pages/src/sections/home/hero";
 import { Stories } from "@/modules/features/pages/src/sections/home/stories";
 import { RegisterStartupCta } from "@/modules/features/pages/src/sections/shared/register-startup-cta";
-
-const STORY_SLUGS = [
-  "cafe-cursor-puebla-2026",
-  "unlock-summit-zacatlan-2026",
-  "pabellon-puebla-innovafest-queretaro-2026",
-] as const;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -61,12 +55,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const t = await getTranslations({ locale, namespace: "Home" });
   const register = await getTranslations({ locale, namespace: "RegisterStartup" });
 
-  const posts = STORY_SLUGS.flatMap((slug) => {
-    const post = getPost(slug, locale);
-    if (!post) return [];
-    const { contentHtml: _contentHtml, ...meta } = post;
-    return [meta];
-  });
+  const posts = latestPosts(locale);
 
   return (
     <>

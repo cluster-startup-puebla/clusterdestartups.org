@@ -3,7 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { marked, Renderer, type Tokens } from "marked";
 import { withNoteUtm } from "@/lib/utm";
-import type { BlogPost, BlogPostImage } from "../interfaces/blog.interface";
+import type { BlogPost, BlogPostImage, PostMeta } from "../interfaces/blog.interface";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "blog");
 
@@ -123,6 +123,13 @@ export function listPosts(locale: string, category?: string): BlogPost[] {
     .map(parseFile)
     .filter((post) => !category || post.category === category)
     .sort((a, b) => b.date.localeCompare(a.date));
+}
+
+/** Las notas más nuevas de un idioma, sin el HTML. El home usa las tres primeras. */
+export function latestPosts(locale: string, limit = 3): PostMeta[] {
+  return listPosts(locale)
+    .slice(0, limit)
+    .map(({ contentHtml: _contentHtml, ...meta }) => meta);
 }
 
 export function getPost(slug: string, locale: string): BlogPost | undefined {
