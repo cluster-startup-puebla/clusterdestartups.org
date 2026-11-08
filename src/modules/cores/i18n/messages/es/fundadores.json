@@ -1,0 +1,29 @@
+{
+  "Founders": {
+    "metaTitle": "Directorio de founders",
+    "metaDescription": "Las personas que fundan y dirigen las startups del Clúster de Startups e Innovación.",
+    "title": "Directorio de founders",
+    "count": "{count} en el directorio",
+    "subtitle": "Las personas detrás de las startups del clúster. Busca por nombre, industria o región.",
+    "home": "Inicio",
+    "backToList": "Founders",
+    "showing": "Mostrando {count}",
+    "roleAt": "{role} en {company}",
+    "pending": "Pendiente de confirmar",
+    "viewCompany": "Ver la empresa",
+    "follow": "Sigue a {name}",
+    "linkedinHint": "Conectar en LinkedIn",
+    "previously": "Antes en",
+    "education": "Estudió en",
+    "related": "También de {company}",
+    "company": "Su startup",
+    "filter": {
+      "search": "Buscar founder...",
+      "industry": "Industria",
+      "region": "Región",
+      "clear": "Limpiar filtros",
+      "filters": "Filtros",
+      "noResults": "Ningún founder coincide con estos filtros."
+    }
+  }
+}

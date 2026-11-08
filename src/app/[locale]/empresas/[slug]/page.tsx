@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ChevronRight } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
@@ -7,6 +8,8 @@ import { buildMetadata } from "@/modules/cores/site/src/services/page-metadata";
 import { SITE_URL } from "@/modules/cores/site/src/config/site";
 import { Badge, CompanyLogo } from "@/modules/shared/ui/src/components";
 import { companies, getCompany, localize, STARTUP_INDUSTRIES, type Company } from "@/data/companies";
+import { getFoundersByCompany } from "@/data/founders";
+import { FounderAvatar } from "@/modules/features/founders/src";
 import { listPosts } from "@/modules/features/blog/src/services/markdown";
 import { toTelHref } from "@/lib/phone";
 import { withClusterUtm } from "@/lib/utm";
@@ -84,6 +87,7 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
   ];
 
   const person = company.contact?.person;
+  const companyFounders = getFoundersByCompany(company.slug);
   const hasLinks = contactEntries.some((entry) => entry.value);
   const notes = listPosts(locale).filter((post) => post.companies?.includes(company.slug));
 
@@ -175,11 +179,30 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
         <h2 className="text-micro uppercase tracking-wider text-ink-muted">
           {t("detail.contact")}
         </h2>
-        {person && (
-          <p className="mt-4 text-h4 font-display text-ink">{person}</p>
-        )}
-        {company.contact?.role && (
-          <p className="text-small text-ink-muted">{company.contact.role}</p>
+        {companyFounders.length > 0 ? (
+          <ul className="mt-4 grid gap-4">
+            {companyFounders.map((item) => (
+              <li key={item.slug}>
+                <Link href={`/fundadores/${item.slug}`} className="group flex items-center gap-3">
+                  <FounderAvatar name={item.name} photo={item.photo} className="size-12 text-small" />
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-body font-display text-ink group-hover:text-brand">{item.name}</span>
+                    {item.role && (
+                      <span className="block text-small text-ink-secondary">{item.role}</span>
+                    )}
+                  </span>
+                  <ChevronRight size={16} strokeWidth={2} aria-hidden="true" className="shrink-0 text-ink-muted transition group-hover:text-brand" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <>
+            {person && <p className="mt-4 text-h4 font-display text-ink">{person}</p>}
+            {company.contact?.role && (
+              <p className="text-small text-ink-muted">{company.contact.role}</p>
+            )}
+          </>
         )}
         {hasLinks ? (
           <dl className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-14 sm:gap-y-4">

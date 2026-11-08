@@ -1,4 +1,5 @@
 import { companies } from "@/data/companies";
+import { founders } from "@/data/founders";
 import { routing } from "@/modules/cores/i18n/src/config/routing";
 import { listPosts } from "@/modules/features/blog/src/services/markdown";
 import { localeUrl, SITE_URL } from "@/modules/cores/site/src/config/site";
@@ -35,6 +36,13 @@ const PAGES: { path: string; es: string; en: string; aboutEs: string; aboutEn: s
     en: "Companies",
     aboutEs: "Directorio de startups del clúster en Puebla.",
     aboutEn: "Directory of startups in the Puebla cluster.",
+  },
+  {
+    path: "/fundadores",
+    es: "Founders",
+    en: "Founders",
+    aboutEs: "Directorio de las personas que fundan y dirigen las startups del clúster.",
+    aboutEn: "Directory of the people who found and lead the cluster's startups.",
   },
   {
     path: "/hub",
@@ -134,6 +142,10 @@ ${spanishPages.join("\n")}
 ## English
 
 ${englishPages.join("\n")}
+
+## Founders
+
+${founders.map((founder) => link(founder.name, localeUrl("es", `/fundadores/${founder.slug}`))).join("\n")}
 
 ## Empresas del clúster
 

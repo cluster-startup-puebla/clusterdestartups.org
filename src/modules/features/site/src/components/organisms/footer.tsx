@@ -9,6 +9,7 @@ const FOOTER_LINKS = [
   { key: "about", href: "/quienes-somos" },
   { key: "governance", href: "/gobernanza" },
   { key: "companies", href: "/empresas" },
+  { key: "founders", href: "/fundadores" },
   { key: "blog", href: "/blog" },
   { key: "contact", href: "/contacto" },
   { key: "media", href: "/medios" },
