@@ -5,10 +5,10 @@ excerpt: "First place went to SENTIA, from Xicotepec de Juárez. MeCANautas, fro
 date: "2026-11-06"
 author: "Clúster de Startups e Innovación A.C."
 category: "sala-de-prensa"
-tags: ["ElectroHack", "Energy Agency", "renewable energy", "CSI Puebla", "Concora", "X-Chair"]
+tags: ["ElectroHack", "Energy Agency", "renewable energy", "CSI Puebla", "Concora", "The X-Company"]
 companies:
   - concora
-  - the-x-chair
+  - the-x-company
 image:
   src: "/prensa/prensa-electrohack-2026.webp"
   alt: "First-place award at ElectroHack 2026, at the International Museum of the Baroque"
@@ -20,7 +20,7 @@ It is the fifth edition of the University Innovation Contest convened by the [Pu
 
 There is one category, Energy. Inside it sit infrastructure, digitalization, public policy, entrepreneurship and business, and electromobility. Those cover clean generation, storage, green hydrogen, biofuels, smart grids, artificial intelligence applied to the power system, and vehicle charging. Artificial intelligence may be used as support. A proposal handed in whole by a model falls outside the call.
 
-Ten finalists came out of the eligible projects and were notified on October 30. On November 6 each team had five to ten minutes, and the evaluation committee could ask up to three questions. The committee includes the Agency, the public sector, academia, the private sector, and civil society. Álvaro Castillo Carreño, vice president of the [Cluster of Startups and Innovation](/en/quienes-somos/), sat on the jury. On the same day, Rodrigo Yamil Álvarez Moisés, president of the Cluster, gave the talk “The power of dreams,” on the possibility of starting a company. Fátima Gaytán, CEO of [Concora](/en/empresas/concora/), and the [X-Chair](/en/empresas/the-x-chair/) team told how their path has gone.
+Ten finalists came out of the eligible projects and were notified on October 30. On November 6 each team had five to ten minutes, and the evaluation committee could ask up to three questions. The committee includes the Agency, the public sector, academia, the private sector, and civil society. Álvaro Castillo Carreño, vice president of the [Cluster of Startups and Innovation](/en/quienes-somos/), sat on the jury. On the same day, Rodrigo Yamil Álvarez Moisés, president of the Cluster, gave the talk “The power of dreams,” on the possibility of starting a company. Fátima Gaytán, CEO of [Concora](/en/empresas/concora/), and the [The X-Company](/en/empresas/the-x-company/) team told how their path has gone.
 
 First place, for the team and its advisor, is a professional-development and academic-linkage stay abroad during the second half of 2027. Second place receives a prize with an estimated value of 25,000 pesos. Third place, one of 15,000. The ten finalists receive a certificate.
 

@@ -101,6 +101,8 @@ export type Company = {
     lat: number;
     lng: number;
   };
+  /** Slug anterior. Sigue abriendo esta ficha y muestra el aviso hacia `slug`. */
+  previousSlug?: string;
   /** Descripción corta de una línea para el listado. */
   shortDescription?: LocalizedText;
   /** Verticales de `STARTUP_INDUSTRIES`. Una o dos, nunca una frase. */
@@ -139,6 +141,12 @@ export function localize<T>(value: Record<Locale, T>, locale: string): T {
 }
 
 /** Orden alfabético por nombre. */
+const TEC_PUEBLA = {
+  address: "Tecnológico de Monterrey Campus Puebla, Blvd. Vía Atlixcáyotl 5718, Puebla",
+  lat: 19.020559,
+  lng: -98.244652,
+};
+
 export const companies: readonly Company[] = [
   {
     slug: 'celunova',
@@ -200,11 +208,7 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
-    location: {
-      address: 'Puebla, México',
-      lat: 19.043798,
-      lng: -98.198151,
-    },
+    location: TEC_PUEBLA,
     shortDescription: {
       es: 'Plataforma que conecta juventudes con oportunidades y empresas con talento junior mediante retos.',
       en: 'Platform connecting young people with opportunities and companies with junior talent through challenges.'
@@ -397,11 +401,7 @@ export const companies: readonly Company[] = [
       es: 'México',
       en: 'Mexico'
     },
-    location: {
-      address: 'Puebla, Puebla',
-      lat: 19.043798,
-      lng: -98.198151,
-    },
+    location: TEC_PUEBLA,
     shortDescription: {
       es: 'Educación STEAM para niñas y jóvenes, con una app que funciona sin internet y talleres presenciales.',
       en: 'STEAM education for girls and young women, with an app that works offline and in-person workshops.'
@@ -1268,11 +1268,7 @@ export const companies: readonly Company[] = [
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
-    location: {
-      address: 'Puebla, México',
-      lat: 19.043798,
-      lng: -98.198151,
-    },
+    location: TEC_PUEBLA,
     shortDescription: {
       es: 'Plataforma de huella de carbono alimentaria e inventario de emisiones con captura de CO₂.',
       en: 'Food carbon footprint platform and emissions inventory with CO₂ capture.'
@@ -1299,11 +1295,7 @@ export const companies: readonly Company[] = [
     name: 'Padel 360',
     logo: '/empresas/padel-360.webp',
     logoInk: true,
-    location: {
-      address: 'Puebla',
-      lat: 19.043798,
-      lng: -98.198151,
-    },
+    location: TEC_PUEBLA,
     shortDescription: {
       es: 'Liga amateur de pádel por equipos en México, con tres formatos y categoría asignada por evaluación.',
       en: 'Amateur team padel league in Mexico, with three formats and a category assigned by evaluation.'
@@ -1744,20 +1736,17 @@ export const companies: readonly Company[] = [
     }
   },
   {
-    slug: 'the-x-chair',
+    slug: 'the-x-company',
+    previousSlug: 'the-x-chair',
     verified: true,
-    name: 'The X-Chair',
+    name: 'The X-Company',
     logo: '/empresas/the-x-chair.webp',
     logoInk: true,
     region: {
       es: 'Puebla, México',
       en: 'Puebla, Mexico'
     },
-    location: {
-      address: 'Puebla, México',
-      lat: 19.043798,
-      lng: -98.198151,
-    },
+    location: TEC_PUEBLA,
     shortDescription: {
       es: 'Silla de ruedas controlada por la mente, con interfaz cerebro-computadora.',
       en: 'Mind-controlled wheelchair with a brain-computer interface.'
@@ -1839,11 +1828,7 @@ export const companies: readonly Company[] = [
     name: 'WePadel',
     logo: '/empresas/wepadel.webp',
     logoInk: true,
-    location: {
-      address: 'Tecnológico de Monterrey Campus Puebla, Blvd. Vía Atlixcáyotl 5718, Puebla',
-      lat: 19.020559,
-      lng: -98.244652,
-    },
+    location: TEC_PUEBLA,
     shortDescription: {
       es: 'Plataforma para jugar, organizar y hacer crecer una comunidad de pádel.',
       en: 'Platform to play, organize and grow a padel community.'
@@ -1978,5 +1963,5 @@ export const companies: readonly Company[] = [
 ];
 
 export function getCompany(slug: string): Company | undefined {
-  return companies.find((company) => company.slug === slug);
+  return companies.find((company) => company.slug === slug || company.previousSlug === slug);
 }

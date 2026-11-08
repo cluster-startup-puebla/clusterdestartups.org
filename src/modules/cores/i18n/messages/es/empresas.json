@@ -9,10 +9,13 @@
     "viewLabel": "Vista",
     "viewMap": "Mapa",
     "viewList": "Lista",
+    "clusterLabel": "{count} empresas en esta zona",
     "viewDetail": "Ver ficha",
     "backToList": "Volver al directorio",
     "pending": "Pendiente de confirmar",
     "pendingNote": "Estamos validando la información de esta ficha con la empresa. Regresa pronto.",
+    "formerNotice": "Esta dirección es la anterior. La ficha vigente está en la página nueva.",
+    "formerNoticeLink": "Ver la página nueva",
     "filter": {
       "search": "Buscar empresa...",
       "batch": "Lote",

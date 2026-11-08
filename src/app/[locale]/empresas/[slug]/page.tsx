@@ -16,7 +16,10 @@ import { withClusterUtm } from "@/lib/utm";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
-    companies.map((company) => ({ locale, slug: company.slug })),
+    companies.flatMap((company) => {
+      const slugs = company.previousSlug ? [company.slug, company.previousSlug] : [company.slug];
+      return slugs.map((slug) => ({ locale, slug }));
+    }),
   );
 }
 
@@ -31,7 +34,7 @@ export async function generateMetadata({
 
   return buildMetadata({
     locale,
-    route: `/empresas/${slug}`,
+    route: `/empresas/${company.slug}`,
     title: company.name,
     description: company.solution
       ? localize(company.solution, locale)
@@ -42,7 +45,15 @@ export async function generateMetadata({
 
 type ContactKey = "website" | "demo" | "email" | "phone";
 
-async function CompanyDetail({ company, locale }: { company: Company; locale: string }) {
+async function CompanyDetail({
+  company,
+  locale,
+  formerUrl,
+}: {
+  company: Company;
+  locale: string;
+  formerUrl: boolean;
+}) {
   const t = await getTranslations({ locale, namespace: "Companies" });
 
   const industries = (company.industries ?? []).map((id) =>
@@ -89,13 +100,24 @@ async function CompanyDetail({ company, locale }: { company: Company; locale: st
   const person = company.contact?.person;
   const companyFounders = getFoundersByCompany(company.slug);
   const hasLinks = contactEntries.some((entry) => entry.value);
-  const notes = listPosts(locale).filter((post) => post.companies?.includes(company.slug));
+  const notes = listPosts(locale).filter((post) =>
+    post.companies?.some((id) => id === company.slug || id === company.previousSlug),
+  );
 
   return (
     <article className="container-site py-16 lg:py-24">
       <Link href="/empresas" className="text-small text-link">
         ← {t("backToList")}
       </Link>
+
+      {formerUrl && (
+        <div className="mt-8 flex flex-col gap-3 rounded-md border border-line bg-surface-subtle px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-body text-ink">{t("formerNotice")}</p>
+          <Link href={`/empresas/${company.slug}`} className="btn btn-primary shrink-0">
+            {t("formerNoticeLink")}
+          </Link>
+        </div>
+      )}
 
       <header className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-7">
         <CompanyLogo name={company.name} logo={company.logo} className="size-20" dark={company.logoDark} ink={company.logoInk} />
@@ -303,5 +325,5 @@ export default async function CompanyDetailPage({
   const company = getCompany(slug);
   if (!company) notFound();
 
-  return <CompanyDetail company={company} locale={locale} />;
+  return <CompanyDetail company={company} locale={locale} formerUrl={slug === company.previousSlug} />;
 }

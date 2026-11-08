@@ -188,7 +188,7 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
   }, [companies, locale, labels, matches, womanLabel, statusLabel, verifiedLabel, unverifiedLabel, allLabel]);
 
   const mapped = companies.filter((company) => company.location);
-  const [view, setView] = useState<"map" | "list">(mapped.length > 0 ? "map" : "list");
+  const [view, setView] = useState<"map" | "list">("list");
   const viewButton = (id: "map" | "list", label: string, icon: ReactNode) => (
     <button
       type="button"
@@ -212,8 +212,8 @@ export function CompanyDirectory({ companies, locale, labels }: CompanyDirectory
             aria-label={t("viewLabel")}
             className="inline-flex rounded-full border border-line bg-surface p-1"
           >
-            {viewButton("map", t("viewMap"), <MapIcon size={18} strokeWidth={1.75} aria-hidden />)}
             {viewButton("list", t("viewList"), <List size={18} strokeWidth={1.75} aria-hidden />)}
+            {viewButton("map", t("viewMap"), <MapIcon size={18} strokeWidth={1.75} aria-hidden />)}
           </div>
         </div>
       ) : null}

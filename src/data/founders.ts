@@ -59,7 +59,7 @@ export const founders: readonly Founder[] = [
     verified: true,
     name: "Mauro Daniel Munguia Manzanarez",
     role: "Cofundador y CEO",
-    companySlug: "the-x-chair",
+    companySlug: "the-x-company",
     photo: "/fundadores/mauro-daniel-munguia.webp",
     linkedin: "https://www.linkedin.com/in/mauro-munguia/",
     bio: {
@@ -73,7 +73,7 @@ export const founders: readonly Founder[] = [
     verified: true,
     name: "Eduardo Zárate Lara",
     role: "Cofundador y CTO",
-    companySlug: "the-x-chair",
+    companySlug: "the-x-company",
     photo: "/fundadores/eduardo-zarate-lara.webp",
     linkedin: "https://www.linkedin.com/in/eduardozaratelara/",
     bio: {
