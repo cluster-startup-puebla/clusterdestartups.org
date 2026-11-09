@@ -72,6 +72,7 @@ interface Frontmatter {
   category?: string;
   tags: string[];
   companies?: string[];
+  founders?: string[];
   image?: BlogPostImage;
   images?: BlogPostImage[];
 }
@@ -79,6 +80,7 @@ interface Frontmatter {
 export const CATEGORIES = {
   press: "sala-de-prensa",
   community: "comunidad",
+  column: "columna",
 } as const;
 
 function parseFile(fileName: string): BlogPost {
@@ -107,6 +109,9 @@ function parseFile(fileName: string): BlogPost {
     tags: meta.tags ?? [],
     companies: Array.isArray(meta.companies)
       ? meta.companies.filter((slug): slug is string => typeof slug === "string")
+      : [],
+    founders: Array.isArray(meta.founders)
+      ? meta.founders.filter((slug): slug is string => typeof slug === "string")
       : [],
     image: meta.image,
     images: meta.images,

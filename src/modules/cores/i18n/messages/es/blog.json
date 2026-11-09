@@ -2,11 +2,12 @@
   "Blog": {
     "title": "Blog",
     "metaTitle": "Blog de startups e innovación en Puebla",
-    "description": "Notas del clúster sobre startups e innovación en Puebla: comunidad, alianzas y el ecosistema del estado.",
+    "description": "Notas del clúster sobre startups e innovación en Puebla: comunidad, alianzas y el ecosistema del estado. La columna es un texto firmado, no un comunicado.",
     "backToBlog": "← Volver al blog",
     "readingTime": "{minutes} min de lectura",
     "categoryPress": "Sala de prensa",
     "categoryCommunity": "Comunidad",
+    "categoryColumn": "Columna",
     "readMore": "Leer más →",
     "allPosts": "Todas las publicaciones",
     "relatedTitle": "Notas que te pueden interesar",

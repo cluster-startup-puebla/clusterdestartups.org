@@ -20,6 +20,8 @@
     "closePhoto": "Cerrar",
     "related": "También de {company}",
     "company": "Su startup",
+    "column": "Columna",
+    "readColumn": "Leer la columna",
     "filter": {
       "search": "Buscar founder...",
       "industry": "Industria",

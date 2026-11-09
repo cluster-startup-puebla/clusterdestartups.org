@@ -2,11 +2,12 @@
   "Blog": {
     "title": "Blog",
     "metaTitle": "Startup and innovation blog in Puebla",
-    "description": "Notes from the cluster on startups and innovation in Puebla: community, alliances and the state's ecosystem.",
+    "description": "Notes from the cluster on startups and innovation in Puebla: community, alliances and the state's ecosystem. The column is a signed essay, not a statement from the cluster.",
     "backToBlog": "← Back to blog",
     "readingTime": "{minutes} min read",
     "categoryPress": "Press room",
     "categoryCommunity": "Community",
+    "categoryColumn": "Column",
     "readMore": "Read more →",
     "allPosts": "All posts",
     "relatedTitle": "Notes you may like",

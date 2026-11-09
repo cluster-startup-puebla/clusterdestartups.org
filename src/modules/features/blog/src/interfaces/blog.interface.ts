@@ -8,7 +8,7 @@ export interface BlogPostImage {
 export interface BlogPost {
   slug: string;
   locale: string;
-  /** "sala-de-prensa" (institucional, aparece en /prensa) o "comunidad" (workshops, convocatorias; /blog) */
+  /** "sala-de-prensa" (institucional, /prensa), "comunidad" (workshops y convocatorias) o "columna" (texto firmado). */
   category: string;
   title: string;
   description: string;
@@ -18,6 +18,8 @@ export interface BlogPost {
   tags: string[];
   /** Slugs del padrón (`companies.ts`) que esta nota vincula. */
   companies?: string[];
+  /** Slugs de `founders.ts`. La ficha de esa persona lista la nota. */
+  founders?: string[];
   image?: BlogPostImage;
   /** Fotos extra, además de la portada. También se pueden insertar en el markdown. */
   images?: BlogPostImage[];

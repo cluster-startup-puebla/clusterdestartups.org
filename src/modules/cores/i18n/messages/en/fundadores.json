@@ -20,6 +20,8 @@
     "closePhoto": "Close",
     "related": "Also at {company}",
     "company": "Their startup",
+    "column": "Column",
+    "readColumn": "Read the column",
     "filter": {
       "search": "Search founders...",
       "industry": "Industry",

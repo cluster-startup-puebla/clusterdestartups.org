@@ -17,6 +17,7 @@ import {
 } from "@/data/founders";
 import { getUniversity } from "@/data/universities";
 import { FounderAvatar, FounderPhoto } from "@/modules/features/founders/src";
+import { listPosts } from "@/modules/features/blog/src/services/markdown";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -137,6 +138,7 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
   const related = founders.filter(
     (item) => item.slug !== founder.slug && item.companySlug === founder.companySlug,
   );
+  const notes = listPosts(locale).filter((post) => post.founders?.includes(founder.slug));
 
   return (
     <article className="container-site py-16 lg:py-24">
@@ -324,6 +326,47 @@ async function FounderProfile({ founder, locale }: { founder: Founder; locale: s
           )}
         </aside>
       </div>
+
+      {notes.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-h4 font-display text-ink">{t("column")}</h2>
+          <ul className="mt-4 grid gap-4">
+            {notes.map((note) => (
+              <li key={note.slug}>
+                <Link
+                  href={`/blog/${note.slug}`}
+                  className="card group grid overflow-hidden transition hover:border-accent sm:grid-cols-[18rem_1fr]"
+                >
+                  {note.image && (
+                    <span className="bg-elevated relative block aspect-[16/9] sm:aspect-auto sm:h-full">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={note.image.src}
+                        alt={note.image.alt}
+                        loading="lazy"
+                        className="h-full w-full object-cover sm:absolute sm:inset-0"
+                      />
+                    </span>
+                  )}
+                  <span className="flex flex-col gap-2 p-5">
+                    <time dateTime={note.date} className="text-micro text-ink-muted">
+                      {new Date(note.date).toLocaleDateString(locale, {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                        timeZone: "UTC",
+                      })}
+                    </time>
+                    <span className="text-h4 font-display text-ink group-hover:text-brand">{note.title}</span>
+                    <span className="text-small text-ink-secondary">{note.excerpt}</span>
+                    <span className="text-small mt-auto text-link">{t("readColumn")} →</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </article>
   );
 }

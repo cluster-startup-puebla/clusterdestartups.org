@@ -63,6 +63,7 @@ export default async function BlogPage({ params }: PageProps<"/[locale]/blog">) 
             all: t("allPosts"),
             press: t("categoryPress"),
             community: t("categoryCommunity"),
+            column: t("categoryColumn"),
             readMore: t("readMore"),
           }}
         />

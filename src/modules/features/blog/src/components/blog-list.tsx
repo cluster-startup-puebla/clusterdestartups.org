@@ -7,6 +7,7 @@ import type { PostMeta } from "@/modules/features/blog/src/interfaces/blog.inter
 
 const PRESS = "sala-de-prensa";
 const COMMUNITY = "comunidad";
+const COLUMN = "columna";
 
 interface BlogListProps {
   posts: PostMeta[];
@@ -15,6 +16,7 @@ interface BlogListProps {
     all: string;
     press: string;
     community: string;
+    column: string;
     readMore: string;
   };
 }
@@ -39,12 +41,15 @@ export function BlogList({ posts, locale, labels }: BlogListProps) {
       ? posts.filter((post) => post.category === PRESS)
       : categoria === COMMUNITY
         ? posts.filter((post) => post.category === COMMUNITY)
-        : posts;
+        : categoria === COLUMN
+          ? posts.filter((post) => post.category === COLUMN)
+          : posts;
 
   const filters = [
-    { value: null, label: labels.all, active: categoria !== PRESS && categoria !== COMMUNITY },
+    { value: null, label: labels.all, active: categoria !== PRESS && categoria !== COMMUNITY && categoria !== COLUMN },
     { value: PRESS, label: labels.press, active: categoria === PRESS },
     { value: COMMUNITY, label: labels.community, active: categoria === COMMUNITY },
+    { value: COLUMN, label: labels.column, active: categoria === COLUMN },
   ];
 
   return (
@@ -83,7 +88,13 @@ export function BlogList({ posts, locale, labels }: BlogListProps) {
                     timeZone: "UTC",
                   })}
                 </time>
-                <Badge>{post.category === PRESS ? labels.press : labels.community}</Badge>
+                <Badge>
+                  {post.category === PRESS
+                    ? labels.press
+                    : post.category === COLUMN
+                      ? labels.column
+                      : labels.community}
+                </Badge>
               </div>
               <h2 className="text-h4 font-display text-ink">{post.title}</h2>
               <p className="text-small text-ink-secondary">{post.excerpt}</p>

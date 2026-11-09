@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { routing } from "@/modules/cores/i18n/src/config/routing";
+import { Link, routing } from "@/modules/cores/i18n/src/config/routing";
+import { getFounder } from "@/data/founders";
 import { getPost, getPostSlugs, listPosts, CATEGORIES } from "@/modules/features/blog/src/services/markdown";
 import { RelatedNotes } from "@/modules/features/blog/src/components/related-notes";
 import { LinkedCompanies } from "@/modules/features/blog/src/components/linked-companies";
@@ -91,6 +92,11 @@ export default async function BlogPostPage({
     }));
 
   const isPress = post.category === CATEGORIES.press;
+  const isColumn = post.category === CATEGORIES.column;
+  const columnists = (post.founders ?? []).flatMap((id) => {
+    const founder = getFounder(id);
+    return founder ? [founder] : [];
+  });
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": isPress ? "NewsArticle" : "BlogPosting",
@@ -98,11 +104,18 @@ export default async function BlogPostPage({
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
-    author: {
-      "@type": "Organization",
-      name: "Clúster de Startups e Innovación (CSI) A.C.",
-      url: `${SITE_URL}/es/`,
-    },
+    author:
+      columnists.length > 0
+        ? columnists.map((founder) => ({
+            "@type": "Person",
+            name: columnists.length === 1 ? post.author : founder.name,
+            url: `${SITE_URL}/${locale}/fundadores/${founder.slug}/`,
+          }))
+        : {
+            "@type": "Organization",
+            name: "Clúster de Startups e Innovación (CSI) A.C.",
+            url: `${SITE_URL}/es/`,
+          },
     publisher: { "@id": ORGANIZATION_ID },
     mainEntityOfPage: `${SITE_URL}/${locale}/blog/${slug}/`,
     isPartOf: { "@id": WEBSITE_ID },
@@ -150,11 +163,25 @@ export default async function BlogPostPage({
               })}
             </time>
             {isPress && <span className="badge-brand">{t("categoryPress")}</span>}
+            {isColumn && <span className="badge-brand">{t("categoryColumn")}</span>}
           </div>
           <h1 className="text-h1 mt-2 font-display">{post.title}</h1>
           <p className="text-body-lg mt-4 text-ink-secondary">{post.excerpt}</p>
           <p className="mt-6 flex flex-col items-start gap-1 text-small text-ink-muted md:flex-row md:items-center md:gap-3">
-            <span>{post.author}</span>
+            {columnists.length > 0 ? (
+              <span>
+                {columnists.map((founder, index) => (
+                  <span key={founder.slug}>
+                    {index > 0 ? ", " : null}
+                    <Link href={`/fundadores/${founder.slug}`} className="text-link">
+                      {columnists.length === 1 ? post.author : founder.name}
+                    </Link>
+                  </span>
+                ))}
+              </span>
+            ) : (
+              <span>{post.author}</span>
+            )}
             <span aria-hidden="true" className="hidden md:inline">
               ·
             </span>
