@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/modules/cores/i18n/src/config/routing";
 import { type Committee, type CommitteeMember, committeePeople, committees } from "@/data/committees";
+import { AvatarStack } from "./avatar-stack";
 import { CommitteeMemberRow } from "./committee-member-row";
 import { OrgChart } from "./org-chart";
 
@@ -49,6 +50,9 @@ export async function CommitteeDetail({
           <h1 className="mt-4 max-w-4xl text-h1 font-display text-ink lg:text-display">
             {t(committee.titleKey)}
           </h1>
+          <div className="mt-8">
+            <AvatarStack people={people} />
+          </div>
         </div>
       </header>
 
