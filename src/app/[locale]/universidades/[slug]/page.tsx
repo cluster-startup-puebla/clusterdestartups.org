@@ -99,8 +99,8 @@ async function UniversityProfile({
       </nav>
 
       <header className="card mt-8 p-6 sm:p-8">
-        <div className="flex items-center gap-5">
-          <span className="flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-line bg-elevated">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
+          <span className="flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-line bg-elevated sm:size-20">
             {university.logo ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={university.logo} alt="" className="size-full object-contain" />
@@ -108,8 +108,11 @@ async function UniversityProfile({
               <span className="font-display text-h3 text-ink">{university.shortName.slice(0, 1)}</span>
             )}
           </span>
-          <div>
-            <h1 className="text-h1 font-display text-ink">{university.name}</h1>
+          <div className="min-w-0">
+            <h1 className="text-h3 font-display text-ink sm:text-h1">{university.shortName}</h1>
+            {university.name !== university.shortName && (
+              <p className="mt-1 text-body text-balance text-ink">{university.name}</p>
+            )}
             <p className="mt-2 text-body text-ink-secondary">{localize(university.summary, locale)}</p>
           </div>
         </div>
