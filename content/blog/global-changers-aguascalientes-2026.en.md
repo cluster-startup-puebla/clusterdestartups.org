@@ -19,4 +19,4 @@ In the idea she published with the invitation, artificial intelligence can offer
 
 The gathering crosses wellbeing, technology and purpose. [Líder Empresarial](https://www.liderempresarial.com/7-eventos-imperdibles-en-aguascalientes-durante-octubre-de-2026/) described it as a meeting on wellbeing, healthy habits and personal development, and included it in the state's October calendar.
 
-Brenda Guadalupe Caballero Lara is director of AI ethics and responsible use at the [Startup and Innovation Cluster](/en/quienes-somos/). The [AI committee](/en/gobernanza/ia/) is an honorary body of the cluster: it teaches and explains artificial intelligence across the ecosystem, and looks after an ethical, responsible use.
+Brenda Guadalupe Caballero Lara is director of AI ethics and responsible use at the [Startup and Innovation Cluster](/en/quienes-somos/).

@@ -28,8 +28,8 @@ const PAGES: { path: string; es: string; en: string; aboutEs: string; aboutEn: s
     path: "/gobernanza",
     es: "Equipo",
     en: "Team",
-    aboutEs: "Mesa directiva, comité de vigilancia, comité de IA y miembros honorarios.",
-    aboutEn: "Board, oversight committee, AI committee and honorary members.",
+    aboutEs: "Mesa directiva, comité de vigilancia, comité de vinculación y miembros honorarios.",
+    aboutEn: "Board, oversight committee, community liaison committee and honorary members.",
   },
   {
     path: "/gobernanza/mesa-directiva",
@@ -44,13 +44,6 @@ const PAGES: { path: string; es: string; en: string; aboutEs: string; aboutEn: s
     en: "Oversight committee",
     aboutEs: "Órgano de supervisión y transparencia del clúster.",
     aboutEn: "The cluster's supervision and transparency body.",
-  },
-  {
-    path: "/gobernanza/ia",
-    es: "Comité de IA",
-    en: "AI Committee",
-    aboutEs: "Comité honorario de educación, divulgación y ética en inteligencia artificial.",
-    aboutEn: "Honorary committee for AI education, outreach and ethics.",
   },
   {
     path: "/gobernanza/vinculacion",

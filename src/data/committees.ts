@@ -1,7 +1,6 @@
 export const COMMITTEE_SLUGS = [
   "mesa-directiva",
   "vigilancia",
-  "ia",
   "vinculacion",
   "honorarios",
 ] as const;
@@ -94,31 +93,6 @@ export const committees: readonly Committee[] = [
         roleKey: "vigilanciaHectorRole",
         photo: "/gobernanza/gobernanza-hector-gama.png",
         photoClassName: "object-top",
-      },
-    ],
-  },
-  {
-    slug: "ia",
-    kind: "committee",
-    titleKey: "aiTitle",
-    whatKey: "aiWhat",
-    purposeKey: "aiPurpose",
-    metaTitleKey: "aiMetaTitle",
-    metaDescriptionKey: "aiMetaDescription",
-    ctaKey: "openCommittee",
-    members: [
-      {
-        name: "Azul Alessandra Jara Segundo",
-        roleKey: "aiAzulRole",
-        photo: "/gobernanza/azul-jara.webp",
-        href: "https://www.linkedin.com/in/azuljara/",
-        photoClassName: "object-top",
-      },
-      {
-        name: "Brenda Guadalupe Caballero Lara",
-        roleKey: "aiBrendaRole",
-        photo: "/gobernanza/brenda-caballero.webp",
-        href: "https://www.linkedin.com/in/brenda-guadalupe-caballero-lara-981910126/",
       },
     ],
   },

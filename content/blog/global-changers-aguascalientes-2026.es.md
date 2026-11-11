@@ -19,4 +19,4 @@ En la idea que publicó con la invitación, la inteligencia artificial puede dar
 
 El encuentro cruza bienestar, tecnología y propósito. [Líder Empresarial](https://www.liderempresarial.com/7-eventos-imperdibles-en-aguascalientes-durante-octubre-de-2026/) lo describió como una cita de bienestar, hábitos saludables y desarrollo personal, y lo incluyó en la agenda de octubre del estado.
 
-Brenda Guadalupe Caballero Lara es directora de ética y buen uso de IA del [Clúster de Startups e Innovación](/es/quienes-somos/). El [comité de IA](/es/gobernanza/ia/) es un órgano honorario del clúster: forma y divulga sobre inteligencia artificial en el ecosistema, y cuida que su uso sea ético y responsable.
+Brenda Guadalupe Caballero Lara es directora de ética y buen uso de IA del [Clúster de Startups e Innovación](/es/quienes-somos/).
